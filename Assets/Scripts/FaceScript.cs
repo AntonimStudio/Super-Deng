@@ -23,10 +23,11 @@ public class FaceScript : MonoBehaviour
     [Space]
     private float inputWindow = 0.25f; // Длительность окна ввода в секундах
     [SerializeField] private RhythmManager RM;
+    [SerializeField] private StartCountDown SCD;
 
     private void Start()
     {
-        RM = GameObject.FindObjectOfType<RhythmManager>();
+        RM = FindObjectOfType<RhythmManager>();
 
         materials = new Dictionary<string, int>();
         sides = new Dictionary<string, GameObject>();
@@ -39,15 +40,19 @@ public class FaceScript : MonoBehaviour
             sides.Add("OrangeSide", sideOrange);
             sides.Add("BlueSide", sideBlue);
             sides.Add("GreenSide", sideGreen);
+
+            gameObject.GetComponent<FaceScript>().rend.material = materialLightBlue;
+            sideBlue.GetComponent<FaceScript>().rend.material = materialBlue;
+            sideOrange.GetComponent<FaceScript>().rend.material = materialOrange;
+            sideGreen.GetComponent<FaceScript>().rend.material = materialGreen;
         }
+
     }
-
-
 
     private void Update()
     {
         //Debug.Log(RM.timer.ToString() + " " + inputWindow.ToString() + " " + RM.beatInterval.ToString());
-        if (havePlayer && !transferInProgress)// && RM.timer + inputWindow >= RM.beatInterval
+        if (havePlayer && !transferInProgress && SCD.isOn)// && RM.timer + inputWindow >= RM.beatInterval
         {
             if (Input.GetKeyDown(KeyCode.A))
             {
@@ -88,8 +93,6 @@ public class FaceScript : MonoBehaviour
     public void ReceivePlayer(GameObject newPlayer, int sideNumber, string color)
     {
         rend.material = materialLightBlue;
-
-
 
         materials.Remove("BlueSide");
         materials.Remove("OrangeSide");

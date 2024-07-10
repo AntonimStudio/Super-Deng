@@ -63,7 +63,10 @@ public class LevelButtonTransition : MonoBehaviour
             }
             _screens[_numberMenu].transform.position = Vector3.MoveTowards(_screens[_numberMenu].transform.position, _points[3].position, Time.deltaTime * _speed);
             _screens[_numberMenu - 1].transform.position = Vector3.MoveTowards(_screens[_numberMenu - 1].transform.position, _points[2].position, Time.deltaTime * _speed);
-            _screens[_numberMenu - 2].transform.position = Vector3.MoveTowards(_screens[_numberMenu - 2].transform.position, _points[1].position, Time.deltaTime * _speed);
+            if (_numberMenu > 1)
+            {
+                _screens[_numberMenu - 2].transform.position = Vector3.MoveTowards(_screens[_numberMenu - 2].transform.position, _points[1].position, Time.deltaTime * _speed);
+            }
             if (Mathf.Abs(_screens[_numberMenu].transform.position.x - _points[3].position.x) <= _epsilion)
             {
                 _numberMenu -= 1;

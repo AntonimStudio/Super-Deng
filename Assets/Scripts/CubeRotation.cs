@@ -5,12 +5,20 @@ using UnityEngine;
 public class CubeRotation : MonoBehaviour
 {
     [Range(0, 20)]
-    public float rotationSpeed;
+    [SerializeField] private float rotationSpeed;
+    [SerializeField] private bool isTimer;
 
-    void Update()
+    private void Start()
+    {
+        if (isTimer)
+        {
+            this.enabled = false;
+        }
+    }
+
+    private void Update()
     {
         transform.Rotate(Vector3.up, rotationSpeed * 10 * Time.deltaTime);
-        //transform.Rotate(Vector3.right, rotationSpeed * 10 * Time.deltaTime);
-        //transform.Rotate(Vector3.forward, rotationSpeed * 10 * Time.deltaTime);
+
     }
 }

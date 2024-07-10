@@ -13,11 +13,15 @@ public class RhythmManager : MonoBehaviour
     public delegate void OnBeat();
     public static event OnBeat BeatEvent;
 
-    void Awake()
+    private void Awake()
     {
         beatInterval = 60f / bpm;
 
         nextBeatTime = Time.time + beatInterval;
+    }
+    private void Start()
+    {
+        this.enabled = false;
     }
 
     private void FixedUpdate()
