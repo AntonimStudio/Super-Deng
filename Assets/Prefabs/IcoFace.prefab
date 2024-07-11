@@ -59,6 +59,8 @@ MonoBehaviour:
   havePlayer: 0
   rend: {fileID: 2998102508191227893}
   glowingPart: {fileID: 3646677822264426016}
+  RM: {fileID: 0}
+  SCD: {fileID: 0}
 --- !u!1001 &2837445107364921979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77,7 +79,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f69774f5ad8ed9244955b85417c6a21f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f69774f5ad8ed9244955b85417c6a21f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -143,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 89d02499dba5ade4dbb5d44ab265fc0f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 89d02499dba5ade4dbb5d44ab265fc0f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -219,11 +221,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1766ed11ba7c21745acbdef17917d2ff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1766ed11ba7c21745acbdef17917d2ff, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1766ed11ba7c21745acbdef17917d2ff, type: 3}
       propertyPath: m_LocalRotation.w
