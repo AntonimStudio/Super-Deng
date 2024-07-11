@@ -31,6 +31,7 @@ public class MoveImageOnBeat : MonoBehaviour
             RectTransform canvasRect = parentCanvas.GetComponent<RectTransform>();
             centerPosition = new Vector2(canvasRect.rect.width / 2, canvasRect.rect.height / 2);
         }
+        this.enabled = false;
     }
 
     void Update()
