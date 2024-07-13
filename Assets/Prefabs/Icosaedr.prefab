@@ -511,7 +511,7 @@ GameObject:
   m_Layer: 0
   m_Name: Side1
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -555,9 +555,11 @@ MonoBehaviour:
   materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
   materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   havePlayer: 0
+  isKostil: 0
   rend: {fileID: 989156307469065597}
   glowingPart: {fileID: 4020619867639347704}
   RM: {fileID: 0}
+  SCD: {fileID: 0}
 --- !u!1 &703821351713048196
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,7 +573,7 @@ GameObject:
   m_Layer: 0
   m_Name: Side15
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -615,9 +617,11 @@ MonoBehaviour:
   materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
   materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   havePlayer: 0
+  isKostil: 0
   rend: {fileID: 2080683010223390302}
   glowingPart: {fileID: 18836429421741351}
   RM: {fileID: 0}
+  SCD: {fileID: 0}
 --- !u!1 &801793735118814392
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,7 +718,7 @@ GameObject:
   m_Layer: 0
   m_Name: Side14
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -758,9 +762,11 @@ MonoBehaviour:
   materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
   materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   havePlayer: 0
+  isKostil: 0
   rend: {fileID: 1419163765672365411}
   glowingPart: {fileID: 5350216777521980735}
   RM: {fileID: 0}
+  SCD: {fileID: 0}
 --- !u!1 &1120878829394919131
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,7 +780,7 @@ GameObject:
   m_Layer: 0
   m_Name: Side13
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -818,9 +824,11 @@ MonoBehaviour:
   materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
   materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   havePlayer: 0
+  isKostil: 0
   rend: {fileID: 7553862980113135582}
   glowingPart: {fileID: 4570661889889197151}
   RM: {fileID: 0}
+  SCD: {fileID: 0}
 --- !u!1 &1174972733208094666
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,7 +1008,7 @@ GameObject:
   m_Layer: 0
   m_Name: Side4
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1044,9 +1052,11 @@ MonoBehaviour:
   materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
   materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   havePlayer: 0
+  isKostil: 0
   rend: {fileID: 4449183871336145678}
   glowingPart: {fileID: 4125123560941469550}
   RM: {fileID: 0}
+  SCD: {fileID: 0}
 --- !u!1 &1502407825719104287
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,7 +1070,7 @@ GameObject:
   m_Layer: 0
   m_Name: Side5
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1104,9 +1114,11 @@ MonoBehaviour:
   materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
   materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   havePlayer: 0
+  isKostil: 0
   rend: {fileID: 5794083988076293261}
   glowingPart: {fileID: 3624174532473963734}
   RM: {fileID: 0}
+  SCD: {fileID: 0}
 --- !u!1 &1604185207989464079
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,6 +1433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 1
+  isTimer: 0
 --- !u!1 &1910256788852188713
 GameObject:
   m_ObjectHideFlags: 0
@@ -1683,7 +1696,7 @@ GameObject:
   m_Layer: 0
   m_Name: Side2
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1727,9 +1740,11 @@ MonoBehaviour:
   materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
   materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   havePlayer: 0
+  isKostil: 0
   rend: {fileID: 3623224305709302652}
   glowingPart: {fileID: 7403580103695176343}
   RM: {fileID: 0}
+  SCD: {fileID: 0}
 --- !u!1 &2479007693888291811
 GameObject:
   m_ObjectHideFlags: 0
@@ -2490,7 +2505,7 @@ GameObject:
   m_Layer: 0
   m_Name: Side9
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2534,9 +2549,11 @@ MonoBehaviour:
   materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
   materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   havePlayer: 0
+  isKostil: 0
   rend: {fileID: 6451446808353405727}
   glowingPart: {fileID: 6783923448628042238}
   RM: {fileID: 0}
+  SCD: {fileID: 0}
 --- !u!1 &3624174532473963734
 GameObject:
   m_ObjectHideFlags: 0
@@ -2633,7 +2650,7 @@ GameObject:
   m_Layer: 0
   m_Name: Side18
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2677,9 +2694,11 @@ MonoBehaviour:
   materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
   materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   havePlayer: 0
+  isKostil: 0
   rend: {fileID: 4516527217590699308}
   glowingPart: {fileID: 8850255864997493823}
   RM: {fileID: 0}
+  SCD: {fileID: 0}
 --- !u!1 &3727791189254690262
 GameObject:
   m_ObjectHideFlags: 0
@@ -2942,7 +2961,7 @@ GameObject:
   m_Layer: 0
   m_Name: Side10
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2986,9 +3005,11 @@ MonoBehaviour:
   materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
   materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   havePlayer: 0
+  isKostil: 0
   rend: {fileID: 5296557897460349284}
   glowingPart: {fileID: 5454472273720043343}
   RM: {fileID: 0}
+  SCD: {fileID: 0}
 --- !u!1 &4056151085929288168
 GameObject:
   m_ObjectHideFlags: 0
@@ -3251,7 +3272,7 @@ GameObject:
   m_Layer: 0
   m_Name: Side17
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3295,9 +3316,11 @@ MonoBehaviour:
   materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
   materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   havePlayer: 0
+  isKostil: 0
   rend: {fileID: 3000338844074098431}
   glowingPart: {fileID: 7629843600909053939}
   RM: {fileID: 0}
+  SCD: {fileID: 0}
 --- !u!1 &4325406593131958703
 GameObject:
   m_ObjectHideFlags: 0
@@ -3394,7 +3417,7 @@ GameObject:
   m_Layer: 0
   m_Name: Side11
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3438,9 +3461,11 @@ MonoBehaviour:
   materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
   materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   havePlayer: 0
+  isKostil: 0
   rend: {fileID: 1993201470128285664}
   glowingPart: {fileID: 381257260346422317}
   RM: {fileID: 0}
+  SCD: {fileID: 0}
 --- !u!1 &4465124929311773176
 GameObject:
   m_ObjectHideFlags: 0
@@ -3454,7 +3479,7 @@ GameObject:
   m_Layer: 0
   m_Name: Side19
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3498,9 +3523,11 @@ MonoBehaviour:
   materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
   materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   havePlayer: 0
+  isKostil: 0
   rend: {fileID: 8140426690856492404}
   glowingPart: {fileID: 3022532327962386473}
   RM: {fileID: 0}
+  SCD: {fileID: 0}
 --- !u!1 &4570661889889197151
 GameObject:
   m_ObjectHideFlags: 0
@@ -3846,7 +3873,7 @@ GameObject:
   m_Layer: 0
   m_Name: Side16
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3890,9 +3917,11 @@ MonoBehaviour:
   materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
   materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   havePlayer: 0
+  isKostil: 0
   rend: {fileID: 3482438678630558619}
   glowingPart: {fileID: 6829383744062260528}
   RM: {fileID: 0}
+  SCD: {fileID: 0}
 --- !u!1 &5542294706169236540
 GameObject:
   m_ObjectHideFlags: 0
@@ -4072,7 +4101,7 @@ GameObject:
   m_Layer: 0
   m_Name: Side8
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4116,9 +4145,11 @@ MonoBehaviour:
   materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
   materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   havePlayer: 0
+  isKostil: 0
   rend: {fileID: 3254790281763065366}
   glowingPart: {fileID: 187078118194838077}
   RM: {fileID: 0}
+  SCD: {fileID: 0}
 --- !u!1 &5931332498669057677
 GameObject:
   m_ObjectHideFlags: 0
@@ -4962,7 +4993,7 @@ GameObject:
   m_Layer: 0
   m_Name: Side3
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5006,9 +5037,11 @@ MonoBehaviour:
   materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
   materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   havePlayer: 0
+  isKostil: 0
   rend: {fileID: 8456586020057827482}
   glowingPart: {fileID: 5553296816690903037}
   RM: {fileID: 0}
+  SCD: {fileID: 0}
 --- !u!1 &7403580103695176343
 GameObject:
   m_ObjectHideFlags: 0
@@ -5686,7 +5719,7 @@ GameObject:
   m_Layer: 0
   m_Name: Side12
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5730,9 +5763,11 @@ MonoBehaviour:
   materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
   materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   havePlayer: 0
+  isKostil: 0
   rend: {fileID: 6442205698974623637}
   glowingPart: {fileID: 6763569442544409445}
   RM: {fileID: 0}
+  SCD: {fileID: 0}
 --- !u!1 &8546852333155154099
 GameObject:
   m_ObjectHideFlags: 0
@@ -5829,7 +5864,7 @@ GameObject:
   m_Layer: 0
   m_Name: Side0
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5873,9 +5908,11 @@ MonoBehaviour:
   materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
   materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   havePlayer: 1
+  isKostil: 0
   rend: {fileID: 2931937424287523934}
   glowingPart: {fileID: 3443917499724873107}
   RM: {fileID: 0}
+  SCD: {fileID: 0}
 --- !u!1 &8850255864997493823
 GameObject:
   m_ObjectHideFlags: 0
@@ -5972,7 +6009,7 @@ GameObject:
   m_Layer: 0
   m_Name: Side6
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6016,9 +6053,11 @@ MonoBehaviour:
   materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
   materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   havePlayer: 0
+  isKostil: 0
   rend: {fileID: 3477057247485021949}
   glowingPart: {fileID: 6311940036344497028}
   RM: {fileID: 0}
+  SCD: {fileID: 0}
 --- !u!1 &8921109607259869096
 GameObject:
   m_ObjectHideFlags: 0
@@ -6032,7 +6071,7 @@ GameObject:
   m_Layer: 0
   m_Name: Side7
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6076,9 +6115,11 @@ MonoBehaviour:
   materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
   materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   havePlayer: 0
+  isKostil: 0
   rend: {fileID: 5699472128430251746}
   glowingPart: {fileID: 1177172465130217938}
   RM: {fileID: 0}
+  SCD: {fileID: 0}
 --- !u!1 &9101482364195997002
 GameObject:
   m_ObjectHideFlags: 0

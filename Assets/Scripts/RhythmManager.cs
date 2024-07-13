@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class RhythmManager : MonoBehaviour
 {
-    public float bpm = 120f;
+    public float bpm = 90f;
     public float beatInterval; // Длительность одного такта в секундах
     public float timer = 0.0f;
     private float nextBeatTime; // Время следующего удара

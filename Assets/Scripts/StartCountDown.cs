@@ -11,6 +11,7 @@ public class StartCountDown : MonoBehaviour
     [SerializeField] private GameObject rhythmManager;
     [SerializeField] private GameObject moveImageOnBeat;
     [SerializeField] private GameObject moveImageOnBeat1;
+    [SerializeField] private GameObject killerManager;
     public bool isOn = false;
 
     private void Start()
@@ -33,7 +34,7 @@ public class StartCountDown : MonoBehaviour
         icosahedron.GetComponent<CubeRotation>().enabled = true; // Включаем скрипт вращения куба
         rhythmManager.GetComponent<RhythmManager>().enabled = true;
         moveImageOnBeat.GetComponent<MoveImageOnBeat>().enabled = true;
-        moveImageOnBeat1.GetComponent<MoveImageOnBeat>().enabled = true;
+        killerManager.GetComponent<RedFaceScript>().StartKilling();
     }
 }
 
