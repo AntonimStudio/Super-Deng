@@ -147,8 +147,10 @@ public class FaceScript : MonoBehaviour
 
         player = newPlayer;
         havePlayer = true;
-
-        //player.transform.SetParent(gameObject.transform);
+        /*
+        player.transform.SetParent(gameObject.transform);
+        player.transform.localPosition = new Vector3(0, -10, 0);
+        player.transform.localRotation = new Quaternion(0, -90, 0, 0);*/
     }
 
     public GameObject GetGameObject(string key)

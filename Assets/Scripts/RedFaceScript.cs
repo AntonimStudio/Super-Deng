@@ -5,18 +5,18 @@ using UnityEngine.UI;
 
 public class RedFaceScript : MonoBehaviour
 {
-    public GameObject[] faces;
-    public Image image;
-    private int lastCubeIndex = -1;
-    public float colorChangeDuration = 2f;
-    public float scaleChangeDuration = 1f;
-
+    [SerializeField] private GameObject[] faces;
+    [SerializeField] private Image image;
+    [SerializeField] private float colorChangeDuration = 2f;
+    [SerializeField] private float scaleChangeDuration = 1f;
+    [SerializeField] private float scaleChange = 25f;
     [SerializeField] private Material materialWhite;
     [SerializeField] private Material materialRed;
+    private int lastCubeIndex = -1;
 
-    private void Start()
+    public void StartKilling()
     {
-        InvokeRepeating("ChangeFaceColor", 0f, 1f);
+        InvokeRepeating("ChangeFaceColor", 0f, 60/90f);
     }
 
     private void ChangeFaceColor()
@@ -29,11 +29,10 @@ public class RedFaceScript : MonoBehaviour
 
         if (lastCubeIndex != -1)
         {
-
             StartCoroutine(FadeColorAndScale(faces[lastCubeIndex], materialWhite, new Vector3(1f, 1f, 1f), colorChangeDuration, scaleChangeDuration));
         }
 
-        StartCoroutine(ChangeColorThenScale(faces[randomIndex], materialRed, new Vector3(1f, 1f, 100f), colorChangeDuration, scaleChangeDuration));
+        StartCoroutine(ChangeColorThenScale(faces[randomIndex], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
         lastCubeIndex = randomIndex;
     }
 
@@ -44,8 +43,8 @@ public class RedFaceScript : MonoBehaviour
         
         if (face.GetComponent<FaceScript>().havePlayer)
         {
-            face.GetComponent<FaceScript>().player.gameObject.SetActive(false);
-            face.GetComponent<FaceScript>().havePlayer = false;
+            //face.GetComponent<FaceScript>().player.gameObject.SetActive(false);
+            //face.GetComponent<FaceScript>().havePlayer = false;
             image.gameObject.SetActive(true);
         }
         // Затем меняем масштаб

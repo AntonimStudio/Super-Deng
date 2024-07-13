@@ -19,6 +19,5 @@ public class CubeRotation : MonoBehaviour
     private void Update()
     {
         transform.Rotate(Vector3.up, rotationSpeed * 10 * Time.deltaTime);
-
     }
 }
