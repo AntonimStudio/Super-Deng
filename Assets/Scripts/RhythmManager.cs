@@ -2,37 +2,54 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RhythmManager : MonoBehaviour
 {
-    public float bpm = 90f;
+    [SerializeField] private float bpm = 90f;
     public float beatInterval; // Длительность одного такта в секундах
-    public float timer = 0.0f;
-    private float nextBeatTime; // Время следующего удара
-    [SerializeField] TMP_Text textTimer;
-    public delegate void OnBeat();
-    public static event OnBeat BeatEvent;
+    private AudioSource audioSource;
+    [SerializeField] private Intervals[] intervals;
+   
 
     private void Awake()
     {
         beatInterval = 60f / bpm;
-
-        nextBeatTime = Time.time + beatInterval;
     }
+
     private void Start()
     {
-        this.enabled = false;
+        audioSource = gameObject.GetComponent<AudioSource>(); 
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        timer += Time.deltaTime;
-
-        if (timer >= beatInterval)
+        foreach (Intervals interval in intervals)
         {
-            timer -= beatInterval;
-            BeatEvent?.Invoke();
+            float sampledTime = (audioSource.timeSamples / (audioSource.clip.frequency * interval.GetIntervalLength(bpm)));
+            interval.CheckForNewInterval(sampledTime);
         }
-        textTimer.text = "Timer: " + timer.ToString("F2");
+    }
+}
+
+[System.Serializable]
+public class Intervals
+{
+    [SerializeField] private float steps;
+    [SerializeField] private UnityEvent trigger;
+    private int lastInterval;
+
+    public float GetIntervalLength(float bpm)
+    {
+        return 60f / (bpm * steps);
+    }
+
+    public void CheckForNewInterval (float interval)
+    {
+        if (Mathf.FloorToInt(interval) != lastInterval)
+        {
+            lastInterval = Mathf.FloorToInt(interval);
+            trigger.Invoke();
+        }
     }
 }

@@ -73,7 +73,7 @@ public class RedFaceScript : MonoBehaviour
             face.GetComponent<FaceScript>().rend.material = targetMaterial;
             if (face.GetComponent<FaceScript>().havePlayer)
             {
-                face.GetComponent<FaceScript>().player.gameObject.SetActive(false);
+                //face.GetComponent<FaceScript>().player.gameObject.SetActive(false);
                 image.gameObject.SetActive(true);
             }
             face.GetComponent<FaceScript>().glowingPart.transform.localScale = Vector3.Lerp(startScale, targetScale, timer / duration);

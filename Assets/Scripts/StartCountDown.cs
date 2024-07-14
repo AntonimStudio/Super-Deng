@@ -34,6 +34,7 @@ public class StartCountDown : MonoBehaviour
         icosahedron.GetComponent<CubeRotation>().enabled = true; // Включаем скрипт вращения куба
         rhythmManager.GetComponent<RhythmManager>().enabled = true;
         moveImageOnBeat.GetComponent<MoveImageOnBeat>().enabled = true;
+        moveImageOnBeat1.GetComponent<MoveImageOnBeat>().enabled = true;
         killerManager.GetComponent<RedFaceScript>().StartKilling();
     }
 }

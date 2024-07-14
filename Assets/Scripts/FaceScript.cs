@@ -7,7 +7,7 @@ public class FaceScript : MonoBehaviour
     [SerializeField] private GameObject sideBlue; // BlueSide == Side1
     [SerializeField] private GameObject sideOrange; // OrangeSide == Side2
     [SerializeField] private GameObject sideGreen; // GreenSide == Side3
-    public GameObject player;
+    //public GameObject player;
     [SerializeField] private Material materialWhite;
     [SerializeField] private Material materialLightBlue;
     [SerializeField] private Material materialBlue;
@@ -84,13 +84,13 @@ public class FaceScript : MonoBehaviour
         FaceScript targetFace = targetSide.GetComponent<FaceScript>();
         if (!targetFace.havePlayer)
         {
-            targetFace.ReceivePlayer(player, sideNumber, color);
-            havePlayer = false;
+            targetFace.ReceivePlayer(sideNumber, color);//targetFace.ReceivePlayer(player, sideNumber, color);
+            //havePlayer = false;
         }
         transferInProgress = false;
     }
 
-    public void ReceivePlayer(GameObject newPlayer, int sideNumber, string color)
+    public void ReceivePlayer(int sideNumber, string color) //GameObject newPlayer, int sideNumber, string color)
     {
         rend.material = materialLightBlue;
 
@@ -145,7 +145,7 @@ public class FaceScript : MonoBehaviour
             sideGreen.GetComponent<FaceScript>().rend.material = materialOrange;
         }
 
-        player = newPlayer;
+        //player = newPlayer;
         havePlayer = true;
         /*
         player.transform.SetParent(gameObject.transform);
