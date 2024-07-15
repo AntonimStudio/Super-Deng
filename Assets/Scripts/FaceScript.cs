@@ -21,15 +21,18 @@ public class FaceScript : MonoBehaviour
     public Dictionary<string, int> materials;
     public Dictionary<string, GameObject> sides;
     [Space]
-    private float inputWindow = 0.25f; // Длительность окна ввода в секундах
+    private float inputWindow = 0.25f; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     [SerializeField] private RhythmManager RM;
     [SerializeField] private StartCountDown SCD;
 
-
+    private void Awake() 
+    {
+        rend = glowingPart.GetComponent<MeshRenderer>();
+    }
     private void Start()
     {
         RM = FindObjectOfType<RhythmManager>();
-
+        
         materials = new Dictionary<string, int>();
         sides = new Dictionary<string, GameObject>();
         if (havePlayer)
@@ -86,7 +89,7 @@ public class FaceScript : MonoBehaviour
         if (!targetFace.havePlayer)
         {
             targetFace.ReceivePlayer(sideNumber, color);//targetFace.ReceivePlayer(player, sideNumber, color);
-            //havePlayer = false;
+            havePlayer = false;
         }
         transferInProgress = false;
     }
@@ -163,7 +166,7 @@ public class FaceScript : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"Материал с ключом '{key}' не найден");
+            Debug.LogWarning($"пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ '{key}' пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
             return null;
         }
     }
@@ -176,7 +179,7 @@ public class FaceScript : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"Материал с ключом '{key}' не найден");
+            Debug.LogWarning($"пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ '{key}' пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
             return -1;
         }
     }
