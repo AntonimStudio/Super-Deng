@@ -5,68 +5,56 @@ using UnityEngine.UI; // Для работы с UI элементами
 
 public class MoveImageOnBeat : MonoBehaviour
 {
-    public RhythmManager RM;
-    public Image uiImage; // Ссылка на UI Image
+    public Image image;  // Ссылка на Image
+    private Vector3 centerPosition;  // Центровая позиция
+    private Vector3 initialPosition;  // Начальная позиция
+    public float moveDuration = 0.2f;  // Длительность движения до центра
+    private bool isMoving = false;  // Флаг, чтобы избежать одновременного запуска нескольких корутин
 
-    private RectTransform imageRectTransform;
-    private Canvas parentCanvas;
-
-    private float beatInterval; // Интервал времени между ударами
-    private float nextBeatTime; // Время следующего удара
-    private Vector2 startPosition; // Начальная позиция Image
-    private Vector2 centerPosition; // Центральная позиция в Canvas
-    private bool isMoving = false; // Флаг движения
-    private float moveStartTime; // Время начала движения
-
-    void Start()
+    private void Start()
     {
-        beatInterval = RM.beatInterval;
-        nextBeatTime = Time.time + beatInterval;
-        imageRectTransform = uiImage.GetComponent<RectTransform>();
-        parentCanvas = imageRectTransform.GetComponentInParent<Canvas>();
-        startPosition = imageRectTransform.anchoredPosition;
-        centerPosition = Vector2.zero; 
-        if (imageRectTransform.anchorMin != Vector2.one * 0.5f || imageRectTransform.anchorMax != Vector2.one * 0.5f)
-        {
-            RectTransform canvasRect = parentCanvas.GetComponent<RectTransform>();
-            centerPosition = new Vector2(canvasRect.rect.width / 2, canvasRect.rect.height / 2);
-        }
-        this.enabled = false;
+        // Устанавливаем начальную позицию image
+        initialPosition = image.rectTransform.localPosition;
+        centerPosition = new Vector3(0, 0, initialPosition.z);  // Предположим, что центр экрана в (0,0)
+        transform.localPosition = centerPosition;
     }
 
-    void Update()
+    // Этот метод должен вызываться в такт музыке
+    public void OnBeat()
     {
-        // Проверить, достигло ли текущее время следующего времени удара
-        if (Time.time >= nextBeatTime)
+        if (!isMoving)
         {
-            nextBeatTime += beatInterval;
-            StartMoveToCenter();
-        }
-        if (isMoving)
-        {
-            MoveToCenter();
+            StartCoroutine(MoveToCenterAndBack());
         }
     }
 
-    void StartMoveToCenter()
+    private IEnumerator MoveToCenterAndBack()
     {
         isMoving = true;
-        moveStartTime = Time.time;
-    }
 
-    void MoveToCenter()
-    {
-        float elapsed = Time.time - moveStartTime;
-        float t = elapsed / beatInterval;
+        // Перемещение к центру
+        float elapsedTime = 0;
+        while (elapsedTime < moveDuration)
+        {
+            image.rectTransform.localPosition = Vector3.Lerp(initialPosition, centerPosition, elapsedTime / moveDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        image.rectTransform.localPosition = centerPosition;
 
-        if (t <= 1f)
+        // Задержка, если необходимо
+        yield return new WaitForSeconds(0.1f);  // Пауза в центре
+
+        // Перемещение обратно к начальной позиции
+        elapsedTime = 0;
+        while (elapsedTime < moveDuration)
         {
-            imageRectTransform.anchoredPosition = Vector2.Lerp(startPosition, centerPosition, t);
+            image.rectTransform.localPosition = Vector3.Lerp(centerPosition, initialPosition, elapsedTime / moveDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
         }
-        else
-        {
-            imageRectTransform.anchoredPosition = startPosition;
-            isMoving = false;
-        }
+        image.rectTransform.localPosition = initialPosition;
+
+        isMoving = false;
     }
 }

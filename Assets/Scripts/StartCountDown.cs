@@ -32,10 +32,11 @@ public class StartCountDown : MonoBehaviour
         countDownText.gameObject.SetActive(false);
         isOn = true;
         icosahedron.GetComponent<CubeRotation>().enabled = true; // Включаем скрипт вращения куба
-        rhythmManager.GetComponent<RhythmManager>().enabled = true;
+        //rhythmManager.GetComponent<RhythmManager>().enabled = true;
         moveImageOnBeat.GetComponent<MoveImageOnBeat>().enabled = true;
         moveImageOnBeat1.GetComponent<MoveImageOnBeat>().enabled = true;
-        killerManager.GetComponent<RedFaceScript>().StartKilling();
+        killerManager.GetComponent<RedFaceScript>().isTurnOn = true;
+        //killerManager.GetComponent<RedFaceScript>().StartKilling();
     }
 }
 

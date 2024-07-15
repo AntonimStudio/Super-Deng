@@ -25,6 +25,7 @@ public class FaceScript : MonoBehaviour
     [SerializeField] private RhythmManager RM;
     [SerializeField] private StartCountDown SCD;
 
+
     private void Start()
     {
         RM = FindObjectOfType<RhythmManager>();

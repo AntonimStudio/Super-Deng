@@ -14,12 +14,12 @@ public class PulseToTheBeat : MonoBehaviour
     private void Start()
     {
         startSize = transform.localScale;
-        if (isTest)
+        /*if (isTest)
         {
             StartCoroutine(TransformOnBeat());
-        }
+        }*/
     }
-
+    
     // Update is called once per frame
     private void Update()
     {
@@ -30,13 +30,13 @@ public class PulseToTheBeat : MonoBehaviour
     {
         transform.localScale = startSize * pulseSize;
     }
-
+    /*
     IEnumerator TransformOnBeat()
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.666f);
+            yield return new WaitForSeconds(5f);
             Pulse();
         }
-    }
+    }*/
 }

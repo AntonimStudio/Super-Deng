@@ -11,7 +11,6 @@ public class RhythmManager : MonoBehaviour
     private AudioSource audioSource;
     [SerializeField] private Intervals[] intervals;
    
-
     private void Awake()
     {
         beatInterval = 60f / bpm;
@@ -19,7 +18,8 @@ public class RhythmManager : MonoBehaviour
 
     private void Start()
     {
-        audioSource = gameObject.GetComponent<AudioSource>(); 
+        audioSource = gameObject.GetComponent<AudioSource>();
+
     }
 
     private void Update()

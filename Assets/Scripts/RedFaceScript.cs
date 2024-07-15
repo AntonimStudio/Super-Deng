@@ -13,27 +13,27 @@ public class RedFaceScript : MonoBehaviour
     [SerializeField] private Material materialWhite;
     [SerializeField] private Material materialRed;
     private int lastCubeIndex = -1;
+    public bool isTurnOn = false;
 
-    public void StartKilling()
+    public void ChangeFaceColor()
     {
-        InvokeRepeating("ChangeFaceColor", 0f, 60/90f);
-    }
-
-    private void ChangeFaceColor()
-    {
-        int randomIndex = Random.Range(0, faces.Length);
-        while (randomIndex == lastCubeIndex)
+        if (isTurnOn)
         {
-            randomIndex = Random.Range(0, faces.Length);
-        }
+            int randomIndex = Random.Range(0, faces.Length);
+            while (randomIndex == lastCubeIndex)
+            {
+                randomIndex = Random.Range(0, faces.Length);
+            }
 
-        if (lastCubeIndex != -1)
-        {
-            StartCoroutine(FadeColorAndScale(faces[lastCubeIndex], materialWhite, new Vector3(1f, 1f, 1f), colorChangeDuration, scaleChangeDuration));
-        }
+            if (lastCubeIndex != -1)
+            {
+                StartCoroutine(FadeColorAndScale(faces[lastCubeIndex], materialWhite, new Vector3(1f, 1f, 1f), colorChangeDuration, scaleChangeDuration));
+            }
 
-        StartCoroutine(ChangeColorThenScale(faces[randomIndex], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
-        lastCubeIndex = randomIndex;
+            StartCoroutine(ChangeColorThenScale(faces[randomIndex], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
+            lastCubeIndex = randomIndex;
+        }
+        
     }
 
     IEnumerator ChangeColorThenScale(GameObject face, Material targetMaterial, Vector3 targetScale, float colorDuration, float scaleDuration)
