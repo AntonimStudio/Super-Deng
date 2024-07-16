@@ -24,6 +24,7 @@ public class FaceScript : MonoBehaviour
     private float inputWindow = 0.25f; // ������������ ���� ����� � ��������
     [SerializeField] private RhythmManager RM;
     [SerializeField] private StartCountDown SCD;
+    [SerializeField] private BeatController BC;
 
     private void Awake() 
     {
@@ -56,7 +57,7 @@ public class FaceScript : MonoBehaviour
     private void Update()
     {
         //Debug.Log(RM.timer.ToString() + " " + inputWindow.ToString() + " " + RM.beatInterval.ToString());
-        if (havePlayer && !transferInProgress && SCD.isOn )// && RM.timer + inputWindow >= RM.beatInterval
+        if (havePlayer && !transferInProgress && SCD.isOn && BC.canPress)// && RM.timer + inputWindow >= RM.beatInterval
         {
             if (Input.GetKeyDown(KeyCode.A))
             {
