@@ -24,7 +24,7 @@ public class StartCountDown : MonoBehaviour
         for (int i = 3; i > 0; i--)
         {
             countDownText.text = i.ToString();
-            yield return new WaitForSeconds(0.7f);
+            yield return new WaitForSeconds(0.666f);
         }
 
         countDownText.text = "GO!";
