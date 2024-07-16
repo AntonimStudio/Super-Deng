@@ -1,0 +1,376 @@
+fileFormatVersion: 2
+guid: 6e787f4998cf60847ab81434322ca217
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: atlasCombo_2
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 695
+        width: 352
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a90c290381b811048aa09d6d9c2fad5d
+      internalID: 650135595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlasCombo_6
+      rect:
+        serializedVersion: 2
+        x: 3075
+        y: 697
+        width: 352
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77ffa4e790a230f4ea85e8c99acbf988
+      internalID: -274154995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlasCombo_7
+      rect:
+        serializedVersion: 2
+        x: 3568
+        y: 681
+        width: 352
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d13426606aaba024e8ad148e54d8e7ea
+      internalID: 864792060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlasCombo_8
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 244
+        width: 813
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d16eeaea66f75fe4f96a5fc97e0f4ddb
+      internalID: -1158037637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlasCombo_9
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 79
+        width: 813
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6884376477007f40bc3bfe169443aec
+      internalID: -1418060151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlasCombo_13
+      rect:
+        serializedVersion: 2
+        x: 2624
+        y: 708
+        width: 352
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba2d64b336eedd64abd84c96b58ed96d
+      internalID: 1016991093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlasCombo_44
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 497
+        width: 50
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b17f75f873629ab4ea6bda08bde271d2
+      internalID: 1005385717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlasCombo_46
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 359
+        width: 50
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b90c0226b9d2e746b7ce39e3e477d70
+      internalID: 673377002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      atlasCombo_0: -486661829
+      atlasCombo_1: -1611879378
+      atlasCombo_10: -1638549377
+      atlasCombo_11: -301068582
+      atlasCombo_12: 685781596
+      atlasCombo_13: 1016991093
+      atlasCombo_14: -994325787
+      atlasCombo_15: 282491715
+      atlasCombo_16: 1968201735
+      atlasCombo_17: 1557582748
+      atlasCombo_18: -68809598
+      atlasCombo_19: 886597175
+      atlasCombo_2: 650135595
+      atlasCombo_20: 2102450964
+      atlasCombo_21: -1465742136
+      atlasCombo_22: -1979057327
+      atlasCombo_23: 498733238
+      atlasCombo_24: 978983335
+      atlasCombo_25: 748770998
+      atlasCombo_26: -1440299742
+      atlasCombo_27: -1795027159
+      atlasCombo_28: -1643952296
+      atlasCombo_29: -752777950
+      atlasCombo_3: -2047361511
+      atlasCombo_30: 285731563
+      atlasCombo_31: 2049483386
+      atlasCombo_32: -1018312514
+      atlasCombo_33: -602163276
+      atlasCombo_34: 1879046158
+      atlasCombo_35: -1579917380
+      atlasCombo_36: -276448181
+      atlasCombo_37: 835608900
+      atlasCombo_38: -1519980953
+      atlasCombo_39: -1507413088
+      atlasCombo_4: -629707450
+      atlasCombo_40: 1105957083
+      atlasCombo_41: -868643716
+      atlasCombo_42: -2142065361
+      atlasCombo_43: -211445832
+      atlasCombo_44: 1005385717
+      atlasCombo_45: -1859259666
+      atlasCombo_46: 673377002
+      atlasCombo_47: 1861830665
+      atlasCombo_48: 189219647
+      atlasCombo_49: -853911474
+      atlasCombo_5: 1635395869
+      atlasCombo_50: 1522566562
+      atlasCombo_51: -1943248249
+      atlasCombo_52: 1204791431
+      atlasCombo_53: 984770833
+      atlasCombo_54: -377444039
+      atlasCombo_55: -1112721331
+      atlasCombo_56: 1172990717
+      atlasCombo_57: -1319068273
+      atlasCombo_58: -123684346
+      atlasCombo_59: 2145266301
+      atlasCombo_6: -274154995
+      atlasCombo_60: 149640566
+      atlasCombo_61: -350244669
+      atlasCombo_62: 2129165157
+      atlasCombo_63: 1845553482
+      atlasCombo_64: -1392945354
+      atlasCombo_65: -876349545
+      atlasCombo_66: -562187358
+      atlasCombo_67: -1210880343
+      atlasCombo_7: 864792060
+      atlasCombo_8: -1158037637
+      atlasCombo_9: -1418060151
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

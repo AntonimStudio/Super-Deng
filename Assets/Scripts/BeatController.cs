@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,55 +5,66 @@ public class BeatController : MonoBehaviour
 {
     public float beatInterval = 0.6666f;
     private float elapsedTime = 0f;
-    public bool canPress = true;
+    public bool canPress = false;
+    public bool canCombo = false;
 
-    [SerializeField] private Image image;
-    [SerializeField] private Vector3 startPos = new Vector3(-300f, 0f, 0f);
-    [SerializeField] private Vector3 midPos = new Vector3(-100f, 0f, 0f);
-    [SerializeField] private Vector3 almostEndPos = new Vector3(0f, 0f, 0f);
-    [SerializeField] private Vector3 endPos = new Vector3(50f, 0f, 0f);
-
+    [SerializeField] private Image image1;
+    private Vector3 startPos1 = new Vector3(-350f, 0f, 0f);
+    private Vector3 midPos1 = new Vector3(-200f, 0f, 0f);
+    private Vector3 almostEndPos1 = new Vector3(-50f, 0f, 0f);
+    private Vector3 endPos1 = new Vector3(100f, 0f, 0f);
+    [SerializeField] private Image image2;
+    private Vector3 startPos2 = new Vector3(350f, 0f, 0f);
+    private Vector3 midPos2 = new Vector3(200f, 0f, 0f);
+    private Vector3 almostEndPos2 = new Vector3(50f, 0f, 0f);
+    private Vector3 endPos2 = new Vector3(-100f, 0f, 0f);
+    public int beatcount = 0;
     private float lastBeatTime = 0f;
 
     void Start()
     {
-        image.enabled = false;
-        image.rectTransform.localPosition = startPos; // Установка начальной позиции
+
+        image1.enabled = false;
+        image1.rectTransform.localPosition = startPos1;
+        image2.enabled = false;
+        image2.rectTransform.localPosition = startPos2;
     }
 
     private void Update()
     {
+        if (0f < elapsedTime && ((elapsedTime < 0.25f * beatInterval) || (elapsedTime > 0.75f * beatInterval)))
+        {
+            canCombo = true;
+        }
+        else canCombo = false;
+
         if (elapsedTime > 0f)
         {
             elapsedTime += Time.deltaTime;
 
-            if (elapsedTime <= beatInterval / 3f)
+            if (elapsedTime < beatInterval / 3f)
             {
                 canPress = true;
                 float t = elapsedTime / (beatInterval / 3f);
-                image.rectTransform.localPosition = Vector3.Lerp(almostEndPos, endPos, t);
-            }
-            else if (Mathf.Abs(elapsedTime - (2f * beatInterval) / 3f) < 0.01f)
-            {
-                //image.rectTransform.localPosition = startPos;
+                image1.rectTransform.localPosition = Vector3.Lerp(almostEndPos1, endPos1, t);
+                image2.rectTransform.localPosition = Vector3.Lerp(almostEndPos2, endPos2, t);
+
             }
             else if (elapsedTime < (2f * beatInterval) / 3f)
             {
                 canPress = false;
                 float t = (elapsedTime - (beatInterval / 3f)) / (beatInterval / 3f);
-                image.rectTransform.localPosition = Vector3.Lerp(startPos, midPos, t);
-                /*
-                float t = (elapsedTime - (beatInterval / 3f)) / (beatInterval / 3f);
-                image.rectTransform.localPosition = Vector3.Lerp(midPos, midPos, t);
-                */
+                image1.enabled = true;
+                image1.rectTransform.localPosition = Vector3.Lerp(startPos1, midPos1, t);
+                image2.enabled = true;
+                image2.rectTransform.localPosition = Vector3.Lerp(startPos2, midPos2, t);
             }
             else if (elapsedTime < beatInterval)
             {
-                // Третья треть beatInterval
                 canPress = true;
-                // Анимация перемещения к endPos
                 float t = (elapsedTime - ((2f * beatInterval) / 3f)) / (beatInterval / 3f);
-                image.rectTransform.localPosition = Vector3.Lerp(midPos, almostEndPos, t);
+                image1.rectTransform.localPosition = Vector3.Lerp(midPos1, almostEndPos1, t);
+                image2.rectTransform.localPosition = Vector3.Lerp(midPos2, almostEndPos2, t);
             }
             else
             {
@@ -70,10 +79,10 @@ public class BeatController : MonoBehaviour
         if (lastBeatTime != 0f)
         {
             beatInterval = currentTime - lastBeatTime;
-            Debug.Log(beatInterval);
+            //Debug.Log(beatInterval);
         }
         lastBeatTime = currentTime;
-
+        beatcount++;
         elapsedTime = 0.0001f; // Запуск процесса
         //image.rectTransform.localPosition = startPos; // Телепортирование на начальную позицию
     }
