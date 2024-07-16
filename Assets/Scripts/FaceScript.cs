@@ -56,13 +56,13 @@ public class FaceScript : MonoBehaviour
     private void Update()
     {
         //Debug.Log(RM.timer.ToString() + " " + inputWindow.ToString() + " " + RM.beatInterval.ToString());
-        if (havePlayer && !transferInProgress && SCD.isOn)// && RM.timer + inputWindow >= RM.beatInterval
+        if (havePlayer && !transferInProgress && SCD.isOn )// && RM.timer + inputWindow >= RM.beatInterval
         {
             if (Input.GetKeyDown(KeyCode.A))
             {
                 StartTransfer(GetGameObject("OrangeSide"), GetInt("OrangeSide"), "Orange");
             }
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.W))
             {
                 StartTransfer(GetGameObject("GreenSide"), GetInt("GreenSide"), "Green");
             }
