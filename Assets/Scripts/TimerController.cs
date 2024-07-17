@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro; // Если вы используете TextMeshPro для текста
@@ -6,22 +8,21 @@ public class TimerController : MonoBehaviour
 {
     public Slider timerSlider; // Ссылка на ползунок
     public TextMeshProUGUI timerText; // Ссылка на текстовое поле (используйте Text вместо TextMeshProUGUI, если используете стандартный текст)
+    public float timeElapsed = 0f; // Прошедшее время
+    public float totalTime = 130f; // Общее время в секундах (2 минуты)
+    public bool timerIsRunning = false;
+    [SerializeField] private Image imageCompleted;
+    [SerializeField] private RedFaceScript RFS;
+    [SerializeField] private StartCountDown SCD;
 
-    private float timeElapsed = 0f; // Прошедшее время
-    private float totalTime = 120f; // Общее время в секундах (2 минуты)
-    private bool timerIsRunning = false;
-
-    void Start()
+    private void Start()
     {
-        // Инициализация ползунка
         timerSlider.maxValue = totalTime;
         timerSlider.value = 0;
-
-        // Запуск таймера
         timerIsRunning = true;
     }
 
-    void Update()
+    private void Update()
     {
         if (timerIsRunning)
         {
@@ -35,8 +36,9 @@ public class TimerController : MonoBehaviour
                 timeElapsed = totalTime;
                 timerIsRunning = false;
                 UpdateTimerDisplay(timeElapsed);
-                // Таймер завершен
-                Debug.Log("Таймер завершен!");
+                imageCompleted.gameObject.SetActive(true);
+                RFS.isTurnOn = false;
+                SCD.isOn = false;
             }
         }
     }

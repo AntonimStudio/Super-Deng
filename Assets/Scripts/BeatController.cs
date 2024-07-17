@@ -18,8 +18,12 @@ public class BeatController : MonoBehaviour
     private Vector3 midPos2 = new Vector3(200f, 0f, 0f);
     private Vector3 almostEndPos2 = new Vector3(50f, 0f, 0f);
     private Vector3 endPos2 = new Vector3(-100f, 0f, 0f);
+    [SerializeField] private CameraZoom CZ;
     public int beatcount = 0;
     private float lastBeatTime = 0f;
+    public bool isAlreadyPressed = false;
+    public bool isAlreadyPressedIsAlreadyPressed = false;
+    public bool isAlreadyZoomed = false;
 
     void Start()
     {
@@ -44,7 +48,11 @@ public class BeatController : MonoBehaviour
 
             if (elapsedTime < beatInterval / 3f)
             {
-                canPress = true;
+
+                if (!isAlreadyPressed)
+                    canPress = true;
+                else
+                    canPress = false;
                 float t = elapsedTime / (beatInterval / 3f);
                 image1.rectTransform.localPosition = Vector3.Lerp(almostEndPos1, endPos1, t);
                 image2.rectTransform.localPosition = Vector3.Lerp(almostEndPos2, endPos2, t);
@@ -53,6 +61,8 @@ public class BeatController : MonoBehaviour
             else if (elapsedTime < (2f * beatInterval) / 3f)
             {
                 canPress = false;
+                if (!isAlreadyPressedIsAlreadyPressed)
+                    PressIsAlreadyPress();
                 float t = (elapsedTime - (beatInterval / 3f)) / (beatInterval / 3f);
                 image1.enabled = true;
                 image1.rectTransform.localPosition = Vector3.Lerp(startPos1, midPos1, t);
@@ -61,16 +71,36 @@ public class BeatController : MonoBehaviour
             }
             else if (elapsedTime < beatInterval)
             {
-                canPress = true;
+                if (!isAlreadyPressed)
+                    canPress = true;
+                else
+                    canPress = false;
                 float t = (elapsedTime - ((2f * beatInterval) / 3f)) / (beatInterval / 3f);
                 image1.rectTransform.localPosition = Vector3.Lerp(midPos1, almostEndPos1, t);
                 image2.rectTransform.localPosition = Vector3.Lerp(midPos2, almostEndPos2, t);
+                if (! isAlreadyZoomed)
+                {
+                    PressIsAlreadyZoomed();
+                }
             }
             else
             {
                 elapsedTime = 0f;
             }
         }
+    }
+
+    private void PressIsAlreadyPress()
+    {
+        isAlreadyPressed = false;
+        isAlreadyPressedIsAlreadyPressed = true;
+    }
+
+    private void PressIsAlreadyZoomed()
+    {
+        isAlreadyZoomed = true;
+        CZ.StartZooming();
+        
     }
 
     public void OnBeat()

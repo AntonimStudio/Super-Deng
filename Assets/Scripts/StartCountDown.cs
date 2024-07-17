@@ -9,9 +9,9 @@ public class StartCountDown : MonoBehaviour
     [SerializeField] private TMP_Text countDownText; // —сылка на UI элемент дл€ отображени€ текста
     [SerializeField] private GameObject icosahedron; // —сылка на объект куба
     [SerializeField] private GameObject rhythmManager;
-    [SerializeField] private GameObject moveImageOnBeat;
-    [SerializeField] private GameObject moveImageOnBeat1;
+    [SerializeField] private GameObject beatManager;
     [SerializeField] private GameObject killerManager;
+    [SerializeField] private GameObject cameraZoom;
     public bool isOn = false;
 
     private void Start()
@@ -36,6 +36,8 @@ public class StartCountDown : MonoBehaviour
         //moveImageOnBeat.GetComponent<MoveImageOnBeat>().enabled = true;
         //moveImageOnBeat1.GetComponent<MoveImageOnBeat>().enabled = true;
         killerManager.GetComponent<RedFaceScript>().isTurnOn = true;
+        cameraZoom.GetComponent<CameraZoom>().isOn = true;
+        beatManager.GetComponent<BeatController>().isAlreadyZoomed = false ;
         //killerManager.GetComponent<RedFaceScript>().StartKilling();
     }
 }

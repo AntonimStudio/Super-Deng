@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PulseToTheBeat : MonoBehaviour
 {
-    [SerializeField] private bool isTest;
     [SerializeField] private float pulseSize = 1.5f;
     [SerializeField] private float returnSpeed = 10f;
     private Vector3 startSize;

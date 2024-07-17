@@ -25,6 +25,7 @@ public class FaceScript : MonoBehaviour
     [SerializeField] private RhythmManager RM;
     [SerializeField] private StartCountDown SCD;
     [SerializeField] private BeatController BC;
+    [SerializeField] private SoundScript SS;
 
     private void Awake() 
     {
@@ -62,15 +63,25 @@ public class FaceScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.A))
             {
                 StartTransfer(GetGameObject("OrangeSide"), GetInt("OrangeSide"), "Orange");
+                BC.isAlreadyPressed = true;
+                BC.isAlreadyPressedIsAlreadyPressed = false;
+                SS.TurnOnSound();
             }
             if (Input.GetKeyDown(KeyCode.W))
             {
                 StartTransfer(GetGameObject("GreenSide"), GetInt("GreenSide"), "Green");
+                BC.isAlreadyPressed = true;
+                BC.isAlreadyPressedIsAlreadyPressed = false;
+                SS.TurnOnSound();
             }
             if (Input.GetKeyDown(KeyCode.D))
             {
                 StartTransfer(GetGameObject("BlueSide"), GetInt("BlueSide"), "Blue");
+                BC.isAlreadyPressed = true;
+                BC.isAlreadyPressedIsAlreadyPressed = false;
+                SS.TurnOnSound();
             }
+            
         }
     }
 
