@@ -5,12 +5,11 @@ using UnityEngine;
 public class SoundScript : MonoBehaviour
 {
     public AudioClip soundClip;  // Перетащите сюда ваш аудиофайл в инспекторе
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
     private void Start()
     {
         // Добавляем компонент AudioSource к объекту, если его еще нет
-        audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.clip = soundClip;
     }
 

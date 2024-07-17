@@ -14,15 +14,20 @@ public class RedFaceScript : MonoBehaviour
     [SerializeField] private Material materialRed;
     [SerializeField] private StartCountDown SCD;
     [SerializeField] private TimerController TC;
-    [SerializeField] private EnemySpawnSettings spawnSettings;
+    [SerializeField] private EnemySpawnSettings enemySpawnSettings;
     private float timeElapsed = 0f;
     private int lastCubeIndex = -1;
     public bool isTurnOn = false;
-
-
     private List<int> lastCubeIndices = new List<int>();
+    private bool[] spawnExecuted;
+    private int colvo = 1;
 
-    public void ChangeFaceColor(int n)
+    private void Start()
+    {
+        spawnExecuted = new bool[enemySpawnSettings.spawnTimes.Length];
+    }
+
+    public void ChangeFaceColor()
     {
         if (isTurnOn)
         {
@@ -35,15 +40,16 @@ public class RedFaceScript : MonoBehaviour
             // Clear the lastCubeIndices list for new indices
             lastCubeIndices.Clear();
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < colvo; i++)
             {
                 int randomIndex;
+                
                 do
                 {
                     randomIndex = Random.Range(0, faces.Length);
                 }
                 while (lastCubeIndices.Contains(randomIndex));
-
+                Debug.Log(randomIndex);
                 lastCubeIndices.Add(randomIndex);
                 StartCoroutine(ChangeColorThenScale(faces[randomIndex], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
             }
@@ -54,7 +60,25 @@ public class RedFaceScript : MonoBehaviour
 
     private void Update()
     {
-        timeElapsed += Time.deltaTime;
+        float elapsedTime = TC.timeElapsed;
+
+        for (int i = 0; i < enemySpawnSettings.spawnTimes.Length-1; i++)
+        {
+            var spawnTimeData = enemySpawnSettings.spawnTimes[i];
+            var nextSpawnTimeData = enemySpawnSettings.spawnTimes[i+1];
+
+            // Проверяем, прошло ли указанное время и не был ли спавн уже выполнен
+            if (elapsedTime >= spawnTimeData.time && elapsedTime <= nextSpawnTimeData.time  && !spawnExecuted[i])
+            {
+                // Устанавливаем startRandom в зависимости от значения isRandom
+                Debug.Log(colvo);
+                if (spawnTimeData.isRandom)
+                    colvo = spawnTimeData.colvo;
+
+                // Отмечаем, что спавн был выполнен
+                spawnExecuted[i] = true;
+            }
+        }
     }
 
 
