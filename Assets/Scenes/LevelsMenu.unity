@@ -1879,7 +1879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 183213f2a25b1064cb3ad06de8d821a3, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 484932c94a3aa01458c4797a41e918c9, type: 2}
   isGlobal: 1
   blendDistance: 0
   weight: 0.248
@@ -2012,7 +2012,7 @@ Transform:
   m_GameObject: {fileID: 940476588}
   serializedVersion: 2
   m_LocalRotation: {x: 0.043619405, y: 0, z: 0, w: 0.9990483}
-  m_LocalPosition: {x: 0, y: 4.14, z: -5.1850963}
+  m_LocalPosition: {x: 0, y: 4.14, z: -5.185}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
