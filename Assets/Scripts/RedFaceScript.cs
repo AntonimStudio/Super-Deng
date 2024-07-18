@@ -137,6 +137,12 @@ public class RedFaceScript : MonoBehaviour
         float timer = 0f;
         while (timer < duration)
         {
+            if (!face.GetComponent<FaceScript>().havePlayer)
+            {
+                face.GetComponent<FaceScript>().rend.material = targetMaterial;
+            }
+            else
+                PS.rend.material = targetMaterial;
             timer += Time.deltaTime;
             yield return null;
         }
