@@ -12,6 +12,7 @@ public class RedFaceScript : MonoBehaviour
     [SerializeField] private float scaleChange = 25f;
     [SerializeField] private Material materialWhite;
     [SerializeField] private Material materialRed;
+    [SerializeField] private Material materialPlayer;
     [SerializeField] private StartCountDown SCD;
     [SerializeField] private TimerController TC;
     [SerializeField] private EnemySpawnSettings enemySpawnSettings;
@@ -139,6 +140,7 @@ public class RedFaceScript : MonoBehaviour
             timer += Time.deltaTime;
             yield return null;
         }
+        PS.rend.material = materialPlayer;
     }
 
     IEnumerator ChangeScale(GameObject face, Vector3 targetScale, float duration, Material targetMaterial)
