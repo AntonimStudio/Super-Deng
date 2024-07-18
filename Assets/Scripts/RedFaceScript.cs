@@ -15,16 +15,20 @@ public class RedFaceScript : MonoBehaviour
     [SerializeField] private StartCountDown SCD;
     [SerializeField] private TimerController TC;
     [SerializeField] private EnemySpawnSettings enemySpawnSettings;
+    [SerializeField] private PlayerScript PS;
     private float timeElapsed = 0f;
     private int lastCubeIndex = -1;
     public bool isTurnOn = false;
     private List<int> lastCubeIndices = new List<int>();
+    private List<int> newCubeIndices = new List<int>();
     private bool[] spawnExecuted;
     private int colvo = 1;
+    private bool isRandomSpawnTime = true;
 
     private void Start()
     {
         spawnExecuted = new bool[enemySpawnSettings.spawnTimes.Length];
+        //PS.rend.material = targetMaterial;
     }
 
     public void ChangeFaceColor()
@@ -40,19 +44,31 @@ public class RedFaceScript : MonoBehaviour
             // Clear the lastCubeIndices list for new indices
             lastCubeIndices.Clear();
 
-            for (int i = 0; i < colvo; i++)
-            {
-                int randomIndex;
-                
-                do
+            if (isRandomSpawnTime) 
+            { 
+                for (int i = 0; i < colvo; i++)
                 {
-                    randomIndex = Random.Range(0, faces.Length);
+                    int randomIndex;
+                
+                    do
+                    {
+                        randomIndex = Random.Range(0, faces.Length);
+                    }
+                    while (lastCubeIndices.Contains(randomIndex));
+                    //Debug.Log(randomIndex);
+                    lastCubeIndices.Add(randomIndex);
+                    StartCoroutine(ChangeColorThenScale(faces[randomIndex], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
                 }
-                while (lastCubeIndices.Contains(randomIndex));
-                Debug.Log(randomIndex);
-                lastCubeIndices.Add(randomIndex);
-                StartCoroutine(ChangeColorThenScale(faces[randomIndex], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
             }
+            else
+            {
+                for (int i = 0; i < newCubeIndices.Count; i++)
+                {
+                    //lastCubeIndices = newCubeIndices;
+                    StartCoroutine(ChangeColorThenScale(faces[newCubeIndices[i]], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
+                }
+            }
+
         }
     }
 
@@ -71,9 +87,19 @@ public class RedFaceScript : MonoBehaviour
             if (elapsedTime >= spawnTimeData.time && elapsedTime <= nextSpawnTimeData.time  && !spawnExecuted[i])
             {
                 // Устанавливаем startRandom в зависимости от значения isRandom
-                Debug.Log(colvo);
                 if (spawnTimeData.isRandom)
+                {
                     colvo = spawnTimeData.colvo;
+                    isRandomSpawnTime = true;
+                }
+                else
+                {
+                    newCubeIndices.Clear();
+                    newCubeIndices = new List<int>(spawnTimeData.gameObjects);
+                    isRandomSpawnTime = false;
+                }
+
+
 
                 // Отмечаем, что спавн был выполнен
                 spawnExecuted[i] = true;
@@ -84,7 +110,7 @@ public class RedFaceScript : MonoBehaviour
 
     IEnumerator ChangeColorThenScale(GameObject face, Material targetMaterial, Vector3 targetScale, float colorDuration, float scaleDuration)
     {
-        // Сначала меняем цвет
+
         yield return StartCoroutine(FadeColor(face, targetMaterial, colorDuration));
         
         if (face.GetComponent<FaceScript>().havePlayer)
@@ -101,7 +127,12 @@ public class RedFaceScript : MonoBehaviour
 
     IEnumerator FadeColor(GameObject face, Material targetMaterial, float duration)
     {
-        face.GetComponent<FaceScript>().rend.material = targetMaterial;
+        if (!face.GetComponent<FaceScript>().havePlayer)
+        {
+            face.GetComponent<FaceScript>().rend.material = targetMaterial;
+        }
+        else
+            PS.rend.material = targetMaterial;
         float timer = 0f;
         while (timer < duration)
         {

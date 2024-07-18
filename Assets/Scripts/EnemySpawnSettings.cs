@@ -13,6 +13,6 @@ public class SpawnTimeData
 {
     public float time;
     public bool isRandom;
-    public GameObject[] gameObjects;
+    public int[] gameObjects;
     public int colvo; 
 }

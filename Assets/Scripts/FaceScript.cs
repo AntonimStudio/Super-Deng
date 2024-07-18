@@ -161,13 +161,13 @@ public class FaceScript : MonoBehaviour
             sideGreen.GetComponent<FaceScript>().rend.material = materialOrange;
         }
 
-        //player = newPlayer;
+        // = newPlayer;
         havePlayer = true;
 
 
         newPlayer.transform.SetParent(gameObject.transform);
-        newPlayer.transform.localPosition = new Vector3(0, -10, 0);
-        newPlayer.transform.localRotation = Quaternion.Euler(0, -90, 0);
+        newPlayer.transform.localPosition = new Vector3(0, 0, 0);
+        newPlayer.transform.localRotation = Quaternion.Euler(0, 0, 0);
     }
 
     public GameObject GetGameObject(string key)
