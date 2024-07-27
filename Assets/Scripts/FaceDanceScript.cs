@@ -16,7 +16,7 @@ public class FaceDanceScript : MonoBehaviour
         {
             foreach (GameObject obj in objects)
             {
-                StartCoroutine(ScaleObject(obj, scaleFactor, duration));
+                StartCoroutine(ScaleObject(obj.GetComponent<FaceScript>().glowingPart, scaleFactor, duration));
             }
             
         }
@@ -26,7 +26,7 @@ public class FaceDanceScript : MonoBehaviour
     {
         inProcess = true;
         Vector3 originalScale = obj.transform.localScale;
-        Vector3 targetScale = new Vector3(originalScale.x, originalScale.y * factor, originalScale.z);
+        Vector3 targetScale = new Vector3(originalScale.x, originalScale.y , originalScale.z * factor);
         
         // Scale up
         float elapsedTime = 0f;
