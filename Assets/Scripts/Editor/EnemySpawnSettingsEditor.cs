@@ -25,10 +25,16 @@ public class EnemySpawnSettingsEditor : Editor
             SerializedProperty isRandom = spawnTime.FindPropertyRelative("isRandom");
             SerializedProperty gameObjects = spawnTime.FindPropertyRelative("gameObjects");
             SerializedProperty colvo = spawnTime.FindPropertyRelative("colvo");
+            SerializedProperty isFaceDance = spawnTime.FindPropertyRelative("isFaceDance");
+            SerializedProperty isSphereDance = spawnTime.FindPropertyRelative("isSphereDance");
+            SerializedProperty isRotate = spawnTime.FindPropertyRelative("isRotate");
 
             EditorGUILayout.BeginVertical(GUI.skin.box);
             EditorGUILayout.PropertyField(time, new GUIContent("Time")); // Изменение существующего свойства
             EditorGUILayout.PropertyField(isRandom, new GUIContent("Is Random"));
+            EditorGUILayout.PropertyField(isFaceDance, new GUIContent("Is FaceDance")); // Изменение существующего свойства
+            EditorGUILayout.PropertyField(isSphereDance, new GUIContent("Is Sphere Dance"));
+            EditorGUILayout.PropertyField(isRotate, new GUIContent("Is Rotate"));
 
             if (isRandom.boolValue)
             {

@@ -15,5 +15,8 @@ public class SpawnTimeData
     public float time;
     public bool isRandom;
     public int[] gameObjects;
-    public int colvo; 
+    public int colvo;
+    public bool isFaceDance;
+    public bool isSphereDance;
+    public bool isRotate;
 }

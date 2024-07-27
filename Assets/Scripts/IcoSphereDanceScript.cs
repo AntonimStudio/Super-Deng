@@ -10,16 +10,38 @@ public class IcoSphereDanceScript : MonoBehaviour
     public bool isOn = false;  // Переменная для управления вращением
     private bool inProcess = false;
     private int side = -1;
+    [SerializeField] private EnemySpawnSettings enemySpawnSettings;
+    [SerializeField] private TimerController TC;
+    private bool[] spawnExecuted;
+    private int colvo = 1;
+
+    private void Start()
+    {
+        spawnExecuted = new bool[enemySpawnSettings.spawnTimes.Length];
+    }
 
     private void Update()
     {
+        float elapsedTime = TC.timeElapsed;
+
+        for (int i = 0; i < enemySpawnSettings.spawnTimes.Length - 1; i++)
+        {
+            var spawnTimeData = enemySpawnSettings.spawnTimes[i];
+            var nextSpawnTimeData = enemySpawnSettings.spawnTimes[i + 1];
+
+            // Проверяем, прошло ли указанное время и не был ли спавн уже выполнен
+            if (elapsedTime >= spawnTimeData.time && elapsedTime <= nextSpawnTimeData.time && !spawnExecuted[i])
+            {
+                isOn = spawnTimeData.isSphereDance;
+                spawnExecuted[i] = true;
+            }
+        }
         if (isOn && !inProcess)
         {
             foreach (GameObject obj in objects)
             {
                 StartCoroutine(RotateObject(obj, rotationAngle, duration));
             }
-            //isOn = false;  // Сбрасываем isOn, чтобы предотвратить повторное срабатывание
         }
     }
 

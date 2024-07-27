@@ -17,47 +17,83 @@ MonoBehaviour:
     isRandom: 1
     gameObjects: 000000000000000000000000
     colvo: 1
-  - time: 12
+    isFaceDance: 0
+    isSphereDance: 0
+    isRotate: 0
+  - time: 5
     isRandom: 1
     gameObjects: 00000000010000000200000003000000040000000500000006000000
     colvo: 2
-  - time: 18
+    isFaceDance: 1
+    isSphereDance: 1
+    isRotate: 1
+  - time: 10
     isRandom: 1
     gameObjects: 000000000000000000000000
     colvo: 3
-  - time: 22
+    isFaceDance: 0
+    isSphereDance: 0
+    isRotate: 1
+  - time: 15
     isRandom: 1
     gameObjects: 000000000000000000000000
-    colvo: 4
-  - time: 32
+    colvo: 1
+    isFaceDance: 0
+    isSphereDance: 1
+    isRotate: 0
+  - time: 20
     isRandom: 1
     gameObjects: 000000000000000000000000
     colvo: 2
+    isFaceDance: 1
+    isSphereDance: 0
+    isRotate: 0
   - time: 40
     isRandom: 1
     gameObjects: 000000000000000000000000
     colvo: 5
+    isFaceDance: 0
+    isSphereDance: 0
+    isRotate: 0
   - time: 50
     isRandom: 1
     gameObjects: 000000000000000000000000
     colvo: 3
+    isFaceDance: 0
+    isSphereDance: 0
+    isRotate: 0
   - time: 52
     isRandom: 1
     gameObjects: 000000000000000000000000
     colvo: 5
+    isFaceDance: 0
+    isSphereDance: 0
+    isRotate: 0
   - time: 55
     isRandom: 1
     gameObjects: 000000000000000000000000
     colvo: 4
+    isFaceDance: 0
+    isSphereDance: 0
+    isRotate: 0
   - time: 60
     isRandom: 1
     gameObjects: 000000000000000000000000
     colvo: 3
+    isFaceDance: 0
+    isSphereDance: 0
+    isRotate: 0
   - time: 68
     isRandom: 0
     gameObjects: 0000000001000000020000000300000004000000050000000600000007000000090000000b0000000e000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001f0000002500000028000000290000002b0000002c0000002d0000003000000034000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004400000049000000
     colvo: 5
+    isFaceDance: 0
+    isSphereDance: 0
+    isRotate: 0
   - time: 3e+22
     isRandom: 1
     gameObjects: 000000000000000000000000
     colvo: 5
+    isFaceDance: 0
+    isSphereDance: 0
+    isRotate: 0

@@ -36,13 +36,10 @@ public class RedFaceScript : MonoBehaviour
     {
         if (isTurnOn)
         {
-            // Call FadeColorAndScale on previously changed faces
             foreach (int index in lastCubeIndices)
             {
                 StartCoroutine(FadeColorAndScale(faces[index], materialWhite, new Vector3(1f, 1f, 1f), colorChangeDuration, scaleChangeDuration));
             }
-
-            // Clear the lastCubeIndices list for new indices
             lastCubeIndices.Clear();
 
             if (isRandomSpawnTime) 
@@ -56,9 +53,10 @@ public class RedFaceScript : MonoBehaviour
                         randomIndex = Random.Range(0, faces.Length);
                     }
                     while (lastCubeIndices.Contains(randomIndex));
-                    //Debug.Log(randomIndex);
                     lastCubeIndices.Add(randomIndex);
                     StartCoroutine(ChangeColorThenScale(faces[randomIndex], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
+                    faces[randomIndex].GetComponent<FaceScript>().isKilling = true;
+                    faces[randomIndex].GetComponent<FaceDanceScript>().StopScaling();
                 }
             }
             else
@@ -69,12 +67,8 @@ public class RedFaceScript : MonoBehaviour
                     StartCoroutine(ChangeColorThenScale(faces[newCubeIndices[i]], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
                 }
             }
-
         }
     }
-
-
-
     private void Update()
     {
         float elapsedTime = TC.timeElapsed;
@@ -84,10 +78,8 @@ public class RedFaceScript : MonoBehaviour
             var spawnTimeData = enemySpawnSettings.spawnTimes[i];
             var nextSpawnTimeData = enemySpawnSettings.spawnTimes[i+1];
 
-            // Проверяем, прошло ли указанное время и не был ли спавн уже выполнен
             if (elapsedTime >= spawnTimeData.time && elapsedTime <= nextSpawnTimeData.time  && !spawnExecuted[i])
             {
-                // Устанавливаем startRandom в зависимости от значения isRandom
                 if (spawnTimeData.isRandom)
                 {
                     colvo = spawnTimeData.colvo;
@@ -99,10 +91,6 @@ public class RedFaceScript : MonoBehaviour
                     newCubeIndices = new List<int>(spawnTimeData.gameObjects);
                     isRandomSpawnTime = false;
                 }
-
-
-
-                // Отмечаем, что спавн был выполнен
                 spawnExecuted[i] = true;
             }
         }
@@ -122,8 +110,7 @@ public class RedFaceScript : MonoBehaviour
             isTurnOn = false;
             SCD.isOn = false;
         }
-        // Затем меняем масштаб
-        yield return StartCoroutine(ChangeScale(face, targetScale, scaleDuration, targetMaterial));
+        yield return StartCoroutine(ChangeScale(face, targetScale, scaleDuration, targetMaterial, true));
     }
 
     IEnumerator FadeColor(GameObject face, Material targetMaterial, float duration)
@@ -149,7 +136,7 @@ public class RedFaceScript : MonoBehaviour
         PS.rend.material = materialPlayer;
     }
 
-    IEnumerator ChangeScale(GameObject face, Vector3 targetScale, float duration, Material targetMaterial)
+    IEnumerator ChangeScale(GameObject face, Vector3 targetScale, float duration, Material targetMaterial, bool isGettingBigger)
     {
         Vector3 startScale = face.GetComponent<FaceScript>().glowingPart.transform.localScale;
         float timer = 0f;
@@ -166,13 +153,22 @@ public class RedFaceScript : MonoBehaviour
             timer += Time.deltaTime;
             yield return null;
         }
-        face.GetComponent<FaceScript>().rend.material = materialWhite;
+        if (!isGettingBigger)
+        {
+            face.GetComponent<FaceScript>().rend.material = materialWhite;
+            Debug.Log("sfasf");
+        }
         face.GetComponent<FaceScript>().glowingPart.transform.localScale = targetScale;
     }
 
     IEnumerator FadeColorAndScale(GameObject cube, Material targetMaterial, Vector3 targetScale, float colorDuration, float scaleDuration)
     {
         yield return StartCoroutine(FadeColor(cube, targetMaterial, colorDuration));
-        yield return StartCoroutine(ChangeScale(cube, targetScale, scaleDuration, materialRed));
+        yield return StartCoroutine(ChangeScale(cube, targetScale, scaleDuration, materialRed, false));
+        cube.GetComponent<FaceScript>().isKilling = false;
+        if (cube.GetComponent<FaceDanceScript>().isOn)
+        {
+            cube.GetComponent<FaceDanceScript>().StartScaling();
+        }
     }
 }

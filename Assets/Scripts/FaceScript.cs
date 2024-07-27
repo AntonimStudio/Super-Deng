@@ -21,11 +21,10 @@ public class FaceScript : MonoBehaviour
     public Dictionary<string, int> materials;
     public Dictionary<string, GameObject> sides;
     [Space]
-    private float inputWindow = 0.25f; // ������������ ���� ����� � ��������
-    [SerializeField] private RhythmManager RM;
     [SerializeField] private StartCountDown SCD;
     [SerializeField] private BeatController BC;
     [SerializeField] private SoundScript SS;
+    public bool isKilling = false;
 
     private void Awake() 
     {
@@ -33,8 +32,6 @@ public class FaceScript : MonoBehaviour
     }
     private void Start()
     {
-        RM = FindObjectOfType<RhythmManager>();
-        
         materials = new Dictionary<string, int>();
         sides = new Dictionary<string, GameObject>();
         if (havePlayer)
