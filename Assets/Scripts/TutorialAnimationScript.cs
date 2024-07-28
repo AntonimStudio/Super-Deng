@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class TutorialAnimationScript : MonoBehaviour
 {
-    public GameObject[] objectsToAnimate;
-    public AnimationClip animationClip;
-    public float moveDuration = 1.0f; // Время, за которое объекты будут подниматься
+    [SerializeField] private GameObject[] objectsToAnimate;
+    [SerializeField] private AnimationClip animationClip1;
+    [SerializeField] private AnimationClip animationClip2;
+    [SerializeField] private float moveDuration = 1.0f; // Время, за которое объекты будут подниматься
 
     private void Start()
     {
@@ -21,20 +22,18 @@ public class TutorialAnimationScript : MonoBehaviour
 
     private IEnumerator PlayAnimationsWithDelay()
     {
-        foreach (GameObject obj in objectsToAnimate)
+        for (int i = 0; i < objectsToAnimate.Length; i++)
         {
+            GameObject obj = objectsToAnimate[i];
             Animation anim = obj.GetComponent<Animation>();
+
             if (anim != null)
             {
                 obj.SetActive(true);
-                anim.AddClip(animationClip, animationClip.name);
-
-                // Запускаем корутину для поднятия объекта
+                AnimationClip clipToPlay = (i % 2 == 0) ? animationClip1 : animationClip2;
+                anim.AddClip(clipToPlay, clipToPlay.name);
                 StartCoroutine(MoveObjectUp(obj));
-
-                anim.Play(animationClip.name);
-
-                // Ждем 1 секунду перед запуском следующей анимации
+                anim.Play(clipToPlay.name);
                 yield return new WaitForSeconds(0.1f);
             }
         }

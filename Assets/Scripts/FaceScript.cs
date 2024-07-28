@@ -24,7 +24,9 @@ public class FaceScript : MonoBehaviour
     [SerializeField] private StartCountDown SCD;
     [SerializeField] private BeatController BC;
     [SerializeField] private SoundScript SS;
-    public bool isKilling = false;
+    [HideInInspector] public bool isKilling = false;
+    [SerializeField] private bool isTutorial = false;
+
 
     private void Awake() 
     {
@@ -163,7 +165,15 @@ public class FaceScript : MonoBehaviour
 
         newPlayer.transform.SetParent(gameObject.transform);
         newPlayer.transform.localPosition = new Vector3(0, 0, 0);
-        newPlayer.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        if (isTutorial)
+        {
+            newPlayer.transform.localRotation = Quaternion.Euler(0, 180f, 0);
+        }
+        else
+        {
+            newPlayer.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+        
     }
 
     public GameObject GetGameObject(string key)
