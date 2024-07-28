@@ -54,24 +54,23 @@ public class FaceScript : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log(RM.timer.ToString() + " " + inputWindow.ToString() + " " + RM.beatInterval.ToString());
-        if (havePlayer && !transferInProgress && SCD.isOn && BC.canPress)// && RM.timer + inputWindow >= RM.beatInterval
+        if (havePlayer && !transferInProgress && (SCD == null || SCD.isOn) && BC.canPress)
         {
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.D))
             {
                 StartTransfer(GetGameObject("OrangeSide"), GetInt("OrangeSide"), "Orange");
                 BC.isAlreadyPressed = true;
                 BC.isAlreadyPressedIsAlreadyPressed = false;
                 SS.TurnOnSound();
             }
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.D))
             {
                 StartTransfer(GetGameObject("GreenSide"), GetInt("GreenSide"), "Green");
                 BC.isAlreadyPressed = true;
                 BC.isAlreadyPressedIsAlreadyPressed = false;
                 SS.TurnOnSound();
             }
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.D) && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.A))
             {
                 StartTransfer(GetGameObject("BlueSide"), GetInt("BlueSide"), "Blue");
                 BC.isAlreadyPressed = true;
@@ -176,7 +175,6 @@ public class FaceScript : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"�������� � ������ '{key}' �� ������");
             return null;
         }
     }
@@ -189,7 +187,6 @@ public class FaceScript : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"�������� � ������ '{key}' �� ������");
             return -1;
         }
     }

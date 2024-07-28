@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class RedFaceScript : MonoBehaviour
 {
     [SerializeField] private GameObject[] faces;
-    [SerializeField] private Image image;
+    [SerializeField] private Image imageLose;
     [SerializeField] private float colorChangeDuration = 2f;
     [SerializeField] private float scaleChangeDuration = 1f;
     [SerializeField] private float scaleChange = 25f;
@@ -17,8 +18,7 @@ public class RedFaceScript : MonoBehaviour
     [SerializeField] private TimerController TC;
     [SerializeField] private EnemySpawnSettings enemySpawnSettings;
     [SerializeField] private PlayerScript PS;
-    private float timeElapsed = 0f;
-    private int lastCubeIndex = -1;
+    [SerializeField] private ComboManager CM;
     public bool isTurnOn = false;
     private List<int> lastCubeIndices = new List<int>();
     private List<int> newCubeIndices = new List<int>();
@@ -63,7 +63,6 @@ public class RedFaceScript : MonoBehaviour
             {
                 for (int i = 0; i < newCubeIndices.Count; i++)
                 {
-                    //lastCubeIndices = newCubeIndices;
                     StartCoroutine(ChangeColorThenScale(faces[newCubeIndices[i]], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
                 }
             }
@@ -71,27 +70,30 @@ public class RedFaceScript : MonoBehaviour
     }
     private void Update()
     {
-        float elapsedTime = TC.timeElapsed;
-
-        for (int i = 0; i < enemySpawnSettings.spawnTimes.Length-1; i++)
+        if (TC != null)
         {
-            var spawnTimeData = enemySpawnSettings.spawnTimes[i];
-            var nextSpawnTimeData = enemySpawnSettings.spawnTimes[i+1];
+            float elapsedTime = TC.timeElapsed;
 
-            if (elapsedTime >= spawnTimeData.time && elapsedTime <= nextSpawnTimeData.time  && !spawnExecuted[i])
+            for (int i = 0; i < enemySpawnSettings.spawnTimes.Length - 1; i++)
             {
-                if (spawnTimeData.isRandom)
+                var spawnTimeData = enemySpawnSettings.spawnTimes[i];
+                var nextSpawnTimeData = enemySpawnSettings.spawnTimes[i + 1];
+
+                if (elapsedTime >= spawnTimeData.time && elapsedTime <= nextSpawnTimeData.time && !spawnExecuted[i])
                 {
-                    colvo = spawnTimeData.colvo;
-                    isRandomSpawnTime = true;
+                    if (spawnTimeData.isRandom)
+                    {
+                        colvo = spawnTimeData.colvo;
+                        isRandomSpawnTime = true;
+                    }
+                    else
+                    {
+                        newCubeIndices.Clear();
+                        newCubeIndices = new List<int>(spawnTimeData.gameObjects);
+                        isRandomSpawnTime = false;
+                    }
+                    spawnExecuted[i] = true;
                 }
-                else
-                {
-                    newCubeIndices.Clear();
-                    newCubeIndices = new List<int>(spawnTimeData.gameObjects);
-                    isRandomSpawnTime = false;
-                }
-                spawnExecuted[i] = true;
             }
         }
     }
@@ -104,11 +106,7 @@ public class RedFaceScript : MonoBehaviour
         
         if (face.GetComponent<FaceScript>().havePlayer)
         {
-            face.GetComponent<FaceScript>().havePlayer = false;
-            image.gameObject.SetActive(true);
-            TC.timerIsRunning = false;
-            isTurnOn = false;
-            SCD.isOn = false;
+            Lose(face);
         }
         yield return StartCoroutine(ChangeScale(face, targetScale, scaleDuration, targetMaterial, true));
     }
@@ -146,8 +144,7 @@ public class RedFaceScript : MonoBehaviour
             face.GetComponent<FaceScript>().rend.material = targetMaterial;
             if (face.GetComponent<FaceScript>().havePlayer)
             {
-                //face.GetComponent<FaceScript>().player.gameObject.SetActive(false);
-                image.gameObject.SetActive(true);
+                Lose(face);
             }
             face.GetComponent<FaceScript>().glowingPart.transform.localScale = Vector3.Lerp(startScale, targetScale, timer / duration);
             timer += Time.deltaTime;
@@ -156,7 +153,6 @@ public class RedFaceScript : MonoBehaviour
         if (!isGettingBigger)
         {
             face.GetComponent<FaceScript>().rend.material = materialWhite;
-            Debug.Log("sfasf");
         }
         face.GetComponent<FaceScript>().glowingPart.transform.localScale = targetScale;
     }
@@ -170,5 +166,14 @@ public class RedFaceScript : MonoBehaviour
         {
             cube.GetComponent<FaceDanceScript>().StartScaling();
         }
+    }
+
+    private void Lose(GameObject face)
+    {
+        face.GetComponent<FaceScript>().havePlayer = false;
+        imageLose.gameObject.SetActive(true);
+        TC.timerIsRunning = false;
+        isTurnOn = false;
+        SCD.isOn = false;
     }
 }

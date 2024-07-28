@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; // Если вы используете TextMeshPro для текста
+using TMPro;
 
 public class TimerController : MonoBehaviour
 {
@@ -14,6 +14,7 @@ public class TimerController : MonoBehaviour
     [SerializeField] private Image imageCompleted;
     [SerializeField] private RedFaceScript RFS;
     [SerializeField] private StartCountDown SCD;
+    [SerializeField] private ComboManager CM;
 
     private void Start()
     {

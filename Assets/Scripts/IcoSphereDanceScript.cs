@@ -13,7 +13,6 @@ public class IcoSphereDanceScript : MonoBehaviour
     [SerializeField] private EnemySpawnSettings enemySpawnSettings;
     [SerializeField] private TimerController TC;
     private bool[] spawnExecuted;
-    private int colvo = 1;
 
     private void Start()
     {
