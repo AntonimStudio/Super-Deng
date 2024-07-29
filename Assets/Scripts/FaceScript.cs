@@ -27,6 +27,7 @@ public class FaceScript : MonoBehaviour
     [HideInInspector] public bool isKilling = false;
     [SerializeField] private bool isTutorial = false;
     [SerializeField] private TutorialController TC;
+    [SerializeField] private RedFaceScript RFS;
 
 
     private void Awake() 
@@ -66,6 +67,7 @@ public class FaceScript : MonoBehaviour
 
     private void Update()
     {
+
         if (havePlayer && !transferInProgress && (SCD == null || SCD.isOn) && BC.canPress)
         {
             if (Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.D))
@@ -126,6 +128,7 @@ public class FaceScript : MonoBehaviour
 
     public void ReceivePlayer(GameObject newPlayer, int sideNumber, string color) //GameObject newPlayer, int sideNumber, string color)
     {
+
         rend.material = materialLightBlue;
 
         materials.Remove("BlueSide");

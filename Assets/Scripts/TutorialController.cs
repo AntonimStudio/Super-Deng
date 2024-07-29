@@ -8,6 +8,7 @@ public class TutorialController : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _text;
     public GameObject _textSpace;
+    public GameObject _imageWAD;
     public TutorialSettings _tutorialSettings;
     [SerializeField] private float _timeTypeSymbolDefault;
     [SerializeField] private float _timeTypeSymbolSpeedUp;
@@ -26,6 +27,7 @@ public class TutorialController : MonoBehaviour
     private void Start()
     {
         _timeTypeSymbolCurrent = _timeTypeSymbolDefault;
+        _imageWAD.SetActive(false);
         _isWriting = false;
         SetMessage(0);
     }
@@ -42,6 +44,7 @@ public class TutorialController : MonoBehaviour
             if (_tutorialSettings[_index].isMoving && _index == 1)
             {
                 _mainFace.TurnOnInTutorial();
+                _imageWAD.SetActive(true);
             }
             if (_tutorialSettings[_index].isBeat)
             {
