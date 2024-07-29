@@ -7,23 +7,34 @@ using UnityEngine.UI;
 
 public class ComboManager : MonoBehaviour
 {
-    public TMP_Text comboText; // Текстовое поле для отображения комбо
-    public TMP_Text scoreText; // Текстовое поле для отображения комбо
+    [SerializeField] private TMP_Text comboText; // Текстовое поле для отображения комбо
+    [SerializeField] private TMP_Text scoreText;
+    [SerializeField] private TMP_Text scoreLoseText; // Текстовое поле для отображения комбо
+    [SerializeField] private TMP_Text scoreWinText;
     public Image comboImage; // Изображение для смены при достижении определённого комбо
     public Sprite[] comboSprites; // Массив изображений для смены
     [SerializeField] private BeatController BC;
+    [SerializeField] private TimerController TC;
     private int comboCount = 0;
     private bool comboTime = false;
     private float comboTimer;
     private int score;
     private int previousComboCount;
+    private bool inProcess = false;
 
 
     private void Start()
     {
         comboText.text = "x0";
         scoreText.text = "0";
+        scoreLoseText.text = "0";
+        scoreWinText.text = "0";
         score = 0;
+    }
+
+    public int GetScore()
+    {
+        return score;
     }
 
     private void Update()
@@ -38,24 +49,34 @@ public class ComboManager : MonoBehaviour
         {
             comboTime = false;
         }
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.D))
+        if ((Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.D)) || (Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.D)) || (Input.GetKeyDown(KeyCode.D) && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.A)))
         {
-            if (comboTime)
+            if (!inProcess && TC.timeElapsed < TC.totalTime && TC.timerIsRunning)
             {
-                score += 20;
-                scoreText.text = score.ToString();
-                comboCount++;
-                UpdateComboDisplay();
-                ResetComboTimer();
+                inProcess = true;
+                if (comboTime)
+                {
+                    score += 20;
+                    scoreText.text = score.ToString();
+                    scoreLoseText.text = score.ToString();
+                    scoreWinText.text = score.ToString();
+                    comboCount++;
+                    UpdateComboDisplay();
+                    ResetComboTimer();
+                }
+                else
+                {
+                    score += 10;
+                    previousComboCount = comboCount;
+                    comboCount = 0;
+                    scoreText.text = score.ToString();
+                    scoreLoseText.text = score.ToString();
+                    scoreWinText.text = score.ToString();
+                    UpdateComboDisplay();
+                }
+                StartCoroutine(ResetCooldown());
             }
-            else
-            {
-                score += 10;
-                scoreText.text = score.ToString();
-                previousComboCount = comboCount;
-                comboCount = 0;
-                UpdateComboDisplay();
-            }
+            
 
         }
         if (comboCount > 0)
@@ -71,6 +92,12 @@ public class ComboManager : MonoBehaviour
             }
         }
 
+    }
+
+    private IEnumerator ResetCooldown()
+    {
+        yield return new WaitForSeconds(BC.beatInterval * 0.75f); // Ждем 0.666 секунд
+        inProcess = false; // Сбрасываем флаг
     }
 
     void ResetComboTimer()
@@ -102,6 +129,8 @@ public class ComboManager : MonoBehaviour
                 comboImage.sprite = comboSprites[0];
                 score += (int)(Math.Round(0.5f * Math.Pow(previousComboCount, 2)));
                 scoreText.text = score.ToString();
+                scoreLoseText.text = score.ToString();
+                scoreWinText.text = score.ToString();
                 //Debug.Log((int)(Math.Round(0.5f * Math.Pow(previousComboCount, 2))));
             }
         }

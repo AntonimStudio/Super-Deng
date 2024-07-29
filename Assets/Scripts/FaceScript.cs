@@ -24,7 +24,9 @@ public class FaceScript : MonoBehaviour
     [SerializeField] private StartCountDown SCD;
     [SerializeField] private BeatController BC;
     [SerializeField] private SoundScript SS;
-    public bool isKilling = false;
+    [HideInInspector] public bool isKilling = false;
+    [SerializeField] private bool isTutorial = false;
+
 
     private void Awake() 
     {
@@ -54,24 +56,23 @@ public class FaceScript : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log(RM.timer.ToString() + " " + inputWindow.ToString() + " " + RM.beatInterval.ToString());
-        if (havePlayer && !transferInProgress && SCD.isOn && BC.canPress)// && RM.timer + inputWindow >= RM.beatInterval
+        if (havePlayer && !transferInProgress && (SCD == null || SCD.isOn) && BC.canPress)
         {
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.D))
             {
                 StartTransfer(GetGameObject("OrangeSide"), GetInt("OrangeSide"), "Orange");
                 BC.isAlreadyPressed = true;
                 BC.isAlreadyPressedIsAlreadyPressed = false;
                 SS.TurnOnSound();
             }
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.D))
             {
                 StartTransfer(GetGameObject("GreenSide"), GetInt("GreenSide"), "Green");
                 BC.isAlreadyPressed = true;
                 BC.isAlreadyPressedIsAlreadyPressed = false;
                 SS.TurnOnSound();
             }
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.D) && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.A))
             {
                 StartTransfer(GetGameObject("BlueSide"), GetInt("BlueSide"), "Blue");
                 BC.isAlreadyPressed = true;
@@ -164,7 +165,15 @@ public class FaceScript : MonoBehaviour
 
         newPlayer.transform.SetParent(gameObject.transform);
         newPlayer.transform.localPosition = new Vector3(0, 0, 0);
-        newPlayer.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        if (isTutorial)
+        {
+            newPlayer.transform.localRotation = Quaternion.Euler(0, 180f, 0);
+        }
+        else
+        {
+            newPlayer.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+        
     }
 
     public GameObject GetGameObject(string key)
@@ -176,7 +185,6 @@ public class FaceScript : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"�������� � ������ '{key}' �� ������");
             return null;
         }
     }
@@ -189,7 +197,6 @@ public class FaceScript : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"�������� � ������ '{key}' �� ������");
             return -1;
         }
     }
