@@ -26,6 +26,7 @@ public class FaceScript : MonoBehaviour
     [SerializeField] private SoundScript SS;
     [HideInInspector] public bool isKilling = false;
     [SerializeField] private bool isTutorial = false;
+    [SerializeField] private TutorialController TC;
 
 
     private void Awake() 
@@ -46,10 +47,19 @@ public class FaceScript : MonoBehaviour
             sides.Add("BlueSide", sideBlue);
             sides.Add("GreenSide", sideGreen);
 
-            gameObject.GetComponent<FaceScript>().rend.material = materialLightBlue;
-            sideBlue.GetComponent<FaceScript>().rend.material = materialBlue;
-            sideOrange.GetComponent<FaceScript>().rend.material = materialOrange;
-            sideGreen.GetComponent<FaceScript>().rend.material = materialGreen;
+            if (TC != null && !TC._tutorialSettings[TC._index].isMoving)
+            {
+                player.SetActive(false);
+                havePlayer = false;
+            }
+            else
+            {
+                gameObject.GetComponent<FaceScript>().rend.material = materialLightBlue;
+                sideBlue.GetComponent<FaceScript>().rend.material = materialBlue;
+                sideOrange.GetComponent<FaceScript>().rend.material = materialOrange;
+                sideGreen.GetComponent<FaceScript>().rend.material = materialGreen;
+            }
+            
         }
 
     }
@@ -81,6 +91,16 @@ public class FaceScript : MonoBehaviour
             }
             
         }
+    }
+
+    public void TurnOnInTutorial()
+    {
+        player.SetActive(true);
+        havePlayer = true;
+        gameObject.GetComponent<FaceScript>().rend.material = materialLightBlue;
+        sideBlue.GetComponent<FaceScript>().rend.material = materialBlue;
+        sideOrange.GetComponent<FaceScript>().rend.material = materialOrange;
+        sideGreen.GetComponent<FaceScript>().rend.material = materialGreen;
     }
 
     private void StartTransfer(GameObject targetSide, int sideNumber, string color)

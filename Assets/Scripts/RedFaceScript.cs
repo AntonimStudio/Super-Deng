@@ -25,6 +25,9 @@ public class RedFaceScript : MonoBehaviour
     private bool[] spawnExecuted;
     private int colvo = 1;
     private bool isRandomSpawnTime = true;
+    public bool isTutorial = false;
+    public TutorialController TuC;
+    public Image panel;
 
     private void Start()
     {
@@ -162,7 +165,8 @@ public class RedFaceScript : MonoBehaviour
         yield return StartCoroutine(FadeColor(cube, targetMaterial, colorDuration));
         yield return StartCoroutine(ChangeScale(cube, targetScale, scaleDuration, materialRed, false));
         cube.GetComponent<FaceScript>().isKilling = false;
-        if (cube.GetComponent<FaceDanceScript>().isOn)
+        FaceDanceScript FDC = cube.GetComponent<FaceDanceScript>();
+        if (FDC.isOn && FDC != null)
         {
             cube.GetComponent<FaceDanceScript>().StartScaling();
         }
@@ -170,10 +174,28 @@ public class RedFaceScript : MonoBehaviour
 
     private void Lose(GameObject face)
     {
-        face.GetComponent<FaceScript>().havePlayer = false;
-        imageLose.gameObject.SetActive(true);
-        TC.timerIsRunning = false;
-        isTurnOn = false;
-        SCD.isOn = false;
+        if (!isTutorial)
+        {
+            face.GetComponent<FaceScript>().havePlayer = false;
+            imageLose.gameObject.SetActive(true);
+            if (TC != null)
+            {
+                TC.timerIsRunning = false;
+            }
+            isTurnOn = false;
+            SCD.isOn = false;
+        }
+        else
+        {
+            StartCoroutine(ToggleImageCoroutine());
+            TuC.LoseTutorial();
+        }
+    }
+
+    IEnumerator ToggleImageCoroutine()
+    {
+        panel.enabled = true;
+        yield return new WaitForSeconds(0.1f);
+        panel.enabled = false;
     }
 }

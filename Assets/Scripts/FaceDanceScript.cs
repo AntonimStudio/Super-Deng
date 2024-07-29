@@ -18,30 +18,35 @@ public class FaceDanceScript : MonoBehaviour
     {
         duration += Random.Range(-0.2f, 0.05f);
         originalScale = gameObject.GetComponent<FaceScript>().glowingPart.transform.localScale;
-        spawnExecuted = new bool[enemySpawnSettings.spawnTimes.Length];
+        if (enemySpawnSettings != null)
+        {
+            spawnExecuted = new bool[enemySpawnSettings.spawnTimes.Length];
+        }
     }
 
     private void Update()
     {
-        float elapsedTime = TC.timeElapsed;
-
-        for (int i = 0; i < enemySpawnSettings.spawnTimes.Length - 1; i++)
+        if (TC != null)
         {
-            var spawnTimeData = enemySpawnSettings.spawnTimes[i];
-            var nextSpawnTimeData = enemySpawnSettings.spawnTimes[i + 1];
+            float elapsedTime = TC.timeElapsed;
 
-            // Проверяем, прошло ли указанное время и не был ли спавн уже выполнен
-            if (elapsedTime >= spawnTimeData.time && elapsedTime <= nextSpawnTimeData.time && !spawnExecuted[i])
+            for (int i = 0; i < enemySpawnSettings.spawnTimes.Length - 1; i++)
             {
-                isOn = spawnTimeData.isFaceDance;
-                spawnExecuted[i] = true;
+                var spawnTimeData = enemySpawnSettings.spawnTimes[i];
+                var nextSpawnTimeData = enemySpawnSettings.spawnTimes[i + 1];
+
+                // Проверяем, прошло ли указанное время и не был ли спавн уже выполнен
+                if (elapsedTime >= spawnTimeData.time && elapsedTime <= nextSpawnTimeData.time && !spawnExecuted[i])
+                {
+                    isOn = spawnTimeData.isFaceDance;
+                    spawnExecuted[i] = true;
+                }
+            }
+            if (isOn && !inProcess)
+            {
+                constantCoroutine = StartCoroutine(ScaleObject(gameObject.GetComponent<FaceScript>().glowingPart, scaleFactor, duration));
             }
         }
-        if (isOn && !inProcess)
-        {
-            constantCoroutine = StartCoroutine(ScaleObject(gameObject.GetComponent<FaceScript>().glowingPart, scaleFactor, duration));
-        }
-
     }
 
     public void StartScaling()

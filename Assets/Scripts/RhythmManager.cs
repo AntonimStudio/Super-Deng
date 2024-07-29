@@ -49,7 +49,8 @@ public class Intervals
         if (Mathf.FloorToInt(interval) != lastInterval)
         {
             lastInterval = Mathf.FloorToInt(interval);
-            trigger.Invoke();
+            if (trigger != null)
+                trigger.Invoke();
         }
     }
 }

@@ -7,6 +7,7 @@ public class TutorialAnimationScript : MonoBehaviour
     [SerializeField] private GameObject[] objectsToAnimate;
     [SerializeField] private AnimationClip animationClip1;
     [SerializeField] private AnimationClip animationClip2;
+    [SerializeField] private TutorialController TC;
     [SerializeField] private float moveDuration = 1.0f; // Время, за которое объекты будут подниматься
 
     private void Start()
@@ -14,6 +15,13 @@ public class TutorialAnimationScript : MonoBehaviour
         foreach (GameObject obj in objectsToAnimate)
         {
             obj.SetActive(false);
+        }
+    }
+
+    public void StartAnimation()
+    {
+        foreach (GameObject obj in objectsToAnimate)
+        {
             // Устанавливаем начальную позицию объектов
             obj.transform.position = new Vector3(obj.transform.position.x, -4, obj.transform.position.z);
         }
@@ -37,6 +45,8 @@ public class TutorialAnimationScript : MonoBehaviour
                 yield return new WaitForSeconds(0.1f);
             }
         }
+        TC._textSpace.SetActive(true);
+        TC.isAnimationEnded = true;
     }
 
     private IEnumerator MoveObjectUp(GameObject obj)

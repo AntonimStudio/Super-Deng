@@ -24,10 +24,10 @@ public class BeatController : MonoBehaviour
     public bool isAlreadyPressed = false;
     public bool isAlreadyPressedIsAlreadyPressed = false;
     public bool isAlreadyZoomed = false;
+    public bool isTutorial = false;
 
-    void Start()
+    private void Start()
     {
-
         image1.enabled = false;
         image1.rectTransform.localPosition = startPos1;
         image2.enabled = false;
@@ -36,7 +36,7 @@ public class BeatController : MonoBehaviour
 
     private void Update()
     {
-        if (0f < elapsedTime && ((elapsedTime < 0.25f * beatInterval) || (elapsedTime > 0.75f * beatInterval)))
+        if (isTutorial || (0f < elapsedTime && ((elapsedTime < 0.25f * beatInterval) || (elapsedTime > 0.75f * beatInterval))))
         {
             canCombo = true;
         }
@@ -49,7 +49,7 @@ public class BeatController : MonoBehaviour
             if (elapsedTime < beatInterval / 3f)
             {
 
-                if (!isAlreadyPressed)
+                if (isTutorial || !isAlreadyPressed)
                     canPress = true;
                 else
                     canPress = false;
@@ -60,7 +60,10 @@ public class BeatController : MonoBehaviour
             }
             else if (elapsedTime < (2f * beatInterval) / 3f)
             {
-                canPress = false;
+                if (isTutorial)
+                    canPress = true;
+                else
+                    canPress = false;
                 if (!isAlreadyPressedIsAlreadyPressed)
                     PressIsAlreadyPress();
                 float t = (elapsedTime - (beatInterval / 3f)) / (beatInterval / 3f);
@@ -71,7 +74,7 @@ public class BeatController : MonoBehaviour
             }
             else if (elapsedTime < beatInterval)
             {
-                if (!isAlreadyPressed)
+                if (isTutorial || !isAlreadyPressed)
                     canPress = true;
                 else
                     canPress = false;
@@ -109,7 +112,6 @@ public class BeatController : MonoBehaviour
         if (lastBeatTime != 0f)
         {
             beatInterval = currentTime - lastBeatTime;
-            //Debug.Log(beatInterval);
         }
         lastBeatTime = currentTime;
         beatcount++;
