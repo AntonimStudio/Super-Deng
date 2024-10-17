@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -39,7 +40,13 @@ public class FaceScript : MonoBehaviour
     [Header("Glowing&Rendering")]
     public MeshRenderer rend;
     public GameObject glowingPart;
-    
+
+    [Header("Key Bindings")]
+    public KeyCode keyLeft = KeyCode.A;
+    public KeyCode keyTop = KeyCode.W;
+    public KeyCode keyRight = KeyCode.D;
+
+
     [Space]
     [Header("Scene ScriptManagers")]
     [SerializeField] private StartCountDown SCD;
@@ -51,6 +58,7 @@ public class FaceScript : MonoBehaviour
     [Space]
     [Header("Questions")]
     public bool havePlayer = false;
+    [SerializeField] private bool isAnExtremeSide = false;
     [SerializeField] private bool isTutorial = false;
     private bool transferInProgress = false;
     [HideInInspector] public bool isKilling = false;
@@ -94,26 +102,20 @@ public class FaceScript : MonoBehaviour
     {
         if (havePlayer && !transferInProgress && (SCD == null || SCD.isOn) && BC.canPress)
         {
-            if (Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(keyLeft) || Input.GetKeyDown(keyTop) || Input.GetKeyDown(keyRight))
             {
-                StartTransfer(GetGameObject("LeftSide"), GetInt("LeftSide"), "Left");
-                BC.isAlreadyPressed = true;
-                BC.isAlreadyPressedIsAlreadyPressed = false;
-                SS.TurnOnSound();
-            }
-            if (Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.D))
-            {
-                StartTransfer(GetGameObject("TopSide"), GetInt("TopSide"), "Top");
-                BC.isAlreadyPressed = true;
-                BC.isAlreadyPressedIsAlreadyPressed = false;
-                SS.TurnOnSound();
-            }
-            if (Input.GetKeyDown(KeyCode.D) && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.A))
-            {
-                StartTransfer(GetGameObject("RightSide"), GetInt("RightSide"), "Right");
-                BC.isAlreadyPressed = true;
-                BC.isAlreadyPressedIsAlreadyPressed = false;
-                SS.TurnOnSound();
+                string direction = "";
+                if (Input.GetKeyDown(keyLeft) && !Input.GetKey(keyTop) && !Input.GetKey(keyRight)) direction = "Left";
+                if (Input.GetKeyDown(keyTop) && !Input.GetKey(keyLeft) && !Input.GetKey(keyRight)) direction = "Top";
+                if (Input.GetKeyDown(keyRight) && !Input.GetKey(keyTop) && !Input.GetKey(keyLeft)) direction = "Right";
+
+                if (!string.IsNullOrEmpty(direction))
+                {
+                    StartTransfer(GetGameObject($"{direction}Side"), GetInt($"{direction}Side"), direction);
+                    BC.isAlreadyPressed = true;
+                    BC.isAlreadyPressedIsAlreadyPressed = false;
+                    SS.TurnOnSound();
+                }
             }
         }
     }
