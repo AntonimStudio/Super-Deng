@@ -1,52 +1,79 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class FaceScript : MonoBehaviour
+// Обязательное уведомление: "Правые", "Левые" и "Верхние" указаны для треугольника с основанием, направленным ВНИЗ!!!
+// Обратите внимание, что "Правая" сторона раньше носила название "BlueSide", "Левая" - "OrangeSide", а "Верхняя" - "GreenSide"
+// Помимо прочих наименований, "Правая" сторона может записываться как "Side1", "Левая" - "Side2", а "Верхняя" - "Side3"
+public class FaceScript : MonoBehaviour 
 {
-    [SerializeField] private GameObject sideBlue; // BlueSide == Side1
-    [SerializeField] private GameObject sideOrange; // OrangeSide == Side2
-    [SerializeField] private GameObject sideGreen; // GreenSide == Side3
+
     public GameObject player;
-    [SerializeField] private Material materialWhite;
-    [SerializeField] private Material materialLightBlue;
-    [SerializeField] private Material materialBlue;
-    [SerializeField] private Material materialOrange;
-    [SerializeField] private Material materialGreen;
-    public bool havePlayer = false;
-    private bool transferInProgress = false;
+
     [Space]
+    [Header("Sides of the Face")]
+    [FormerlySerializedAs("sideBlue")]
+    [SerializeField] private GameObject siderRight; // BlueSide == Side1
+    [FormerlySerializedAs("sideOrange")]
+    [SerializeField] private GameObject sideLeft; // OrangeSide == Side2
+    [FormerlySerializedAs("sideGreen")]
+    [SerializeField] private GameObject sideTop; // GreenSide == Side3
+    public Dictionary<string, GameObject> sides;
+
+    [Space]
+    [Header("Materials")]
+    [FormerlySerializedAs("materialWhite")]
+    [SerializeField] private Material materialBasicFace;
+    [FormerlySerializedAs("materialLightBlue")]
+    [SerializeField] private Material materialPlayerFace;
+    [FormerlySerializedAs("materialBlue")]
+    [SerializeField] private Material materialRightFace;
+    [FormerlySerializedAs("materialOrange")]
+    [SerializeField] private Material materialLeftFace;
+    [FormerlySerializedAs("materialGreen")]
+    [SerializeField] private Material materialTopSide;
+    public Dictionary<string, int> materials;
+
+    [Space]
+    [Header("Glowing&Rendering")]
     public MeshRenderer rend;
     public GameObject glowingPart;
-    public Dictionary<string, int> materials;
-    public Dictionary<string, GameObject> sides;
+    
     [Space]
+    [Header("Scene ScriptManagers")]
     [SerializeField] private StartCountDown SCD;
+    [SerializeField] private RedFaceScript RFS;
     [SerializeField] private BeatController BC;
     [SerializeField] private SoundScript SS;
-    [HideInInspector] public bool isKilling = false;
-    [SerializeField] private bool isTutorial = false;
     [SerializeField] private TutorialController TC;
-    [SerializeField] private RedFaceScript RFS;
 
+    [Space]
+    [Header("Questions")]
+    public bool havePlayer = false;
+    [SerializeField] private bool isTutorial = false;
+    private bool transferInProgress = false;
+    [HideInInspector] public bool isKilling = false;
 
     private void Awake() 
     {
         rend = glowingPart.GetComponent<MeshRenderer>();
     }
+
     private void Start()
     {
         materials = new Dictionary<string, int>();
         sides = new Dictionary<string, GameObject>();
+
         if (havePlayer)
         {
-            materials.Add("OrangeSide", 1);
-            materials.Add("BlueSide", 2);
-            materials.Add("GreenSide", 3);
+            materials.Add("LeftSide", 1);
+            materials.Add("RightSide", 2);
+            materials.Add("TopSide", 3);
 
-            sides.Add("OrangeSide", sideOrange);
-            sides.Add("BlueSide", sideBlue);
-            sides.Add("GreenSide", sideGreen);
+            sides.Add("LeftSide", sideLeft);
+            sides.Add("RightSide", siderRight);
+            sides.Add("TopSide", sideTop);
 
             if (TC != null && !TC._tutorialSettings[TC._index].isMoving)
             {
@@ -55,43 +82,39 @@ public class FaceScript : MonoBehaviour
             }
             else
             {
-                gameObject.GetComponent<FaceScript>().rend.material = materialLightBlue;
-                sideBlue.GetComponent<FaceScript>().rend.material = materialBlue;
-                sideOrange.GetComponent<FaceScript>().rend.material = materialOrange;
-                sideGreen.GetComponent<FaceScript>().rend.material = materialGreen;
+                gameObject.GetComponent<FaceScript>().rend.material = materialPlayerFace;
+                siderRight.GetComponent<FaceScript>().rend.material = materialRightFace;
+                sideLeft.GetComponent<FaceScript>().rend.material = materialLeftFace;
+                sideTop.GetComponent<FaceScript>().rend.material = materialTopSide;
             }
-            
         }
-
     }
 
     private void Update()
     {
-
         if (havePlayer && !transferInProgress && (SCD == null || SCD.isOn) && BC.canPress)
         {
             if (Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.D))
             {
-                StartTransfer(GetGameObject("OrangeSide"), GetInt("OrangeSide"), "Orange");
+                StartTransfer(GetGameObject("LeftSide"), GetInt("LeftSide"), "Left");
                 BC.isAlreadyPressed = true;
                 BC.isAlreadyPressedIsAlreadyPressed = false;
                 SS.TurnOnSound();
             }
             if (Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.D))
             {
-                StartTransfer(GetGameObject("GreenSide"), GetInt("GreenSide"), "Green");
+                StartTransfer(GetGameObject("TopSide"), GetInt("TopSide"), "Top");
                 BC.isAlreadyPressed = true;
                 BC.isAlreadyPressedIsAlreadyPressed = false;
                 SS.TurnOnSound();
             }
             if (Input.GetKeyDown(KeyCode.D) && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.A))
             {
-                StartTransfer(GetGameObject("BlueSide"), GetInt("BlueSide"), "Blue");
+                StartTransfer(GetGameObject("RightSide"), GetInt("RightSide"), "Right");
                 BC.isAlreadyPressed = true;
                 BC.isAlreadyPressedIsAlreadyPressed = false;
                 SS.TurnOnSound();
             }
-            
         }
     }
 
@@ -99,18 +122,18 @@ public class FaceScript : MonoBehaviour
     {
         player.SetActive(true);
         havePlayer = true;
-        gameObject.GetComponent<FaceScript>().rend.material = materialLightBlue;
-        sideBlue.GetComponent<FaceScript>().rend.material = materialBlue;
-        sideOrange.GetComponent<FaceScript>().rend.material = materialOrange;
-        sideGreen.GetComponent<FaceScript>().rend.material = materialGreen;
+        gameObject.GetComponent<FaceScript>().rend.material = materialPlayerFace;
+        siderRight.GetComponent<FaceScript>().rend.material = materialRightFace;
+        sideLeft.GetComponent<FaceScript>().rend.material = materialLeftFace;
+        sideTop.GetComponent<FaceScript>().rend.material = materialTopSide;
     }
 
     private void StartTransfer(GameObject targetSide, int sideNumber, string color)
     {
         transferInProgress = true;
-        sideBlue.GetComponent<FaceScript>().rend.material = materialWhite;
-        sideOrange.GetComponent<FaceScript>().rend.material = materialWhite;
-        sideGreen.GetComponent<FaceScript>().rend.material = materialWhite;
+        siderRight.GetComponent<FaceScript>().rend.material = materialBasicFace;
+        sideLeft.GetComponent<FaceScript>().rend.material = materialBasicFace;
+        sideTop.GetComponent<FaceScript>().rend.material = materialBasicFace;
         StartCoroutine(TransferPlayer(targetSide, sideNumber, color));
     }
 
@@ -129,62 +152,59 @@ public class FaceScript : MonoBehaviour
     public void ReceivePlayer(GameObject newPlayer, int sideNumber, string color) //GameObject newPlayer, int sideNumber, string color)
     {
 
-        rend.material = materialLightBlue;
+        rend.material = materialPlayerFace;
 
-        materials.Remove("BlueSide");
-        materials.Remove("OrangeSide");
-        materials.Remove("GreenSide");
+        materials.Remove("RightSide");
+        materials.Remove("LeftSide");
+        materials.Remove("TopSide");
 
-        sides.Remove("BlueSide");
-        sides.Remove("OrangeSide");
-        sides.Remove("GreenSide");
+        sides.Remove("RightSide");
+        sides.Remove("LeftSide");
+        sides.Remove("TopSide");
 
-        if ((sideNumber == 1 && color == "Orange") || (sideNumber == 2 && color == "Green") || (sideNumber == 3 && color == "Blue"))
+        if ((sideNumber == 1 && color == "Left") || (sideNumber == 2 && color == "Top") || (sideNumber == 3 && color == "Right"))
         {
-            materials.Add("OrangeSide", 2);
-            materials.Add("BlueSide", 3);
-            materials.Add("GreenSide", 1);
+            materials.Add("LeftSide", 2);
+            materials.Add("RightSide", 3);
+            materials.Add("TopSide", 1);
 
-            sides.Add("OrangeSide", sideBlue);
-            sides.Add("BlueSide", sideGreen);
-            sides.Add("GreenSide", sideOrange);
+            sides.Add("LeftSide", siderRight);
+            sides.Add("RightSide", sideTop);
+            sides.Add("TopSide", sideLeft);
 
-            sideBlue.GetComponent<FaceScript>().rend.material = materialOrange;
-            sideOrange.GetComponent<FaceScript>().rend.material = materialGreen;
-            sideGreen.GetComponent<FaceScript>().rend.material = materialBlue;
+            siderRight.GetComponent<FaceScript>().rend.material = materialLeftFace;
+            sideLeft.GetComponent<FaceScript>().rend.material = materialTopSide;
+            sideTop.GetComponent<FaceScript>().rend.material = materialRightFace;
         }
-        else if ((sideNumber == 1 && color == "Blue") || (sideNumber == 2 && color == "Orange") || (sideNumber == 3 && color == "Green"))
+        else if ((sideNumber == 1 && color == "Right") || (sideNumber == 2 && color == "Left") || (sideNumber == 3 && color == "Top"))
         {
-            materials.Add("OrangeSide", 1);
-            materials.Add("BlueSide", 2);
-            materials.Add("GreenSide", 3);
+            materials.Add("LeftSide", 1);
+            materials.Add("RightSide", 2);
+            materials.Add("TopSide", 3);
 
-            sides.Add("OrangeSide", sideOrange);
-            sides.Add("BlueSide", sideBlue);
-            sides.Add("GreenSide", sideGreen);
+            sides.Add("LeftSide", sideLeft);
+            sides.Add("RightSide", siderRight);
+            sides.Add("TopSide", sideTop);
 
-            sideBlue.GetComponent<FaceScript>().rend.material = materialBlue;
-            sideOrange.GetComponent<FaceScript>().rend.material = materialOrange;
-            sideGreen.GetComponent<FaceScript>().rend.material = materialGreen;
+            siderRight.GetComponent<FaceScript>().rend.material = materialRightFace;
+            sideLeft.GetComponent<FaceScript>().rend.material = materialLeftFace;
+            sideTop.GetComponent<FaceScript>().rend.material = materialTopSide;
         }
-        else if ((sideNumber == 1 && color == "Green") || (sideNumber == 2 && color == "Blue") || (sideNumber == 3 && color == "Orange"))
+        else if ((sideNumber == 1 && color == "Top") || (sideNumber == 2 && color == "Right") || (sideNumber == 3 && color == "Left"))
         {
-            materials.Add("OrangeSide", 3);
-            materials.Add("BlueSide", 1);
-            materials.Add("GreenSide", 2);
+            materials.Add("LeftSide", 3);
+            materials.Add("RightSide", 1);
+            materials.Add("TopSide", 2);
 
-            sides.Add("OrangeSide", sideGreen);
-            sides.Add("BlueSide", sideOrange);
-            sides.Add("GreenSide", sideBlue);
+            sides.Add("LeftSide", sideTop);
+            sides.Add("RightSide", sideLeft);
+            sides.Add("TopSide", siderRight);
 
-            sideOrange.GetComponent<FaceScript>().rend.material = materialBlue;
-            sideBlue.GetComponent<FaceScript>().rend.material = materialGreen;
-            sideGreen.GetComponent<FaceScript>().rend.material = materialOrange;
+            sideLeft.GetComponent<FaceScript>().rend.material = materialRightFace;
+            siderRight.GetComponent<FaceScript>().rend.material = materialTopSide;
+            sideTop.GetComponent<FaceScript>().rend.material = materialLeftFace;
         }
-
-        // = newPlayer;
         havePlayer = true;
-
 
         newPlayer.transform.SetParent(gameObject.transform);
         newPlayer.transform.localPosition = new Vector3(0, 0, 0);
