@@ -6,20 +6,27 @@ using UnityEngine.Serialization;
 
 // Обязательное уведомление: "Правые", "Левые" и "Верхние" указаны для треугольника с основанием, направленным ВНИЗ!!!
 // Обратите внимание, что "Правая" сторона раньше носила название "BlueSide", "Левая" - "OrangeSide", а "Верхняя" - "GreenSide"
-// Помимо прочих наименований, "Правая" сторона может записываться как "Side1", "Левая" - "Side2", а "Верхняя" - "Side3"
+// Помимо прочих наименований, "Правая" сторона может записываться как "Side2", "Левая" - "Side1", а "Верхняя" - "Side3"
 public class FaceScript : MonoBehaviour 
 {
-
+    /*                /\  
+                     /  \
+                    /  3 \
+                   /______\
+                  / \    / \
+                 / 1 \  / 2 \
+                /_____\/_____\
+    */
     public GameObject player;
 
     [Space]
     [Header("Sides of the Face")]
     [FormerlySerializedAs("sideBlue")]
-    [SerializeField] private GameObject sideRight; // BlueSide == Side1
+    [SerializeField] private GameObject side2; // BlueSide == Side2
     [FormerlySerializedAs("sideOrange")]
-    [SerializeField] private GameObject sideLeft; // OrangeSide == Side2
+    [SerializeField] private GameObject side1; // OrangeSide == Side1
     [FormerlySerializedAs("sideGreen")]
-    [SerializeField] private GameObject sideTop; // GreenSide == Side3
+    [SerializeField] private GameObject side3; // GreenSide == Side3
     public Dictionary<string, GameObject> sides;
 
     [Space]
@@ -62,6 +69,7 @@ public class FaceScript : MonoBehaviour
     [SerializeField] private bool isTutorial = false;
     private bool transferInProgress = false;
     [HideInInspector] public bool isKilling = false;
+    private bool isPreviousAnExtremeSide1 = false;
 
     private void Awake() 
     {
@@ -79,10 +87,17 @@ public class FaceScript : MonoBehaviour
             materials.Add("RightSide", 2);
             materials.Add("TopSide", 3);
 
-            sides.Add("LeftSide", sideLeft);
-            sides.Add("RightSide", sideRight);
-            sides.Add("TopSide", sideTop);
-
+            sides.Add("LeftSide", side1);
+            sides.Add("RightSide", side2);
+            sides.Add("TopSide", side3);
+            /*        /\  
+                     /  \
+                    /  3 \
+                   /______\
+                  / \    / \
+                 / 1 \  / 2 \
+                /_____\/_____\
+            */
             if (TC != null && !TC._tutorialSettings[TC._index].isMoving)
             {
                 player.SetActive(false);
@@ -91,9 +106,9 @@ public class FaceScript : MonoBehaviour
             else
             {
                 gameObject.GetComponent<FaceScript>().rend.material = materialPlayerFace;
-                sideRight.GetComponent<FaceScript>().rend.material = materialRightFace;
-                sideLeft.GetComponent<FaceScript>().rend.material = materialLeftFace;
-                sideTop.GetComponent<FaceScript>().rend.material = materialTopFace;
+                side2.GetComponent<FaceScript>().rend.material = materialRightFace;
+                side1.GetComponent<FaceScript>().rend.material = materialLeftFace;
+                side3.GetComponent<FaceScript>().rend.material = materialTopFace;
             }
         }
     }
@@ -125,17 +140,17 @@ public class FaceScript : MonoBehaviour
         player.SetActive(true);
         havePlayer = true;
         gameObject.GetComponent<FaceScript>().rend.material = materialPlayerFace;
-        sideRight.GetComponent<FaceScript>().rend.material = materialRightFace;
-        sideLeft.GetComponent<FaceScript>().rend.material = materialLeftFace;
-        sideTop.GetComponent<FaceScript>().rend.material = materialTopFace;
+        side2.GetComponent<FaceScript>().rend.material = materialRightFace;
+        side1.GetComponent<FaceScript>().rend.material = materialLeftFace;
+        side3.GetComponent<FaceScript>().rend.material = materialTopFace;
     }
 
     private void StartTransfer(GameObject targetSide, int sideNumber, string color)
     {
         transferInProgress = true;
-        sideRight.GetComponent<FaceScript>().rend.material = materialBasicFace;
-        sideLeft.GetComponent<FaceScript>().rend.material = materialBasicFace;
-        sideTop.GetComponent<FaceScript>().rend.material = materialBasicFace;
+        side2.GetComponent<FaceScript>().rend.material = materialBasicFace;
+        side1.GetComponent<FaceScript>().rend.material = materialBasicFace;
+        side3.GetComponent<FaceScript>().rend.material = materialBasicFace;
         StartCoroutine(TransferPlayer(targetSide, sideNumber, color));
     }
 
@@ -145,13 +160,13 @@ public class FaceScript : MonoBehaviour
         FaceScript targetFace = targetSide.GetComponent<FaceScript>();
         if (!targetFace.havePlayer)
         {
-            targetFace.ReceivePlayer(player, sideNumber, color, isAnExtremeSide);
+            targetFace.ReceivePlayer(player, sideNumber, color, isAnExtremeSide, isPreviousAnExtremeSide1);
             havePlayer = false;
         }
         transferInProgress = false;
     }
 
-    public void ReceivePlayer(GameObject newPlayer, int sideNumber, string color, bool isPreviousAnExtremeSide) //GameObject newPlayer, int sideNumber, string color)
+    public void ReceivePlayer(GameObject newPlayer, int sideNumber, string color, bool isPreviousAnExtremeSide, bool isPreviousPreviousAnExtremeSide) //GameObject newPlayer, int sideNumber, string color)
     {
 
         rend.material = materialPlayerFace;
@@ -163,50 +178,59 @@ public class FaceScript : MonoBehaviour
         sides.Remove("RightSide");
         sides.Remove("LeftSide");
         sides.Remove("TopSide");
-
-        if (isPreviousAnExtremeSide && isAnExtremeSide)
+        /*            /\  
+                     /  \
+                    /  3 \
+                   /______\
+                  / \    / \
+                 / 1 \  / 2 \
+                /_____\/_____\
+            */
+        
+        if (!isPreviousPreviousAnExtremeSide && isPreviousAnExtremeSide && isAnExtremeSide)
         {
+            Debug.Log("Definitile nah");
             if (sideNumber == 1 && color == "Left")
             {
                 materials.Add("LeftSide", 2);
-                materials.Add("RightSide", 3);
-                materials.Add("TopSide", 1);
+                materials.Add("RightSide", 1);
+                materials.Add("TopSide", 3);
 
-                sides.Add("LeftSide", sideRight);
-                sides.Add("RightSide", sideTop);
-                sides.Add("TopSide", sideLeft);
+                sides.Add("LeftSide", side2);
+                sides.Add("RightSide", side1);
+                sides.Add("TopSide", side3);
 
-                sideRight.GetComponent<FaceScript>().rend.material = materialLeftFace;
-                sideLeft.GetComponent<FaceScript>().rend.material = materialTopFace;
-                sideTop.GetComponent<FaceScript>().rend.material = materialRightFace;
+                side2.GetComponent<FaceScript>().rend.material = materialLeftFace;
+                side1.GetComponent<FaceScript>().rend.material = materialRightFace;
+                side3.GetComponent<FaceScript>().rend.material = materialTopFace;
             }
             else if (sideNumber == 2 && color == "Top")
             {
-                materials.Add("LeftSide", 2);
-                materials.Add("RightSide", 3);
+                materials.Add("LeftSide", 3);
+                materials.Add("RightSide", 2);
                 materials.Add("TopSide", 1);
 
-                sides.Add("LeftSide", sideRight);
-                sides.Add("RightSide", sideTop);
-                sides.Add("TopSide", sideLeft);
+                sides.Add("LeftSide", side3);
+                sides.Add("RightSide", side2);
+                sides.Add("TopSide", side1);
 
-                sideRight.GetComponent<FaceScript>().rend.material = materialLeftFace;
-                sideLeft.GetComponent<FaceScript>().rend.material = materialTopFace;
-                sideTop.GetComponent<FaceScript>().rend.material = materialRightFace;
+                side2.GetComponent<FaceScript>().rend.material = materialRightFace;
+                side1.GetComponent<FaceScript>().rend.material = materialTopFace;
+                side3.GetComponent<FaceScript>().rend.material = materialLeftFace;
             }
             else if (sideNumber == 3 && color == "Right")
             {
-                materials.Add("LeftSide", 2);
+                materials.Add("LeftSide", 1);
                 materials.Add("RightSide", 3);
-                materials.Add("TopSide", 1);
+                materials.Add("TopSide", 2);
 
-                sides.Add("LeftSide", sideRight);
-                sides.Add("RightSide", sideTop);
-                sides.Add("TopSide", sideLeft);
+                sides.Add("LeftSide", side1);
+                sides.Add("RightSide", side3);
+                sides.Add("TopSide", side2);
 
-                sideRight.GetComponent<FaceScript>().rend.material = materialLeftFace;
-                sideLeft.GetComponent<FaceScript>().rend.material = materialTopFace;
-                sideTop.GetComponent<FaceScript>().rend.material = materialRightFace;
+                side2.GetComponent<FaceScript>().rend.material = materialTopFace;
+                side1.GetComponent<FaceScript>().rend.material = materialLeftFace;
+                side3.GetComponent<FaceScript>().rend.material = materialRightFace;
             }
 
 
@@ -216,45 +240,45 @@ public class FaceScript : MonoBehaviour
 
             else if (sideNumber == 1 && color == "Right")
             {
-                materials.Add("LeftSide", 1);
+                materials.Add("LeftSide", 3);
                 materials.Add("RightSide", 2);
-                materials.Add("TopSide", 3);
+                materials.Add("TopSide", 1);
 
-                sides.Add("LeftSide", sideLeft);
-                sides.Add("RightSide", sideRight);
-                sides.Add("TopSide", sideTop);
+                sides.Add("LeftSide", side3);
+                sides.Add("RightSide", side2);
+                sides.Add("TopSide", side1);
 
-                sideRight.GetComponent<FaceScript>().rend.material = materialRightFace;
-                sideLeft.GetComponent<FaceScript>().rend.material = materialLeftFace;
-                sideTop.GetComponent<FaceScript>().rend.material = materialTopFace;
+                side2.GetComponent<FaceScript>().rend.material = materialRightFace;
+                side1.GetComponent<FaceScript>().rend.material = materialTopFace;
+                side3.GetComponent<FaceScript>().rend.material = materialLeftFace;
             }
             else if (sideNumber == 2 && color == "Left")
             {
                 materials.Add("LeftSide", 1);
-                materials.Add("RightSide", 2);
-                materials.Add("TopSide", 3);
+                materials.Add("RightSide", 3);
+                materials.Add("TopSide", 2);
 
-                sides.Add("LeftSide", sideLeft);
-                sides.Add("RightSide", sideRight);
-                sides.Add("TopSide", sideTop);
+                sides.Add("LeftSide", side1);
+                sides.Add("RightSide", side3);
+                sides.Add("TopSide", side2);
 
-                sideRight.GetComponent<FaceScript>().rend.material = materialRightFace;
-                sideLeft.GetComponent<FaceScript>().rend.material = materialLeftFace;
-                sideTop.GetComponent<FaceScript>().rend.material = materialTopFace;
+                side2.GetComponent<FaceScript>().rend.material = materialTopFace;
+                side1.GetComponent<FaceScript>().rend.material = materialLeftFace;
+                side3.GetComponent<FaceScript>().rend.material = materialRightFace;
             }
             else if (sideNumber == 3 && color == "Top")
             {
-                materials.Add("LeftSide", 1);
-                materials.Add("RightSide", 2);
+                materials.Add("LeftSide", 2);
+                materials.Add("RightSide", 1);
                 materials.Add("TopSide", 3);
 
-                sides.Add("LeftSide", sideLeft);
-                sides.Add("RightSide", sideRight);
-                sides.Add("TopSide", sideTop);
+                sides.Add("LeftSide", side2);
+                sides.Add("RightSide", side1);
+                sides.Add("TopSide", side3);
 
-                sideRight.GetComponent<FaceScript>().rend.material = materialRightFace;
-                sideLeft.GetComponent<FaceScript>().rend.material = materialLeftFace;
-                sideTop.GetComponent<FaceScript>().rend.material = materialTopFace;
+                side2.GetComponent<FaceScript>().rend.material = materialLeftFace;
+                side1.GetComponent<FaceScript>().rend.material = materialRightFace;
+                side3.GetComponent<FaceScript>().rend.material = materialTopFace;
             }
 
 
@@ -263,62 +287,71 @@ public class FaceScript : MonoBehaviour
 
             else if (sideNumber == 1 && color == "Top")
             {
-                materials.Add("LeftSide", 3);
-                materials.Add("RightSide", 1);
+                materials.Add("LeftSide", 1);
+                materials.Add("RightSide", 3);
                 materials.Add("TopSide", 2);
 
-                sides.Add("LeftSide", sideTop);
-                sides.Add("RightSide", sideLeft);
-                sides.Add("TopSide", sideRight);
+                sides.Add("LeftSide", side1);
+                sides.Add("RightSide", side3);
+                sides.Add("TopSide", side2);
 
-                sideLeft.GetComponent<FaceScript>().rend.material = materialRightFace;
-                sideRight.GetComponent<FaceScript>().rend.material = materialTopFace;
-                sideTop.GetComponent<FaceScript>().rend.material = materialLeftFace;
+                side1.GetComponent<FaceScript>().rend.material = materialLeftFace;
+                side2.GetComponent<FaceScript>().rend.material = materialTopFace;
+                side3.GetComponent<FaceScript>().rend.material = materialRightFace;
             }
             else if (sideNumber == 2 && color == "Right")
             {
-                materials.Add("LeftSide", 3);
+                materials.Add("LeftSide", 2);
                 materials.Add("RightSide", 1);
-                materials.Add("TopSide", 2);
+                materials.Add("TopSide", 3);
 
-                sides.Add("LeftSide", sideTop);
-                sides.Add("RightSide", sideLeft);
-                sides.Add("TopSide", sideRight);
+                sides.Add("LeftSide", side2);
+                sides.Add("RightSide", side1);
+                sides.Add("TopSide", side3);
 
-                sideLeft.GetComponent<FaceScript>().rend.material = materialRightFace;
-                sideRight.GetComponent<FaceScript>().rend.material = materialTopFace;
-                sideTop.GetComponent<FaceScript>().rend.material = materialLeftFace;
+                side1.GetComponent<FaceScript>().rend.material = materialRightFace;
+                side2.GetComponent<FaceScript>().rend.material = materialLeftFace;
+                side3.GetComponent<FaceScript>().rend.material = materialTopFace;
             }
             else if (sideNumber == 3 && color == "Left")
             {
                 materials.Add("LeftSide", 3);
-                materials.Add("RightSide", 1);
-                materials.Add("TopSide", 2);
+                materials.Add("RightSide", 2);
+                materials.Add("TopSide", 1);
 
-                sides.Add("LeftSide", sideTop);
-                sides.Add("RightSide", sideLeft);
-                sides.Add("TopSide", sideRight);
+                sides.Add("LeftSide", side3);
+                sides.Add("RightSide", side2);
+                sides.Add("TopSide", side1);
 
-                sideLeft.GetComponent<FaceScript>().rend.material = materialRightFace;
-                sideRight.GetComponent<FaceScript>().rend.material = materialTopFace;
-                sideTop.GetComponent<FaceScript>().rend.material = materialLeftFace;
+                side1.GetComponent<FaceScript>().rend.material = materialTopFace;
+                side2.GetComponent<FaceScript>().rend.material = materialRightFace;
+                side3.GetComponent<FaceScript>().rend.material = materialLeftFace;
             }
+            isPreviousAnExtremeSide1 = true;
         }
         else
         {
+            /*        /\  
+                     /  \
+                    /  3 \
+                   /______\
+                  / \    / \
+                 / 1 \  / 2 \
+                /_____\/_____\
+            */
             if ((sideNumber == 1 && color == "Left") || (sideNumber == 2 && color == "Top") || (sideNumber == 3 && color == "Right"))
             {
                 materials.Add("LeftSide", 2);
                 materials.Add("RightSide", 3);
                 materials.Add("TopSide", 1);
 
-                sides.Add("LeftSide", sideRight);
-                sides.Add("RightSide", sideTop);
-                sides.Add("TopSide", sideLeft);
+                sides.Add("LeftSide", side2);
+                sides.Add("RightSide", side3);
+                sides.Add("TopSide", side1);
 
-                sideRight.GetComponent<FaceScript>().rend.material = materialLeftFace;
-                sideLeft.GetComponent<FaceScript>().rend.material = materialTopFace;
-                sideTop.GetComponent<FaceScript>().rend.material = materialRightFace;
+                side2.GetComponent<FaceScript>().rend.material = materialLeftFace;
+                side1.GetComponent<FaceScript>().rend.material = materialTopFace;
+                side3.GetComponent<FaceScript>().rend.material = materialRightFace;
             }
             else if ((sideNumber == 1 && color == "Right") || (sideNumber == 2 && color == "Left") || (sideNumber == 3 && color == "Top"))
             {
@@ -326,13 +359,13 @@ public class FaceScript : MonoBehaviour
                 materials.Add("RightSide", 2);
                 materials.Add("TopSide", 3);
 
-                sides.Add("LeftSide", sideLeft);
-                sides.Add("RightSide", sideRight);
-                sides.Add("TopSide", sideTop);
+                sides.Add("LeftSide", side1);
+                sides.Add("RightSide", side2);
+                sides.Add("TopSide", side3);
 
-                sideRight.GetComponent<FaceScript>().rend.material = materialRightFace;
-                sideLeft.GetComponent<FaceScript>().rend.material = materialLeftFace;
-                sideTop.GetComponent<FaceScript>().rend.material = materialTopFace;
+                side2.GetComponent<FaceScript>().rend.material = materialRightFace;
+                side1.GetComponent<FaceScript>().rend.material = materialLeftFace;
+                side3.GetComponent<FaceScript>().rend.material = materialTopFace;
             }
             else if ((sideNumber == 1 && color == "Top") || (sideNumber == 2 && color == "Right") || (sideNumber == 3 && color == "Left"))
             {
@@ -340,14 +373,15 @@ public class FaceScript : MonoBehaviour
                 materials.Add("RightSide", 1);
                 materials.Add("TopSide", 2);
 
-                sides.Add("LeftSide", sideTop);
-                sides.Add("RightSide", sideLeft);
-                sides.Add("TopSide", sideRight);
+                sides.Add("LeftSide", side3);
+                sides.Add("RightSide", side1);
+                sides.Add("TopSide", side2);
 
-                sideLeft.GetComponent<FaceScript>().rend.material = materialRightFace;
-                sideRight.GetComponent<FaceScript>().rend.material = materialTopFace;
-                sideTop.GetComponent<FaceScript>().rend.material = materialLeftFace;
+                side1.GetComponent<FaceScript>().rend.material = materialRightFace;
+                side2.GetComponent<FaceScript>().rend.material = materialTopFace;
+                side3.GetComponent<FaceScript>().rend.material = materialLeftFace;
             }
+            isPreviousAnExtremeSide1 = false;
         }
         havePlayer = true;
 

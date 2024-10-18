@@ -47,22 +47,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 7735698173426261198}
-  sideOrange: {fileID: 6046306741307039995}
-  sideGreen: {fileID: 7012345550774154504}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 7735698173426261198}
+  side1: {fileID: 6046306741307039995}
+  side3: {fileID: 7012345550774154504}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 4980849880837030925}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &250563210981145005
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,22 +117,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 6570964182601405983}
-  sideOrange: {fileID: 6112165654322964989}
-  sideGreen: {fileID: 7102918306467607040}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 6570964182601405983}
+  side1: {fileID: 6112165654322964989}
+  side3: {fileID: 7102918306467607040}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 2851078100995345863}
   glowingPart: {fileID: 4364529124976798738}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &318358543946288996
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,22 +187,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 434307620496469984}
-  sideOrange: {fileID: 5234919433185034692}
-  sideGreen: {fileID: 8365565005503481948}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 434307620496469984}
+  side1: {fileID: 5234919433185034692}
+  side3: {fileID: 8365565005503481948}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 2623455699940382004}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &434307620496469984
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,22 +257,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 2742462724520093556}
-  sideOrange: {fileID: 318358543946288996}
-  sideGreen: {fileID: 1965302102255867624}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 2742462724520093556}
+  side1: {fileID: 318358543946288996}
+  side3: {fileID: 1965302102255867624}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 6088821608563006749}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &499679028486825140
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,22 +327,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 6106082453602785605}
-  sideOrange: {fileID: 1837679986962795538}
-  sideGreen: {fileID: 2742462724520093556}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 6106082453602785605}
+  side1: {fileID: 1837679986962795538}
+  side3: {fileID: 2742462724520093556}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 3597788292367172088}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &600218872758734642
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,22 +448,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 7369142941821324401}
-  sideOrange: {fileID: 4830914241559364469}
-  sideGreen: {fileID: 3919304699312285804}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 7369142941821324401}
+  side1: {fileID: 4830914241559364469}
+  side3: {fileID: 3919304699312285804}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 4930607360024774217}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &749263298601138927
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,22 +518,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 8553532268895956014}
-  sideOrange: {fileID: 6234845317047494711}
-  sideGreen: {fileID: 929559425470851936}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 8553532268895956014}
+  side1: {fileID: 6234845317047494711}
+  side3: {fileID: 929559425470851936}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 70346542014571727}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &838775323961285570
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,22 +588,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 4513669224618614431}
-  sideOrange: {fileID: 2333041968347566988}
-  sideGreen: {fileID: 7735698173426261198}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 4513669224618614431}
+  side1: {fileID: 2333041968347566988}
+  side3: {fileID: 7735698173426261198}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 3163424890305824014}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &929559425470851936
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,22 +658,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 8578529159484550698}
-  sideOrange: {fileID: 3549776180664793402}
-  sideGreen: {fileID: 749263298601138927}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 8578529159484550698}
+  side1: {fileID: 3549776180664793402}
+  side3: {fileID: 749263298601138927}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 1293944194080987372}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &994143741030477826
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,22 +728,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 9145196027471913241}
-  sideOrange: {fileID: 2742462724520093556}
-  sideGreen: {fileID: 4729499894221336858}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 9145196027471913241}
+  side1: {fileID: 2742462724520093556}
+  side3: {fileID: 4729499894221336858}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 2831995006387441825}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &1170012824398820310
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,22 +798,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 8049329918862935367}
-  sideOrange: {fileID: 2813226997821905303}
-  sideGreen: {fileID: 9136584641840077622}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 8049329918862935367}
+  side1: {fileID: 2813226997821905303}
+  side3: {fileID: 9136584641840077622}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 7183441857451598281}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &1289777920599542458
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,22 +904,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 4729499894221336858}
-  sideOrange: {fileID: 1965302102255867624}
-  sideGreen: {fileID: 3660285781751441619}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 4729499894221336858}
+  side1: {fileID: 1965302102255867624}
+  side3: {fileID: 3660285781751441619}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 1765963563613756258}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &1342441944372239098
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,22 +974,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 6112165654322964989}
-  sideOrange: {fileID: 2351935556004592677}
-  sideGreen: {fileID: 5726590261708184695}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 6112165654322964989}
+  side1: {fileID: 2351935556004592677}
+  side3: {fileID: 5726590261708184695}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 3346452259492413663}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &1837679986962795538
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,22 +1044,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 499679028486825140}
-  sideOrange: {fileID: 8365565005503481948}
-  sideGreen: {fileID: 6112165654322964989}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 499679028486825140}
+  side1: {fileID: 8365565005503481948}
+  side3: {fileID: 6112165654322964989}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 8413372631884493479}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &1965302102255867624
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,22 +1114,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 1338632889447029834}
-  sideOrange: {fileID: 2461397896930871195}
-  sideGreen: {fileID: 434307620496469984}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 1338632889447029834}
+  side1: {fileID: 2461397896930871195}
+  side3: {fileID: 434307620496469984}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 8335255113964843908}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &1977540912250590712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,22 +1184,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 3919304699312285804}
-  sideOrange: {fileID: 5696066412293980597}
-  sideGreen: {fileID: 5575593989716607707}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 3919304699312285804}
+  side1: {fileID: 5696066412293980597}
+  side3: {fileID: 5575593989716607707}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 3975331018969648959}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &2333041968347566988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1142,22 +1254,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 838775323961285570}
-  sideOrange: {fileID: 8267011386902420242}
-  sideGreen: {fileID: 6046306741307039995}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 838775323961285570}
+  side1: {fileID: 8267011386902420242}
+  side3: {fileID: 6046306741307039995}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 4128508567257008096}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &2351935556004592677
 GameObject:
   m_ObjectHideFlags: 0
@@ -1205,22 +1324,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 1342441944372239098}
-  sideOrange: {fileID: 6570964182601405983}
-  sideGreen: {fileID: 4754458160043455089}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 1342441944372239098}
+  side1: {fileID: 6570964182601405983}
+  side3: {fileID: 4754458160043455089}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 4466769735854480289}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &2461397896930871195
 GameObject:
   m_ObjectHideFlags: 0
@@ -1268,22 +1394,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 1965302102255867624}
-  sideOrange: {fileID: 7256876197800930307}
-  sideGreen: {fileID: 8699132423281594788}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 1965302102255867624}
+  side1: {fileID: 7256876197800930307}
+  side3: {fileID: 8699132423281594788}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 2408343718070166939}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &2479322142983254785
 GameObject:
   m_ObjectHideFlags: 0
@@ -1331,22 +1464,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 5234919433185034692}
-  sideOrange: {fileID: 7012345550774154504}
-  sideGreen: {fileID: 9045838579808242458}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 5234919433185034692}
+  side1: {fileID: 7012345550774154504}
+  side3: {fileID: 9045838579808242458}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 4079699278213322212}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &2538517579781362413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1394,22 +1534,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 7516142785602260944}
-  sideOrange: {fileID: 3042490848670046069}
-  sideGreen: {fileID: 2615288408572365257}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 7516142785602260944}
+  side1: {fileID: 3042490848670046069}
+  side3: {fileID: 2615288408572365257}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 9017189063342625478}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &2615288408572365257
 GameObject:
   m_ObjectHideFlags: 0
@@ -1457,22 +1604,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 7024042354357101386}
-  sideOrange: {fileID: 5936408541072415560}
-  sideGreen: {fileID: 2538517579781362413}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 7024042354357101386}
+  side1: {fileID: 5936408541072415560}
+  side3: {fileID: 2538517579781362413}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 623949880013441036}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &2653653904457469430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,22 +1720,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 994143741030477826}
-  sideOrange: {fileID: 434307620496469984}
-  sideGreen: {fileID: 499679028486825140}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 994143741030477826}
+  side1: {fileID: 434307620496469984}
+  side3: {fileID: 499679028486825140}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 1683848104979432632}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &2813226997821905303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,22 +1790,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 1170012824398820310}
-  sideOrange: {fileID: 2998914306799676867}
-  sideGreen: {fileID: 3042490848670046069}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 1170012824398820310}
+  side1: {fileID: 2998914306799676867}
+  side3: {fileID: 3042490848670046069}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 4455090103192310271}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &2998914306799676867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1692,22 +1860,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 2813226997821905303}
-  sideOrange: {fileID: 8553532268895956014}
-  sideGreen: {fileID: 5567505987553535432}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 2813226997821905303}
+  side1: {fileID: 8553532268895956014}
+  side3: {fileID: 5567505987553535432}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 2215583836719061958}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &3042490848670046069
 GameObject:
   m_ObjectHideFlags: 0
@@ -1755,22 +1930,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 2538517579781362413}
-  sideOrange: {fileID: 3924965484612317127}
-  sideGreen: {fileID: 2813226997821905303}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 2538517579781362413}
+  side1: {fileID: 3924965484612317127}
+  side3: {fileID: 2813226997821905303}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 53924962985996469}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &3188191788771161647
 GameObject:
   m_ObjectHideFlags: 0
@@ -1869,22 +2051,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 929559425470851936}
-  sideOrange: {fileID: 7102918306467607040}
-  sideGreen: {fileID: 4245001089259185261}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 929559425470851936}
+  side1: {fileID: 7102918306467607040}
+  side3: {fileID: 4245001089259185261}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 2229133754100204460}
   glowingPart: {fileID: 427706892028371577}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &3578327661452296100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1932,22 +2121,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 5696066412293980597}
-  sideOrange: {fileID: 5866420694040546404}
-  sideGreen: {fileID: 8267011386902420242}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 5696066412293980597}
+  side1: {fileID: 5866420694040546404}
+  side3: {fileID: 8267011386902420242}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 2567804789715466702}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &3660285781751441619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1995,22 +2191,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 5575593989716607707}
-  sideOrange: {fileID: 8699132423281594788}
-  sideGreen: {fileID: 1338632889447029834}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 5575593989716607707}
+  side1: {fileID: 8699132423281594788}
+  side3: {fileID: 1338632889447029834}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 3687115703815459489}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &3703377597551912633
 GameObject:
   m_ObjectHideFlags: 0
@@ -2058,22 +2261,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 4830914241559364469}
-  sideOrange: {fileID: 5575593989716607707}
-  sideGreen: {fileID: 7887250672121410544}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 4830914241559364469}
+  side1: {fileID: 5575593989716607707}
+  side3: {fileID: 7887250672121410544}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 4989702058461340112}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &3903394396396785280
 GameObject:
   m_ObjectHideFlags: 0
@@ -2121,22 +2331,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 3924965484612317127}
-  sideOrange: {fileID: 5203064882388176902}
-  sideGreen: {fileID: 8553532268895956014}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 3924965484612317127}
+  side1: {fileID: 5203064882388176902}
+  side3: {fileID: 8553532268895956014}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 4351665314076943907}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &3919304699312285804
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,22 +2401,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 5866420694040546404}
-  sideOrange: {fileID: 1977540912250590712}
-  sideGreen: {fileID: 611807253160836265}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 5866420694040546404}
+  side1: {fileID: 1977540912250590712}
+  side3: {fileID: 611807253160836265}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 5285729486256559604}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &3924965484612317127
 GameObject:
   m_ObjectHideFlags: 0
@@ -2247,22 +2471,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 3042490848670046069}
-  sideOrange: {fileID: 3903394396396785280}
-  sideGreen: {fileID: 6769831366055548956}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 3042490848670046069}
+  side1: {fileID: 3903394396396785280}
+  side3: {fileID: 6769831366055548956}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 7316893574879847797}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &3968934881111175390
 GameObject:
   m_ObjectHideFlags: 0
@@ -2310,22 +2541,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 5768078684606229682}
-  sideOrange: {fileID: 4754458160043455089}
-  sideGreen: {fileID: 7609126553982860416}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 5768078684606229682}
+  side1: {fileID: 4754458160043455089}
+  side3: {fileID: 7609126553982860416}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 7631279297461515067}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &4245001089259185261
 GameObject:
   m_ObjectHideFlags: 0
@@ -2373,22 +2611,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 6234845317047494711}
-  sideOrange: {fileID: 6343685575542027520}
-  sideGreen: {fileID: 3549776180664793402}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 6234845317047494711}
+  side1: {fileID: 6343685575542027520}
+  side3: {fileID: 3549776180664793402}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 7010464961014595079}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &4384275591529929323
 GameObject:
   m_ObjectHideFlags: 0
@@ -2436,22 +2681,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 5203064882388176902}
-  sideOrange: {fileID: 8931923988157696947}
-  sideGreen: {fileID: 6234845317047494711}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 5203064882388176902}
+  side1: {fileID: 8931923988157696947}
+  side3: {fileID: 6234845317047494711}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 8420505580801135537}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &4459724513596080970
 GameObject:
   m_ObjectHideFlags: 0
@@ -2499,22 +2751,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 5892287813396906366}
-  sideOrange: {fileID: 7516142785602260944}
-  sideGreen: {fileID: 7024042354357101386}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 5892287813396906366}
+  side1: {fileID: 7516142785602260944}
+  side3: {fileID: 7024042354357101386}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 1546825012217189523}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &4513669224618614431
 GameObject:
   m_ObjectHideFlags: 0
@@ -2562,22 +2821,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 8699132423281594788}
-  sideOrange: {fileID: 838775323961285570}
-  sideGreen: {fileID: 5696066412293980597}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 8699132423281594788}
+  side1: {fileID: 838775323961285570}
+  side3: {fileID: 5696066412293980597}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 6266871889722165852}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &4729499894221336858
 GameObject:
   m_ObjectHideFlags: 0
@@ -2626,22 +2892,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 7887250672121410544}
-  sideOrange: {fileID: 1338632889447029834}
-  sideGreen: {fileID: 994143741030477826}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 1
+  side2: {fileID: 7887250672121410544}
+  side1: {fileID: 1338632889447029834}
+  side3: {fileID: 994143741030477826}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 7594733112404677411}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 1
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &4754458160043455089
 GameObject:
   m_ObjectHideFlags: 0
@@ -2689,22 +2962,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 3968934881111175390}
-  sideOrange: {fileID: 9136584641840077622}
-  sideGreen: {fileID: 2351935556004592677}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 3968934881111175390}
+  side1: {fileID: 9136584641840077622}
+  side3: {fileID: 2351935556004592677}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 3672391984056363495}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &4830914241559364469
 GameObject:
   m_ObjectHideFlags: 0
@@ -2752,22 +3032,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 611807253160836265}
-  sideOrange: {fileID: 3703377597551912633}
-  sideGreen: {fileID: 8931923988157696947}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 611807253160836265}
+  side1: {fileID: 3703377597551912633}
+  side3: {fileID: 8931923988157696947}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 7681948440175336590}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &5203064882388176902
 GameObject:
   m_ObjectHideFlags: 0
@@ -2815,22 +3102,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 3903394396396785280}
-  sideOrange: {fileID: 4384275591529929323}
-  sideGreen: {fileID: 7369142941821324401}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 3903394396396785280}
+  side1: {fileID: 4384275591529929323}
+  side3: {fileID: 7369142941821324401}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 3161864178535555868}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &5234919433185034692
 GameObject:
   m_ObjectHideFlags: 0
@@ -2878,22 +3172,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 318358543946288996}
-  sideOrange: {fileID: 2479322142983254785}
-  sideGreen: {fileID: 7256876197800930307}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 318358543946288996}
+  side1: {fileID: 2479322142983254785}
+  side3: {fileID: 7256876197800930307}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 4769926749299314986}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &5567505987553535432
 GameObject:
   m_ObjectHideFlags: 0
@@ -2941,22 +3242,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 9136584641840077622}
-  sideOrange: {fileID: 8578529159484550698}
-  sideGreen: {fileID: 2998914306799676867}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 9136584641840077622}
+  side1: {fileID: 8578529159484550698}
+  side3: {fileID: 2998914306799676867}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 4433091836525605186}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &5575593989716607707
 GameObject:
   m_ObjectHideFlags: 0
@@ -3004,22 +3312,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 3703377597551912633}
-  sideOrange: {fileID: 3660285781751441619}
-  sideGreen: {fileID: 1977540912250590712}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 3703377597551912633}
+  side1: {fileID: 3660285781751441619}
+  side3: {fileID: 1977540912250590712}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 1082017151639794814}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &5696066412293980597
 GameObject:
   m_ObjectHideFlags: 0
@@ -3067,22 +3382,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 1977540912250590712}
-  sideOrange: {fileID: 3578327661452296100}
-  sideGreen: {fileID: 4513669224618614431}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 1977540912250590712}
+  side1: {fileID: 3578327661452296100}
+  side3: {fileID: 4513669224618614431}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 2882023135200914812}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &5726590261708184695
 GameObject:
   m_ObjectHideFlags: 0
@@ -3130,22 +3452,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 9045838579808242458}
-  sideOrange: {fileID: 5768078684606229682}
-  sideGreen: {fileID: 1342441944372239098}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 9045838579808242458}
+  side1: {fileID: 5768078684606229682}
+  side3: {fileID: 1342441944372239098}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 4311649797157847922}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &5768078684606229682
 GameObject:
   m_ObjectHideFlags: 0
@@ -3193,22 +3522,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 5726590261708184695}
-  sideOrange: {fileID: 3968934881111175390}
-  sideGreen: {fileID: 7144825517796094670}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 5726590261708184695}
+  side1: {fileID: 3968934881111175390}
+  side3: {fileID: 7144825517796094670}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 4162351197370454825}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &5866420694040546404
 GameObject:
   m_ObjectHideFlags: 0
@@ -3256,22 +3592,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 3578327661452296100}
-  sideOrange: {fileID: 3919304699312285804}
-  sideGreen: {fileID: 5936408541072415560}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 3578327661452296100}
+  side1: {fileID: 3919304699312285804}
+  side3: {fileID: 5936408541072415560}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 277691048885934704}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &5892287813396906366
 GameObject:
   m_ObjectHideFlags: 0
@@ -3319,22 +3662,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 6046306741307039995}
-  sideOrange: {fileID: 4459724513596080970}
-  sideGreen: {fileID: 6953705133574963937}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 6046306741307039995}
+  side1: {fileID: 4459724513596080970}
+  side3: {fileID: 6953705133574963937}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 9221525323466006382}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &5936408541072415560
 GameObject:
   m_ObjectHideFlags: 0
@@ -3382,22 +3732,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 2615288408572365257}
-  sideOrange: {fileID: 6769831366055548956}
-  sideGreen: {fileID: 5866420694040546404}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 2615288408572365257}
+  side1: {fileID: 6769831366055548956}
+  side3: {fileID: 5866420694040546404}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 6603256775438389126}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &6046306741307039995
 GameObject:
   m_ObjectHideFlags: 0
@@ -3445,22 +3802,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 44481538107201911}
-  sideOrange: {fileID: 5892287813396906366}
-  sideGreen: {fileID: 2333041968347566988}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 44481538107201911}
+  side1: {fileID: 5892287813396906366}
+  side3: {fileID: 2333041968347566988}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 819626670968970575}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &6106082453602785605
 GameObject:
   m_ObjectHideFlags: 0
@@ -3508,22 +3872,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 7102918306467607040}
-  sideOrange: {fileID: 499679028486825140}
-  sideGreen: {fileID: 9145196027471913241}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 7102918306467607040}
+  side1: {fileID: 499679028486825140}
+  side3: {fileID: 9145196027471913241}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 6850824564874797704}
   glowingPart: {fileID: 4905538011930706781}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &6112165654322964989
 GameObject:
   m_ObjectHideFlags: 0
@@ -3571,22 +3942,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 250563210981145005}
-  sideOrange: {fileID: 1342441944372239098}
-  sideGreen: {fileID: 1837679986962795538}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 250563210981145005}
+  side1: {fileID: 1342441944372239098}
+  side3: {fileID: 1837679986962795538}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 3933626647290150059}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &6234845317047494711
 GameObject:
   m_ObjectHideFlags: 0
@@ -3634,22 +4012,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 749263298601138927}
-  sideOrange: {fileID: 4245001089259185261}
-  sideGreen: {fileID: 4384275591529929323}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 749263298601138927}
+  side1: {fileID: 4245001089259185261}
+  side3: {fileID: 4384275591529929323}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 533118305118426768}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &6343685575542027520
 GameObject:
   m_ObjectHideFlags: 0
@@ -3697,22 +4082,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 4245001089259185261}
-  sideOrange: {fileID: 9145196027471913241}
-  sideGreen: {fileID: 8089265229431732647}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 4245001089259185261}
+  side1: {fileID: 9145196027471913241}
+  side3: {fileID: 8089265229431732647}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 8624054587898239021}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &6570964182601405983
 GameObject:
   m_ObjectHideFlags: 0
@@ -3760,22 +4152,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 2351935556004592677}
-  sideOrange: {fileID: 250563210981145005}
-  sideGreen: {fileID: 8578529159484550698}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 2351935556004592677}
+  side1: {fileID: 250563210981145005}
+  side3: {fileID: 8578529159484550698}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 7283767278607212898}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &6769831366055548956
 GameObject:
   m_ObjectHideFlags: 0
@@ -3823,22 +4222,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 5936408541072415560}
-  sideOrange: {fileID: 7369142941821324401}
-  sideGreen: {fileID: 3924965484612317127}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 5936408541072415560}
+  side1: {fileID: 7369142941821324401}
+  side3: {fileID: 3924965484612317127}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 490606617636456924}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &6953705133574963937
 GameObject:
   m_ObjectHideFlags: 0
@@ -3886,22 +4292,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 7144825517796094670}
-  sideOrange: {fileID: 7609126553982860416}
-  sideGreen: {fileID: 5892287813396906366}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 7144825517796094670}
+  side1: {fileID: 7609126553982860416}
+  side3: {fileID: 5892287813396906366}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 5788832050467461302}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &7012345550774154504
 GameObject:
   m_ObjectHideFlags: 0
@@ -3949,22 +4362,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 2479322142983254785}
-  sideOrange: {fileID: 7144825517796094670}
-  sideGreen: {fileID: 44481538107201911}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 2479322142983254785}
+  side1: {fileID: 7144825517796094670}
+  side3: {fileID: 44481538107201911}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 7472522260235327310}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &7024042354357101386
 GameObject:
   m_ObjectHideFlags: 0
@@ -4012,22 +4432,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 8267011386902420242}
-  sideOrange: {fileID: 2615288408572365257}
-  sideGreen: {fileID: 4459724513596080970}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 8267011386902420242}
+  side1: {fileID: 2615288408572365257}
+  side3: {fileID: 4459724513596080970}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 3029247236875689471}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &7102918306467607040
 GameObject:
   m_ObjectHideFlags: 0
@@ -4075,22 +4502,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 3549776180664793402}
-  sideOrange: {fileID: 6106082453602785605}
-  sideGreen: {fileID: 250563210981145005}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 3549776180664793402}
+  side1: {fileID: 6106082453602785605}
+  side3: {fileID: 250563210981145005}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 5084589522952624143}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &7144825517796094670
 GameObject:
   m_ObjectHideFlags: 0
@@ -4138,22 +4572,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 7012345550774154504}
-  sideOrange: {fileID: 6953705133574963937}
-  sideGreen: {fileID: 5768078684606229682}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 7012345550774154504}
+  side1: {fileID: 6953705133574963937}
+  side3: {fileID: 5768078684606229682}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 6615999204134378925}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &7256876197800930307
 GameObject:
   m_ObjectHideFlags: 0
@@ -4201,22 +4642,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 2461397896930871195}
-  sideOrange: {fileID: 7735698173426261198}
-  sideGreen: {fileID: 5234919433185034692}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 2461397896930871195}
+  side1: {fileID: 7735698173426261198}
+  side3: {fileID: 5234919433185034692}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 8935060530101613873}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &7369142941821324401
 GameObject:
   m_ObjectHideFlags: 0
@@ -4264,22 +4712,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 6769831366055548956}
-  sideOrange: {fileID: 611807253160836265}
-  sideGreen: {fileID: 5203064882388176902}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 6769831366055548956}
+  side1: {fileID: 611807253160836265}
+  side3: {fileID: 5203064882388176902}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 2115634823809709490}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &7516142785602260944
 GameObject:
   m_ObjectHideFlags: 0
@@ -4327,22 +4782,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 4459724513596080970}
-  sideOrange: {fileID: 2538517579781362413}
-  sideGreen: {fileID: 8049329918862935367}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 4459724513596080970}
+  side1: {fileID: 2538517579781362413}
+  side3: {fileID: 8049329918862935367}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 1013943842831245567}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &7609126553982860416
 GameObject:
   m_ObjectHideFlags: 0
@@ -4390,22 +4852,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 6953705133574963937}
-  sideOrange: {fileID: 8049329918862935367}
-  sideGreen: {fileID: 3968934881111175390}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 6953705133574963937}
+  side1: {fileID: 8049329918862935367}
+  side3: {fileID: 3968934881111175390}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 4705684109692033448}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &7735698173426261198
 GameObject:
   m_ObjectHideFlags: 0
@@ -4453,22 +4922,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 7256876197800930307}
-  sideOrange: {fileID: 44481538107201911}
-  sideGreen: {fileID: 838775323961285570}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 7256876197800930307}
+  side1: {fileID: 44481538107201911}
+  side3: {fileID: 838775323961285570}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 7460287077941148937}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &7887250672121410544
 GameObject:
   m_ObjectHideFlags: 0
@@ -4516,22 +4992,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 8089265229431732647}
-  sideOrange: {fileID: 4729499894221336858}
-  sideGreen: {fileID: 3703377597551912633}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 8089265229431732647}
+  side1: {fileID: 4729499894221336858}
+  side3: {fileID: 3703377597551912633}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 1985606182655917731}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &8049329918862935367
 GameObject:
   m_ObjectHideFlags: 0
@@ -4579,22 +5062,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 7609126553982860416}
-  sideOrange: {fileID: 1170012824398820310}
-  sideGreen: {fileID: 7516142785602260944}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 7609126553982860416}
+  side1: {fileID: 1170012824398820310}
+  side3: {fileID: 7516142785602260944}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 1707407530515422091}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &8056883889154414948
 GameObject:
   m_ObjectHideFlags: 0
@@ -4709,22 +5199,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 8931923988157696947}
-  sideOrange: {fileID: 7887250672121410544}
-  sideGreen: {fileID: 6343685575542027520}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 8931923988157696947}
+  side1: {fileID: 7887250672121410544}
+  side3: {fileID: 6343685575542027520}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 5369286492266232156}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &8267011386902420242
 GameObject:
   m_ObjectHideFlags: 0
@@ -4772,22 +5269,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 2333041968347566988}
-  sideOrange: {fileID: 7024042354357101386}
-  sideGreen: {fileID: 3578327661452296100}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 2333041968347566988}
+  side1: {fileID: 7024042354357101386}
+  side3: {fileID: 3578327661452296100}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 8053618770748665220}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &8365565005503481948
 GameObject:
   m_ObjectHideFlags: 0
@@ -4835,22 +5339,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 1837679986962795538}
-  sideOrange: {fileID: 9045838579808242458}
-  sideGreen: {fileID: 318358543946288996}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 1837679986962795538}
+  side1: {fileID: 9045838579808242458}
+  side3: {fileID: 318358543946288996}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 6857819733813693297}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &8547730529244836688
 GameObject:
   m_ObjectHideFlags: 0
@@ -4944,22 +5455,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 2998914306799676867}
-  sideOrange: {fileID: 749263298601138927}
-  sideGreen: {fileID: 3903394396396785280}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 2998914306799676867}
+  side1: {fileID: 749263298601138927}
+  side3: {fileID: 3903394396396785280}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 1352392809871395196}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &8578529159484550698
 GameObject:
   m_ObjectHideFlags: 0
@@ -5007,22 +5525,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 5567505987553535432}
-  sideOrange: {fileID: 929559425470851936}
-  sideGreen: {fileID: 6570964182601405983}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 5567505987553535432}
+  side1: {fileID: 929559425470851936}
+  side3: {fileID: 6570964182601405983}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 5481588899847133291}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &8699132423281594788
 GameObject:
   m_ObjectHideFlags: 0
@@ -5070,22 +5595,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 3660285781751441619}
-  sideOrange: {fileID: 4513669224618614431}
-  sideGreen: {fileID: 2461397896930871195}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 3660285781751441619}
+  side1: {fileID: 4513669224618614431}
+  side3: {fileID: 2461397896930871195}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 9015897249696130502}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &8931923988157696947
 GameObject:
   m_ObjectHideFlags: 0
@@ -5133,22 +5665,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 4384275591529929323}
-  sideOrange: {fileID: 8089265229431732647}
-  sideGreen: {fileID: 4830914241559364469}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 4384275591529929323}
+  side1: {fileID: 8089265229431732647}
+  side3: {fileID: 4830914241559364469}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 2380544534661515947}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &9039654227719974945
 GameObject:
   m_ObjectHideFlags: 0
@@ -5263,22 +5802,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 8365565005503481948}
-  sideOrange: {fileID: 5726590261708184695}
-  sideGreen: {fileID: 2479322142983254785}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 8365565005503481948}
+  side1: {fileID: 5726590261708184695}
+  side3: {fileID: 2479322142983254785}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 8635662759342839070}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &9136584641840077622
 GameObject:
   m_ObjectHideFlags: 0
@@ -5326,22 +5872,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 4754458160043455089}
-  sideOrange: {fileID: 5567505987553535432}
-  sideGreen: {fileID: 1170012824398820310}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 4754458160043455089}
+  side1: {fileID: 5567505987553535432}
+  side3: {fileID: 1170012824398820310}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 980682019344895370}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1 &9145196027471913241
 GameObject:
   m_ObjectHideFlags: 0
@@ -5389,22 +5942,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8982b84b108a02d41bd90fc972d45f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideBlue: {fileID: 6343685575542027520}
-  sideOrange: {fileID: 994143741030477826}
-  sideGreen: {fileID: 6106082453602785605}
   player: {fileID: 3766995322741213703}
-  materialWhite: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
-  materialLightBlue: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
-  materialBlue: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
-  materialOrange: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
-  materialGreen: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
-  havePlayer: 0
+  side2: {fileID: 6343685575542027520}
+  side1: {fileID: 994143741030477826}
+  side3: {fileID: 6106082453602785605}
+  materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
+  materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
+  materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
+  materialTopFace: {fileID: 2100000, guid: 58f78dde3204a174db4c9037a8914c82, type: 2}
   rend: {fileID: 0}
   glowingPart: {fileID: 5164812958814347910}
-  RM: {fileID: 0}
+  keyLeft: 97
+  keyTop: 119
+  keyRight: 100
   SCD: {fileID: 0}
+  RFS: {fileID: 0}
   BC: {fileID: 0}
   SS: {fileID: 0}
+  TC: {fileID: 0}
+  havePlayer: 0
+  isAnExtremeSide: 0
+  isTutorial: 0
+  isKilling: 0
 --- !u!1001 &83772768527443841
 PrefabInstance:
   m_ObjectHideFlags: 0
