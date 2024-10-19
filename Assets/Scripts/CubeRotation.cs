@@ -7,6 +7,7 @@ public class CubeRotation : MonoBehaviour
     [Range(0, 20)]
     [SerializeField] private float rotationSpeed;
     [SerializeField] private bool isTimer;
+    [SerializeField] private bool clockwiseRotation = true;
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class CubeRotation : MonoBehaviour
 
     private void Update()
     {
-        transform.Rotate(Vector3.up, rotationSpeed * 10 * Time.deltaTime);
+        if (clockwiseRotation) transform.Rotate(Vector3.up, rotationSpeed * 10 * Time.deltaTime);
+        else transform.Rotate(Vector3.up, - rotationSpeed * 10 * Time.deltaTime);
     }
 }

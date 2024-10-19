@@ -8,14 +8,14 @@ public class LevelButtonTransition : MonoBehaviour
     [SerializeField] private Button _button;
     [SerializeField] private bool _isRight;
     [SerializeField] private List<Transform> _points;
-    [SerializeField] private List<Transform> _screens;
+    public List<Transform> _screens;
     [SerializeField] private float _speed;
     [SerializeField] private GameObject _wall;
     [SerializeField] private  LevelButtonTransition BSM;
     [SerializeField] private float _epsilion;
     private bool _isRightClicked;
     private bool _isLeftClicked;
-    private int _numberMenu;
+    public int _numberMenu;
 
 
     private void Start()

@@ -29,7 +29,7 @@ public class SettingsScript : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
 
         dropDownResolution.ClearOptions();
         List<string> options = new List<string>();
