@@ -8,16 +8,22 @@ using TMPro;
 
 public class SettingsScript : MonoBehaviour
 {
-    //[SerializeField] public TMP_Dropdown dropDownLanguage;
-
-    //[SerializeField] private AudioMixer audioMixer;
-    [SerializeField] public TMP_Dropdown dropDownResolution;
+    [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private TMP_Dropdown dropDownResolution;
+    [SerializeField] private TMP_Dropdown dropDownLanguage;
     //[SerializeField] private TMP_Dropdown qualityDropdown;
-    //[SerializeField] private Slider volumeSlider;
+
+    [SerializeField] private TextMeshProUGUI textMusicVolume;
+    [SerializeField] private Button buttonIncreaseMusic;    
+    [SerializeField] private Button buttonDecreaseMusic;   
+
     private float currentVolume;
+    private const int step = 5;        
+    private const int minValue = 0;    
+    private const int maxValue = 100;
     private Resolution[] resolutions;
 
-    void Start()
+    private void Start()
     {
         dropDownResolution.ClearOptions();
         List<string> options = new List<string>();
@@ -35,12 +41,18 @@ public class SettingsScript : MonoBehaviour
 
         dropDownResolution.AddOptions(options);
         dropDownResolution.RefreshShownValue();
+
+        buttonIncreaseMusic.onClick.AddListener(IncreaseValue);
+        buttonDecreaseMusic.onClick.AddListener(DecreaseValue);
+        UpdateText();
+        Debug.Log(currentVolume.ToString());
         LoadSettings(currentResolutionIndex);
+        Debug.Log(currentVolume.ToString());
     }
     /*
     public void SetVolume(float volume)
     {
-        audioMixer.SetFloat("Volume", volume);
+        audioMixer.SetFloat("Master", Mathf.Log10(volume) * 20);
         currentVolume = volume;
     }*/
     public void SetFullscreen(bool isFullscreen)
@@ -55,12 +67,9 @@ public class SettingsScript : MonoBehaviour
                   resolution.height, Screen.fullScreen);
     }
 
-
     public void SetQuality(int qualityIndex)
     {
-
         QualitySettings.SetQualityLevel(qualityIndex);
-
     }
 
     public void SaveSettings()
@@ -70,9 +79,8 @@ public class SettingsScript : MonoBehaviour
         PlayerPrefs.SetInt("ResolutionPreference",
                    dropDownResolution.value);
         PlayerPrefs.SetInt("FullscreenPreference",
-                   System.Convert.ToInt32(Screen.fullScreen));/*
-        PlayerPrefs.SetFloat("VolumePreference",
-                   currentVolume);*/
+                   System.Convert.ToInt32(Screen.fullScreen));
+        PlayerPrefs.SetFloat("MusicVolumePreference", currentVolume);
     }
 
     public void LoadSettings(int currentResolutionIndex)
@@ -87,16 +95,55 @@ public class SettingsScript : MonoBehaviour
                          PlayerPrefs.GetInt("ResolutionPreference");
         else
             dropDownResolution.value = currentResolutionIndex;
+
         if (PlayerPrefs.HasKey("FullscreenPreference"))
             Screen.fullScreen =
             System.Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference"));
         else
-            Screen.fullScreen = true;/*
-        if (PlayerPrefs.HasKey("VolumePreference"))
-            volumeSlider.value =
-                        PlayerPrefs.GetFloat("VolumePreference");
+            Screen.fullScreen = true;
+
+        if (PlayerPrefs.HasKey("MusicVolumePreference"))
+        {
+            textMusicVolume.text = PlayerPrefs.GetFloat("MusicVolumePreference").ToString();
+            Debug.Log("1");
+        }
+            
+
         else
-            volumeSlider.value =
-                        PlayerPrefs.GetFloat("VolumePreference");*/
+        {/*
+            float value;
+            if (audioMixer.GetFloat("MasterVolume", out value))
+            {
+                textMusicVolume.text = Mathf.Pow(10, value / 20).ToString(); ;  // ѕреобразуем обратно из dB в линейное значение
+            }
+            else
+            {
+                textMusicVolume.text = "100";
+                currentVolume = 100;
+                audioMixer.SetFloat("Master", Mathf.Log10(100) * 20);
+                SetVolume(100);
+            }*/
+            textMusicVolume.text = "100";
+            currentVolume = 100;
+        }
+            
+
+    }
+    public void IncreaseValue()
+    {
+        currentVolume = Mathf.Clamp(currentVolume + step, minValue, maxValue);
+        UpdateText();
+
+    }
+
+    public void DecreaseValue()
+    {
+        currentVolume = Mathf.Clamp(currentVolume - step, minValue, maxValue);
+        UpdateText();
+    }
+
+    private void UpdateText()
+    {
+        textMusicVolume.text = currentVolume.ToString();
     }
 }

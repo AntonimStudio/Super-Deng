@@ -14,4 +14,6 @@ public class UIButtonScript : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
     }
+
+    
 }
