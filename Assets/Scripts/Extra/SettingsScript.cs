@@ -5,6 +5,7 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using JetBrains.Annotations;
 
 public class SettingsScript : MonoBehaviour
 {
@@ -15,21 +16,26 @@ public class SettingsScript : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI textMusicVolume;
     [SerializeField] private Button buttonIncreaseMusic;    
-    [SerializeField] private Button buttonDecreaseMusic;   
+    [SerializeField] private Button buttonDecreaseMusic;
 
+    [SerializeField] private string volumeParameter = "MusicVolume";
     private float currentVolume;
     private const int step = 5;        
-    private const int minValue = 0;    
+    private const float minValue = 0;    
     private const int maxValue = 100;
+    private int easterEggCounter = 0;
+    public int parameter;
     private Resolution[] resolutions;
 
     private void Start()
     {
+        PlayerPrefs.DeleteAll();
+
         dropDownResolution.ClearOptions();
         List<string> options = new List<string>();
         resolutions = Screen.resolutions;
         int currentResolutionIndex = 0;
-
+        easterEggCounter = 0;
         for (int i = 0; i < resolutions.Length; i++)
         {
             string option = resolutions[i].width + "x" + resolutions[i].height; // + " " + resolutions[i].refreshRateRatio + "Hz"
@@ -45,16 +51,17 @@ public class SettingsScript : MonoBehaviour
         buttonIncreaseMusic.onClick.AddListener(IncreaseValue);
         buttonDecreaseMusic.onClick.AddListener(DecreaseValue);
         UpdateText();
-        Debug.Log(currentVolume.ToString());
+        
         LoadSettings(currentResolutionIndex);
-        Debug.Log(currentVolume.ToString());
+        
     }
-    /*
+    
     public void SetVolume(float volume)
     {
-        audioMixer.SetFloat("Master", Mathf.Log10(volume) * 20);
+        audioMixer.SetFloat("Master", Mathf.Log10(volume) * parameter);
         currentVolume = volume;
-    }*/
+    }
+
     public void SetFullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
@@ -105,45 +112,57 @@ public class SettingsScript : MonoBehaviour
         if (PlayerPrefs.HasKey("MusicVolumePreference"))
         {
             textMusicVolume.text = PlayerPrefs.GetFloat("MusicVolumePreference").ToString();
-            Debug.Log("1");
-        }
-            
 
+            var value = DecibelConvert(PlayerPrefs.GetFloat("MusicVolumePreference"));
+            audioMixer.SetFloat(volumeParameter, value);
+        }
         else
-        {/*
-            float value;
-            if (audioMixer.GetFloat("MasterVolume", out value))
-            {
-                textMusicVolume.text = Mathf.Pow(10, value / 20).ToString(); ;  // ѕреобразуем обратно из dB в линейное значение
-            }
-            else
-            {
-                textMusicVolume.text = "100";
-                currentVolume = 100;
-                audioMixer.SetFloat("Master", Mathf.Log10(100) * 20);
-                SetVolume(100);
-            }*/
+        {
+            audioMixer.SetFloat(volumeParameter, DecibelConvert(100));
             textMusicVolume.text = "100";
             currentVolume = 100;
         }
             
 
     }
+    private float DecibelConvert(float volumeValue)
+    {
+        var value = Mathf.Log10(volumeValue) * parameter - 45;
+        return value;
+    }
+
     public void IncreaseValue()
     {
         currentVolume = Mathf.Clamp(currentVolume + step, minValue, maxValue);
+        
+        if (currentVolume == 100)
+        {
+            easterEggCounter += 1;
+            if (easterEggCounter >= 15) 
+            {
+                currentVolume = 999;
+            }
+        }
         UpdateText();
-
     }
 
     public void DecreaseValue()
     {
+        easterEggCounter = 0;
         currentVolume = Mathf.Clamp(currentVolume - step, minValue, maxValue);
-        UpdateText();
+        if (currentVolume == 0)
+        {
+            audioMixer.SetFloat(volumeParameter, DecibelConvert(0.00001f));
+            textMusicVolume.text = "0";
+        }
+        else
+            UpdateText();
     }
 
     private void UpdateText()
     {
+        
+        audioMixer.SetFloat(volumeParameter, DecibelConvert(currentVolume));
         textMusicVolume.text = currentVolume.ToString();
     }
 }
