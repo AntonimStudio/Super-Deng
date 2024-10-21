@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 using JetBrains.Annotations;
+using System.Data.Common;
+using static System.Net.Mime.MediaTypeNames;
 
 public class SettingsScript : MonoBehaviour
 {
@@ -13,13 +15,25 @@ public class SettingsScript : MonoBehaviour
     [SerializeField] private TMP_Dropdown dropDownResolution;
     [SerializeField] private TMP_Dropdown dropDownLanguage;
     //[SerializeField] private TMP_Dropdown qualityDropdown;
-
+    [Header("MasterVolumeSettings")]
+    [SerializeField] private TextMeshProUGUI textMasterVolume;
+    [SerializeField] private Button buttonIncreaseMaster;
+    [SerializeField] private Button buttonDecreaseMaster;
+    [SerializeField] private string volumeParameterMaster = "MasterVolume";
+    private float currentMasterVolume = 100;
+    [Header("MusicVolumeSettings")]
     [SerializeField] private TextMeshProUGUI textMusicVolume;
     [SerializeField] private Button buttonIncreaseMusic;    
     [SerializeField] private Button buttonDecreaseMusic;
+    [SerializeField] private string volumeParameterMusic = "MusicVolume";
+    private float currentMusicVolume = 100;
+    [Header("SFXVolumeSettings")]
+    [SerializeField] private TextMeshProUGUI textSFXVolume;
+    [SerializeField] private Button buttonIncreaseSFX;
+    [SerializeField] private Button buttonDecreaseSFX;
+    [SerializeField] private string volumeParameterSFX = "SFXVolume";
+    private float currentSFXVolume = 100;
 
-    [SerializeField] private string volumeParameter = "MusicVolume";
-    private float currentVolume;
     private const int step = 5;        
     private const float minValue = 0;    
     private const int maxValue = 100;
@@ -48,18 +62,19 @@ public class SettingsScript : MonoBehaviour
         dropDownResolution.AddOptions(options);
         dropDownResolution.RefreshShownValue();
 
-        buttonIncreaseMusic.onClick.AddListener(IncreaseValue);
-        buttonDecreaseMusic.onClick.AddListener(DecreaseValue);
-        UpdateText();
-        
+        buttonIncreaseMaster.onClick.AddListener(() => IncreaseValue(ref currentMasterVolume, volumeParameterMaster, textMasterVolume));
+        buttonDecreaseMaster.onClick.AddListener(() => DecreaseValue(ref currentMasterVolume, volumeParameterMaster, textMasterVolume));
+        UpdateText(currentMasterVolume,volumeParameterMaster, textMasterVolume);
+
+        buttonIncreaseMusic.onClick.AddListener(() => IncreaseValue(ref currentMusicVolume, volumeParameterMusic, textMusicVolume));
+        buttonDecreaseMusic.onClick.AddListener(() => DecreaseValue(ref currentMusicVolume, volumeParameterMusic, textMusicVolume));
+        UpdateText(currentMusicVolume,volumeParameterMusic, textMusicVolume);
+
+        buttonIncreaseSFX.onClick.AddListener(() => IncreaseValue(ref currentSFXVolume, volumeParameterSFX, textSFXVolume));
+        buttonDecreaseSFX.onClick.AddListener(() => DecreaseValue(ref currentSFXVolume, volumeParameterSFX, textSFXVolume));
+        UpdateText(currentSFXVolume, volumeParameterSFX, textSFXVolume);
+
         LoadSettings(currentResolutionIndex);
-        
-    }
-    
-    public void SetVolume(float volume)
-    {
-        audioMixer.SetFloat("Master", Mathf.Log10(volume) * parameter);
-        currentVolume = volume;
     }
 
     public void SetFullscreen(bool isFullscreen)
@@ -81,49 +96,72 @@ public class SettingsScript : MonoBehaviour
 
     public void SaveSettings()
     {
-        //PlayerPrefs.SetInt("QualitySettingPreference",
-                   //qualityDropdown.value);
-        PlayerPrefs.SetInt("ResolutionPreference",
-                   dropDownResolution.value);
-        PlayerPrefs.SetInt("FullscreenPreference",
-                   System.Convert.ToInt32(Screen.fullScreen));
-        PlayerPrefs.SetFloat("MusicVolumePreference", currentVolume);
+        //PlayerPrefs.SetInt("QualitySettingPreference", qualityDropdown.value);
+        PlayerPrefs.SetInt("ResolutionPreference", dropDownResolution.value);
+        PlayerPrefs.SetInt("FullscreenPreference", System.Convert.ToInt32(Screen.fullScreen));
+        PlayerPrefs.SetFloat("MasterVolumePreference", currentMasterVolume);
+        PlayerPrefs.SetFloat("MusicVolumePreference", currentMusicVolume);
+        PlayerPrefs.SetFloat("SFXVolumePreference", currentSFXVolume);
     }
 
     public void LoadSettings(int currentResolutionIndex)
     {
         /*if (PlayerPrefs.HasKey("QualitySettingPreference"))
-            qualityDropdown.value =
-                         PlayerPrefs.GetInt("QualitySettingPreference");
+            qualityDropdown.value = PlayerPrefs.GetInt("QualitySettingPreference");
         else
             qualityDropdown.value = 3;*/
+
         if (PlayerPrefs.HasKey("ResolutionPreference"))
-            dropDownResolution.value =
-                         PlayerPrefs.GetInt("ResolutionPreference");
+            dropDownResolution.value = PlayerPrefs.GetInt("ResolutionPreference");
         else
             dropDownResolution.value = currentResolutionIndex;
 
         if (PlayerPrefs.HasKey("FullscreenPreference"))
-            Screen.fullScreen =
-            System.Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference"));
+            Screen.fullScreen = System.Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference"));
         else
             Screen.fullScreen = true;
+
+        if (PlayerPrefs.HasKey("MasterVolumePreference"))
+        {
+            textMasterVolume.text = PlayerPrefs.GetFloat("MasterVolumePreference").ToString();
+
+            var value = DecibelConvert(PlayerPrefs.GetFloat("MasterVolumePreference"));
+            audioMixer.SetFloat(volumeParameterMaster, value);
+        }
+        else
+        {
+            audioMixer.SetFloat(volumeParameterMaster, DecibelConvert(100));
+            textMasterVolume.text = "100";
+            currentMasterVolume = 100;
+        }
 
         if (PlayerPrefs.HasKey("MusicVolumePreference"))
         {
             textMusicVolume.text = PlayerPrefs.GetFloat("MusicVolumePreference").ToString();
 
             var value = DecibelConvert(PlayerPrefs.GetFloat("MusicVolumePreference"));
-            audioMixer.SetFloat(volumeParameter, value);
+            audioMixer.SetFloat(volumeParameterMusic, value);
         }
         else
         {
-            audioMixer.SetFloat(volumeParameter, DecibelConvert(100));
+            audioMixer.SetFloat(volumeParameterMusic, DecibelConvert(100));
             textMusicVolume.text = "100";
-            currentVolume = 100;
+            currentMusicVolume = 100;
         }
-            
 
+        if (PlayerPrefs.HasKey("SFXVolumePreference"))
+        {
+            textSFXVolume.text = PlayerPrefs.GetFloat("SFXVolumePreference").ToString();
+
+            var value = DecibelConvert(PlayerPrefs.GetFloat("SFXVolumePreference"));
+            audioMixer.SetFloat(volumeParameterSFX, value);
+        }
+        else
+        {
+            audioMixer.SetFloat(volumeParameterSFX, DecibelConvert(100));
+            textSFXVolume.text = "100";
+            currentSFXVolume = 100;
+        }
     }
     private float DecibelConvert(float volumeValue)
     {
@@ -131,38 +169,37 @@ public class SettingsScript : MonoBehaviour
         return value;
     }
 
-    public void IncreaseValue()
+    public void IncreaseValue(ref float currentVolume, string volumeParameter, TextMeshProUGUI text)
     {
         currentVolume = Mathf.Clamp(currentVolume + step, minValue, maxValue);
-        
+
         if (currentVolume == 100)
         {
             easterEggCounter += 1;
-            if (easterEggCounter >= 15) 
+            if (easterEggCounter >= 15)
             {
                 currentVolume = 999;
             }
         }
-        UpdateText();
+        UpdateText(currentVolume, volumeParameter, text);
     }
 
-    public void DecreaseValue()
+    public void DecreaseValue(ref float currentVolume, string volumeParameter, TextMeshProUGUI text)
     {
         easterEggCounter = 0;
         currentVolume = Mathf.Clamp(currentVolume - step, minValue, maxValue);
         if (currentVolume == 0)
         {
             audioMixer.SetFloat(volumeParameter, DecibelConvert(0.00001f));
-            textMusicVolume.text = "0";
+            text.text = "0";
         }
         else
-            UpdateText();
+            UpdateText(currentVolume, volumeParameter, text);
     }
 
-    private void UpdateText()
+    public void UpdateText(float currentVolume, string volumeParameter, TextMeshProUGUI text)
     {
-        
         audioMixer.SetFloat(volumeParameter, DecibelConvert(currentVolume));
-        textMusicVolume.text = currentVolume.ToString();
+        text.text = currentVolume.ToString();
     }
 }

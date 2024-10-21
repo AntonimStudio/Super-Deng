@@ -1,44 +1,65 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
-using System;
-using System.Reflection;
+using UnityEngine.Audio;
+using static System.Runtime.CompilerServices.RuntimeHelpers;
 
 public class MovementButtonsChanger : MonoBehaviour
 {
-    [SerializeField] private Button[] buttons; // Массив для всех трёх кнопок
-    [SerializeField] private TextMeshProUGUI[] buttonTexts; // Массив для текстов на кнопках (TMPro)
-    [SerializeField] private Image[] buttonImages;
+    [SerializeField] private Button buttonRight;
+    [SerializeField] private Button buttonLeft;
+    [SerializeField] private Button buttonTop;
 
-    private int currentButtonIndex = -1; // Индекс текущей кнопки, для которой ждём нажатия клавиши
+    [SerializeField] private TextMeshProUGUI buttonRightText;
+    [SerializeField] private TextMeshProUGUI buttonLeftText;
+    [SerializeField] private TextMeshProUGUI buttonTopText;
+
+    [SerializeField] private Image buttonRightImage;
+    [SerializeField] private Image buttonLeftImage;
+    [SerializeField] private Image buttonTopImage;
+
+    [SerializeField] private AudioSource errorSound; // Звук ошибки
+
+    private int currentButtonIndex = -1; // Индекс текущей выбранной кнопки
+
+    private KeyCode rightKey = KeyCode.D;
+    private KeyCode leftKey = KeyCode.A;
+    private KeyCode topKey = KeyCode.W;
 
     private void Start()
     {
-        for (int i = 0; i < buttons.Length; i++)
-        {
-            int index = i;
-            buttonTexts[i].text = "D"; // Изначальный текст на всех кнопках
-            buttons[i].onClick.AddListener(() => OnButtonClick(index)); // Привязываем обработчик для каждой кнопки
-        }
+        buttonRightText.text = rightKey.ToString();
+        buttonLeftText.text = leftKey.ToString();
+        buttonTopText.text = topKey.ToString();
+
+        buttonRight.onClick.AddListener(() => OnButtonClick(0));
+        buttonLeft.onClick.AddListener(() => OnButtonClick(1));
+        buttonTop.onClick.AddListener(() => OnButtonClick(2));
+
+        LoadSettings();
     }
 
     private void Update()
     {
-        // Если мы ждём нажатия клавиши для одной из кнопок
         if (currentButtonIndex != -1)
         {
             if (Input.anyKeyDown)
             {
                 foreach (KeyCode keyCode in System.Enum.GetValues(typeof(KeyCode)))
                 {
-                    // Если нажата клавиша, которая является буквой, цифрой или стрелкой
                     if (Input.GetKeyDown(keyCode) && IsValidKey(keyCode))
                     {
-                        buttonTexts[currentButtonIndex].text = keyCode.ToString(); // Изменяем текст на выбранной кнопке
-                        buttonImages[currentButtonIndex].enabled = true;
-                        currentButtonIndex = -1; // Сбрасываем индекс
+                        if (!IsKeyAlreadyAssigned(keyCode)) // Проверка, занята ли клавиша
+                        {
+                            UpdateButtonTextAndImage(currentButtonIndex, keyCode);
+                            currentButtonIndex = -1; // Сброс текущей выбранной кнопки
+                            SetButtonsInteractable(true); // Включаем все кнопки
+                        }
+                        else
+                        {
+                            errorSound.Play(); // Воспроизводим звук ошибки
+                        }
                         break;
                     }
                 }
@@ -46,20 +67,102 @@ public class MovementButtonsChanger : MonoBehaviour
         }
     }
 
-    void OnButtonClick(int index)
+    private void OnButtonClick(int index)
     {
-        // При нажатии на кнопку изменяем текст и начинаем ждать нажатие клавиши для конкретной кнопки
-        buttonTexts[index].text = "Press";
-        currentButtonIndex = index;
-        buttonImages[index].enabled = false;
+        if (currentButtonIndex == -1) // Если никакая кнопка не выбрана
+        {
+            SetButtonsInteractable(false); // Выключаем другие кнопки
+
+            if (index == 0)
+            {
+                buttonRightText.text = "Press";
+                buttonRightImage.enabled = false;
+            }
+            else if (index == 1)
+            {
+                buttonLeftText.text = "Press";
+                buttonLeftImage.enabled = false;
+            }
+            else if (index == 2)
+            {
+                buttonTopText.text = "Press";
+                buttonTopImage.enabled = false;
+            }
+            currentButtonIndex = index; // Запоминаем индекс выбранной кнопки
+        }
     }
 
-    // Проверяем, является ли клавиша буквой, цифрой или стрелкой
-    bool IsValidKey(KeyCode keyCode)
+    private void UpdateButtonTextAndImage(int index, KeyCode newKey)
     {
-        return (keyCode >= KeyCode.A && keyCode <= KeyCode.Z) || // Проверка на буквы
-               (keyCode >= KeyCode.Alpha0 && keyCode <= KeyCode.Alpha9) || // Проверка на цифры
-               (keyCode >= KeyCode.Keypad0 && keyCode <= KeyCode.Keypad9) || // Проверка на цифры на цифровой клавиатуре
-               (keyCode == KeyCode.LeftArrow || keyCode == KeyCode.RightArrow || keyCode == KeyCode.UpArrow || keyCode == KeyCode.DownArrow); // Проверка на стрелки
+        if (index == 0)
+        {
+            rightKey = newKey;
+            buttonRightText.text = newKey.ToString();
+            buttonRightImage.enabled = true;
+        }
+        else if (index == 1)
+        {
+            leftKey = newKey;
+            buttonLeftText.text = newKey.ToString();
+            buttonLeftImage.enabled = true;
+        }
+        else if (index == 2)
+        {
+            topKey = newKey;
+            buttonTopText.text = newKey.ToString();
+            buttonTopImage.enabled = true;
+        }
+    }
+
+    private bool IsValidKey(KeyCode keyCode)
+    {
+        return (keyCode >= KeyCode.A && keyCode <= KeyCode.Z) ||
+               (keyCode >= KeyCode.Alpha0 && keyCode <= KeyCode.Alpha9) ||
+               (keyCode >= KeyCode.Keypad0 && keyCode <= KeyCode.Keypad9) ||
+               (keyCode == KeyCode.LeftArrow || keyCode == KeyCode.RightArrow || keyCode == KeyCode.UpArrow || keyCode == KeyCode.DownArrow);
+    }
+
+    private bool IsKeyAlreadyAssigned(KeyCode keyCode)
+    {
+        if (currentButtonIndex == 0)
+        {
+            return keyCode == leftKey || keyCode == topKey;
+        }
+        else if (currentButtonIndex == 1)
+        {
+            return keyCode == rightKey || keyCode == topKey;
+        }
+        else
+        {
+            return keyCode == rightKey || keyCode == leftKey;
+        }
+    }
+
+    // Функция для управления состоянием всех кнопок
+    private void SetButtonsInteractable(bool interactable)
+    {
+        buttonRight.interactable = interactable || currentButtonIndex == 0;
+        buttonLeft.interactable = interactable || currentButtonIndex == 1;
+        buttonTop.interactable = interactable || currentButtonIndex == 2;
+    }
+
+    public void SaveSettings()
+    {
+        PlayerPrefs.SetString("RightButtonSymbol", rightKey.ToString());
+        PlayerPrefs.SetString("LeftButtonSymbol", leftKey.ToString());
+        PlayerPrefs.SetString("TopButtonSymbol", topKey.ToString());
+    }
+
+    private void LoadSettings()
+    {
+        /*if (PlayerPrefs.HasKey("QualitySettingPreference"))
+            qualityDropdown.value = PlayerPrefs.GetInt("QualitySettingPreference");
+        else
+            qualityDropdown.value = 3;*/
+        /*
+        if (PlayerPrefs.HasKey("RightButtonSymbol"))
+            UpdateButtonTextAndImage(0, PlayerPrefs.GetString("RightButtonSymbol").toKe);
+        else
+            dropDownResolution.value = currentResolutionIndex;*/
     }
 }
