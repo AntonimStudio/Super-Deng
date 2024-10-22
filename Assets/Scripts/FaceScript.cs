@@ -74,6 +74,9 @@ public class FaceScript : MonoBehaviour
     private void Awake() 
     {
         rend = glowingPart.GetComponent<MeshRenderer>();
+        keyRight = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RightButtonSymbol"));
+        keyLeft = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("LeftButtonSymbol"));
+        keyTop = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("TopButtonSymbol"));
     }
 
     private void Start()

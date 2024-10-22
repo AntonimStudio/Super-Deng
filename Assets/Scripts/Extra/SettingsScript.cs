@@ -5,16 +5,16 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
-using JetBrains.Annotations;
-using System.Data.Common;
 using static System.Net.Mime.MediaTypeNames;
 
 public class SettingsScript : MonoBehaviour
 {
     [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private Toggle toggleFullScreen;
     [SerializeField] private TMP_Dropdown dropDownResolution;
     [SerializeField] private TMP_Dropdown dropDownLanguage;
-    //[SerializeField] private TMP_Dropdown qualityDropdown;
+    [SerializeField] private TMP_Dropdown qualityDropdown;
+    [SerializeField] private MovementButtonsChanger MBC;
     [Header("MasterVolumeSettings")]
     [SerializeField] private TextMeshProUGUI textMasterVolume;
     [SerializeField] private Button buttonIncreaseMaster;
@@ -54,8 +54,7 @@ public class SettingsScript : MonoBehaviour
         {
             string option = resolutions[i].width + "x" + resolutions[i].height; // + " " + resolutions[i].refreshRateRatio + "Hz"
             options.Add(option);
-            if (resolutions[i].width == Screen.currentResolution.width
-                  && resolutions[i].height == Screen.currentResolution.height)
+            if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
                 currentResolutionIndex = i;
         }
 
@@ -74,7 +73,7 @@ public class SettingsScript : MonoBehaviour
         buttonDecreaseSFX.onClick.AddListener(() => DecreaseValue(ref currentSFXVolume, volumeParameterSFX, textSFXVolume));
         UpdateText(currentSFXVolume, volumeParameterSFX, textSFXVolume);
 
-        LoadSettings(currentResolutionIndex);
+        LoadSettings();
     }
 
     public void SetFullscreen(bool isFullscreen)
@@ -96,37 +95,67 @@ public class SettingsScript : MonoBehaviour
 
     public void SaveSettings()
     {
-        //PlayerPrefs.SetInt("QualitySettingPreference", qualityDropdown.value);
+        PlayerPrefs.SetInt("LanguageSettingPreference", dropDownLanguage.value);
+        PlayerPrefs.SetInt("QualitySettingPreference", qualityDropdown.value);
         PlayerPrefs.SetInt("ResolutionPreference", dropDownResolution.value);
         PlayerPrefs.SetInt("FullscreenPreference", System.Convert.ToInt32(Screen.fullScreen));
         PlayerPrefs.SetFloat("MasterVolumePreference", currentMasterVolume);
         PlayerPrefs.SetFloat("MusicVolumePreference", currentMusicVolume);
         PlayerPrefs.SetFloat("SFXVolumePreference", currentSFXVolume);
+        MBC.SaveSettings();
     }
 
-    public void LoadSettings(int currentResolutionIndex)
+    public void LoadSettings()
     {
-        /*if (PlayerPrefs.HasKey("QualitySettingPreference"))
+        if (PlayerPrefs.HasKey("LanguageSettingPreference"))
+            dropDownLanguage.value = PlayerPrefs.GetInt("LanguageSettingPreference");
+        else
+            dropDownLanguage.value = 0;
+
+        if (PlayerPrefs.HasKey("QualitySettingPreference"))
             qualityDropdown.value = PlayerPrefs.GetInt("QualitySettingPreference");
         else
-            qualityDropdown.value = 3;*/
+            qualityDropdown.value = 1;
 
         if (PlayerPrefs.HasKey("ResolutionPreference"))
             dropDownResolution.value = PlayerPrefs.GetInt("ResolutionPreference");
         else
-            dropDownResolution.value = currentResolutionIndex;
+        {
+            for (int i = 0; i < resolutions.Length; i++)
+            {
+                if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
+                    dropDownResolution.value = i;
+            }
+        }
+
 
         if (PlayerPrefs.HasKey("FullscreenPreference"))
+        {
             Screen.fullScreen = System.Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference"));
+            toggleFullScreen.isOn = System.Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference"));
+        }
         else
+        {
             Screen.fullScreen = true;
+            toggleFullScreen.isOn = true;
+        }
+
 
         if (PlayerPrefs.HasKey("MasterVolumePreference"))
         {
-            textMasterVolume.text = PlayerPrefs.GetFloat("MasterVolumePreference").ToString();
+            currentMasterVolume = PlayerPrefs.GetFloat("MasterVolumePreference");
 
-            var value = DecibelConvert(PlayerPrefs.GetFloat("MasterVolumePreference"));
-            audioMixer.SetFloat(volumeParameterMaster, value);
+            if (currentMasterVolume == 0)
+            {
+                audioMixer.SetFloat(volumeParameterMaster, DecibelConvert(0.00001f));
+                textMasterVolume.text = "0";
+            }
+            else
+            {
+                textMasterVolume.text = PlayerPrefs.GetFloat("MasterVolumePreference").ToString();
+                var value = DecibelConvert(PlayerPrefs.GetFloat("MasterVolumePreference"));
+                audioMixer.SetFloat(volumeParameterMaster, value);
+            }
         }
         else
         {
@@ -137,10 +166,19 @@ public class SettingsScript : MonoBehaviour
 
         if (PlayerPrefs.HasKey("MusicVolumePreference"))
         {
-            textMusicVolume.text = PlayerPrefs.GetFloat("MusicVolumePreference").ToString();
+            currentMusicVolume = PlayerPrefs.GetFloat("MusicVolumePreference");
 
-            var value = DecibelConvert(PlayerPrefs.GetFloat("MusicVolumePreference"));
-            audioMixer.SetFloat(volumeParameterMusic, value);
+            if (currentMusicVolume == 0)
+            {
+                audioMixer.SetFloat(volumeParameterMusic, DecibelConvert(0.00001f));
+                textMusicVolume.text = "0";
+            }
+            else
+            {
+                textMusicVolume.text = PlayerPrefs.GetFloat("MusicVolumePreference").ToString();
+                var value = DecibelConvert(PlayerPrefs.GetFloat("MusicVolumePreference"));
+                audioMixer.SetFloat(volumeParameterMusic, value);
+            }
         }
         else
         {
@@ -151,10 +189,19 @@ public class SettingsScript : MonoBehaviour
 
         if (PlayerPrefs.HasKey("SFXVolumePreference"))
         {
-            textSFXVolume.text = PlayerPrefs.GetFloat("SFXVolumePreference").ToString();
-
-            var value = DecibelConvert(PlayerPrefs.GetFloat("SFXVolumePreference"));
-            audioMixer.SetFloat(volumeParameterSFX, value);
+            currentSFXVolume = PlayerPrefs.GetFloat("SFXVolumePreference");
+            
+            if (currentSFXVolume == 0)
+            {
+                audioMixer.SetFloat(volumeParameterSFX, DecibelConvert(0.00001f));
+                textSFXVolume.text = "0";
+            }
+            else
+            {
+                textSFXVolume.text = PlayerPrefs.GetFloat("SFXVolumePreference").ToString();
+                var value = DecibelConvert(PlayerPrefs.GetFloat("SFXVolumePreference"));
+                audioMixer.SetFloat(volumeParameterSFX, value);
+            }
         }
         else
         {
@@ -162,6 +209,7 @@ public class SettingsScript : MonoBehaviour
             textSFXVolume.text = "100";
             currentSFXVolume = 100;
         }
+        MBC.LoadSettings();
     }
     private float DecibelConvert(float volumeValue)
     {

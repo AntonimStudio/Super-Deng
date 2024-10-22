@@ -26,6 +26,7 @@ public class ExitButtonScript : MonoBehaviour
         }
         else
         {
+            textQuiting.text = "Esc - Quit";
             holdTimer = 0f;
         }
     }

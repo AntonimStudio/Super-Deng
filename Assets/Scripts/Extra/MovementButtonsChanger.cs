@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.Audio;
 using static System.Runtime.CompilerServices.RuntimeHelpers;
+using System.Linq;
 
 public class MovementButtonsChanger : MonoBehaviour
 {
@@ -153,16 +154,36 @@ public class MovementButtonsChanger : MonoBehaviour
         PlayerPrefs.SetString("TopButtonSymbol", topKey.ToString());
     }
 
-    private void LoadSettings()
+    public void LoadSettings()
     {
-        /*if (PlayerPrefs.HasKey("QualitySettingPreference"))
-            qualityDropdown.value = PlayerPrefs.GetInt("QualitySettingPreference");
-        else
-            qualityDropdown.value = 3;*/
-        /*
         if (PlayerPrefs.HasKey("RightButtonSymbol"))
-            UpdateButtonTextAndImage(0, PlayerPrefs.GetString("RightButtonSymbol").toKe);
+        {
+            KeyCode keyCode = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RightButtonSymbol"));
+            UpdateButtonTextAndImage(0, keyCode);
+        }
         else
-            dropDownResolution.value = currentResolutionIndex;*/
+        {
+            UpdateButtonTextAndImage(0, KeyCode.D);
+        }
+
+        if (PlayerPrefs.HasKey("LeftButtonSymbol"))
+        {
+            KeyCode keyCode = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("LeftButtonSymbol"));
+            UpdateButtonTextAndImage(1, keyCode);
+        }
+        else
+        {
+            UpdateButtonTextAndImage(1, KeyCode.A);
+        }
+
+        if (PlayerPrefs.HasKey("TopButtonSymbol"))
+        {
+            KeyCode keyCode = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("TopButtonSymbol"));
+            UpdateButtonTextAndImage(2, keyCode);
+        }
+        else
+        {
+            UpdateButtonTextAndImage(2, KeyCode.W);
+        }
     }
 }
