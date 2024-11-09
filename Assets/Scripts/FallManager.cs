@@ -38,6 +38,11 @@ public class FallManager : MonoBehaviour
 
             ApplyImpulse(faces[numb], numb);
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ResetFall();
+        }
     }
 
     private void ApplyImpulse(GameObject face, int numb)
@@ -58,23 +63,56 @@ public class FallManager : MonoBehaviour
         ).normalized * torqueStrength;
 
         rb.AddTorque(randomTorque, ForceMode.Impulse);
-        StartCoroutine(ResetAfterDelay(rb, initialPosition, initialRotation, initialLocalPosition, initialLocalRotation, delay, numb));
+
+        face.GetComponent<FaceScript>().isBlocked = true; ///!!!!!!!!!!!!!!
+
+        StartCoroutine(ResetAfterDelay(face, initialPosition, initialRotation, initialLocalPosition, initialLocalRotation, delay, numb));
     }
 
 
-    IEnumerator ResetAfterDelay(Rigidbody rb, Vector3 initialPosition, Quaternion initialRotation, Vector3 initialLocalPosition, Quaternion initialLocalRotation, float delay, int numb)
+    IEnumerator ResetAfterDelay(GameObject face, Vector3 initialPosition, Quaternion initialRotation, Vector3 initialLocalPosition, Quaternion initialLocalRotation, float delay, int numb)
     {
+        
+        Rigidbody rb = face.GetComponent<Rigidbody>();
         yield return new WaitForSeconds(delay);
+
+        Renderer[] childRenderers = face.GetComponentsInChildren<Renderer>();
+        foreach (Renderer renderer in childRenderers)
+        {
+            renderer.enabled = false; // Отключаем рендеринг у всех дочерних объектов
+        }
+
         rb.velocity = Vector3.zero; 
         rb.angularVelocity = Vector3.zero;
         rb.transform.position = initialPosition;
         rb.transform.rotation = initialRotation;
         rb.transform.localPosition = initialLocalPosition;
         rb.transform.localRotation = initialLocalRotation;
-
+        
+        /*
         if (numbersOfFalledFaces.Contains(numb))
         {
             numbersOfFalledFaces.Remove(numb);
+        }*/
+    }
+
+    public void ResetFall()
+    {
+        foreach (GameObject face in faces)
+        {
+            face.GetComponent<FaceScript>().isBlocked = false;
+            Renderer[] childRenderers = face.GetComponentsInChildren<Renderer>();
+            foreach (Renderer renderer in childRenderers)
+            {
+                renderer.enabled = true;
+            }
+        }
+        for (int numb = 0; numb <= 80; numb++)
+        {
+            if (numbersOfFalledFaces.Contains(numb))
+            {
+                numbersOfFalledFaces.Remove(numb);
+            }
         }
     }
 }
