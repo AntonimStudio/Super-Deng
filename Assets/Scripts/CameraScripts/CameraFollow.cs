@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform player; // The player object to follow
-    public Transform center; // The center object to look at
-    public float followSpeed = 5f; // Speed of the camera following the player
+    [SerializeField] private Transform player; // The player object to follow
+    [SerializeField] private Transform center; // The center object to look at
+    [SerializeField] private float followSpeed = 5f; // Speed of the camera following the player
 
     private void Start()
     {

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 using UnityEngine.Serialization;
 
 // Обязательное уведомление: "Правые", "Левые" и "Верхние" указаны для треугольника с основанием, направленным ВНИЗ!!!
@@ -18,6 +20,7 @@ public class FaceScript : MonoBehaviour
                 /_____\/_____\
     */
     public GameObject player;
+    [SerializeField] private PlayerScript PS;
 
     [Space]
     [Header("Sides of the Face")]
@@ -52,7 +55,9 @@ public class FaceScript : MonoBehaviour
     public KeyCode keyLeft = KeyCode.A;
     public KeyCode keyTop = KeyCode.W;
     public KeyCode keyRight = KeyCode.D;
-
+    [SerializeField] private TextMeshProUGUI textTop;
+    [SerializeField] private TextMeshProUGUI textRight;
+    [SerializeField] private TextMeshProUGUI textLeft;
 
     [Space]
     [Header("Scene ScriptManagers")]
@@ -78,6 +83,10 @@ public class FaceScript : MonoBehaviour
         keyRight = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RightButtonSymbol"));
         keyLeft = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("LeftButtonSymbol"));
         keyTop = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("TopButtonSymbol"));
+
+        textRight.text = keyRight.ToString();
+        textLeft.text = keyLeft.ToString();
+        textTop.text = keyTop.ToString();
     }
 
     private void Start()
@@ -115,6 +124,7 @@ public class FaceScript : MonoBehaviour
                 side3.GetComponent<FaceScript>().rend.material = materialTopFace;
             }
         }
+        PS.SetCurrentFace(gameObject);
     }
 
     private void Update()
@@ -125,10 +135,7 @@ public class FaceScript : MonoBehaviour
             {
                 string direction = "";
                 if (Input.GetKeyDown(keyLeft) && !GetGameObject("LeftSide").GetComponent<FaceScript>().isBlocked
-                        && !Input.GetKey(keyTop) && !Input.GetKey(keyRight))
-                {
-                    direction = "Left";
-                }
+                        && !Input.GetKey(keyTop) && !Input.GetKey(keyRight)) direction = "Left";
                 else if (GetGameObject("LeftSide").GetComponent<FaceScript>().isBlocked)
                 {
                     SS.TurnOnSoundBlock();
@@ -140,12 +147,14 @@ public class FaceScript : MonoBehaviour
                 {
                     SS.TurnOnSoundBlock();
                 }
+
                 if (Input.GetKeyDown(keyRight) && !GetGameObject("RightSide").GetComponent<FaceScript>().isBlocked
                     && !Input.GetKey(keyTop) && !Input.GetKey(keyLeft)) direction = "Right";
                 else if (GetGameObject("RightSide").GetComponent<FaceScript>().isBlocked)
                 {
                     SS.TurnOnSoundBlock();
                 }
+
                 if (!string.IsNullOrEmpty(direction))
                 {
                     StartTransfer(GetGameObject($"{direction}Side"), GetInt($"{direction}Side"), direction);
@@ -190,7 +199,6 @@ public class FaceScript : MonoBehaviour
 
     public void ReceivePlayer(GameObject newPlayer, int sideNumber, string color, bool isPreviousAnExtremeSide, bool isPreviousPreviousAnExtremeSide) //GameObject newPlayer, int sideNumber, string color)
     {
-
         rend.material = materialPlayerFace;
 
         materials.Remove("RightSide");
@@ -207,7 +215,7 @@ public class FaceScript : MonoBehaviour
                   / \    / \
                  / 1 \  / 2 \
                 /_____\/_____\
-            */
+        */
         
         if (!isPreviousPreviousAnExtremeSide && isPreviousAnExtremeSide && isAnExtremeSide)
         {
@@ -254,12 +262,6 @@ public class FaceScript : MonoBehaviour
                 side1.GetComponent<FaceScript>().rend.material = materialLeftFace;
                 side3.GetComponent<FaceScript>().rend.material = materialRightFace;
             }
-
-
-
-
-
-
             else if (sideNumber == 1 && color == "Right")
             {
                 materials.Add("LeftSide", 3);
@@ -302,11 +304,6 @@ public class FaceScript : MonoBehaviour
                 side1.GetComponent<FaceScript>().rend.material = materialRightFace;
                 side3.GetComponent<FaceScript>().rend.material = materialTopFace;
             }
-
-
-
-
-
             else if (sideNumber == 1 && color == "Top")
             {
                 materials.Add("LeftSide", 1);
@@ -406,7 +403,7 @@ public class FaceScript : MonoBehaviour
             isPreviousAnExtremeSide1 = false;
         }
         havePlayer = true;
-
+        PS.SetCurrentFace(gameObject);
         newPlayer.transform.SetParent(gameObject.transform);
         newPlayer.transform.localPosition = new Vector3(0, 0, 0);
         if (isTutorial)

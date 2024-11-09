@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FaceDanceScript : MonoBehaviour
 {
-    public float scaleFactor = 1.2f;  // Factor by which the size increases
+    public float scaleFactor = 1.15f;  // Factor by which the size increases
     public float duration = 0.2f;  // Duration for scaling up and down
     public bool isOn = false;  // Boolean to control the scaling behavior
     private bool inProcess = false;
@@ -26,7 +26,7 @@ public class FaceDanceScript : MonoBehaviour
 
     private void Update()
     {
-        if (TC != null)
+        if (TC != null && !gameObject.GetComponent<FaceScript>().havePlayer)
         {
             float elapsedTime = TC.timeElapsed;
 
@@ -53,7 +53,6 @@ public class FaceDanceScript : MonoBehaviour
     {
         gameObject.GetComponent<FaceScript>().glowingPart.transform.localScale = originalScale;
         constantCoroutine = StartCoroutine(ScaleObject(gameObject.GetComponent<FaceScript>().glowingPart, scaleFactor, duration));
-
     }
 
     public void StopScaling()

@@ -22,6 +22,10 @@ public class ComboManager : MonoBehaviour
     private int previousComboCount;
     private bool inProcess = false;
 
+    [Header("Key Bindings")]
+    public KeyCode keyLeft = KeyCode.A;
+    public KeyCode keyTop = KeyCode.W;
+    public KeyCode keyRight = KeyCode.D;
 
     private void Start()
     {
@@ -30,6 +34,9 @@ public class ComboManager : MonoBehaviour
         scoreLoseText.text = "0";
         scoreWinText.text = "0";
         score = 0;
+        keyRight = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RightButtonSymbol"));
+        keyLeft = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("LeftButtonSymbol"));
+        keyTop = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("TopButtonSymbol"));
     }
 
     public int GetScore()
@@ -39,17 +46,15 @@ public class ComboManager : MonoBehaviour
 
     private void Update()
     {
-
         if (BC.canCombo)
         {
             comboTime = true;
-
         }
         else
         {
             comboTime = false;
         }
-        if ((Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.D)) || (Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.D)) || (Input.GetKeyDown(KeyCode.D) && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.A)))
+        if ((Input.GetKeyDown(keyLeft) && !Input.GetKeyDown(keyTop) && !Input.GetKeyDown(keyRight)) || (Input.GetKeyDown(keyTop) && !Input.GetKeyDown(keyLeft) && !Input.GetKeyDown(keyRight)) || (Input.GetKeyDown(keyRight) && !Input.GetKeyDown(keyTop) && !Input.GetKeyDown(keyLeft)))
         {
             if (!inProcess && TC.timeElapsed < TC.totalTime && TC.timerIsRunning)
             {
@@ -102,7 +107,6 @@ public class ComboManager : MonoBehaviour
 
     void ResetComboTimer()
     {
-        // —брасываем таймер комбо
         comboTimer = 1.5f * BC.beatInterval;
     }
 
