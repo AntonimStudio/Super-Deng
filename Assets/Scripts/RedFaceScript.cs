@@ -6,6 +6,10 @@ using TMPro;
 
 public class RedFaceScript : MonoBehaviour
 {
+
+    public bool isTurnOn = false;
+    /*
+    
     [SerializeField] private GameObject[] faces;
     [SerializeField] private Image imageLose;
     [SerializeField] private float colorChangeDuration = 2f;
@@ -19,7 +23,7 @@ public class RedFaceScript : MonoBehaviour
     [SerializeField] private EnemySpawnSettings enemySpawnSettings;
     [SerializeField] private PlayerScript PS;
     [SerializeField] private ComboManager CM;
-    public bool isTurnOn = false;
+    
     private List<int> lastCubeIndices = new List<int>();
     private List<int> newCubeIndices = new List<int>();
     private bool[] spawnExecuted;
@@ -197,5 +201,5 @@ public class RedFaceScript : MonoBehaviour
         panel.enabled = true;
         yield return new WaitForSeconds(0.1f);
         panel.enabled = false;
-    }
+    }*/
 }

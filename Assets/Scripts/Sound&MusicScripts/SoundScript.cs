@@ -4,19 +4,29 @@ using UnityEngine;
 
 public class SoundScript : MonoBehaviour
 {
-    public AudioClip soundClip;  // Перетащите сюда ваш аудиофайл в инспекторе
+    public AudioClip soundClipStep;  // Перетащите сюда ваш аудиофайл в инспекторе
+    public AudioClip soundClipBlock;
     public AudioSource audioSource;
 
     private void Start()
     {
         // Добавляем компонент AudioSource к объекту, если его еще нет
-        audioSource.clip = soundClip;
+        audioSource.clip = soundClipStep;
     }
 
-    public void TurnOnSound()
+    public void TurnOnSoundStep()
     {
-        // Воспроизводим звук по клику на объект
-        if (audioSource != null && soundClip != null)
+        audioSource.clip = soundClipStep;
+        if (audioSource != null && soundClipStep != null)
+        {
+            audioSource.Play();
+        }
+    }
+
+    public void TurnOnSoundBlock()
+    {
+        audioSource.clip = soundClipBlock;
+        if (audioSource != null && soundClipBlock != null)
         {
             audioSource.Play();
         }

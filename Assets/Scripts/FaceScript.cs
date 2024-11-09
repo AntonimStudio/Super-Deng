@@ -68,6 +68,7 @@ public class FaceScript : MonoBehaviour
     [SerializeField] private bool isAnExtremeSide = false;
     [SerializeField] private bool isTutorial = false;
     private bool transferInProgress = false;
+    public bool isBlocked = false;
     [HideInInspector] public bool isKilling = false;
     private bool isPreviousAnExtremeSide1 = false;
 
@@ -123,16 +124,34 @@ public class FaceScript : MonoBehaviour
             if (Input.GetKeyDown(keyLeft) || Input.GetKeyDown(keyTop) || Input.GetKeyDown(keyRight))
             {
                 string direction = "";
-                if (Input.GetKeyDown(keyLeft) && !Input.GetKey(keyTop) && !Input.GetKey(keyRight)) direction = "Left";
-                if (Input.GetKeyDown(keyTop) && !Input.GetKey(keyLeft) && !Input.GetKey(keyRight)) direction = "Top";
-                if (Input.GetKeyDown(keyRight) && !Input.GetKey(keyTop) && !Input.GetKey(keyLeft)) direction = "Right";
+                if (Input.GetKeyDown(keyLeft) && !GetGameObject("LeftSide").GetComponent<FaceScript>().isBlocked
+                        && !Input.GetKey(keyTop) && !Input.GetKey(keyRight))
+                {
+                    direction = "Left";
+                }
+                else if (GetGameObject("LeftSide").GetComponent<FaceScript>().isBlocked)
+                {
+                    SS.TurnOnSoundBlock();
+                }
 
+                if (Input.GetKeyDown(keyTop) && !GetGameObject("TopSide").GetComponent<FaceScript>().isBlocked
+                    && !Input.GetKey(keyLeft) && !Input.GetKey(keyRight)) direction = "Top";
+                else if (GetGameObject("TopSide").GetComponent<FaceScript>().isBlocked)
+                {
+                    SS.TurnOnSoundBlock();
+                }
+                if (Input.GetKeyDown(keyRight) && !GetGameObject("RightSide").GetComponent<FaceScript>().isBlocked
+                    && !Input.GetKey(keyTop) && !Input.GetKey(keyLeft)) direction = "Right";
+                else if (GetGameObject("RightSide").GetComponent<FaceScript>().isBlocked)
+                {
+                    SS.TurnOnSoundBlock();
+                }
                 if (!string.IsNullOrEmpty(direction))
                 {
                     StartTransfer(GetGameObject($"{direction}Side"), GetInt($"{direction}Side"), direction);
                     BC.isAlreadyPressed = true;
                     BC.isAlreadyPressedIsAlreadyPressed = false;
-                    SS.TurnOnSound();
+                    SS.TurnOnSoundStep();
                 }
             }
         }
