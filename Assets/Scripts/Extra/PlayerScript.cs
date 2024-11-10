@@ -96,7 +96,7 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    private void Lose()
+    public void Lose()
     {
         faceCurrent.GetComponent<FaceScript>().havePlayer = false;
         rendPartMiddle.material = materialTurnOff;

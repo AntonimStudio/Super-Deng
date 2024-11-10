@@ -9,12 +9,14 @@ public class FallManager : MonoBehaviour
     [SerializeField] private GameObject[] faces;
     private List<int> numbersOfFalledFaces;
 
+    [SerializeField] private PlayerScript PS;
     [SerializeField] private Vector3 centerPoint; // Точка, из которой будет направлен импульс
     [SerializeField] private float impulseForce = 10f; // Сила импульса
     [SerializeField] private float torqueStrength = 10f; // Сила импульса
     [SerializeField] private float delay = 1.5f;
     [SerializeField] private AnimationClip animClipFall;
     [SerializeField] private AnimationClip animClipReset;
+    private bool waitForDeath = false;
 
 
     private void Start()
@@ -58,7 +60,7 @@ public class FallManager : MonoBehaviour
 
     private IEnumerator PlayAnimationFall(GameObject face, int numb)
     {
-        face.GetComponent<FaceScript>().isBlocked = true; ///////////////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+         ///////////////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         Animator animator = face.GetComponent<Animator>();
         if (animator != null && animClipFall != null)
         {
@@ -66,6 +68,7 @@ public class FallManager : MonoBehaviour
             animator.Play(animClipFall.name); // Проигрываем анимацию
             yield return new WaitForSeconds(animClipFall.length); // Ждем завершения анимации
         }
+        face.GetComponent<FaceScript>().isBlocked = true;
         animator.enabled = false;
         ApplyImpulse(face, numb);
     }
@@ -77,6 +80,11 @@ public class FallManager : MonoBehaviour
         var initialRotation = rb.transform.rotation;
         var initialLocalPosition = rb.transform.localPosition;
         var initialLocalRotation = rb.transform.localRotation;
+        if (face.GetComponent<FaceScript>().havePlayer) 
+        {
+            face.GetComponent<FaceScript>().havePlayer = false;
+            waitForDeath = true;
+        }
 
         Vector3 direction = (rb.transform.position - centerPoint).normalized;
         rb.AddForce(direction * impulseForce, ForceMode.Impulse);
@@ -96,7 +104,10 @@ public class FallManager : MonoBehaviour
     {
         Rigidbody rb = face.GetComponent<Rigidbody>();
         yield return new WaitForSeconds(delay);
-
+        if (waitForDeath)
+        {
+            PS.Lose();
+        }
         Renderer[] childRenderers = face.GetComponentsInChildren<Renderer>();
         foreach (Renderer renderer in childRenderers)
         {
