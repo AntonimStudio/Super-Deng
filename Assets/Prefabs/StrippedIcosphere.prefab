@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5432199209459043996}
   - component: {fileID: 6983863138674667621}
   - component: {fileID: 1836960405028180844}
+  - component: {fileID: 1821611938754324858}
   m_Layer: 0
   m_Name: FaceUp
   m_TagString: Untagged
@@ -50,6 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 7735698173426261198}
   side1: {fileID: 6046306741307039995}
   side3: {fileID: 7012345550774154504}
@@ -63,6 +65,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -117,6 +122,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &1821611938754324858
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44481538107201911}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &250563210981145005
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,6 +155,7 @@ GameObject:
   - component: {fileID: 3539179134935672244}
   - component: {fileID: 7094631125174948890}
   - component: {fileID: 7045327341572820094}
+  - component: {fileID: 1569662841321525380}
   m_Layer: 0
   m_Name: FaceUp
   m_TagString: Untagged
@@ -167,6 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 6570964182601405983}
   side1: {fileID: 6112165654322964989}
   side3: {fileID: 7102918306467607040}
@@ -180,6 +208,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -234,6 +265,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &1569662841321525380
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250563210981145005}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &318358543946288996
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,6 +298,7 @@ GameObject:
   - component: {fileID: 2027249133739526807}
   - component: {fileID: 7634214641624245320}
   - component: {fileID: 7851257105426033293}
+  - component: {fileID: 7708327533419922387}
   m_Layer: 0
   m_Name: FaceRight
   m_TagString: Untagged
@@ -284,6 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 434307620496469984}
   side1: {fileID: 5234919433185034692}
   side3: {fileID: 8365565005503481948}
@@ -297,6 +351,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -351,6 +408,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &7708327533419922387
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318358543946288996}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &434307620496469984
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,6 +441,7 @@ GameObject:
   - component: {fileID: 4610458484876958560}
   - component: {fileID: 3657152478766879529}
   - component: {fileID: 1102770389806974387}
+  - component: {fileID: 8131445059182693413}
   m_Layer: 0
   m_Name: FaceCenter
   m_TagString: Untagged
@@ -401,6 +480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 2742462724520093556}
   side1: {fileID: 318358543946288996}
   side3: {fileID: 1965302102255867624}
@@ -414,6 +494,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -468,6 +551,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &8131445059182693413
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434307620496469984}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &499679028486825140
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,6 +584,7 @@ GameObject:
   - component: {fileID: 5076399039498796217}
   - component: {fileID: 7682434362592615015}
   - component: {fileID: 3779950846323441671}
+  - component: {fileID: 4755303661225874641}
   m_Layer: 0
   m_Name: FaceRight
   m_TagString: Untagged
@@ -518,6 +623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 6106082453602785605}
   side1: {fileID: 1837679986962795538}
   side3: {fileID: 2742462724520093556}
@@ -531,6 +637,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -585,6 +694,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &4755303661225874641
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499679028486825140}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &600218872758734642
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,6 +778,7 @@ GameObject:
   - component: {fileID: 2151263991565478357}
   - component: {fileID: 3907411749223931019}
   - component: {fileID: 4340902276763294069}
+  - component: {fileID: 2812620038355163536}
   m_Layer: 0
   m_Name: FaceCenter
   m_TagString: Untagged
@@ -686,6 +817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 7369142941821324401}
   side1: {fileID: 4830914241559364469}
   side3: {fileID: 3919304699312285804}
@@ -699,6 +831,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -753,6 +888,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &2812620038355163536
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611807253160836265}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &749263298601138927
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,6 +921,7 @@ GameObject:
   - component: {fileID: 3586682682165374192}
   - component: {fileID: 209712921331530563}
   - component: {fileID: 4416254756846099676}
+  - component: {fileID: 960066889378180954}
   m_Layer: 0
   m_Name: FaceRight
   m_TagString: Untagged
@@ -803,6 +960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 8553532268895956014}
   side1: {fileID: 6234845317047494711}
   side3: {fileID: 929559425470851936}
@@ -816,6 +974,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -870,6 +1031,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &960066889378180954
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749263298601138927}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &838775323961285570
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,6 +1064,7 @@ GameObject:
   - component: {fileID: 5756951131162690552}
   - component: {fileID: 6125794165942885535}
   - component: {fileID: 2140080927805795403}
+  - component: {fileID: 2155922238586986218}
   m_Layer: 0
   m_Name: FaceRight
   m_TagString: Untagged
@@ -920,6 +1103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 4513669224618614431}
   side1: {fileID: 2333041968347566988}
   side3: {fileID: 7735698173426261198}
@@ -933,6 +1117,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -987,6 +1174,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &2155922238586986218
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838775323961285570}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &929559425470851936
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,6 +1207,7 @@ GameObject:
   - component: {fileID: 6434584489987590562}
   - component: {fileID: 5859235113600866225}
   - component: {fileID: 4350650237792700296}
+  - component: {fileID: 3295675554703369133}
   m_Layer: 0
   m_Name: FaceLeft
   m_TagString: Untagged
@@ -1037,6 +1246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 8578529159484550698}
   side1: {fileID: 3549776180664793402}
   side3: {fileID: 749263298601138927}
@@ -1050,6 +1260,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -1104,6 +1317,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &3295675554703369133
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929559425470851936}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &994143741030477826
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,6 +1350,7 @@ GameObject:
   - component: {fileID: 6549304602751216168}
   - component: {fileID: 7890551316442426607}
   - component: {fileID: 5414137341704723458}
+  - component: {fileID: 5944826291282784368}
   m_Layer: 0
   m_Name: FaceUp
   m_TagString: Untagged
@@ -1154,6 +1389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 9145196027471913241}
   side1: {fileID: 2742462724520093556}
   side3: {fileID: 4729499894221336858}
@@ -1167,6 +1403,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -1221,6 +1460,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &5944826291282784368
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994143741030477826}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1170012824398820310
 GameObject:
   m_ObjectHideFlags: 0
@@ -1233,6 +1493,7 @@ GameObject:
   - component: {fileID: 1759155253396207993}
   - component: {fileID: 1579062797151468765}
   - component: {fileID: 8538559641487134550}
+  - component: {fileID: 3213277097783591540}
   m_Layer: 0
   m_Name: FaceRight
   m_TagString: Untagged
@@ -1271,6 +1532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 8049329918862935367}
   side1: {fileID: 2813226997821905303}
   side3: {fileID: 9136584641840077622}
@@ -1284,6 +1546,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -1338,6 +1603,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &3213277097783591540
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170012824398820310}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1289777920599542458
 GameObject:
   m_ObjectHideFlags: 0
@@ -1386,6 +1672,7 @@ GameObject:
   - component: {fileID: 3165125340519941825}
   - component: {fileID: 5830635290730019311}
   - component: {fileID: 4877295997663911252}
+  - component: {fileID: 2386773243130091763}
   m_Layer: 0
   m_Name: FaceLeft
   m_TagString: Untagged
@@ -1424,6 +1711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 4729499894221336858}
   side1: {fileID: 1965302102255867624}
   side3: {fileID: 3660285781751441619}
@@ -1437,6 +1725,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -1491,6 +1782,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &2386773243130091763
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338632889447029834}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1342441944372239098
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,6 +1815,7 @@ GameObject:
   - component: {fileID: 2317760098132491250}
   - component: {fileID: 5985842579894069011}
   - component: {fileID: 8639526506825172774}
+  - component: {fileID: 3544087867338126978}
   m_Layer: 0
   m_Name: FaceUp
   m_TagString: Untagged
@@ -1541,6 +1854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 6112165654322964989}
   side1: {fileID: 2351935556004592677}
   side3: {fileID: 5726590261708184695}
@@ -1554,6 +1868,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -1608,6 +1925,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &3544087867338126978
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342441944372239098}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1837679986962795538
 GameObject:
   m_ObjectHideFlags: 0
@@ -1620,6 +1958,7 @@ GameObject:
   - component: {fileID: 518152173997713344}
   - component: {fileID: 1207707059664175966}
   - component: {fileID: 4869085134709266115}
+  - component: {fileID: 744904806595587527}
   m_Layer: 0
   m_Name: FaceCenter
   m_TagString: Untagged
@@ -1658,6 +1997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 499679028486825140}
   side1: {fileID: 8365565005503481948}
   side3: {fileID: 6112165654322964989}
@@ -1671,6 +2011,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -1725,6 +2068,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &744904806595587527
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837679986962795538}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1965302102255867624
 GameObject:
   m_ObjectHideFlags: 0
@@ -1737,6 +2101,7 @@ GameObject:
   - component: {fileID: 4077786526288415121}
   - component: {fileID: 8016427134208873198}
   - component: {fileID: 8018785729572610811}
+  - component: {fileID: 1715456526529279875}
   m_Layer: 0
   m_Name: FaceUp
   m_TagString: Untagged
@@ -1775,6 +2140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 1338632889447029834}
   side1: {fileID: 2461397896930871195}
   side3: {fileID: 434307620496469984}
@@ -1788,6 +2154,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -1842,6 +2211,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &1715456526529279875
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965302102255867624}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1977540912250590712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1854,6 +2244,7 @@ GameObject:
   - component: {fileID: 8382089375580467911}
   - component: {fileID: 4891778373422178632}
   - component: {fileID: 6410532714953537770}
+  - component: {fileID: 7298052099293358556}
   m_Layer: 0
   m_Name: FaceUp
   m_TagString: Untagged
@@ -1892,6 +2283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 3919304699312285804}
   side1: {fileID: 5696066412293980597}
   side3: {fileID: 5575593989716607707}
@@ -1905,6 +2297,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -1959,6 +2354,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &7298052099293358556
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977540912250590712}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2333041968347566988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1971,6 +2387,7 @@ GameObject:
   - component: {fileID: 6814048344985343923}
   - component: {fileID: 3520150124678301024}
   - component: {fileID: 2198908630031410122}
+  - component: {fileID: 4268458622126507283}
   m_Layer: 0
   m_Name: FaceLeft
   m_TagString: Untagged
@@ -2009,6 +2426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 838775323961285570}
   side1: {fileID: 8267011386902420242}
   side3: {fileID: 6046306741307039995}
@@ -2022,6 +2440,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -2076,6 +2497,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &4268458622126507283
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2333041968347566988}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2351935556004592677
 GameObject:
   m_ObjectHideFlags: 0
@@ -2088,6 +2530,7 @@ GameObject:
   - component: {fileID: 5791188674514731984}
   - component: {fileID: 330630906731407782}
   - component: {fileID: 4081683999515454462}
+  - component: {fileID: 1139063560061365336}
   m_Layer: 0
   m_Name: FaceUp
   m_TagString: Untagged
@@ -2126,6 +2569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 1342441944372239098}
   side1: {fileID: 6570964182601405983}
   side3: {fileID: 4754458160043455089}
@@ -2139,6 +2583,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -2193,6 +2640,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &1139063560061365336
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2351935556004592677}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2461397896930871195
 GameObject:
   m_ObjectHideFlags: 0
@@ -2205,6 +2673,7 @@ GameObject:
   - component: {fileID: 8654642038640848403}
   - component: {fileID: 2831720439872266818}
   - component: {fileID: 3743474478303783270}
+  - component: {fileID: 7566462572861992339}
   m_Layer: 0
   m_Name: FaceRight
   m_TagString: Untagged
@@ -2243,6 +2712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 1965302102255867624}
   side1: {fileID: 7256876197800930307}
   side3: {fileID: 8699132423281594788}
@@ -2256,6 +2726,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -2310,6 +2783,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &7566462572861992339
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2461397896930871195}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2479322142983254785
 GameObject:
   m_ObjectHideFlags: 0
@@ -2322,6 +2816,7 @@ GameObject:
   - component: {fileID: 2306337550933483570}
   - component: {fileID: 7374714001744842751}
   - component: {fileID: 9020398172326262854}
+  - component: {fileID: 2262266634508584998}
   m_Layer: 0
   m_Name: FaceLeft
   m_TagString: Untagged
@@ -2360,6 +2855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 5234919433185034692}
   side1: {fileID: 7012345550774154504}
   side3: {fileID: 9045838579808242458}
@@ -2373,6 +2869,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -2427,6 +2926,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &2262266634508584998
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2479322142983254785}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2538517579781362413
 GameObject:
   m_ObjectHideFlags: 0
@@ -2439,6 +2959,7 @@ GameObject:
   - component: {fileID: 6104822462334397295}
   - component: {fileID: 3677586278841869510}
   - component: {fileID: 8488544494833039438}
+  - component: {fileID: 3604363651729288774}
   m_Layer: 0
   m_Name: FaceRight
   m_TagString: Untagged
@@ -2477,6 +2998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 7516142785602260944}
   side1: {fileID: 3042490848670046069}
   side3: {fileID: 2615288408572365257}
@@ -2490,6 +3012,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -2544,6 +3069,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &3604363651729288774
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2538517579781362413}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2615288408572365257
 GameObject:
   m_ObjectHideFlags: 0
@@ -2556,6 +3102,7 @@ GameObject:
   - component: {fileID: 3637175009457928609}
   - component: {fileID: 4824390158610461604}
   - component: {fileID: 2844204288627326942}
+  - component: {fileID: 6713446256019143030}
   m_Layer: 0
   m_Name: FaceLeft
   m_TagString: Untagged
@@ -2594,6 +3141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 7024042354357101386}
   side1: {fileID: 5936408541072415560}
   side3: {fileID: 2538517579781362413}
@@ -2607,6 +3155,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -2661,6 +3212,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &6713446256019143030
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2615288408572365257}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2653653904457469430
 GameObject:
   m_ObjectHideFlags: 0
@@ -2719,6 +3291,7 @@ GameObject:
   - component: {fileID: 4004313597396996353}
   - component: {fileID: 5245721949216229377}
   - component: {fileID: 2865590482770578829}
+  - component: {fileID: 7306805172528028653}
   m_Layer: 0
   m_Name: FaceLeft
   m_TagString: Untagged
@@ -2757,6 +3330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 994143741030477826}
   side1: {fileID: 434307620496469984}
   side3: {fileID: 499679028486825140}
@@ -2770,6 +3344,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -2824,6 +3401,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &7306805172528028653
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2742462724520093556}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2813226997821905303
 GameObject:
   m_ObjectHideFlags: 0
@@ -2836,6 +3434,7 @@ GameObject:
   - component: {fileID: 1345984074934037633}
   - component: {fileID: 6806375044758258026}
   - component: {fileID: 6536734703811003399}
+  - component: {fileID: 1321861734267022715}
   m_Layer: 0
   m_Name: FaceUp
   m_TagString: Untagged
@@ -2874,6 +3473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 1170012824398820310}
   side1: {fileID: 2998914306799676867}
   side3: {fileID: 3042490848670046069}
@@ -2887,6 +3487,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -2941,6 +3544,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &1321861734267022715
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2813226997821905303}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2998914306799676867
 GameObject:
   m_ObjectHideFlags: 0
@@ -2953,6 +3577,7 @@ GameObject:
   - component: {fileID: 7043364180932257830}
   - component: {fileID: 787822038822242289}
   - component: {fileID: 454930523427815555}
+  - component: {fileID: 4873780569337657474}
   m_Layer: 0
   m_Name: FaceLeft
   m_TagString: Untagged
@@ -2991,6 +3616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 2813226997821905303}
   side1: {fileID: 8553532268895956014}
   side3: {fileID: 5567505987553535432}
@@ -3004,6 +3630,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -3058,6 +3687,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &4873780569337657474
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998914306799676867}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3042490848670046069
 GameObject:
   m_ObjectHideFlags: 0
@@ -3070,6 +3720,7 @@ GameObject:
   - component: {fileID: 8903765999950236024}
   - component: {fileID: 2645241256073731601}
   - component: {fileID: 5041785739917261651}
+  - component: {fileID: 1170698383136374339}
   m_Layer: 0
   m_Name: FaceCenter
   m_TagString: Untagged
@@ -3108,6 +3759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 2538517579781362413}
   side1: {fileID: 3924965484612317127}
   side3: {fileID: 2813226997821905303}
@@ -3121,6 +3773,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -3175,6 +3830,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &1170698383136374339
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3042490848670046069}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3188191788771161647
 GameObject:
   m_ObjectHideFlags: 0
@@ -3238,6 +3914,7 @@ GameObject:
   - component: {fileID: 616066718720130664}
   - component: {fileID: 3407124698849806149}
   - component: {fileID: 1374851691169511464}
+  - component: {fileID: 8531297098751362594}
   m_Layer: 0
   m_Name: FaceRight
   m_TagString: Untagged
@@ -3276,6 +3953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 929559425470851936}
   side1: {fileID: 7102918306467607040}
   side3: {fileID: 4245001089259185261}
@@ -3289,6 +3967,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -3343,6 +4024,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &8531297098751362594
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3549776180664793402}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3578327661452296100
 GameObject:
   m_ObjectHideFlags: 0
@@ -3355,6 +4057,7 @@ GameObject:
   - component: {fileID: 6779041424805103227}
   - component: {fileID: 7776025440369206266}
   - component: {fileID: 484256901249702608}
+  - component: {fileID: 7373586052320235783}
   m_Layer: 0
   m_Name: FaceUp
   m_TagString: Untagged
@@ -3393,6 +4096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 5696066412293980597}
   side1: {fileID: 5866420694040546404}
   side3: {fileID: 8267011386902420242}
@@ -3406,6 +4110,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -3460,6 +4167,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &7373586052320235783
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3578327661452296100}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3660285781751441619
 GameObject:
   m_ObjectHideFlags: 0
@@ -3472,6 +4200,7 @@ GameObject:
   - component: {fileID: 1405656620672660524}
   - component: {fileID: 3634391644038186836}
   - component: {fileID: 3698812151293309496}
+  - component: {fileID: 6364129687528538151}
   m_Layer: 0
   m_Name: FaceRight
   m_TagString: Untagged
@@ -3510,6 +4239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 5575593989716607707}
   side1: {fileID: 8699132423281594788}
   side3: {fileID: 1338632889447029834}
@@ -3523,6 +4253,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -3577,6 +4310,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &6364129687528538151
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3660285781751441619}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3703377597551912633
 GameObject:
   m_ObjectHideFlags: 0
@@ -3589,6 +4343,7 @@ GameObject:
   - component: {fileID: 1751645612446349497}
   - component: {fileID: 6479505220687316052}
   - component: {fileID: 7800638811607261780}
+  - component: {fileID: 1249679614257977153}
   m_Layer: 0
   m_Name: FaceLeft
   m_TagString: Untagged
@@ -3627,6 +4382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 4830914241559364469}
   side1: {fileID: 5575593989716607707}
   side3: {fileID: 7887250672121410544}
@@ -3640,6 +4396,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -3694,6 +4453,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &1249679614257977153
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3703377597551912633}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3903394396396785280
 GameObject:
   m_ObjectHideFlags: 0
@@ -3706,6 +4486,7 @@ GameObject:
   - component: {fileID: 8208134795302090920}
   - component: {fileID: 5767903088904505986}
   - component: {fileID: 5451021972749748018}
+  - component: {fileID: 8599879900682797702}
   m_Layer: 0
   m_Name: FaceUp
   m_TagString: Untagged
@@ -3744,6 +4525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 3924965484612317127}
   side1: {fileID: 5203064882388176902}
   side3: {fileID: 8553532268895956014}
@@ -3757,6 +4539,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -3811,6 +4596,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &8599879900682797702
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3903394396396785280}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3919304699312285804
 GameObject:
   m_ObjectHideFlags: 0
@@ -3823,6 +4629,7 @@ GameObject:
   - component: {fileID: 8426044859571454353}
   - component: {fileID: 5714538612365209655}
   - component: {fileID: 36958911571100853}
+  - component: {fileID: 6724352753764064055}
   m_Layer: 0
   m_Name: FaceUp
   m_TagString: Untagged
@@ -3861,6 +4668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 5866420694040546404}
   side1: {fileID: 1977540912250590712}
   side3: {fileID: 611807253160836265}
@@ -3874,6 +4682,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -3928,6 +4739,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &6724352753764064055
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3919304699312285804}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3924965484612317127
 GameObject:
   m_ObjectHideFlags: 0
@@ -3940,6 +4772,7 @@ GameObject:
   - component: {fileID: 6487943373434982606}
   - component: {fileID: 4760566376783747866}
   - component: {fileID: 928492855698451286}
+  - component: {fileID: 5788090248661047843}
   m_Layer: 0
   m_Name: FaceLeft
   m_TagString: Untagged
@@ -3978,6 +4811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 3042490848670046069}
   side1: {fileID: 3903394396396785280}
   side3: {fileID: 6769831366055548956}
@@ -3991,6 +4825,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -4045,6 +4882,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &5788090248661047843
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3924965484612317127}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3968934881111175390
 GameObject:
   m_ObjectHideFlags: 0
@@ -4057,6 +4915,7 @@ GameObject:
   - component: {fileID: 3081153070483095266}
   - component: {fileID: 1236584469330739840}
   - component: {fileID: 3801213063186552932}
+  - component: {fileID: 7292414553107051280}
   m_Layer: 0
   m_Name: FaceRight
   m_TagString: Untagged
@@ -4095,6 +4954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 5768078684606229682}
   side1: {fileID: 4754458160043455089}
   side3: {fileID: 7609126553982860416}
@@ -4108,6 +4968,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -4162,6 +5025,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &7292414553107051280
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3968934881111175390}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4245001089259185261
 GameObject:
   m_ObjectHideFlags: 0
@@ -4174,6 +5058,7 @@ GameObject:
   - component: {fileID: 2385887042461946909}
   - component: {fileID: 4784051874730429173}
   - component: {fileID: 3395015660840921581}
+  - component: {fileID: 2100457943033351730}
   m_Layer: 0
   m_Name: FaceLeft
   m_TagString: Untagged
@@ -4212,6 +5097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 6234845317047494711}
   side1: {fileID: 6343685575542027520}
   side3: {fileID: 3549776180664793402}
@@ -4225,6 +5111,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -4279,6 +5168,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &2100457943033351730
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4245001089259185261}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4384275591529929323
 GameObject:
   m_ObjectHideFlags: 0
@@ -4291,6 +5201,7 @@ GameObject:
   - component: {fileID: 7873109246702085412}
   - component: {fileID: 3129637929381232478}
   - component: {fileID: 9176925243051378145}
+  - component: {fileID: 2300887671420492971}
   m_Layer: 0
   m_Name: FaceCenter
   m_TagString: Untagged
@@ -4329,6 +5240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 5203064882388176902}
   side1: {fileID: 8931923988157696947}
   side3: {fileID: 6234845317047494711}
@@ -4342,6 +5254,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -4396,6 +5311,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &2300887671420492971
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4384275591529929323}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4459724513596080970
 GameObject:
   m_ObjectHideFlags: 0
@@ -4408,6 +5344,7 @@ GameObject:
   - component: {fileID: 3947980482151693204}
   - component: {fileID: 3538904757332831634}
   - component: {fileID: 1785066778015787973}
+  - component: {fileID: 206765709866967676}
   m_Layer: 0
   m_Name: FaceLeft
   m_TagString: Untagged
@@ -4446,6 +5383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 5892287813396906366}
   side1: {fileID: 7516142785602260944}
   side3: {fileID: 7024042354357101386}
@@ -4459,6 +5397,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -4513,6 +5454,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &206765709866967676
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4459724513596080970}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4513669224618614431
 GameObject:
   m_ObjectHideFlags: 0
@@ -4525,6 +5487,7 @@ GameObject:
   - component: {fileID: 4329173005988268882}
   - component: {fileID: 5639512610474068539}
   - component: {fileID: 67452653236014704}
+  - component: {fileID: 5943233726180211092}
   m_Layer: 0
   m_Name: FaceCenter
   m_TagString: Untagged
@@ -4563,6 +5526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 8699132423281594788}
   side1: {fileID: 838775323961285570}
   side3: {fileID: 5696066412293980597}
@@ -4576,6 +5540,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -4630,6 +5597,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &5943233726180211092
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4513669224618614431}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4729499894221336858
 GameObject:
   m_ObjectHideFlags: 0
@@ -4642,6 +5630,7 @@ GameObject:
   - component: {fileID: 1697336820409979538}
   - component: {fileID: 5146983044582407726}
   - component: {fileID: 1385511028323260438}
+  - component: {fileID: 422892468028542562}
   m_Layer: 0
   m_Name: FaceCenter
   m_TagString: Untagged
@@ -4681,6 +5670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 7887250672121410544}
   side1: {fileID: 1338632889447029834}
   side3: {fileID: 994143741030477826}
@@ -4694,6 +5684,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -4748,6 +5741,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &422892468028542562
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4729499894221336858}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4754458160043455089
 GameObject:
   m_ObjectHideFlags: 0
@@ -4760,6 +5774,7 @@ GameObject:
   - component: {fileID: 4276025220465903657}
   - component: {fileID: 8371010221733134247}
   - component: {fileID: 7255360345258574040}
+  - component: {fileID: 6356093571681468560}
   m_Layer: 0
   m_Name: FaceCenter
   m_TagString: Untagged
@@ -4798,6 +5813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 3968934881111175390}
   side1: {fileID: 9136584641840077622}
   side3: {fileID: 2351935556004592677}
@@ -4811,6 +5827,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -4865,6 +5884,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &6356093571681468560
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4754458160043455089}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4830914241559364469
 GameObject:
   m_ObjectHideFlags: 0
@@ -4877,6 +5917,7 @@ GameObject:
   - component: {fileID: 1484671431259470593}
   - component: {fileID: 5927430590976455216}
   - component: {fileID: 1046282471979382345}
+  - component: {fileID: 571638457881777618}
   m_Layer: 0
   m_Name: FaceRight
   m_TagString: Untagged
@@ -4915,6 +5956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 611807253160836265}
   side1: {fileID: 3703377597551912633}
   side3: {fileID: 8931923988157696947}
@@ -4928,6 +5970,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -4982,6 +6027,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &571638457881777618
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4830914241559364469}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5203064882388176902
 GameObject:
   m_ObjectHideFlags: 0
@@ -4994,6 +6060,7 @@ GameObject:
   - component: {fileID: 2356551336025398340}
   - component: {fileID: 2255419929934352128}
   - component: {fileID: 4276481713354997298}
+  - component: {fileID: 3867387448772496756}
   m_Layer: 0
   m_Name: FaceRight
   m_TagString: Untagged
@@ -5032,6 +6099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 3903394396396785280}
   side1: {fileID: 4384275591529929323}
   side3: {fileID: 7369142941821324401}
@@ -5045,6 +6113,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -5099,6 +6170,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &3867387448772496756
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5203064882388176902}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5234919433185034692
 GameObject:
   m_ObjectHideFlags: 0
@@ -5111,6 +6203,7 @@ GameObject:
   - component: {fileID: 2761714836504831661}
   - component: {fileID: 1693987836051143230}
   - component: {fileID: 8442899139622828244}
+  - component: {fileID: 5222721460017790380}
   m_Layer: 0
   m_Name: FaceUp
   m_TagString: Untagged
@@ -5149,6 +6242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 318358543946288996}
   side1: {fileID: 2479322142983254785}
   side3: {fileID: 7256876197800930307}
@@ -5162,6 +6256,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -5216,6 +6313,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &5222721460017790380
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5234919433185034692}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5567505987553535432
 GameObject:
   m_ObjectHideFlags: 0
@@ -5228,6 +6346,7 @@ GameObject:
   - component: {fileID: 7516969049545971745}
   - component: {fileID: 1916662650591430283}
   - component: {fileID: 8949396586567728963}
+  - component: {fileID: 8940180574768387179}
   m_Layer: 0
   m_Name: FaceRight
   m_TagString: Untagged
@@ -5266,6 +6385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 9136584641840077622}
   side1: {fileID: 8578529159484550698}
   side3: {fileID: 2998914306799676867}
@@ -5279,6 +6399,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -5333,6 +6456,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &8940180574768387179
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5567505987553535432}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5575593989716607707
 GameObject:
   m_ObjectHideFlags: 0
@@ -5345,6 +6489,7 @@ GameObject:
   - component: {fileID: 4291121774478997364}
   - component: {fileID: 3905311828055292377}
   - component: {fileID: 2953852622244744514}
+  - component: {fileID: 6079798056918265123}
   m_Layer: 0
   m_Name: FaceCenter
   m_TagString: Untagged
@@ -5383,6 +6528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 3703377597551912633}
   side1: {fileID: 3660285781751441619}
   side3: {fileID: 1977540912250590712}
@@ -5396,6 +6542,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -5450,6 +6599,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &6079798056918265123
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5575593989716607707}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5696066412293980597
 GameObject:
   m_ObjectHideFlags: 0
@@ -5462,6 +6632,7 @@ GameObject:
   - component: {fileID: 2443759611244485450}
   - component: {fileID: 2573158577915852919}
   - component: {fileID: 2003264447721134230}
+  - component: {fileID: 2756878925088535225}
   m_Layer: 0
   m_Name: FaceUp
   m_TagString: Untagged
@@ -5500,6 +6671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 1977540912250590712}
   side1: {fileID: 3578327661452296100}
   side3: {fileID: 4513669224618614431}
@@ -5513,6 +6685,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -5567,6 +6742,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &2756878925088535225
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5696066412293980597}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5726590261708184695
 GameObject:
   m_ObjectHideFlags: 0
@@ -5579,6 +6775,7 @@ GameObject:
   - component: {fileID: 34028070487007301}
   - component: {fileID: 2706556879407579859}
   - component: {fileID: 866534552484637195}
+  - component: {fileID: 8140829117223842328}
   m_Layer: 0
   m_Name: FaceCenter
   m_TagString: Untagged
@@ -5617,6 +6814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 9045838579808242458}
   side1: {fileID: 5768078684606229682}
   side3: {fileID: 1342441944372239098}
@@ -5630,6 +6828,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -5684,6 +6885,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &8140829117223842328
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5726590261708184695}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5768078684606229682
 GameObject:
   m_ObjectHideFlags: 0
@@ -5696,6 +6918,7 @@ GameObject:
   - component: {fileID: 7269353371979456306}
   - component: {fileID: 5804095452790093572}
   - component: {fileID: 482187750773321757}
+  - component: {fileID: 999037251950910304}
   m_Layer: 0
   m_Name: FaceLeft
   m_TagString: Untagged
@@ -5734,6 +6957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 5726590261708184695}
   side1: {fileID: 3968934881111175390}
   side3: {fileID: 7144825517796094670}
@@ -5747,6 +6971,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -5801,6 +7028,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &999037251950910304
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5768078684606229682}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5866420694040546404
 GameObject:
   m_ObjectHideFlags: 0
@@ -5813,6 +7061,7 @@ GameObject:
   - component: {fileID: 2186675366060176555}
   - component: {fileID: 8413133130709609254}
   - component: {fileID: 3829648248969646199}
+  - component: {fileID: 7076382692422286467}
   m_Layer: 0
   m_Name: FaceUp
   m_TagString: Untagged
@@ -5851,6 +7100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 3578327661452296100}
   side1: {fileID: 3919304699312285804}
   side3: {fileID: 5936408541072415560}
@@ -5864,6 +7114,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -5918,6 +7171,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &7076382692422286467
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5866420694040546404}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5892287813396906366
 GameObject:
   m_ObjectHideFlags: 0
@@ -5930,6 +7204,7 @@ GameObject:
   - component: {fileID: 1228613850696000423}
   - component: {fileID: 110901601902800523}
   - component: {fileID: 8767386507993995}
+  - component: {fileID: 2916435234919018116}
   m_Layer: 0
   m_Name: FaceCenter
   m_TagString: Untagged
@@ -5968,6 +7243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 6046306741307039995}
   side1: {fileID: 4459724513596080970}
   side3: {fileID: 6953705133574963937}
@@ -5981,6 +7257,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -6035,6 +7314,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &2916435234919018116
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5892287813396906366}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5936408541072415560
 GameObject:
   m_ObjectHideFlags: 0
@@ -6047,6 +7347,7 @@ GameObject:
   - component: {fileID: 3963389380743866647}
   - component: {fileID: 4790320123066857274}
   - component: {fileID: 1722459401839303769}
+  - component: {fileID: 6798041585949729946}
   m_Layer: 0
   m_Name: FaceCenter
   m_TagString: Untagged
@@ -6085,6 +7386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 2615288408572365257}
   side1: {fileID: 6769831366055548956}
   side3: {fileID: 5866420694040546404}
@@ -6098,6 +7400,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -6152,6 +7457,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &6798041585949729946
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5936408541072415560}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6046306741307039995
 GameObject:
   m_ObjectHideFlags: 0
@@ -6164,6 +7490,7 @@ GameObject:
   - component: {fileID: 8814055780371158657}
   - component: {fileID: 7531837781670059582}
   - component: {fileID: 5882336831096858788}
+  - component: {fileID: 3483181269948908063}
   m_Layer: 0
   m_Name: FaceRight
   m_TagString: Untagged
@@ -6202,6 +7529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 44481538107201911}
   side1: {fileID: 5892287813396906366}
   side3: {fileID: 2333041968347566988}
@@ -6215,6 +7543,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -6269,6 +7600,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &3483181269948908063
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6046306741307039995}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6106082453602785605
 GameObject:
   m_ObjectHideFlags: 0
@@ -6281,6 +7633,7 @@ GameObject:
   - component: {fileID: 343713017323101063}
   - component: {fileID: 3279745398410412725}
   - component: {fileID: 4530889506463619320}
+  - component: {fileID: 5623832511739990521}
   m_Layer: 0
   m_Name: FaceLeft
   m_TagString: Untagged
@@ -6319,6 +7672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 7102918306467607040}
   side1: {fileID: 499679028486825140}
   side3: {fileID: 9145196027471913241}
@@ -6332,6 +7686,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -6386,6 +7743,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &5623832511739990521
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6106082453602785605}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6112165654322964989
 GameObject:
   m_ObjectHideFlags: 0
@@ -6398,6 +7776,7 @@ GameObject:
   - component: {fileID: 6605838793512657259}
   - component: {fileID: 3157043611393607324}
   - component: {fileID: 8540954972845079393}
+  - component: {fileID: 1839999399068417546}
   m_Layer: 0
   m_Name: FaceUp
   m_TagString: Untagged
@@ -6436,6 +7815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 250563210981145005}
   side1: {fileID: 1342441944372239098}
   side3: {fileID: 1837679986962795538}
@@ -6449,6 +7829,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -6503,6 +7886,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &1839999399068417546
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6112165654322964989}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6234845317047494711
 GameObject:
   m_ObjectHideFlags: 0
@@ -6515,6 +7919,7 @@ GameObject:
   - component: {fileID: 3401160219488682738}
   - component: {fileID: 5695576578273995693}
   - component: {fileID: 3844702239517475830}
+  - component: {fileID: 5881654696076842058}
   m_Layer: 0
   m_Name: FaceUp
   m_TagString: Untagged
@@ -6553,6 +7958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 749263298601138927}
   side1: {fileID: 4245001089259185261}
   side3: {fileID: 4384275591529929323}
@@ -6566,6 +7972,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -6620,6 +8029,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &5881654696076842058
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6234845317047494711}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6343685575542027520
 GameObject:
   m_ObjectHideFlags: 0
@@ -6632,6 +8062,7 @@ GameObject:
   - component: {fileID: 4482664526868870864}
   - component: {fileID: 7033452455094438732}
   - component: {fileID: 6490637642005997025}
+  - component: {fileID: 5443521796989417172}
   m_Layer: 0
   m_Name: FaceCenter
   m_TagString: Untagged
@@ -6670,6 +8101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 4245001089259185261}
   side1: {fileID: 9145196027471913241}
   side3: {fileID: 8089265229431732647}
@@ -6683,6 +8115,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -6737,6 +8172,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &5443521796989417172
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6343685575542027520}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6570964182601405983
 GameObject:
   m_ObjectHideFlags: 0
@@ -6749,6 +8205,7 @@ GameObject:
   - component: {fileID: 1199222172052252499}
   - component: {fileID: 1103486127492982479}
   - component: {fileID: 1559125700745367285}
+  - component: {fileID: 1360834772231621947}
   m_Layer: 0
   m_Name: FaceUp
   m_TagString: Untagged
@@ -6787,6 +8244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 2351935556004592677}
   side1: {fileID: 250563210981145005}
   side3: {fileID: 8578529159484550698}
@@ -6800,6 +8258,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -6854,6 +8315,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &1360834772231621947
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6570964182601405983}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6769831366055548956
 GameObject:
   m_ObjectHideFlags: 0
@@ -6866,6 +8348,7 @@ GameObject:
   - component: {fileID: 1254940445772780198}
   - component: {fileID: 5342973747713251273}
   - component: {fileID: 1742923957612793937}
+  - component: {fileID: 681955733711493024}
   m_Layer: 0
   m_Name: FaceRight
   m_TagString: Untagged
@@ -6904,6 +8387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 5936408541072415560}
   side1: {fileID: 7369142941821324401}
   side3: {fileID: 3924965484612317127}
@@ -6917,6 +8401,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -6971,6 +8458,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &681955733711493024
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6769831366055548956}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6953705133574963937
 GameObject:
   m_ObjectHideFlags: 0
@@ -6983,6 +8491,7 @@ GameObject:
   - component: {fileID: 8882200485642547979}
   - component: {fileID: 6381951861928430926}
   - component: {fileID: 5323707001195381437}
+  - component: {fileID: 8348543895403397579}
   m_Layer: 0
   m_Name: FaceUp
   m_TagString: Untagged
@@ -7021,6 +8530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 7144825517796094670}
   side1: {fileID: 7609126553982860416}
   side3: {fileID: 5892287813396906366}
@@ -7034,6 +8544,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -7088,6 +8601,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &8348543895403397579
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6953705133574963937}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7012345550774154504
 GameObject:
   m_ObjectHideFlags: 0
@@ -7100,6 +8634,7 @@ GameObject:
   - component: {fileID: 9059514836590473588}
   - component: {fileID: 5718797292602638862}
   - component: {fileID: 4530994889954355603}
+  - component: {fileID: 4989606112706641383}
   m_Layer: 0
   m_Name: FaceCenter
   m_TagString: Untagged
@@ -7138,6 +8673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 2479322142983254785}
   side1: {fileID: 7144825517796094670}
   side3: {fileID: 44481538107201911}
@@ -7151,6 +8687,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -7205,6 +8744,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &4989606112706641383
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7012345550774154504}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7024042354357101386
 GameObject:
   m_ObjectHideFlags: 0
@@ -7217,6 +8777,7 @@ GameObject:
   - component: {fileID: 2939770944794347257}
   - component: {fileID: 2312736342306910194}
   - component: {fileID: 763248419352896089}
+  - component: {fileID: 7505608353901305382}
   m_Layer: 0
   m_Name: FaceRight
   m_TagString: Untagged
@@ -7255,6 +8816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 8267011386902420242}
   side1: {fileID: 2615288408572365257}
   side3: {fileID: 4459724513596080970}
@@ -7268,6 +8830,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -7322,6 +8887,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &7505608353901305382
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7024042354357101386}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7102918306467607040
 GameObject:
   m_ObjectHideFlags: 0
@@ -7334,6 +8920,7 @@ GameObject:
   - component: {fileID: 1215176845012095503}
   - component: {fileID: 5384195081951434591}
   - component: {fileID: 2901657639381198520}
+  - component: {fileID: 6027214284241499047}
   m_Layer: 0
   m_Name: FaceCenter
   m_TagString: Untagged
@@ -7372,6 +8959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 3549776180664793402}
   side1: {fileID: 6106082453602785605}
   side3: {fileID: 250563210981145005}
@@ -7385,6 +8973,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -7439,6 +9030,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &6027214284241499047
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7102918306467607040}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7144825517796094670
 GameObject:
   m_ObjectHideFlags: 0
@@ -7451,6 +9063,7 @@ GameObject:
   - component: {fileID: 5657247287926122739}
   - component: {fileID: 7790377319629676250}
   - component: {fileID: 5646699535652551014}
+  - component: {fileID: 1276335513570337719}
   m_Layer: 0
   m_Name: FaceRight
   m_TagString: Untagged
@@ -7489,6 +9102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 7012345550774154504}
   side1: {fileID: 6953705133574963937}
   side3: {fileID: 5768078684606229682}
@@ -7502,6 +9116,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -7556,6 +9173,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &1276335513570337719
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7144825517796094670}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7256876197800930307
 GameObject:
   m_ObjectHideFlags: 0
@@ -7568,6 +9206,7 @@ GameObject:
   - component: {fileID: 1901268576244619145}
   - component: {fileID: 8881173125793201512}
   - component: {fileID: 5087262970850563944}
+  - component: {fileID: 5264058787715776176}
   m_Layer: 0
   m_Name: FaceCenter
   m_TagString: Untagged
@@ -7606,6 +9245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 2461397896930871195}
   side1: {fileID: 7735698173426261198}
   side3: {fileID: 5234919433185034692}
@@ -7619,6 +9259,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -7673,6 +9316,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &5264058787715776176
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7256876197800930307}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7369142941821324401
 GameObject:
   m_ObjectHideFlags: 0
@@ -7685,6 +9349,7 @@ GameObject:
   - component: {fileID: 6699779585517521955}
   - component: {fileID: 6587366203605430847}
   - component: {fileID: 2800513650752216439}
+  - component: {fileID: 2674187704064468235}
   m_Layer: 0
   m_Name: FaceLeft
   m_TagString: Untagged
@@ -7723,6 +9388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 6769831366055548956}
   side1: {fileID: 611807253160836265}
   side3: {fileID: 5203064882388176902}
@@ -7736,6 +9402,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -7790,6 +9459,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &2674187704064468235
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7369142941821324401}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7516142785602260944
 GameObject:
   m_ObjectHideFlags: 0
@@ -7802,6 +9492,7 @@ GameObject:
   - component: {fileID: 4288769173583741688}
   - component: {fileID: 3106274254069744743}
   - component: {fileID: 1887644154363481133}
+  - component: {fileID: 3625996323552320369}
   m_Layer: 0
   m_Name: FaceUp
   m_TagString: Untagged
@@ -7840,6 +9531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 4459724513596080970}
   side1: {fileID: 2538517579781362413}
   side3: {fileID: 8049329918862935367}
@@ -7853,6 +9545,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -7907,6 +9602,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &3625996323552320369
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7516142785602260944}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7609126553982860416
 GameObject:
   m_ObjectHideFlags: 0
@@ -7919,6 +9635,7 @@ GameObject:
   - component: {fileID: 4432274828160902837}
   - component: {fileID: 8211657331451775887}
   - component: {fileID: 6835548548341387126}
+  - component: {fileID: 1234396598429145027}
   m_Layer: 0
   m_Name: FaceLeft
   m_TagString: Untagged
@@ -7957,6 +9674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 6953705133574963937}
   side1: {fileID: 8049329918862935367}
   side3: {fileID: 3968934881111175390}
@@ -7970,6 +9688,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -8024,6 +9745,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &1234396598429145027
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7609126553982860416}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7735698173426261198
 GameObject:
   m_ObjectHideFlags: 0
@@ -8036,6 +9778,7 @@ GameObject:
   - component: {fileID: 5966110441307509997}
   - component: {fileID: 8777623199346894033}
   - component: {fileID: 1167399826758713109}
+  - component: {fileID: 2243264999741843851}
   m_Layer: 0
   m_Name: FaceLeft
   m_TagString: Untagged
@@ -8074,6 +9817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 7256876197800930307}
   side1: {fileID: 44481538107201911}
   side3: {fileID: 838775323961285570}
@@ -8087,6 +9831,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -8141,6 +9888,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &2243264999741843851
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7735698173426261198}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7887250672121410544
 GameObject:
   m_ObjectHideFlags: 0
@@ -8153,6 +9921,7 @@ GameObject:
   - component: {fileID: 5773058478816473497}
   - component: {fileID: 7173422917942734498}
   - component: {fileID: 4979798217536118596}
+  - component: {fileID: 1585929422618241934}
   m_Layer: 0
   m_Name: FaceRight
   m_TagString: Untagged
@@ -8191,6 +9960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 8089265229431732647}
   side1: {fileID: 4729499894221336858}
   side3: {fileID: 3703377597551912633}
@@ -8204,6 +9974,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -8258,6 +10031,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &1585929422618241934
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7887250672121410544}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8049329918862935367
 GameObject:
   m_ObjectHideFlags: 0
@@ -8270,6 +10064,7 @@ GameObject:
   - component: {fileID: 2586447420220151039}
   - component: {fileID: 7746627561003351785}
   - component: {fileID: 6675118106859366905}
+  - component: {fileID: 6924494881279518414}
   m_Layer: 0
   m_Name: FaceCenter
   m_TagString: Untagged
@@ -8308,6 +10103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 7609126553982860416}
   side1: {fileID: 1170012824398820310}
   side3: {fileID: 7516142785602260944}
@@ -8321,6 +10117,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -8375,6 +10174,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &6924494881279518414
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8049329918862935367}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8056883889154414948
 GameObject:
   m_ObjectHideFlags: 0
@@ -8454,6 +10274,7 @@ GameObject:
   - component: {fileID: 8011043156412748365}
   - component: {fileID: 1074765543016369886}
   - component: {fileID: 2451690818231592777}
+  - component: {fileID: 2582670549566612044}
   m_Layer: 0
   m_Name: FaceUp
   m_TagString: Untagged
@@ -8492,6 +10313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 8931923988157696947}
   side1: {fileID: 7887250672121410544}
   side3: {fileID: 6343685575542027520}
@@ -8505,6 +10327,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -8559,6 +10384,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &2582670549566612044
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8089265229431732647}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8267011386902420242
 GameObject:
   m_ObjectHideFlags: 0
@@ -8571,6 +10417,7 @@ GameObject:
   - component: {fileID: 2941677320869860595}
   - component: {fileID: 8985428388679673540}
   - component: {fileID: 7293777472013326941}
+  - component: {fileID: 6110069912705553806}
   m_Layer: 0
   m_Name: FaceCenter
   m_TagString: Untagged
@@ -8609,6 +10456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 2333041968347566988}
   side1: {fileID: 7024042354357101386}
   side3: {fileID: 3578327661452296100}
@@ -8622,6 +10470,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -8676,6 +10527,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &6110069912705553806
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8267011386902420242}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8365565005503481948
 GameObject:
   m_ObjectHideFlags: 0
@@ -8688,6 +10560,7 @@ GameObject:
   - component: {fileID: 2244740449058515867}
   - component: {fileID: 7671589907177109582}
   - component: {fileID: 4005831170906283419}
+  - component: {fileID: 3796074000827196207}
   m_Layer: 0
   m_Name: FaceLeft
   m_TagString: Untagged
@@ -8726,6 +10599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 1837679986962795538}
   side1: {fileID: 9045838579808242458}
   side3: {fileID: 318358543946288996}
@@ -8739,6 +10613,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -8793,6 +10670,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &3796074000827196207
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8365565005503481948}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8547730529244836688
 GameObject:
   m_ObjectHideFlags: 0
@@ -8851,6 +10749,7 @@ GameObject:
   - component: {fileID: 8434807383874630963}
   - component: {fileID: 417901877002174202}
   - component: {fileID: 7883795132463570116}
+  - component: {fileID: 1314050187199791287}
   m_Layer: 0
   m_Name: FaceCenter
   m_TagString: Untagged
@@ -8889,6 +10788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 2998914306799676867}
   side1: {fileID: 749263298601138927}
   side3: {fileID: 3903394396396785280}
@@ -8902,6 +10802,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -8956,6 +10859,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &1314050187199791287
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8553532268895956014}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8578529159484550698
 GameObject:
   m_ObjectHideFlags: 0
@@ -8968,6 +10892,7 @@ GameObject:
   - component: {fileID: 7923726191844966423}
   - component: {fileID: 1634269720736682988}
   - component: {fileID: 1619406065002355667}
+  - component: {fileID: 2634764473912745190}
   m_Layer: 0
   m_Name: FaceCenter
   m_TagString: Untagged
@@ -9006,6 +10931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 5567505987553535432}
   side1: {fileID: 929559425470851936}
   side3: {fileID: 6570964182601405983}
@@ -9019,6 +10945,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -9073,6 +11002,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &2634764473912745190
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8578529159484550698}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8699132423281594788
 GameObject:
   m_ObjectHideFlags: 0
@@ -9085,6 +11035,7 @@ GameObject:
   - component: {fileID: 377799587218195147}
   - component: {fileID: 2176508663450355282}
   - component: {fileID: 2141643900702422659}
+  - component: {fileID: 8657243228271790357}
   m_Layer: 0
   m_Name: FaceLeft
   m_TagString: Untagged
@@ -9123,6 +11074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 3660285781751441619}
   side1: {fileID: 4513669224618614431}
   side3: {fileID: 2461397896930871195}
@@ -9136,6 +11088,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -9190,6 +11145,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &8657243228271790357
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8699132423281594788}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8931923988157696947
 GameObject:
   m_ObjectHideFlags: 0
@@ -9202,6 +11178,7 @@ GameObject:
   - component: {fileID: 2891890834554956352}
   - component: {fileID: 841070804942880985}
   - component: {fileID: 109478068515142130}
+  - component: {fileID: 526296334296334470}
   m_Layer: 0
   m_Name: FaceLeft
   m_TagString: Untagged
@@ -9240,6 +11217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 4384275591529929323}
   side1: {fileID: 8089265229431732647}
   side3: {fileID: 4830914241559364469}
@@ -9253,6 +11231,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -9307,6 +11288,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &526296334296334470
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8931923988157696947}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9039654227719974945
 GameObject:
   m_ObjectHideFlags: 0
@@ -9387,6 +11389,7 @@ GameObject:
   - component: {fileID: 6910539214377049200}
   - component: {fileID: 4876481263189742435}
   - component: {fileID: 7474072472192983326}
+  - component: {fileID: 5149790300076972154}
   m_Layer: 0
   m_Name: FaceRight
   m_TagString: Untagged
@@ -9425,6 +11428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 8365565005503481948}
   side1: {fileID: 5726590261708184695}
   side3: {fileID: 2479322142983254785}
@@ -9438,6 +11442,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -9492,6 +11499,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &5149790300076972154
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9045838579808242458}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9136584641840077622
 GameObject:
   m_ObjectHideFlags: 0
@@ -9504,6 +11532,7 @@ GameObject:
   - component: {fileID: 590093372218210192}
   - component: {fileID: 6013755274047994185}
   - component: {fileID: 1038689012416246949}
+  - component: {fileID: 1255703035913365981}
   m_Layer: 0
   m_Name: FaceLeft
   m_TagString: Untagged
@@ -9542,6 +11571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 4754458160043455089}
   side1: {fileID: 5567505987553535432}
   side3: {fileID: 1170012824398820310}
@@ -9555,6 +11585,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -9609,6 +11642,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &1255703035913365981
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9136584641840077622}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9145196027471913241
 GameObject:
   m_ObjectHideFlags: 0
@@ -9621,6 +11675,7 @@ GameObject:
   - component: {fileID: 392816082590660539}
   - component: {fileID: 714527544652880647}
   - component: {fileID: 1495324097844469403}
+  - component: {fileID: 1501190670175199365}
   m_Layer: 0
   m_Name: FaceRight
   m_TagString: Untagged
@@ -9659,6 +11714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  PS: {fileID: 0}
   side2: {fileID: 6343685575542027520}
   side1: {fileID: 994143741030477826}
   side3: {fileID: 6106082453602785605}
@@ -9672,6 +11728,9 @@ MonoBehaviour:
   keyLeft: 97
   keyTop: 119
   keyRight: 100
+  textTop: {fileID: 0}
+  textRight: {fileID: 0}
+  textLeft: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
   BC: {fileID: 0}
@@ -9726,6 +11785,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &1501190670175199365
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9145196027471913241}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8528ba4b5ebe97448b3d41d2955e5ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &83772768527443841
 PrefabInstance:
   m_ObjectHideFlags: 0

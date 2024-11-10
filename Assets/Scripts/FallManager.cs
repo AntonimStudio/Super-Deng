@@ -13,6 +13,9 @@ public class FallManager : MonoBehaviour
     [SerializeField] private float impulseForce = 10f; // Сила импульса
     [SerializeField] private float torqueStrength = 10f; // Сила импульса
     [SerializeField] private float delay = 1.5f;
+    [SerializeField] private AnimationClip animClipFall;
+    [SerializeField] private AnimationClip animClipReset;
+
 
     private void Start()
     {
@@ -24,6 +27,11 @@ public class FallManager : MonoBehaviour
             {
                 rb.useGravity = false;
             }
+            Animator animator = face.GetComponent<Animator>();
+            if (animator != null)
+            {
+                animator.enabled = false;
+            }
         }
     }
 
@@ -31,18 +39,35 @@ public class FallManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            if (numbersOfFalledFaces.Count >= 79)
+            {
+                return; // Выход из метода, если все числа использованы
+            }
             int numb;
-            do {numb = Random.Range(0, 80); }
-            while (numbersOfFalledFaces.Contains(numb));
+            do { numb = Random.Range(0, 80); }
+            while (numbersOfFalledFaces.Contains(numb) || faces[numb].GetComponent<FaceScript>().havePlayer);
             numbersOfFalledFaces.Add(numb);
-
-            ApplyImpulse(faces[numb], numb);
+            StartCoroutine(PlayAnimationFall(faces[numb], numb));
         }
 
         if (Input.GetKeyDown(KeyCode.R))
         {
             ResetFall();
         }
+    }
+
+    private IEnumerator PlayAnimationFall(GameObject face, int numb)
+    {
+        face.GetComponent<FaceScript>().isBlocked = true; ///////////////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        Animator animator = face.GetComponent<Animator>();
+        if (animator != null && animClipFall != null)
+        {
+            animator.enabled = true;
+            animator.Play(animClipFall.name); // Проигрываем анимацию
+            yield return new WaitForSeconds(animClipFall.length); // Ждем завершения анимации
+        }
+        animator.enabled = false;
+        ApplyImpulse(face, numb);
     }
 
     private void ApplyImpulse(GameObject face, int numb)
@@ -64,15 +89,11 @@ public class FallManager : MonoBehaviour
 
         rb.AddTorque(randomTorque, ForceMode.Impulse);
 
-        face.GetComponent<FaceScript>().isBlocked = true; ///!!!!!!!!!!!!!!
-
         StartCoroutine(ResetAfterDelay(face, initialPosition, initialRotation, initialLocalPosition, initialLocalRotation, delay, numb));
     }
 
-
     IEnumerator ResetAfterDelay(GameObject face, Vector3 initialPosition, Quaternion initialRotation, Vector3 initialLocalPosition, Quaternion initialLocalRotation, float delay, int numb)
     {
-        
         Rigidbody rb = face.GetComponent<Rigidbody>();
         yield return new WaitForSeconds(delay);
 
@@ -82,30 +103,29 @@ public class FallManager : MonoBehaviour
             renderer.enabled = false; // Отключаем рендеринг у всех дочерних объектов
         }
 
-        rb.velocity = Vector3.zero; 
+        rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         rb.transform.position = initialPosition;
         rb.transform.rotation = initialRotation;
         rb.transform.localPosition = initialLocalPosition;
         rb.transform.localRotation = initialLocalRotation;
-        
-        /*
-        if (numbersOfFalledFaces.Contains(numb))
-        {
-            numbersOfFalledFaces.Remove(numb);
-        }*/
     }
 
     public void ResetFall()
     {
         foreach (GameObject face in faces)
         {
-            face.GetComponent<FaceScript>().isBlocked = false;
             Renderer[] childRenderers = face.GetComponentsInChildren<Renderer>();
             foreach (Renderer renderer in childRenderers)
             {
-                renderer.enabled = true;
+               if (!renderer.enabled && !face.GetComponent<FaceScript>().havePlayer)
+               {
+                    StartCoroutine(PlayAnimationReset(face));
+                    renderer.enabled = true;
+               }
             }
+            
+            face.GetComponent<FaceScript>().isBlocked = false;
         }
         for (int numb = 0; numb <= 80; numb++)
         {
@@ -114,5 +134,21 @@ public class FallManager : MonoBehaviour
                 numbersOfFalledFaces.Remove(numb);
             }
         }
+    }
+
+    private IEnumerator PlayAnimationReset(GameObject face)
+    {
+        
+        Animator animator = face.GetComponent<Animator>();
+        animator.enabled = true;
+        if (animator != null && animClipReset != null)
+        {
+
+            animator.enabled = true;
+            animator.Play(animClipReset.name); // Проигрываем анимацию
+            yield return new WaitForSeconds(animClipReset.length); // Ждем завершения анимации
+        }
+
+        animator.enabled = false;
     }
 }
