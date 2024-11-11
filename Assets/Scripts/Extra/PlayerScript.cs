@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Unity.Android.Types;
+using System.Runtime.CompilerServices;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -28,8 +29,13 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private TimerController TC;
     [SerializeField] private StartCountDown SCD;
     [SerializeField] private RedFaceScript RFS;
+    [SerializeField] private LightShutDownScript LSDS;
+    [SerializeField] private IcoSphereDanceScript ISDS;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private float fadeDuration = 2f;
 
     private bool inBlinking = false;
+    private bool isLosing = false;
 
     private void Awake()
     {
@@ -119,7 +125,7 @@ public class PlayerScript : MonoBehaviour
         {
             hp -= 1;
         }
-        else
+        else if (!isLosing)
         {
             Lose();
         }
@@ -160,14 +166,43 @@ public class PlayerScript : MonoBehaviour
 
     public void Lose()
     {
+        isLosing = true;
         faceCurrent.GetComponent<FaceScript>().havePlayer = false;
         rendPartMiddle.material = materialTurnOff;
-        imageLose.gameObject.SetActive(true);
+        RFS.isTurnOn = false;
+        SCD.isOn = false;
+        ISDS.isOn = false;
         if (TC != null)
         {
             TC.timerIsRunning = false;
         }
-        RFS.isTurnOn = false;
-        SCD.isOn = false;
+        if (LSDS != null)
+        {
+            LSDS.StartShutDown();
+        }
+        else ShowImage();
+        StartCoroutine(FadeOutCoroutine());
+        
+        
+        
+    }
+
+    private IEnumerator FadeOutCoroutine()
+    {
+        float startVolume = audioSource.volume;
+
+        while (audioSource.volume > 0)
+        {
+            audioSource.volume -= startVolume * Time.deltaTime / fadeDuration;
+            yield return null;
+        }
+
+        audioSource.volume = 0;
+        audioSource.Stop();
+    }
+
+    public void ShowImage()
+    {
+        imageLose.gameObject.SetActive(true);
     }
 }

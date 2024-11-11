@@ -68,28 +68,31 @@ public class FaceDanceScript : MonoBehaviour
 
     private IEnumerator ScaleObject(GameObject obj, float factor, float time)
     {
-        inProcess = true;
-        Vector3 targetScale = new Vector3(originalScale.x, originalScale.y , originalScale.z * factor);
-        
-        // Scale up
-        float elapsedTime = 0f;
-        while (elapsedTime < time)
+        if (isOn)
         {
-            obj.transform.localScale = Vector3.Lerp(originalScale, targetScale, elapsedTime / time);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-        obj.transform.localScale = targetScale;
+            inProcess = true;
+            Vector3 targetScale = new Vector3(originalScale.x, originalScale.y, originalScale.z * factor);
 
-        // Scale down
-        elapsedTime = 0f;
-        while (elapsedTime < time)
-        {
-            obj.transform.localScale = Vector3.Lerp(targetScale, originalScale, elapsedTime / time);
-            elapsedTime += Time.deltaTime;
-            yield return null;
+            // Scale up
+            float elapsedTime = 0f;
+            while (elapsedTime < time)
+            {
+                obj.transform.localScale = Vector3.Lerp(originalScale, targetScale, elapsedTime / time);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+            obj.transform.localScale = targetScale;
+
+            // Scale down
+            elapsedTime = 0f;
+            while (elapsedTime < time)
+            {
+                obj.transform.localScale = Vector3.Lerp(targetScale, originalScale, elapsedTime / time);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+            obj.transform.localScale = originalScale;
+            inProcess = false;
         }
-        obj.transform.localScale = originalScale;
-        inProcess = false;
     }
 }

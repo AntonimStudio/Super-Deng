@@ -46,30 +46,37 @@ public class IcoSphereDanceScript : MonoBehaviour
 
     private IEnumerator RotateObject(GameObject obj, float angle, float time)
     {
-        inProcess = true;
-        Quaternion originalRotation = obj.transform.rotation;
-        Quaternion targetRotation = originalRotation * Quaternion.Euler(0, side * angle, 0);
-
-        // Вращение вперёд
-        float elapsedTime = 0f;
-        while (elapsedTime < time)
+        if (isOn)
         {
-            obj.transform.rotation = Quaternion.Slerp(originalRotation, targetRotation, elapsedTime / time);
-            elapsedTime += Time.deltaTime;
+            inProcess = true;
+            Quaternion originalRotation = obj.transform.rotation;
+            Quaternion targetRotation = originalRotation * Quaternion.Euler(0, side * angle, 0);
+
+            // Вращение вперёд
+            float elapsedTime = 0f;
+            while (elapsedTime < time)
+            {
+                obj.transform.rotation = Quaternion.Slerp(originalRotation, targetRotation, elapsedTime / time);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+            obj.transform.rotation = targetRotation;
+
+            // Вращение обратно
+            elapsedTime = 0f;
+            while (elapsedTime < time)
+            {
+                obj.transform.rotation = Quaternion.Slerp(targetRotation, originalRotation, elapsedTime / time);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+            obj.transform.rotation = originalRotation;
+            inProcess = false;
+            side = -side;
+        }
+        else
+        {
             yield return null;
         }
-        obj.transform.rotation = targetRotation;
-
-        // Вращение обратно
-        elapsedTime = 0f;
-        while (elapsedTime < time)
-        {
-            obj.transform.rotation = Quaternion.Slerp(targetRotation, originalRotation, elapsedTime / time);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-        obj.transform.rotation = originalRotation;
-        inProcess = false;
-        side = -side;
     }
 }
