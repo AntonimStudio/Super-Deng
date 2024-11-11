@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2194675665934261989}
   - component: {fileID: 2020910133923759977}
+  - component: {fileID: 8056992392964094004}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -51,6 +52,8 @@ MonoBehaviour:
   glowingPartMiddle: {fileID: 1604035670915099801}
   glowingPartLeft: {fileID: 4168913353163749199}
   glowingPartRight: {fileID: 5667922848827636287}
+  animator: {fileID: 0}
+  animClipBlink: {fileID: 0}
   materialTurnOn: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialTurnOff: {fileID: -3846018093981099296, guid: 0f159ac7e9174c749a10d2eb55f2d24b, type: 3}
   rendPartTop: {fileID: 7343791450808938847}
@@ -61,6 +64,27 @@ MonoBehaviour:
   TC: {fileID: 0}
   SCD: {fileID: 0}
   RFS: {fileID: 0}
+--- !u!95 &8056992392964094004
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401390241730352116}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dc713d459d9fd1246ab4d7cb29b98634, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &795034706251305521
 GameObject:
   m_ObjectHideFlags: 0

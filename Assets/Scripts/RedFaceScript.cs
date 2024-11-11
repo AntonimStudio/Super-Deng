@@ -125,8 +125,14 @@ public class RedFaceScript : MonoBehaviour
             face.GetComponent<FaceScript>().rend.material = targetMaterial;
         }
         else
-            PS.rend.material = targetMaterial;
-        float timer = 0f;
+        {
+            PS.rendPartTop.material = targetMaterial;
+            PS.rendPartMiddle.material = targetMaterial;
+            PS.rendPartLeft.material = targetMaterial;
+            PS.rendPartRight.material = targetMaterial;
+        }
+            
+    float timer = 0f;
         while (timer < duration)
         {
             if (!face.GetComponent<FaceScript>().havePlayer)
@@ -134,11 +140,19 @@ public class RedFaceScript : MonoBehaviour
                 face.GetComponent<FaceScript>().rend.material = targetMaterial;
             }
             else
-                PS.rend.material = targetMaterial;
+            {
+                PS.rendPartTop.material = targetMaterial;
+                PS.rendPartMiddle.material = targetMaterial;
+                PS.rendPartLeft.material = targetMaterial;
+                PS.rendPartRight.material = targetMaterial;
+            }
             timer += Time.deltaTime;
             yield return null;
         }
-        PS.rend.material = materialPlayer;
+        PS.rendPartTop.material = materialPlayer;
+        PS.rendPartMiddle.material = materialPlayer;
+        PS.rendPartLeft.material = materialPlayer;
+        PS.rendPartRight.material = materialPlayer;
     }
 
     IEnumerator ChangeScale(GameObject face, Vector3 targetScale, float duration, Material targetMaterial, bool isGettingBigger)

@@ -65,10 +65,12 @@ public class FallManager : MonoBehaviour
         if (animator != null && animClipFall != null)
         {
             animator.enabled = true;
+            face.GetComponent<FaceScript>().isBlinking = true;
             animator.Play(animClipFall.name); // Проигрываем анимацию
             yield return new WaitForSeconds(animClipFall.length); // Ждем завершения анимации
         }
         face.GetComponent<FaceScript>().isBlocked = true;
+        face.GetComponent<FaceScript>().isBlinking = false;
         animator.enabled = false;
         ApplyImpulse(face, numb);
     }

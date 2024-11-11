@@ -76,6 +76,7 @@ public class FaceScript : MonoBehaviour
     public bool isBlocked = false;
     [HideInInspector] public bool isKilling = false;
     private bool isPreviousAnExtremeSide1 = false;
+    public bool isBlinking = false;
 
     private void Awake() 
     {
