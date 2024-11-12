@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Serialization;
+using UnityEngine.XR;
 
 // Обязательное уведомление: "Правые", "Левые" и "Верхние" указаны для треугольника с основанием, направленным ВНИЗ!!!
 // Обратите внимание, что "Правая" сторона раньше носила название "BlueSide", "Левая" - "OrangeSide", а "Верхняя" - "GreenSide"
@@ -66,6 +67,7 @@ public class FaceScript : MonoBehaviour
     [SerializeField] private BeatController BC;
     [SerializeField] private SoundScript SS;
     [SerializeField] private TutorialController TC;
+    [SerializeField] private BonusSpawnerScript BSS;
 
     [Space]
     [Header("Questions")]
@@ -164,6 +166,26 @@ public class FaceScript : MonoBehaviour
                     BC.isAlreadyPressedIsAlreadyPressed = false;
                     SS.TurnOnSoundStep();
                 }
+            }
+        }
+
+        if (havePlayer && isBonus && BSS!= null)
+        {
+            Debug.Log("111");
+            HealthBonus bonusHealth = GetComponentInChildren<HealthBonus>(true);
+            if (bonusHealth != null)
+            {
+                Debug.Log("!!");
+                PS.TakeHP();
+                isBonus = false;
+                bonusHealth.DestroyMe();
+            }
+            ComboBonus bonusCombo = GetComponentInChildren<ComboBonus>(true);
+            if (bonusCombo != null)
+            {
+                Debug.Log("COMBOTIME");
+                isBonus = false;
+                bonusCombo.DestroyMe();
             }
         }
     }

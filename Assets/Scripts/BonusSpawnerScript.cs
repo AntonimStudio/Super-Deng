@@ -36,42 +36,24 @@ public class BonusSpawnerScript : MonoBehaviour
             }
             while (numbersOfBonusFaces.Contains(numb) || FS.havePlayer || FS.isBlinking || FS.isKilling || FS.isBlocked || FS.isBonus);
             numbersOfBonusFaces.Add(numb);
-            SetBonus(faces[numb], numb, Random.Range(0, 2));
+            SetBonus(faces[numb], Random.Range(0, 2));
         }
-
-
     }
 
-    private void SetBonus(GameObject face, int numb, int type) //0 - Health, 1 - Combo
+    private void SetBonus(GameObject face, int type) //0 - Health, 1 - Combo
     {
-        FaceScript FS = faces[numb].GetComponent<FaceScript>();
+        FaceScript FS = face.GetComponent<FaceScript>();
         FS.isBonus = true;
         FS.rend.material = material;
-        if (type == 0)
-        {
-            GameObject instance = Instantiate(prefabBonusCombo, face.transform);
-            instance.transform.localPosition = Vector3.zero;
-            //instance.transform.localRotation = Quaternion.identity;
-            StartCoroutine(DestroyBonus(face, instance, 10f));
-        }
-        else
-        {
-            GameObject instance = Instantiate(prefabBonusHealth, face.transform);
-            instance.transform.localPosition = Vector3.zero;
-            //instance.transform.localRotation = Quaternion.identity;
-            StartCoroutine(DestroyBonus(face, instance, 10f));
-        }
+
+        GameObject selectedPrefab = type == 0 ? prefabBonusCombo : prefabBonusHealth;
+        GameObject instance = Instantiate(selectedPrefab, face.transform);
+        instance.transform.localPosition = Vector3.zero;
+        StartCoroutine(DestroyBonus(face, instance, 100f));
     }
 
     IEnumerator DestroyBonus(GameObject face, GameObject bonus, float delay)
     {
-        Debug.Log("HUIaaaaaaaaaaaaaaaa");
-        FaceScript FS = face.GetComponent<FaceScript>();
-        if (FS.havePlayer)
-        {
-            Debug.Log("HUI");
-            Destroy(bonus);
-        }
         yield return new WaitForSeconds(delay);
         Destroy(bonus);
     }
