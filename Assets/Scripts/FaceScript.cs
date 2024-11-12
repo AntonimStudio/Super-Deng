@@ -79,7 +79,7 @@ public class FaceScript : MonoBehaviour
     [HideInInspector] public bool isKilling = false;
     [HideInInspector] public bool isBlinking = false;
     [HideInInspector] public bool isBlocked = false;
-    [HideInInspector] public bool isBonus = false;
+    public bool isBonus = false;
 
     private void Awake() 
     {
@@ -171,11 +171,9 @@ public class FaceScript : MonoBehaviour
 
         if (havePlayer && isBonus && BSS!= null)
         {
-            Debug.Log("111");
             HealthBonus bonusHealth = GetComponentInChildren<HealthBonus>(true);
             if (bonusHealth != null)
             {
-                Debug.Log("!!");
                 PS.TakeHP();
                 isBonus = false;
                 bonusHealth.DestroyMe();
@@ -184,6 +182,7 @@ public class FaceScript : MonoBehaviour
             if (bonusCombo != null)
             {
                 Debug.Log("COMBOTIME");
+                BSS.GetComboBonus();
                 isBonus = false;
                 bonusCombo.DestroyMe();
             }
@@ -203,9 +202,15 @@ public class FaceScript : MonoBehaviour
     private void StartTransfer(GameObject targetSide, int sideNumber, string color)
     {
         transferInProgress = true;
-        side2.GetComponent<FaceScript>().rend.material = materialBasicFace;
-        side1.GetComponent<FaceScript>().rend.material = materialBasicFace;
-        side3.GetComponent<FaceScript>().rend.material = materialBasicFace;
+        FaceScript FSSide1 = side1.GetComponent<FaceScript>();
+        FaceScript FSSide2 = side2.GetComponent<FaceScript>();
+        FaceScript FSSide3 = side3.GetComponent<FaceScript>();
+        if (!FSSide2.isBonus) FSSide2.rend.material = materialBasicFace;
+        else FSSide2.rend.material = materialPlayerFace;
+        if (!FSSide1.isBonus) FSSide1.rend.material = materialBasicFace;
+        else FSSide1.rend.material = materialPlayerFace;
+        if (!FSSide3.isBonus) FSSide3.rend.material = materialBasicFace;
+        else FSSide3.rend.material = materialPlayerFace;
         StartCoroutine(TransferPlayer(targetSide, sideNumber, color));
     }
 

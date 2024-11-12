@@ -105,9 +105,17 @@ public class ComboManager : MonoBehaviour
         inProcess = false; // —брасываем флаг
     }
 
-    void ResetComboTimer()
+    public void ResetComboTimer()
     {
         comboTimer = 1.5f * BC.beatInterval;
+    }
+
+    public void Double()
+    {
+        score = score * 2;
+        scoreText.text = score.ToString();
+        scoreLoseText.text = score.ToString();
+        scoreWinText.text = score.ToString();
     }
 
     private void UpdateComboDisplay()
