@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class FallManager : MonoBehaviour
 {
-    [SerializeField] private GameObject[] faces;
+    private GameObject[] faces;
+    [SerializeField] private FaceArrayScript FAS;
     private List<int> numbersOfFalledFaces;
 
     [SerializeField] private PlayerScript PS;
@@ -17,10 +18,12 @@ public class FallManager : MonoBehaviour
     [SerializeField] private AnimationClip animClipFall;
     [SerializeField] private AnimationClip animClipReset;
     private bool waitForDeath = false;
+    private bool isReset = false;
 
 
     private void Start()
     {
+        faces = FAS.GetAllFaces();
         numbersOfFalledFaces = new List<int>();
         foreach (GameObject face in faces)
         {
@@ -105,11 +108,23 @@ public class FallManager : MonoBehaviour
     IEnumerator ResetAfterDelay(GameObject face, Vector3 initialPosition, Quaternion initialRotation, Vector3 initialLocalPosition, Quaternion initialLocalRotation, float delay, int numb)
     {
         Rigidbody rb = face.GetComponent<Rigidbody>();
+
+        if (isReset)
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            rb.transform.position = initialPosition;
+            rb.transform.rotation = initialRotation;
+            rb.transform.localPosition = initialLocalPosition;
+            rb.transform.localRotation = initialLocalRotation;
+        }
+
         yield return new WaitForSeconds(delay);
         if (waitForDeath)
         {
             PS.Lose();
         }
+        
         Renderer[] childRenderers = face.GetComponentsInChildren<Renderer>();
         foreach (Renderer renderer in childRenderers)
         {
@@ -126,6 +141,7 @@ public class FallManager : MonoBehaviour
 
     public void ResetFall()
     {
+        isReset = true;
         foreach (GameObject face in faces)
         {
             Renderer[] childRenderers = face.GetComponentsInChildren<Renderer>();
@@ -158,10 +174,11 @@ public class FallManager : MonoBehaviour
         {
 
             animator.enabled = true;
-            animator.Play(animClipReset.name); // Проигрываем анимацию
-            yield return new WaitForSeconds(animClipReset.length); // Ждем завершения анимации
+            animator.Play(animClipReset.name);
+            yield return new WaitForSeconds(animClipReset.length);
         }
 
         animator.enabled = false;
+        isReset = false;
     }
 }

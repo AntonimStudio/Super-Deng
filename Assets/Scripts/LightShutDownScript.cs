@@ -5,7 +5,8 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class LightShutDownScript : MonoBehaviour
 {
-    [SerializeField] private FaceScript[] faces;
+    private GameObject[] faces;
+    [SerializeField] private FaceArrayScript FAS;
     [SerializeField] private GameObject[] lights;
     [SerializeField] private PlayerScript player;
     [SerializeField] private AudioClip[] soundsLight;
@@ -22,6 +23,7 @@ public class LightShutDownScript : MonoBehaviour
 
     private void Start()
     {
+        faces = FAS.GetAllFaces();
         audioSource = gameObject.AddComponent<AudioSource>();
         if (postProcessVolume.profile.TryGetSettings(out vignette))
         {
@@ -36,10 +38,7 @@ public class LightShutDownScript : MonoBehaviour
         audioSource = gameObject.AddComponent<AudioSource>();
         StartCoroutine(ShutDownLight());
         StartCoroutine(FadeInVignette());
-        for (int i = 0; i < faces.Length; i++)
-        {
-            //////////////BUGGGGGGGGGGGGG
-        }
+        
     }
 
     private IEnumerator ShutDownLight()
@@ -62,12 +61,17 @@ public class LightShutDownScript : MonoBehaviour
 
     private IEnumerator ShutDownIcosahedron()
     {
+        for (int i = 0; i < faces.Length; i++)
+        {
+            FaceDanceScript FDS = faces[i].GetComponent<FaceDanceScript>();
+            FDS.isOn = false;
+            FDS.StopScaling();
+        }
+
         List<int> indices = new List<int>();
         for (int i = 0; i < faces.Length; i++)
             indices.Add(i);
-        Debug.Log(indices);
         Shuffle(indices);
-        Debug.Log(indices);
         audioSource.Stop();
         audioSource.clip = soundFace;
         audioSource.Play();
@@ -76,7 +80,7 @@ public class LightShutDownScript : MonoBehaviour
         {
             if (faces[i] != null)
             {
-                faces[i].rend.material = material;
+                faces[i].GetComponent<FaceScript>().rend.material = material;
                 yield return new WaitForSeconds(delay/10);
             }
         }

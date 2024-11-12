@@ -10,12 +10,14 @@ public class FaceDanceScript : MonoBehaviour
     private bool inProcess = false;
     public Coroutine constantCoroutine;
     private Vector3 originalScale;
+    private FaceScript FS;
     [SerializeField] private EnemySpawnSettings enemySpawnSettings;
     [SerializeField] private TimerController TC;
     private bool[] spawnExecuted;
 
     private void Start()
     {
+        FS = gameObject.GetComponent<FaceScript>();
         duration += Random.Range(-0.2f, 0.05f);
         originalScale = gameObject.GetComponent<FaceScript>().glowingPart.transform.localScale;
         if (enemySpawnSettings != null)
@@ -26,7 +28,7 @@ public class FaceDanceScript : MonoBehaviour
 
     private void Update()
     {
-        if (TC != null && !gameObject.GetComponent<FaceScript>().havePlayer)
+        if (TC != null)
         {
             float elapsedTime = TC.timeElapsed;
 
@@ -42,26 +44,31 @@ public class FaceDanceScript : MonoBehaviour
                     spawnExecuted[i] = true;
                 }
             }
-            if (isOn && !inProcess)
+            if (isOn && !inProcess && !FS.havePlayer)
             {
-                constantCoroutine = StartCoroutine(ScaleObject(gameObject.GetComponent<FaceScript>().glowingPart, scaleFactor, duration));
+                constantCoroutine = StartCoroutine(ScaleObject(FS.glowingPart, scaleFactor, duration));
             }
+        }
+        if (FS.havePlayer || FS.isKilling || FS.isBlocked || FS.isBlinking)
+        {
+            isOn = false;
+            StopScaling();
         }
     }
 
     public void StartScaling()
     {
-        gameObject.GetComponent<FaceScript>().glowingPart.transform.localScale = originalScale;
-        constantCoroutine = StartCoroutine(ScaleObject(gameObject.GetComponent<FaceScript>().glowingPart, scaleFactor, duration));
+        FS.glowingPart.transform.localScale = originalScale;
+        constantCoroutine = StartCoroutine(ScaleObject(FS.glowingPart, scaleFactor, duration));
     }
 
     public void StopScaling()
     {
-        gameObject.GetComponent<FaceScript>().glowingPart.transform.localScale = originalScale;
+        FS.glowingPart.transform.localScale = originalScale;
         if (constantCoroutine != null)
         {
             StopCoroutine(constantCoroutine);
-            gameObject.GetComponent<FaceScript>().glowingPart.transform.localScale = originalScale;
+            FS.glowingPart.transform.localScale = originalScale;
             constantCoroutine = null;
         }
     }

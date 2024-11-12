@@ -16,6 +16,7 @@ public class PlayerScript : MonoBehaviour
     [Space]
     [SerializeField] private Animator animator;
     [SerializeField] private AnimationClip animClipBlink;
+    [SerializeField] private AudioClip sound;
     private GameObject faceCurrent;
     [SerializeField] private Material materialTurnOn;
     [SerializeField] private Material materialTurnOff;
@@ -25,13 +26,15 @@ public class PlayerScript : MonoBehaviour
     public MeshRenderer rendPartLeft;
     public MeshRenderer rendPartRight;
 
+
     [SerializeField] private Image imageLose;
     [SerializeField] private TimerController TC;
     [SerializeField] private StartCountDown SCD;
     [SerializeField] private RedFaceScript RFS;
     [SerializeField] private LightShutDownScript LSDS;
     [SerializeField] private IcoSphereDanceScript ISDS;
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource audioSourceMusic;
+    [SerializeField] private AudioSource audioSourceGameOver;
     [SerializeField] private float fadeDuration = 2f;
 
     private bool inBlinking = false;
@@ -181,24 +184,25 @@ public class PlayerScript : MonoBehaviour
             LSDS.StartShutDown();
         }
         else ShowImage();
+        audioSourceGameOver.clip = sound;
+        audioSourceGameOver.Play();
+
         StartCoroutine(FadeOutCoroutine());
-        
-        
-        
     }
 
     private IEnumerator FadeOutCoroutine()
     {
-        float startVolume = audioSource.volume;
 
-        while (audioSource.volume > 0)
+        float startVolume = audioSourceMusic.volume;
+
+        while (audioSourceMusic.volume > 0)
         {
-            audioSource.volume -= startVolume * Time.deltaTime / fadeDuration;
+            audioSourceMusic.volume -= startVolume * Time.deltaTime / fadeDuration;
             yield return null;
         }
 
-        audioSource.volume = 0;
-        audioSource.Stop();
+        audioSourceMusic.volume = 0;
+        audioSourceMusic.Stop();
     }
 
     public void ShowImage()

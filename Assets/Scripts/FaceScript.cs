@@ -73,10 +73,11 @@ public class FaceScript : MonoBehaviour
     [SerializeField] private bool isAnExtremeSide = false;
     [SerializeField] private bool isTutorial = false;
     private bool transferInProgress = false;
-    public bool isBlocked = false;
-    [HideInInspector] public bool isKilling = false;
     private bool isPreviousAnExtremeSide1 = false;
-    public bool isBlinking = false;
+    [HideInInspector] public bool isKilling = false;
+    [HideInInspector] public bool isBlinking = false;
+    [HideInInspector] public bool isBlocked = false;
+    [HideInInspector] public bool isBonus = false;
 
     private void Awake() 
     {
@@ -220,7 +221,6 @@ public class FaceScript : MonoBehaviour
         
         if (!isPreviousPreviousAnExtremeSide && isPreviousAnExtremeSide && isAnExtremeSide)
         {
-            Debug.Log("Definitile nah");
             if (sideNumber == 1 && color == "Left")
             {
                 materials.Add("LeftSide", 2);
