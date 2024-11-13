@@ -6,10 +6,6 @@ using TMPro;
 
 public class RedFaceScript : MonoBehaviour
 {
-
-    
-
-
     private GameObject[] faces;
     //[SerializeField] private Image imageLose;
     [SerializeField] private float colorChangeDuration = 2f;
@@ -35,7 +31,7 @@ public class RedFaceScript : MonoBehaviour
     public bool isTutorial = false;
     public TutorialController TuC;
     public Image panel;
-
+    /*
     private void Start()
     {
         faces = FAS.GetAllFaces();
@@ -111,7 +107,7 @@ public class RedFaceScript : MonoBehaviour
                     /*if (!(FS.havePlayer || FS.isBlinking || FS.isKilling || FS.isBlocked || FS.isBonus))
                     {
                         StartCoroutine(ChangeColorThenScale(faces[newCubeIndices[i]], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
-                    }*/
+                    }
                     StartCoroutine(ChangeColorThenScale(faces[newCubeIndices[i]], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
                 }
             }
@@ -128,7 +124,7 @@ public class RedFaceScript : MonoBehaviour
        if (face.GetComponent<FaceScript>().havePlayer)
        {
            Lose(face);
-       }*/
+       }
     }
     
     private IEnumerator FadeColorAndScale(GameObject cube, Material targetMaterial, Vector3 targetScale, float colorDuration, float scaleDuration)
@@ -140,7 +136,7 @@ public class RedFaceScript : MonoBehaviour
         if (FDC.isOn && FDC != null)
         {
             cube.GetComponent<FaceDanceScript>().StartScaling();
-        }*/
+        }
     }
 
     IEnumerator FadeColor(GameObject face, Material targetMaterial, float duration)
@@ -192,7 +188,7 @@ public class RedFaceScript : MonoBehaviour
             /*if (FS.havePlayer)
             {
                 Lose(face);
-            }*/
+            }
             FS.glowingPart.transform.localScale = Vector3.Lerp(startScale, targetScale, timer / duration);
             timer += Time.deltaTime;
             Debug.Log(targetScale);
@@ -231,5 +227,5 @@ public class RedFaceScript : MonoBehaviour
         panel.enabled = true;
         yield return new WaitForSeconds(0.1f);
         panel.enabled = false;
-    }
+    }*/
 }
