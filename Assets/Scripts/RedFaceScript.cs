@@ -7,11 +7,11 @@ using TMPro;
 public class RedFaceScript : MonoBehaviour
 {
 
-    public bool isTurnOn = false;
-    /*
     
-    [SerializeField] private GameObject[] faces;
-    [SerializeField] private Image imageLose;
+
+
+    private GameObject[] faces;
+    //[SerializeField] private Image imageLose;
     [SerializeField] private float colorChangeDuration = 2f;
     [SerializeField] private float scaleChangeDuration = 1f;
     [SerializeField] private float scaleChange = 25f;
@@ -19,11 +19,14 @@ public class RedFaceScript : MonoBehaviour
     [SerializeField] private Material materialRed;
     [SerializeField] private Material materialPlayer;
     [SerializeField] private StartCountDown SCD;
+    [SerializeField] private FaceArrayScript FAS;
     [SerializeField] private TimerController TC;
-    [SerializeField] private EnemySpawnSettings enemySpawnSettings;
     [SerializeField] private PlayerScript PS;
     [SerializeField] private ComboManager CM;
-    
+    [SerializeField] private EnemySpawnSettings enemySpawnSettings;
+    public bool isTurnOn = false;
+
+
     private List<int> lastCubeIndices = new List<int>();
     private List<int> newCubeIndices = new List<int>();
     private bool[] spawnExecuted;
@@ -35,46 +38,11 @@ public class RedFaceScript : MonoBehaviour
 
     private void Start()
     {
+        faces = FAS.GetAllFaces();
         spawnExecuted = new bool[enemySpawnSettings.spawnTimes.Length];
         //PS.rend.material = targetMaterial;
     }
 
-    public void ChangeFaceColor()
-    {
-        if (isTurnOn)
-        {
-            foreach (int index in lastCubeIndices)
-            {
-                StartCoroutine(FadeColorAndScale(faces[index], materialWhite, new Vector3(1f, 1f, 1f), colorChangeDuration, scaleChangeDuration));
-            }
-            lastCubeIndices.Clear();
-
-            if (isRandomSpawnTime) 
-            { 
-                for (int i = 0; i < colvo; i++)
-                {
-                    int randomIndex;
-                
-                    do
-                    {
-                        randomIndex = Random.Range(0, faces.Length);
-                    }
-                    while (lastCubeIndices.Contains(randomIndex));
-                    lastCubeIndices.Add(randomIndex);
-                    StartCoroutine(ChangeColorThenScale(faces[randomIndex], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
-                    faces[randomIndex].GetComponent<FaceScript>().isKilling = true;
-                    faces[randomIndex].GetComponent<FaceDanceScript>().StopScaling();
-                }
-            }
-            else
-            {
-                for (int i = 0; i < newCubeIndices.Count; i++)
-                {
-                    StartCoroutine(ChangeColorThenScale(faces[newCubeIndices[i]], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
-                }
-            }
-        }
-    }
     private void Update()
     {
         if (TC != null)
@@ -105,17 +73,74 @@ public class RedFaceScript : MonoBehaviour
         }
     }
 
+    public void ChangeFaceColor()
+    {
+        if (isTurnOn)
+        {
+            foreach (int index in lastCubeIndices)
+            {
+                //StartCoroutine(FadeColorAndScale(faces[index], materialWhite, new Vector3(1f, 1f, 1f), colorChangeDuration, scaleChangeDuration));
+                StartCoroutine(ChangeScale(faces[index], new Vector3(1f, 1f, 1f), scaleChangeDuration, materialWhite, false));
+                faces[index].GetComponent<FaceScript>().isKilling = false;
+            }
+            lastCubeIndices.Clear();
 
-    IEnumerator ChangeColorThenScale(GameObject face, Material targetMaterial, Vector3 targetScale, float colorDuration, float scaleDuration)
+            if (isRandomSpawnTime) 
+            { 
+                for (int i = 0; i < colvo; i++)
+                {
+                    int randomIndex;
+                    FaceScript FS;
+                    do
+                    {
+                        randomIndex = Random.Range(0, faces.Length);
+                        FS = faces[randomIndex].GetComponent<FaceScript>();
+                    }
+                    while (lastCubeIndices.Contains(randomIndex) || FS.havePlayer || FS.isBlinking || FS.isKilling || FS.isBlocked || FS.isBonus);
+                    lastCubeIndices.Add(randomIndex);
+                    StartCoroutine(ChangeColorThenScale(faces[randomIndex], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
+                    FS.isKilling = true;
+                    //faces[randomIndex].GetComponent<FaceDanceScript>().StopScaling();
+                }
+            }
+            else
+            {
+                for (int i = 0; i < newCubeIndices.Count; i++)
+                {
+                    FaceScript FS = faces[i].GetComponent<FaceScript>();
+                    /*if (!(FS.havePlayer || FS.isBlinking || FS.isKilling || FS.isBlocked || FS.isBonus))
+                    {
+                        StartCoroutine(ChangeColorThenScale(faces[newCubeIndices[i]], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
+                    }*/
+                    StartCoroutine(ChangeColorThenScale(faces[newCubeIndices[i]], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
+                }
+            }
+        }
+    }
+
+
+    private IEnumerator ChangeColorThenScale(GameObject face, Material targetMaterial, Vector3 targetScale, float colorDuration, float scaleDuration)
     {
 
         yield return StartCoroutine(FadeColor(face, targetMaterial, colorDuration));
-        
-        if (face.GetComponent<FaceScript>().havePlayer)
-        {
-            Lose(face);
-        }
         yield return StartCoroutine(ChangeScale(face, targetScale, scaleDuration, targetMaterial, true));
+        /*
+       if (face.GetComponent<FaceScript>().havePlayer)
+       {
+           Lose(face);
+       }*/
+    }
+    
+    private IEnumerator FadeColorAndScale(GameObject cube, Material targetMaterial, Vector3 targetScale, float colorDuration, float scaleDuration)
+    {
+        //yield return StartCoroutine(FadeColor(cube, targetMaterial, colorDuration));
+        yield return StartCoroutine(ChangeScale(cube, targetScale, scaleDuration, materialRed, false));
+        //cube.GetComponent<FaceScript>().isKilling = false;
+        /*FaceDanceScript FDC = cube.GetComponent<FaceDanceScript>();
+        if (FDC.isOn && FDC != null)
+        {
+            cube.GetComponent<FaceDanceScript>().StartScaling();
+        }*/
     }
 
     IEnumerator FadeColor(GameObject face, Material targetMaterial, float duration)
@@ -132,7 +157,7 @@ public class RedFaceScript : MonoBehaviour
             PS.rendPartRight.material = targetMaterial;
         }
             
-    float timer = 0f;
+        float timer = 0f;
         while (timer < duration)
         {
             if (!face.GetComponent<FaceScript>().havePlayer)
@@ -157,37 +182,28 @@ public class RedFaceScript : MonoBehaviour
 
     IEnumerator ChangeScale(GameObject face, Vector3 targetScale, float duration, Material targetMaterial, bool isGettingBigger)
     {
-        Vector3 startScale = face.GetComponent<FaceScript>().glowingPart.transform.localScale;
+        FaceScript FS = face.GetComponent<FaceScript>();
+        Vector3 startScale = FS.glowingPart.transform.localScale;
         float timer = 0f;
-
+        
         while (timer < duration)
         {
-            face.GetComponent<FaceScript>().rend.material = targetMaterial;
-            if (face.GetComponent<FaceScript>().havePlayer)
+            FS.rend.material = targetMaterial;
+            /*if (FS.havePlayer)
             {
                 Lose(face);
-            }
-            face.GetComponent<FaceScript>().glowingPart.transform.localScale = Vector3.Lerp(startScale, targetScale, timer / duration);
+            }*/
+            FS.glowingPart.transform.localScale = Vector3.Lerp(startScale, targetScale, timer / duration);
             timer += Time.deltaTime;
+            Debug.Log(targetScale);
             yield return null;
         }
         if (!isGettingBigger)
         {
-            face.GetComponent<FaceScript>().rend.material = materialWhite;
+            FS.rend.material = materialWhite;
         }
-        face.GetComponent<FaceScript>().glowingPart.transform.localScale = targetScale;
-    }
-
-    IEnumerator FadeColorAndScale(GameObject cube, Material targetMaterial, Vector3 targetScale, float colorDuration, float scaleDuration)
-    {
-        yield return StartCoroutine(FadeColor(cube, targetMaterial, colorDuration));
-        yield return StartCoroutine(ChangeScale(cube, targetScale, scaleDuration, materialRed, false));
-        cube.GetComponent<FaceScript>().isKilling = false;
-        FaceDanceScript FDC = cube.GetComponent<FaceDanceScript>();
-        if (FDC.isOn && FDC != null)
-        {
-            cube.GetComponent<FaceDanceScript>().StartScaling();
-        }
+        else FS.rend.material = materialRed;
+        FS.glowingPart.transform.localScale = targetScale;
     }
 
     private void Lose(GameObject face)
@@ -195,7 +211,7 @@ public class RedFaceScript : MonoBehaviour
         if (!isTutorial)
         {
             face.GetComponent<FaceScript>().havePlayer = false;
-            imageLose.gameObject.SetActive(true);
+            PS.Lose();
             if (TC != null)
             {
                 TC.timerIsRunning = false;
@@ -215,5 +231,5 @@ public class RedFaceScript : MonoBehaviour
         panel.enabled = true;
         yield return new WaitForSeconds(0.1f);
         panel.enabled = false;
-    }*/
+    }
 }

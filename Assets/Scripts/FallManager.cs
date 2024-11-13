@@ -49,8 +49,13 @@ public class FallManager : MonoBehaviour
                 return; // ¬ыход из метода, если все числа использованы
             }
             int numb;
-            do { numb = Random.Range(0, 80); }
-            while (numbersOfFalledFaces.Contains(numb) || faces[numb].GetComponent<FaceScript>().havePlayer);
+            FaceScript FS;
+            do 
+            { 
+                numb = Random.Range(0, 80);
+                FS = faces[numb].GetComponent<FaceScript>();
+            }
+            while (numbersOfFalledFaces.Contains(numb) || FS.havePlayer || FS.isBlinking || FS.isKilling || FS.isBlocked || FS.isBonus);
             numbersOfFalledFaces.Add(numb);
             StartCoroutine(PlayAnimationFall(faces[numb], numb));
         }
