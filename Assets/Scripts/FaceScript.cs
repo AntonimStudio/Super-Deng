@@ -51,6 +51,7 @@ public class FaceScript : MonoBehaviour
     [Header("Glowing&Rendering")]
     public MeshRenderer rend;
     public GameObject glowingPart;
+    private Animator animator;
 
     [Header("Key Bindings")]
     public KeyCode keyLeft = KeyCode.A;
@@ -97,6 +98,12 @@ public class FaceScript : MonoBehaviour
     {
         materials = new Dictionary<string, int>();
         sides = new Dictionary<string, GameObject>();
+
+        animator = GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.enabled = false;
+        }
 
         if (havePlayer)
         {
