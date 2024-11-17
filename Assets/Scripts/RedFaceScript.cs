@@ -27,6 +27,7 @@ public class RedFaceScript : MonoBehaviour
     private List<int> newCubeIndices = new List<int>();
     private bool[] spawnExecuted;
     private int colvo = 1;
+    private bool isRandomSpawnTime = true;
     public bool isTutorial = false;
     public TutorialController TuC;
     public Image panel;
@@ -37,14 +38,42 @@ public class RedFaceScript : MonoBehaviour
     }
 
     private void Update()
-    {
+    {/*
+        if (TC != null)
+        {
+            float elapsedTime = TC.timeElapsed;
+
+            for (int i = 0; i < enemySpawnSettings.spawnTimes.Length - 1; i++)
+            {
+                var spawnTimeData = enemySpawnSettings.spawnTimes[i];
+                var nextSpawnTimeData = enemySpawnSettings.spawnTimes[i + 1];
+
+                if (elapsedTime >= spawnTimeData.time && elapsedTime <= nextSpawnTimeData.time && !spawnExecuted[i])
+                {
+                    if (spawnTimeData.isRandom)
+                    {
+                        colvo = spawnTimeData.colvo;
+                        isRandomSpawnTime = true;
+                    }
+                    else
+                    {
+                        newCubeIndices.Clear();
+                        newCubeIndices = new List<int>(spawnTimeData.gameObjects);
+                        isRandomSpawnTime = false;
+                    }
+                    spawnExecuted[i] = true;
+                }
+            }
+        }*/
+
         if (Input.GetKeyDown(KeyCode.X))
         {
-            ChangeFaceColor();
+            isRandomSpawnTime = true;
+            StartSettingRedFace();
         }
     }
 
-    public void ChangeFaceColor()
+    public void StartSettingRedFace()
     {
         if (isTurnOn)
         {
@@ -59,17 +88,84 @@ public class RedFaceScript : MonoBehaviour
                 }
                 while (FS.havePlayer);
                     
-                StartCoroutine(ChangeColorThenScale(faces[randomIndex], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
+                StartCoroutine(SetRedFace(faces[randomIndex], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
             }
         }
     }
 
-
-    private IEnumerator ChangeColorThenScale(GameObject face, Material targetMaterial, Vector3 targetScale, float colorDuration, float scaleDuration)
+    public void ChangeFaceColor()
     {
+        if (isTurnOn)
+        {/*
+            foreach (int index in lastCubeIndices)
+            {
+                //GameObject face, Material targetMaterial, Vector3 targetScale, float colorDuration, float scaleDuration
+                //StartCoroutine(FadeColorAndScale(faces[index], materialWhite, new Vector3(1f, 1f, 1f), colorChangeDuration, scaleChangeDuration));
+                StartCoroutine(ChangeScaleThenColor(faces[index], materialWhite, new Vector3(1f, 1f, 1f), colorChangeDuration, scaleChangeDuration));
+                faces[index].GetComponent<FaceScript>().isKilling = false;
+            }
+            lastCubeIndices.Clear();
+            */
+            if (isRandomSpawnTime)
+            {
+                for (int i = 0; i < colvo; i++)
+                {
+                    int randomIndex;
+                    FaceScript FS;
+                    do
+                    {
+                        randomIndex = Random.Range(0, faces.Length);
+                        FS = faces[randomIndex].GetComponent<FaceScript>();
+                    }
+                    while (FS.havePlayer || FS.isBlinking || FS.isKilling || FS.isBlocked || FS.isBonus); //lastCubeIndices.Contains(randomIndex) 
+
+                    StartCoroutine(SetRedFace(faces[randomIndex], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
+                }
+            }
+            else
+            {
+                for (int i = 0; i < newCubeIndices.Count; i++)
+                {
+                    FaceScript FS = faces[i].GetComponent<FaceScript>();
+                    /*if (!(FS.havePlayer || FS.isBlinking || FS.isKilling || FS.isBlocked || FS.isBonus))
+                    {
+                        StartCoroutine(ChangeColorThenScale(faces[newCubeIndices[i]], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
+                    }*/
+                    StartCoroutine(SetRedFace(faces[newCubeIndices[i]], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
+                }
+            }
+        }
+    }
+
+    private IEnumerator SetRedFace(GameObject face, Material targetMaterial, Vector3 targetScale, float colorDuration, float scaleDuration)
+    {
+        FaceScript FS = face.GetComponent<FaceScript>();
+        FaceDanceScript FDC = face.GetComponent<FaceDanceScript>();
+        FS.isKilling = true;
+
+        if (FDC.isOn && FDC != null)
+        {
+            FDC.StopScaling();
+        }
+        float timer = 0f;
+        while (timer < colorDuration)
+        {
+            if (!FS.havePlayer) FS.rend.material = targetMaterial;
+            else SetPartsMaterial(targetMaterial);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
         yield return StartCoroutine(ChangeScale(face, new Vector3(1f, 1f, scaleChange), scaleDuration));
-        yield return new WaitForSeconds(0.3333f);
-        yield return StartCoroutine(ChangeScale(face, new Vector3(1f, 1f, 1f), scaleDuration)); ///materialRed
+
+        yield return new WaitForSeconds(1f);
+
+        yield return StartCoroutine(ChangeScale(face, new Vector3(1f, 1f, 1f), scaleDuration)); 
+
+        if (!FS.havePlayer) FS.rend.material = materialWhite;
+        else SetPartsMaterial(materialPlayer);
+
+        FS.isKilling = false ;
 
     }
 
@@ -81,10 +177,21 @@ public class RedFaceScript : MonoBehaviour
 
         while (timer < duration)
         {
+            if (!FS.havePlayer) FS.rend.material = materialRed;
+            else SetPartsMaterial(materialPlayer);
+
             FS.glowingPart.transform.localScale = Vector3.Lerp(startScale, targetScale, timer / duration);
             timer += Time.deltaTime;
             yield return null;
         }
         FS.glowingPart.transform.localScale = targetScale;
+    }
+
+    private void SetPartsMaterial(Material material)
+    {
+        PS.rendPartTop.material = material;
+        PS.rendPartMiddle.material = material;
+        PS.rendPartLeft.material = material;
+        PS.rendPartRight.material = material;
     }
 }

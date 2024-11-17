@@ -14,7 +14,7 @@ public class FaceDanceScript : MonoBehaviour
     [SerializeField] private EnemySpawnSettings enemySpawnSettings;
     [SerializeField] private TimerController TC;
     private bool[] spawnExecuted;
-
+    /*
     private void Start()
     {
         FS = gameObject.GetComponent<FaceScript>();
@@ -61,7 +61,7 @@ public class FaceDanceScript : MonoBehaviour
         FS.glowingPart.transform.localScale = originalScale;
         constantCoroutine = StartCoroutine(ScaleObject(FS.glowingPart, scaleFactor, duration));
     }
-
+    */
     public void StopScaling()
     {
         FS.glowingPart.transform.localScale = originalScale;
@@ -72,10 +72,11 @@ public class FaceDanceScript : MonoBehaviour
             constantCoroutine = null;
         }
     }
-
+    /*
     private IEnumerator ScaleObject(GameObject obj, float factor, float time)
     {
-        if (isOn)
+        FaceScript FS = obj.GetComponent<FaceScript>();
+        if (isOn && !inProcess && !FS.havePlayer && !FS.isKilling)
         {
             inProcess = true;
             Vector3 targetScale = new Vector3(originalScale.x, originalScale.y, originalScale.z * factor);
@@ -101,5 +102,9 @@ public class FaceDanceScript : MonoBehaviour
             obj.transform.localScale = originalScale;
             inProcess = false;
         }
-    }
+        else
+        {
+            yield return null;
+        }
+    }*/
 }

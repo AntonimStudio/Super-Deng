@@ -130,6 +130,7 @@ public class FaceScript : MonoBehaviour
             else
             {
                 gameObject.GetComponent<FaceScript>().rend.material = materialPlayerFace;
+                
                 side2.GetComponent<FaceScript>().rend.material = materialRightFace;
                 side1.GetComponent<FaceScript>().rend.material = materialLeftFace;
                 side3.GetComponent<FaceScript>().rend.material = materialTopFace;
