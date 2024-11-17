@@ -11,9 +11,9 @@ public class FallManager : MonoBehaviour
     private List<int> numbersOfFalledFaces;
 
     [SerializeField] private PlayerScript PS;
-    [SerializeField] private Vector3 centerPoint; // Точка, из которой будет направлен импульс
-    [SerializeField] private float impulseForce = 10f; // Сила импульса
-    [SerializeField] private float torqueStrength = 10f; // Сила импульса
+    [SerializeField] private Vector3 centerPoint;
+    [SerializeField] private float impulseForce = 10f; 
+    [SerializeField] private float torqueStrength = 10f; 
     [SerializeField] private float delay = 1.5f;
     [SerializeField] private AnimationClip animClipFall;
     [SerializeField] private AnimationClip animClipReset;
@@ -44,10 +44,7 @@ public class FallManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (numbersOfFalledFaces.Count >= 79)
-            {
-                return; // Выход из метода, если все числа использованы
-            }
+            if (numbersOfFalledFaces.Count >= 79) return;
             int numb;
             FaceScript FS;
             do 
@@ -68,17 +65,17 @@ public class FallManager : MonoBehaviour
 
     private IEnumerator PlayAnimationFall(GameObject face, int numb)
     {
-         ///////////////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        FaceScript FS = face.GetComponent<FaceScript>();    
         Animator animator = face.GetComponent<Animator>();
         if (animator != null && animClipFall != null)
         {
             animator.enabled = true;
-            face.GetComponent<FaceScript>().isBlinking = true;
-            animator.Play(animClipFall.name); // Проигрываем анимацию
-            yield return new WaitForSeconds(animClipFall.length); // Ждем завершения анимации
+            FS.isBlinking = true;
+            animator.Play(animClipFall.name);
+            yield return new WaitForSeconds(animClipFall.length);
         }
-        face.GetComponent<FaceScript>().isBlocked = true;
-        face.GetComponent<FaceScript>().isBlinking = false;
+        FS.isBlocked = true;
+        FS.isBlinking = false;
         animator.enabled = false;
         ApplyImpulse(face, numb);
     }
@@ -172,7 +169,6 @@ public class FallManager : MonoBehaviour
 
     private IEnumerator PlayAnimationReset(GameObject face)
     {
-        
         Animator animator = face.GetComponent<Animator>();
         animator.enabled = true;
         if (animator != null && animClipReset != null)

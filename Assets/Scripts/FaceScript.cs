@@ -33,6 +33,10 @@ public class FaceScript : MonoBehaviour
     [SerializeField] private GameObject side3; // GreenSide == Side3
     public Dictionary<string, GameObject> sides;
 
+    [HideInInspector] public FaceScript FS2;
+    [HideInInspector] public FaceScript FS1;
+    [HideInInspector] public FaceScript FS3;
+
     [Space]
     [Header("Materials")]
     [FormerlySerializedAs("materialWhite")]
@@ -40,11 +44,11 @@ public class FaceScript : MonoBehaviour
     [FormerlySerializedAs("materialLightBlue")]
     [SerializeField] private Material materialPlayerFace;
     [FormerlySerializedAs("materialBlue")]
-    [SerializeField] private Material materialRightFace;
+    public Material materialRightFace;
     [FormerlySerializedAs("materialOrange")]
-    [SerializeField] private Material materialLeftFace;
+    public Material materialLeftFace;
     [FormerlySerializedAs("materialGreen")]
-    [SerializeField] private Material materialTopFace;
+    public Material materialTopFace;
     public Dictionary<string, int> materials;
 
     [Space]
@@ -77,9 +81,13 @@ public class FaceScript : MonoBehaviour
     [SerializeField] private bool isTutorial = false;
     private bool transferInProgress = false;
     private bool isPreviousAnExtremeSide1 = false;
-    [HideInInspector] public bool isKilling = false;
+    public bool isKilling = false;
     [HideInInspector] public bool isBlinking = false;
     [HideInInspector] public bool isBlocked = false;
+    [HideInInspector] public bool isLeft = false;
+    [HideInInspector] public bool isRight = false;
+    [HideInInspector] public bool isTop = false;
+
     public bool isBonus = false;
 
     private void Awake() 
@@ -92,6 +100,7 @@ public class FaceScript : MonoBehaviour
         textRight.text = keyRight.ToString();
         textLeft.text = keyLeft.ToString();
         textTop.text = keyTop.ToString();
+
     }
 
     private void Start()
@@ -99,11 +108,16 @@ public class FaceScript : MonoBehaviour
         materials = new Dictionary<string, int>();
         sides = new Dictionary<string, GameObject>();
 
+        FS1 = side1.GetComponent<FaceScript>();
+        FS2 = side2.GetComponent<FaceScript>();
+        FS3 = side3.GetComponent<FaceScript>();
+
         animator = GetComponent<Animator>();
         if (animator != null)
         {
             animator.enabled = false;
         }
+
 
         if (havePlayer)
         {
@@ -114,6 +128,10 @@ public class FaceScript : MonoBehaviour
             sides.Add("LeftSide", side1);
             sides.Add("RightSide", side2);
             sides.Add("TopSide", side3);
+
+            FS1.isLeft = true;
+            FS2.isRight = true;
+            FS3.isTop = true;
             /*        /\  
                      /  \
                     /  3 \
@@ -122,6 +140,8 @@ public class FaceScript : MonoBehaviour
                  / 1 \  / 2 \
                 /_____\/_____\
             */
+            PS.SetCurrentFace(gameObject);
+
             if (TC != null && !TC._tutorialSettings[TC._index].isMoving)
             {
                 player.SetActive(false);
@@ -130,13 +150,12 @@ public class FaceScript : MonoBehaviour
             else
             {
                 gameObject.GetComponent<FaceScript>().rend.material = materialPlayerFace;
-                
-                side2.GetComponent<FaceScript>().rend.material = materialRightFace;
-                side1.GetComponent<FaceScript>().rend.material = materialLeftFace;
-                side3.GetComponent<FaceScript>().rend.material = materialTopFace;
+
+                FS2.rend.material = materialRightFace;
+                FS1.rend.material = materialLeftFace;
+                FS3.rend.material = materialTopFace;
             }
         }
-        PS.SetCurrentFace(gameObject);
     }
 
     private void Update()
@@ -202,23 +221,32 @@ public class FaceScript : MonoBehaviour
         player.SetActive(true);
         havePlayer = true;
         gameObject.GetComponent<FaceScript>().rend.material = materialPlayerFace;
-        side2.GetComponent<FaceScript>().rend.material = materialRightFace;
-        side1.GetComponent<FaceScript>().rend.material = materialLeftFace;
-        side3.GetComponent<FaceScript>().rend.material = materialTopFace;
+        FS2.rend.material = materialRightFace;
+        FS1.rend.material = materialLeftFace;
+        FS3.rend.material = materialTopFace;
     }
 
     private void StartTransfer(GameObject targetSide, int sideNumber, string color)
     {
         transferInProgress = true;
-        FaceScript FSSide1 = side1.GetComponent<FaceScript>();
-        FaceScript FSSide2 = side2.GetComponent<FaceScript>();
-        FaceScript FSSide3 = side3.GetComponent<FaceScript>();
-        if (!FSSide2.isBonus) FSSide2.rend.material = materialBasicFace;
-        else FSSide2.rend.material = materialPlayerFace;
-        if (!FSSide1.isBonus) FSSide1.rend.material = materialBasicFace;
-        else FSSide1.rend.material = materialPlayerFace;
-        if (!FSSide3.isBonus) FSSide3.rend.material = materialBasicFace;
-        else FSSide3.rend.material = materialPlayerFace;
+        FS1.isLeft = false;
+        FS1.isRight = false;
+        FS1.isTop = false;
+
+        FS2.isLeft = false;
+        FS2.isRight = false;
+        FS2.isTop = false;
+
+        FS3.isLeft = false;
+        FS3.isRight = false;
+        FS3.isTop = false;
+
+        if (!FS2.isBonus) FS2.rend.material = materialBasicFace;
+        else FS2.rend.material = materialPlayerFace;
+        if (!FS1.isBonus) FS1.rend.material = materialBasicFace;
+        else FS1.rend.material = materialPlayerFace;
+        if (!FS3.isBonus) FS3.rend.material = materialBasicFace;
+        else FS3.rend.material = materialPlayerFace;
         StartCoroutine(TransferPlayer(targetSide, sideNumber, color));
     }
 
@@ -253,7 +281,7 @@ public class FaceScript : MonoBehaviour
                  / 1 \  / 2 \
                 /_____\/_____\
         */
-        
+
         if (!isPreviousPreviousAnExtremeSide && isPreviousAnExtremeSide && isAnExtremeSide)
         {
             if (sideNumber == 1 && color == "Left")
@@ -266,9 +294,13 @@ public class FaceScript : MonoBehaviour
                 sides.Add("RightSide", side1);
                 sides.Add("TopSide", side3);
 
-                side2.GetComponent<FaceScript>().rend.material = materialLeftFace;
-                side1.GetComponent<FaceScript>().rend.material = materialRightFace;
-                side3.GetComponent<FaceScript>().rend.material = materialTopFace;
+                if (!FS2.isKilling) FS2.rend.material = materialLeftFace;
+                if (!FS1.isKilling) FS1.rend.material = materialRightFace;
+                if (!FS3.isKilling) FS3.rend.material = materialTopFace;
+
+                FS2.isLeft = true;
+                FS1.isRight = true;
+                FS3.isTop = true;
             }
             else if (sideNumber == 2 && color == "Top")
             {
@@ -280,9 +312,13 @@ public class FaceScript : MonoBehaviour
                 sides.Add("RightSide", side2);
                 sides.Add("TopSide", side1);
 
-                side2.GetComponent<FaceScript>().rend.material = materialRightFace;
-                side1.GetComponent<FaceScript>().rend.material = materialTopFace;
-                side3.GetComponent<FaceScript>().rend.material = materialLeftFace;
+                if (!FS2.isKilling) FS2.rend.material = materialRightFace;
+                if (!FS1.isKilling) FS1.rend.material = materialTopFace;
+                if (!FS3.isKilling) FS3.rend.material = materialLeftFace;
+
+                FS2.isRight = true;
+                FS1.isTop = true;
+                FS3.isLeft = true;
             }
             else if (sideNumber == 3 && color == "Right")
             {
@@ -294,9 +330,13 @@ public class FaceScript : MonoBehaviour
                 sides.Add("RightSide", side3);
                 sides.Add("TopSide", side2);
 
-                side2.GetComponent<FaceScript>().rend.material = materialTopFace;
-                side1.GetComponent<FaceScript>().rend.material = materialLeftFace;
-                side3.GetComponent<FaceScript>().rend.material = materialRightFace;
+                if (!FS2.isKilling) FS2.rend.material = materialTopFace;
+                if (!FS1.isKilling) FS1.rend.material = materialLeftFace;
+                if (!FS3.isKilling) FS3.rend.material = materialRightFace;
+
+                FS2.isTop = true;
+                FS1.isLeft = true;
+                FS3.isRight = true;
             }
             else if (sideNumber == 1 && color == "Right")
             {
@@ -308,9 +348,13 @@ public class FaceScript : MonoBehaviour
                 sides.Add("RightSide", side2);
                 sides.Add("TopSide", side1);
 
-                side2.GetComponent<FaceScript>().rend.material = materialRightFace;
-                side1.GetComponent<FaceScript>().rend.material = materialTopFace;
-                side3.GetComponent<FaceScript>().rend.material = materialLeftFace;
+                if (!FS2.isKilling) FS2.rend.material = materialRightFace;
+                if (!FS1.isKilling) FS1.rend.material = materialTopFace;
+                if (!FS3.isKilling) FS3.rend.material = materialLeftFace;
+
+                FS2.isRight = true;
+                FS1.isTop = true;
+                FS3.isLeft = true;
             }
             else if (sideNumber == 2 && color == "Left")
             {
@@ -322,9 +366,13 @@ public class FaceScript : MonoBehaviour
                 sides.Add("RightSide", side3);
                 sides.Add("TopSide", side2);
 
-                side2.GetComponent<FaceScript>().rend.material = materialTopFace;
-                side1.GetComponent<FaceScript>().rend.material = materialLeftFace;
-                side3.GetComponent<FaceScript>().rend.material = materialRightFace;
+                if (!FS2.isKilling) FS2.rend.material = materialTopFace;
+                if (!FS1.isKilling) FS1.rend.material = materialLeftFace;
+                if (!FS3.isKilling) FS3.rend.material = materialRightFace;
+
+                FS2.isTop = true;
+                FS1.isLeft = true;
+                FS3.isRight = true;
             }
             else if (sideNumber == 3 && color == "Top")
             {
@@ -336,9 +384,13 @@ public class FaceScript : MonoBehaviour
                 sides.Add("RightSide", side1);
                 sides.Add("TopSide", side3);
 
-                side2.GetComponent<FaceScript>().rend.material = materialLeftFace;
-                side1.GetComponent<FaceScript>().rend.material = materialRightFace;
-                side3.GetComponent<FaceScript>().rend.material = materialTopFace;
+                if (!FS2.isKilling) FS2.rend.material = materialLeftFace;
+                if (!FS1.isKilling) FS1.rend.material = materialRightFace;
+                if (!FS3.isKilling) FS3.rend.material = materialTopFace;
+
+                FS2.isLeft = true;
+                FS1.isRight = true;
+                FS3.isTop = true;
             }
             else if (sideNumber == 1 && color == "Top")
             {
@@ -350,9 +402,13 @@ public class FaceScript : MonoBehaviour
                 sides.Add("RightSide", side3);
                 sides.Add("TopSide", side2);
 
-                side1.GetComponent<FaceScript>().rend.material = materialLeftFace;
-                side2.GetComponent<FaceScript>().rend.material = materialTopFace;
-                side3.GetComponent<FaceScript>().rend.material = materialRightFace;
+                if (!FS2.isKilling) FS2.rend.material = materialTopFace;
+                if (!FS1.isKilling) FS1.rend.material = materialLeftFace;
+                if (!FS3.isKilling) FS3.rend.material = materialRightFace;
+
+                FS2.isTop = true;
+                FS1.isLeft = true;
+                FS3.isRight = true;
             }
             else if (sideNumber == 2 && color == "Right")
             {
@@ -364,9 +420,13 @@ public class FaceScript : MonoBehaviour
                 sides.Add("RightSide", side1);
                 sides.Add("TopSide", side3);
 
-                side1.GetComponent<FaceScript>().rend.material = materialRightFace;
-                side2.GetComponent<FaceScript>().rend.material = materialLeftFace;
-                side3.GetComponent<FaceScript>().rend.material = materialTopFace;
+                if (!FS2.isKilling) FS2.rend.material = materialLeftFace;
+                if (!FS1.isKilling) FS1.rend.material = materialRightFace;
+                if (!FS3.isKilling) FS3.rend.material = materialTopFace;
+
+                FS2.isLeft = true;
+                FS1.isRight = true;
+                FS3.isTop = true;
             }
             else if (sideNumber == 3 && color == "Left")
             {
@@ -378,22 +438,18 @@ public class FaceScript : MonoBehaviour
                 sides.Add("RightSide", side2);
                 sides.Add("TopSide", side1);
 
-                side1.GetComponent<FaceScript>().rend.material = materialTopFace;
-                side2.GetComponent<FaceScript>().rend.material = materialRightFace;
-                side3.GetComponent<FaceScript>().rend.material = materialLeftFace;
+                if (!FS2.isKilling) FS2.rend.material = materialRightFace;
+                if (!FS1.isKilling) FS1.rend.material = materialTopFace;
+                if (!FS3.isKilling) FS3.rend.material = materialLeftFace;
+
+                FS2.isRight = true;
+                FS1.isTop = true;
+                FS3.isLeft = true;
             }
             isPreviousAnExtremeSide1 = true;
         }
         else
         {
-            /*        /\  
-                     /  \
-                    /  3 \
-                   /______\
-                  / \    / \
-                 / 1 \  / 2 \
-                /_____\/_____\
-            */
             if ((sideNumber == 1 && color == "Left") || (sideNumber == 2 && color == "Top") || (sideNumber == 3 && color == "Right"))
             {
                 materials.Add("LeftSide", 2);
@@ -404,9 +460,13 @@ public class FaceScript : MonoBehaviour
                 sides.Add("RightSide", side3);
                 sides.Add("TopSide", side1);
 
-                side2.GetComponent<FaceScript>().rend.material = materialLeftFace;
-                side1.GetComponent<FaceScript>().rend.material = materialTopFace;
-                side3.GetComponent<FaceScript>().rend.material = materialRightFace;
+                if (!FS2.isKilling) FS2.rend.material = materialLeftFace;
+                if (!FS1.isKilling) FS1.rend.material = materialTopFace;
+                if (!FS3.isKilling) FS3.rend.material = materialRightFace;
+
+                FS2.isLeft = true;
+                FS1.isTop = true;
+                FS3.isRight = true;
             }
             else if ((sideNumber == 1 && color == "Right") || (sideNumber == 2 && color == "Left") || (sideNumber == 3 && color == "Top"))
             {
@@ -418,9 +478,13 @@ public class FaceScript : MonoBehaviour
                 sides.Add("RightSide", side2);
                 sides.Add("TopSide", side3);
 
-                side2.GetComponent<FaceScript>().rend.material = materialRightFace;
-                side1.GetComponent<FaceScript>().rend.material = materialLeftFace;
-                side3.GetComponent<FaceScript>().rend.material = materialTopFace;
+                if (!FS2.isKilling) FS2.rend.material = materialRightFace;
+                if (!FS1.isKilling) FS1.rend.material = materialLeftFace;
+                if (!FS3.isKilling) FS3.rend.material = materialTopFace;
+
+                FS2.isRight = true;
+                FS1.isLeft = true;
+                FS3.isTop = true;
             }
             else if ((sideNumber == 1 && color == "Top") || (sideNumber == 2 && color == "Right") || (sideNumber == 3 && color == "Left"))
             {
@@ -432,9 +496,13 @@ public class FaceScript : MonoBehaviour
                 sides.Add("RightSide", side1);
                 sides.Add("TopSide", side2);
 
-                side1.GetComponent<FaceScript>().rend.material = materialRightFace;
-                side2.GetComponent<FaceScript>().rend.material = materialTopFace;
-                side3.GetComponent<FaceScript>().rend.material = materialLeftFace;
+                if (!FS2.isKilling) FS2.rend.material = materialTopFace;
+                if (!FS1.isKilling) FS1.rend.material = materialRightFace;
+                if (!FS3.isKilling) FS3.rend.material = materialLeftFace;
+
+                FS2.isTop = true;
+                FS1.isRight = true;
+                FS3.isLeft = true;
             }
             isPreviousAnExtremeSide1 = false;
         }

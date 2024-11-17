@@ -156,23 +156,40 @@ public class RedFaceScript : MonoBehaviour
             yield return null;
         }
 
-        yield return StartCoroutine(ChangeScale(face, new Vector3(1f, 1f, scaleChange), scaleDuration));
+        yield return StartCoroutine(ChangeScale(face, new Vector3(1f, 1f, scaleChange), new Vector3(0f, -4.5f, 0f),  scaleDuration));
 
         yield return new WaitForSeconds(1f);
 
-        yield return StartCoroutine(ChangeScale(face, new Vector3(1f, 1f, 1f), scaleDuration)); 
+        yield return StartCoroutine(ChangeScale(face, new Vector3(1f, 1f, 1f), new Vector3(0f, 0f, 0f), scaleDuration)); 
 
         if (!FS.havePlayer) FS.rend.material = materialWhite;
         else SetPartsMaterial(materialPlayer);
 
-        FS.isKilling = false ;
+        if (FS.havePlayer) { SetPartsMaterial(materialPlayer); }
+        else if (FS.isRight)
+        {
+            FS.rend.material = FS.materialRightFace;
+        }
+        else if (FS.isLeft)
+        {
+            FS.rend.material = FS.materialLeftFace;
+        }
+        else if (FS.isTop)
+        {
+            FS.rend.material = FS.materialTopFace;
+        }
+        else FS.rend.material = materialWhite;
+
+
+        FS.isKilling = false;
 
     }
 
-    IEnumerator ChangeScale(GameObject face, Vector3 targetScale, float duration)
+    IEnumerator ChangeScale(GameObject face, Vector3 targetScale, Vector3 targetPosition, float duration)
     {
         FaceScript FS = face.GetComponent<FaceScript>();
         Vector3 startScale = FS.glowingPart.transform.localScale;
+        Vector3 startPosition = FS.glowingPart.transform.localPosition;
         float timer = 0f;
 
         while (timer < duration)
@@ -181,6 +198,8 @@ public class RedFaceScript : MonoBehaviour
             else SetPartsMaterial(materialPlayer);
 
             FS.glowingPart.transform.localScale = Vector3.Lerp(startScale, targetScale, timer / duration);
+            FS.glowingPart.transform.localPosition = Vector3.Lerp(startPosition, targetPosition, timer / duration);
+
             timer += Time.deltaTime;
             yield return null;
         }

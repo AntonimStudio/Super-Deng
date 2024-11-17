@@ -64,13 +64,14 @@ public class FaceDanceScript : MonoBehaviour
     */
     public void StopScaling()
     {
+        /*
         FS.glowingPart.transform.localScale = originalScale;
         if (constantCoroutine != null)
         {
             StopCoroutine(constantCoroutine);
             FS.glowingPart.transform.localScale = originalScale;
             constantCoroutine = null;
-        }
+        }*/
     }
     /*
     private IEnumerator ScaleObject(GameObject obj, float factor, float time)

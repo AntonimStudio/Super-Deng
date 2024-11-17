@@ -16,7 +16,8 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private AnimationClip animClipBlink;
     [SerializeField] private AudioClip sound;
-    private GameObject faceCurrent;
+    [SerializeField] private GameObject faceCurrent;
+    private FaceScript faceCurrentFS;
     [SerializeField] private Material materialTurnOn;
     [SerializeField] private Material materialTurnOff;
     [Space]
@@ -38,9 +39,11 @@ public class PlayerScript : MonoBehaviour
 
     private bool inBlinking = false;
     private bool isLosing = false;
+    private bool inTakingDamage = false;
 
     private void Awake()
     {
+        
         rendPartTop = glowingPartTop.GetComponent<MeshRenderer>();
         rendPartMiddle = glowingPartMiddle.GetComponent<MeshRenderer>();
         rendPartLeft = glowingPartLeft.GetComponent<MeshRenderer>();
@@ -49,15 +52,24 @@ public class PlayerScript : MonoBehaviour
         animator.enabled = false;
     }
 
+    private void Start()
+    {
+        faceCurrentFS = faceCurrent.GetComponent<FaceScript>();
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (faceCurrentFS.isKilling && !inTakingDamage)
         {
+            inTakingDamage = true;
             TakeDamage();
+            StartCoroutine(PlayAnimationTakeDamage());
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && !inTakingDamage)
         {
-            TakeHP();
+            inTakingDamage = true;
+            TakeDamage();
+            StartCoroutine(PlayAnimationTakeDamage());
         }
 
         if (faceCurrent.GetComponent<FaceScript>().isBlinking && !inBlinking)
@@ -107,7 +119,7 @@ public class PlayerScript : MonoBehaviour
             rendPartMiddle.material = materialTurnOn;
             rendPartLeft.material = materialTurnOff;
         }
-        else if (hp == 0)
+        else
         {
             rendPartRight.material = materialTurnOff;
             rendPartTop.material = materialTurnOff;
@@ -115,12 +127,13 @@ public class PlayerScript : MonoBehaviour
             rendPartLeft.material = materialTurnOff;
         }
     }
-
+    
     public void SetCurrentFace(GameObject face)
     {
         faceCurrent = face;
+        faceCurrentFS = face.GetComponent<FaceScript>();
     }
-
+    
     public void TakeDamage()
     {
         if (hp > 1)
@@ -129,6 +142,7 @@ public class PlayerScript : MonoBehaviour
         }
         else if (!isLosing)
         {
+            hp -= 1;
             Lose();
         }
         
@@ -144,6 +158,7 @@ public class PlayerScript : MonoBehaviour
         {
             rendPartLeft.material = materialTurnOff;
         }
+
     }
 
     public void TakeHP()
@@ -166,10 +181,23 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+    private IEnumerator PlayAnimationTakeDamage()
+    {
+        if (animator != null && animClipBlink != null)
+        {
+            animator.enabled = true;
+            animator.Play(animClipBlink.name);
+            yield return new WaitForSeconds(animClipBlink.length); // Ждем завершения анимации
+        }
+        ResetMaterials();
+        animator.enabled = false;
+        inTakingDamage = false;
+    }
+
     public void Lose()
     {
         isLosing = true;
-        faceCurrent.GetComponent<FaceScript>().havePlayer = false;
+        //faceCurrent.GetComponent<FaceScript>().havePlayer = false;
         rendPartMiddle.material = materialTurnOff;
         RFS.isTurnOn = false;
         SCD.isOn = false;
