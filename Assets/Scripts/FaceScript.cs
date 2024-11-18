@@ -41,6 +41,8 @@ public class FaceScript : MonoBehaviour
     [Header("Materials")]
     [FormerlySerializedAs("materialWhite")]
     [SerializeField] private Material materialBasicFace;
+    [FormerlySerializedAs("materialRed")]
+    [SerializeField] private Material materialKillerFace;
     [FormerlySerializedAs("materialLightBlue")]
     [SerializeField] private Material materialPlayerFace;
     [FormerlySerializedAs("materialBlue")]
@@ -149,11 +151,11 @@ public class FaceScript : MonoBehaviour
             }
             else
             {
-                gameObject.GetComponent<FaceScript>().rend.material = materialPlayerFace;
+                if (!isKilling) gameObject.GetComponent<FaceScript>().rend.material = materialPlayerFace;
 
-                FS2.rend.material = materialRightFace;
-                FS1.rend.material = materialLeftFace;
-                FS3.rend.material = materialTopFace;
+                if (!FS2.isKilling) FS2.rend.material = materialRightFace;
+                if (!FS1.isKilling) FS1.rend.material = materialLeftFace;
+                if (!FS3.isKilling) FS3.rend.material = materialTopFace;
             }
         }
     }
@@ -241,12 +243,18 @@ public class FaceScript : MonoBehaviour
         FS3.isRight = false;
         FS3.isTop = false;
 
-        if (!FS2.isBonus) FS2.rend.material = materialBasicFace;
-        else FS2.rend.material = materialPlayerFace;
-        if (!FS1.isBonus) FS1.rend.material = materialBasicFace;
-        else FS1.rend.material = materialPlayerFace;
-        if (!FS3.isBonus) FS3.rend.material = materialBasicFace;
-        else FS3.rend.material = materialPlayerFace;
+        if (FS1.isBonus) FS1.rend.material = materialPlayerFace;
+        else if (FS1.isKilling) FS1.rend.material = materialKillerFace;
+        else FS1.rend.material = materialBasicFace;
+
+        if (FS2.isBonus) FS2.rend.material = materialPlayerFace;
+        else if (FS2.isKilling) FS2.rend.material = materialKillerFace;
+        else FS2.rend.material = materialBasicFace;
+
+        if (FS3.isBonus) FS3.rend.material = materialPlayerFace;
+        else if (FS3.isKilling) FS3.rend.material = materialKillerFace;
+        else FS3.rend.material = materialBasicFace;
+
         StartCoroutine(TransferPlayer(targetSide, sideNumber, color));
     }
 
@@ -264,7 +272,7 @@ public class FaceScript : MonoBehaviour
 
     public void ReceivePlayer(GameObject newPlayer, int sideNumber, string color, bool isPreviousAnExtremeSide, bool isPreviousPreviousAnExtremeSide) //GameObject newPlayer, int sideNumber, string color)
     {
-        rend.material = materialPlayerFace;
+        if (!isKilling) rend.material = materialPlayerFace;
 
         materials.Remove("RightSide");
         materials.Remove("LeftSide");

@@ -67,17 +67,20 @@ public class BonusSpawnerScript : MonoBehaviour
     IEnumerator DestroyBonus(GameObject face, GameObject bonus, float delay)
     {
         yield return new WaitForSeconds(delay);
-        Animator animator = bonus.GetComponent<Animator>();
-        if (animator != null && animClip != null)
-        {
-            animator.enabled = true;
-            animator.Play(animClip.name);
-            yield return new WaitForSeconds(animClip.length);
+        if (bonus != null)
+        { 
+            Animator animator = bonus.GetComponent<Animator>();
+            if (animator != null && animClip != null)
+            {
+                animator.enabled = true;
+                animator.Play(animClip.name);
+                yield return new WaitForSeconds(animClip.length);
+            }
+            FaceScript FS = face.GetComponent<FaceScript>();
+            FS.rend.material = materialBasic;
+            FS.isBonus = false;
+            animator.enabled = false;
         }
-        FaceScript FS = face.GetComponent<FaceScript>();
-        FS.rend.material = materialBasic;
-        FS.isBonus = false;
-        animator.enabled = false;
         Destroy(bonus);
     }
 }
