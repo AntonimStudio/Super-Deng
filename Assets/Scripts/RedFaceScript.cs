@@ -11,6 +11,7 @@ public class RedFaceScript : MonoBehaviour
     [SerializeField] private float colorChangeDuration = 2f;
     [SerializeField] private float scaleChangeDuration = 1f;
     [SerializeField] private float scaleChange = 25f;
+    [SerializeField] private float positionChange = -4.5f;
     [SerializeField] private Material materialWhite;
     [SerializeField] private Material materialRed;
     [SerializeField] private Material materialPlayer;
@@ -72,7 +73,7 @@ public class RedFaceScript : MonoBehaviour
             StartSettingRedFace();
         }
     }
-
+    /*
     public void StartSettingRedFace()
     {
         if (isTurnOn)
@@ -91,9 +92,9 @@ public class RedFaceScript : MonoBehaviour
                 StartCoroutine(SetRedFace(faces[randomIndex], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
             }
         }
-    }
+    }*/
 
-    public void ChangeFaceColor()
+    public void StartSettingRedFace()
     {
         if (isTurnOn)
         {/*
@@ -156,7 +157,7 @@ public class RedFaceScript : MonoBehaviour
             yield return null;
         }
 
-        yield return StartCoroutine(ChangeScale(face, new Vector3(1f, 1f, scaleChange), new Vector3(0f, -4.5f, 0f),  scaleDuration));
+        yield return StartCoroutine(ChangeScale(face, new Vector3(1f, 1f, scaleChange), new Vector3(0f, positionChange, 0f),  scaleDuration));
 
         yield return new WaitForSeconds(1f);
 
