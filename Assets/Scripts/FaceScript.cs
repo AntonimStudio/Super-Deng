@@ -21,6 +21,7 @@ public class FaceScript : MonoBehaviour
                 /_____\/_____\
     */
     public GameObject player;
+    public int pathObjectCount = -1;
     [SerializeField] private PlayerScript PS;
 
     [Space]
@@ -75,6 +76,7 @@ public class FaceScript : MonoBehaviour
     [SerializeField] private SoundScript SS;
     [SerializeField] private TutorialController TC;
     [SerializeField] private BonusSpawnerScript BSS;
+    [SerializeField] private PathCounterScript PCS;
 
     [Space]
     [Header("Questions")]
@@ -103,6 +105,15 @@ public class FaceScript : MonoBehaviour
         textLeft.text = keyLeft.ToString();
         textTop.text = keyTop.ToString();
 
+        if (havePlayer)
+        {
+            pathObjectCount = 0;
+        }
+        else pathObjectCount = -1;
+
+        FS1 = side1.GetComponent<FaceScript>();
+        FS2 = side2.GetComponent<FaceScript>();
+        FS3 = side3.GetComponent<FaceScript>();
     }
 
     private void Start()
@@ -110,16 +121,11 @@ public class FaceScript : MonoBehaviour
         materials = new Dictionary<string, int>();
         sides = new Dictionary<string, GameObject>();
 
-        FS1 = side1.GetComponent<FaceScript>();
-        FS2 = side2.GetComponent<FaceScript>();
-        FS3 = side3.GetComponent<FaceScript>();
-
         animator = GetComponent<Animator>();
         if (animator != null)
         {
             animator.enabled = false;
         }
-
 
         if (havePlayer)
         {
@@ -264,8 +270,8 @@ public class FaceScript : MonoBehaviour
         FaceScript targetFace = targetSide.GetComponent<FaceScript>();
         if (!targetFace.havePlayer)
         {
-            targetFace.ReceivePlayer(player, sideNumber, color, isAnExtremeSide, isPreviousAnExtremeSide1);
             havePlayer = false;
+            targetFace.ReceivePlayer(player, sideNumber, color, isAnExtremeSide, isPreviousAnExtremeSide1);
         }
         transferInProgress = false;
     }
@@ -273,6 +279,7 @@ public class FaceScript : MonoBehaviour
     public void ReceivePlayer(GameObject newPlayer, int sideNumber, string color, bool isPreviousAnExtremeSide, bool isPreviousPreviousAnExtremeSide) //GameObject newPlayer, int sideNumber, string color)
     {
         if (!isKilling) rend.material = materialPlayerFace;
+        
 
         materials.Remove("RightSide");
         materials.Remove("LeftSide");
@@ -515,6 +522,7 @@ public class FaceScript : MonoBehaviour
             isPreviousAnExtremeSide1 = false;
         }
         havePlayer = true;
+        PCS.SetPathCount();
         PS.SetCurrentFace(gameObject);
         newPlayer.transform.SetParent(gameObject.transform);
         newPlayer.transform.localPosition = new Vector3(0, 0, 0);

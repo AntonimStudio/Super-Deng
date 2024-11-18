@@ -41,6 +41,18 @@ public class FaceArrayScript : MonoBehaviour
         return faces;
     }
 
+    public FaceScript[] GetAllFaceScripts()
+    {
+        FaceScript[] result = new FaceScript[faces.Length];
+        for (int i = 0; i < faces.Length; i++)
+        {
+            if (faces[i] != null)
+            {
+                result[i] = faces[i].GetComponent<FaceScript>();
+            }
+        }
+        return result;
+    }
 
     public void ReassembleStripsYX(int numbSet) //Y == 0, X == 1, Z == 2
     {
