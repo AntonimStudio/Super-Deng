@@ -19,7 +19,7 @@ public class HumanoidSceneScript : MonoBehaviour
     [SerializeField] private AudioClip soundScream;
     [SerializeField] private AudioClip music;
     private float timer = 0f;
-    private bool isSwitching = true;
+    //private bool isSwitching = true;
     private Grain grainEffect; // Зернистость
     private Coroutine grainCoroutine;
 
@@ -59,7 +59,7 @@ public class HumanoidSceneScript : MonoBehaviour
         }
 
         // Остановить переключение объектов
-        isSwitching = false;
+        //isSwitching = false;
 
 
         humanoid1.SetActive(true);
