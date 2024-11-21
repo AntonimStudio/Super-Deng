@@ -111,19 +111,32 @@ public class RedFaceScript : MonoBehaviour
             */
             if (isRandomSpawnTime)
             {
-                for (int i = 0; i < colvo; i++)
-                {
-                    int randomIndex;
-                    FaceScript FS;
-                    do
-                    {
-                        randomIndex = Random.Range(0, faces.Length);
-                        FS = faces[randomIndex].GetComponent<FaceScript>();
-                    }
-                    while (FS.havePlayer || FS.isBlinking || FS.isKilling || FS.isBlocked || FS.isBonus); //lastCubeIndices.Contains(randomIndex) 
+                List<int> availableFaces = new List<int>();
 
-                    StartCoroutine(SetRedFace(faces[randomIndex], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDurationUp, scaleChangeDurationDown));
+                // Сбор подходящих граней
+                for (int i = 0; i < faces.Length; i++)
+                {
+                    FaceScript FS = faces[i].GetComponent<FaceScript>();
+                    if (!FS.havePlayer &&
+                        !FS.isBlinking &&
+                        !FS.isKilling &&
+                        !FS.isBlocked &&
+                        !FS.isColored &&
+                        !FS.isBonus)
+                    {
+                        availableFaces.Add(i);
+                    }
                 }
+
+                // Если доступных граней нет, выходим
+                if (availableFaces.Count == 0) return;
+
+                // Выбираем случайный индекс из доступных граней
+                int randomIndex = Random.Range(0, availableFaces.Count);
+                int selectedFaceIndex = availableFaces[randomIndex];
+
+                // Запускаем корутину для выбранной грани
+                StartCoroutine(SetRedFace(faces[selectedFaceIndex],materialRed));
             }
             else
             {
@@ -134,13 +147,13 @@ public class RedFaceScript : MonoBehaviour
                     {
                         StartCoroutine(ChangeColorThenScale(faces[newCubeIndices[i]], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
                     }*/
-                    StartCoroutine(SetRedFace(faces[newCubeIndices[i]], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDurationUp, scaleChangeDurationDown));
+                    StartCoroutine(SetRedFace(faces[newCubeIndices[i]], materialRed));
                 }
             }
         }
     }
 
-    private IEnumerator SetRedFace(GameObject face, Material targetMaterial, Vector3 targetScale, float colorDuration, float scaleDurationUp, float scaleDurationDown)
+    private IEnumerator SetRedFace(GameObject face, Material targetMaterial)
     {
         FaceScript FS = face.GetComponent<FaceScript>();
         FaceDanceScript FDC = face.GetComponent<FaceDanceScript>();
@@ -151,8 +164,9 @@ public class RedFaceScript : MonoBehaviour
             FDC.StopScaling();
         }*/
         FDC.isOn = false;
+        FS.isColored = true;
         float timer = 0f;
-        while (timer < colorDuration)
+        while (timer < colorChangeDuration)
         {
             if (!FS.havePlayer) FS.rend.material = targetMaterial;
             else PS.SetPartsMaterial(targetMaterial);
@@ -160,25 +174,17 @@ public class RedFaceScript : MonoBehaviour
             yield return null;
         }
         FS.isKilling = true;
-        yield return StartCoroutine(ChangeScale(face, new Vector3(1f, 1f, scaleChange), new Vector3(0f, positionChange, 0f), scaleDurationUp));
+        FS.isColored = false ;
+        yield return StartCoroutine(ChangeScale(face, new Vector3(1f, 1f, scaleChange), new Vector3(0f, positionChange, 0f), scaleChangeDurationUp));
 
         yield return new WaitForSeconds(waitDuration);
 
-        yield return StartCoroutine(ChangeScale(face, new Vector3(1f, 1f, 1f), new Vector3(0f, 0f, 0f), scaleDurationDown)); 
+        yield return StartCoroutine(ChangeScale(face, new Vector3(1f, 1f, 1f), new Vector3(0f, 0f, 0f), scaleChangeDurationDown)); 
 
         if (FS.havePlayer) { PS.SetPartsMaterial(materialPlayer); }
-        else if (FS.isRight)
-        {
-            FS.rend.material = FS.materialRightFace;
-        }
-        else if (FS.isLeft)
-        {
-            FS.rend.material = FS.materialLeftFace;
-        }
-        else if (FS.isTop)
-        {
-            FS.rend.material = FS.materialTopFace;
-        }
+        else if (FS.isRight) FS.rend.material = FS.materialRightFace;
+        else if (FS.isLeft) FS.rend.material = FS.materialLeftFace;
+        else if (FS.isTop) FS.rend.material = FS.materialTopFace;
         else FS.rend.material = materialWhite;
 
 

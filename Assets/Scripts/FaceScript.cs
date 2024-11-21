@@ -86,8 +86,9 @@ public class FaceScript : MonoBehaviour
     private bool transferInProgress = false;
     private bool isPreviousAnExtremeSide1 = false;
     public bool isKilling = false;
-    [HideInInspector] public bool isBlinking = false;
-    [HideInInspector] public bool isBlocked = false;
+    public bool isBlinking = false;
+    public bool isColored = false;
+    public bool isBlocked = false;
     [HideInInspector] public bool isLeft = false;
     [HideInInspector] public bool isRight = false;
     [HideInInspector] public bool isTop = false;
