@@ -144,7 +144,7 @@ public class RedFaceScript : MonoBehaviour
     {
         FaceScript FS = face.GetComponent<FaceScript>();
         FaceDanceScript FDC = face.GetComponent<FaceDanceScript>();
-        FS.isKilling = true;
+        
         /*
         if (FDC.isOn && FDC != null)
         {
@@ -155,21 +155,18 @@ public class RedFaceScript : MonoBehaviour
         while (timer < colorDuration)
         {
             if (!FS.havePlayer) FS.rend.material = targetMaterial;
-            else SetPartsMaterial(targetMaterial);
+            else PS.SetPartsMaterial(targetMaterial);
             timer += Time.deltaTime;
             yield return null;
         }
-
+        FS.isKilling = true;
         yield return StartCoroutine(ChangeScale(face, new Vector3(1f, 1f, scaleChange), new Vector3(0f, positionChange, 0f), scaleDurationUp));
 
         yield return new WaitForSeconds(waitDuration);
 
         yield return StartCoroutine(ChangeScale(face, new Vector3(1f, 1f, 1f), new Vector3(0f, 0f, 0f), scaleDurationDown)); 
 
-        if (!FS.havePlayer) FS.rend.material = materialWhite;
-        else SetPartsMaterial(materialPlayer);
-
-        if (FS.havePlayer) { SetPartsMaterial(materialPlayer); }
+        if (FS.havePlayer) { PS.SetPartsMaterial(materialPlayer); }
         else if (FS.isRight)
         {
             FS.rend.material = FS.materialRightFace;
@@ -199,7 +196,7 @@ public class RedFaceScript : MonoBehaviour
         while (timer < duration)
         {
             if (!FS.havePlayer) FS.rend.material = materialRed;
-            else SetPartsMaterial(materialPlayer);
+            else PS.SetPartsMaterial(materialPlayer);
 
             FS.glowingPart.transform.localScale = Vector3.Lerp(startScale, targetScale, timer / duration);
             FS.glowingPart.transform.localPosition = Vector3.Lerp(startPosition, targetPosition, timer / duration);
@@ -208,13 +205,5 @@ public class RedFaceScript : MonoBehaviour
             yield return null;
         }
         FS.glowingPart.transform.localScale = targetScale;
-    }
-
-    private void SetPartsMaterial(Material material)
-    {
-        PS.rendPartTop.material = material;
-        PS.rendPartMiddle.material = material;
-        PS.rendPartLeft.material = material;
-        PS.rendPartRight.material = material;
     }
 }

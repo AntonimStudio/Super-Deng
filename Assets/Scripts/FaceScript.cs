@@ -157,7 +157,7 @@ public class FaceScript : MonoBehaviour
             }
             else
             {
-                if (!isKilling) gameObject.GetComponent<FaceScript>().rend.material = materialPlayerFace;
+                //if (!isKilling) gameObject.GetComponent<FaceScript>().rend.material = materialPlayerFace;
 
                 if (!FS2.isKilling) FS2.rend.material = materialRightFace;
                 if (!FS1.isKilling) FS1.rend.material = materialLeftFace;
@@ -228,7 +228,7 @@ public class FaceScript : MonoBehaviour
     {
         player.SetActive(true);
         havePlayer = true;
-        gameObject.GetComponent<FaceScript>().rend.material = materialPlayerFace;
+        //gameObject.GetComponent<FaceScript>().rend.material = materialPlayerFace;
         FS2.rend.material = materialRightFace;
         FS1.rend.material = materialLeftFace;
         FS3.rend.material = materialTopFace;
@@ -278,7 +278,7 @@ public class FaceScript : MonoBehaviour
 
     public void ReceivePlayer(GameObject newPlayer, int sideNumber, string color, bool isPreviousAnExtremeSide, bool isPreviousPreviousAnExtremeSide) //GameObject newPlayer, int sideNumber, string color)
     {
-        if (!isKilling) rend.material = materialPlayerFace;
+        //if (!isKilling) rend.material = materialPlayerFace;
         
 
         materials.Remove("RightSide");
@@ -522,6 +522,7 @@ public class FaceScript : MonoBehaviour
             isPreviousAnExtremeSide1 = false;
         }
         havePlayer = true;
+        PS.ResetMaterials();
         PCS.SetPathCount();
         PS.SetCurrentFace(gameObject);
         newPlayer.transform.SetParent(gameObject.transform);

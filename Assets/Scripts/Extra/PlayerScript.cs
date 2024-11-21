@@ -93,7 +93,7 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    private void ResetMaterials()
+    public void ResetMaterials()
     {
         if (hp == 4)
         {
@@ -241,4 +241,11 @@ public class PlayerScript : MonoBehaviour
         imageLose.gameObject.SetActive(true);
     }
 
+    public void SetPartsMaterial(Material material)
+    {
+        rendPartTop.material = material;
+        rendPartMiddle.material = material;
+        rendPartLeft.material = material;
+        rendPartRight.material = material;
+    }
 }
