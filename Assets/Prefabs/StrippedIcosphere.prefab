@@ -51,11 +51,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 7735698173426261198}
   side1: {fileID: 6046306741307039995}
   side3: {fileID: 7012345550774154504}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -73,12 +78,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &6983863138674667621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,11 +206,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 6570964182601405983}
   side1: {fileID: 6112165654322964989}
   side3: {fileID: 7102918306467607040}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -217,12 +233,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &7094631125174948890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,11 +361,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 434307620496469984}
   side1: {fileID: 5234919433185034692}
   side3: {fileID: 8365565005503481948}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -361,12 +388,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &7634214641624245320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,11 +516,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 2742462724520093556}
   side1: {fileID: 318358543946288996}
   side3: {fileID: 1965302102255867624}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -505,12 +543,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &3657152478766879529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -627,11 +671,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 6106082453602785605}
   side1: {fileID: 1837679986962795538}
   side3: {fileID: 2742462724520093556}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -649,12 +698,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &7682434362592615015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -822,11 +877,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 7369142941821324401}
   side1: {fileID: 4830914241559364469}
   side3: {fileID: 3919304699312285804}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -844,12 +904,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &3907411749223931019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -966,11 +1032,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 8553532268895956014}
   side1: {fileID: 6234845317047494711}
   side3: {fileID: 929559425470851936}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -988,12 +1059,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &209712921331530563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1110,11 +1187,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 4513669224618614431}
   side1: {fileID: 2333041968347566988}
   side3: {fileID: 7735698173426261198}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -1132,12 +1214,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &6125794165942885535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1254,11 +1342,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 8578529159484550698}
   side1: {fileID: 3549776180664793402}
   side3: {fileID: 749263298601138927}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -1276,12 +1369,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &5859235113600866225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1398,11 +1497,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 9145196027471913241}
   side1: {fileID: 2742462724520093556}
   side3: {fileID: 4729499894221336858}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -1420,12 +1524,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &7890551316442426607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1542,11 +1652,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 8049329918862935367}
   side1: {fileID: 2813226997821905303}
   side3: {fileID: 9136584641840077622}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -1564,12 +1679,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &1579062797151468765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1722,11 +1843,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 4729499894221336858}
   side1: {fileID: 1965302102255867624}
   side3: {fileID: 3660285781751441619}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -1744,12 +1870,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &5830635290730019311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1866,11 +1998,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 6112165654322964989}
   side1: {fileID: 2351935556004592677}
   side3: {fileID: 5726590261708184695}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -1888,12 +2025,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &5985842579894069011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2010,11 +2153,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 499679028486825140}
   side1: {fileID: 8365565005503481948}
   side3: {fileID: 6112165654322964989}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -2032,12 +2180,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &1207707059664175966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2154,11 +2308,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 1338632889447029834}
   side1: {fileID: 2461397896930871195}
   side3: {fileID: 434307620496469984}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -2176,12 +2335,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &8016427134208873198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2298,11 +2463,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 3919304699312285804}
   side1: {fileID: 5696066412293980597}
   side3: {fileID: 5575593989716607707}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -2320,12 +2490,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &4891778373422178632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2614,12 +2790,6 @@ MonoBehaviour:
   facesStripX_D: []
   facesStripX_E: []
   facesStripX_F: []
-  facesStripZ_A: []
-  facesStripZ_B: []
-  facesStripZ_C: []
-  facesStripZ_D: []
-  facesStripZ_E: []
-  facesStripZ_F: []
 --- !u!1 &2160109127815325175
 GameObject:
   m_ObjectHideFlags: 0
@@ -2776,11 +2946,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 838775323961285570}
   side1: {fileID: 8267011386902420242}
   side3: {fileID: 6046306741307039995}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -2798,12 +2973,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &3520150124678301024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2920,11 +3101,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 1342441944372239098}
   side1: {fileID: 6570964182601405983}
   side3: {fileID: 4754458160043455089}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -2942,12 +3128,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &330630906731407782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3064,11 +3256,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 1965302102255867624}
   side1: {fileID: 7256876197800930307}
   side3: {fileID: 8699132423281594788}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -3086,12 +3283,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &2831720439872266818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3208,11 +3411,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 5234919433185034692}
   side1: {fileID: 7012345550774154504}
   side3: {fileID: 9045838579808242458}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -3230,12 +3438,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &7374714001744842751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3352,11 +3566,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 7516142785602260944}
   side1: {fileID: 3042490848670046069}
   side3: {fileID: 2615288408572365257}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -3374,12 +3593,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &3677586278841869510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3496,11 +3721,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 7024042354357101386}
   side1: {fileID: 5936408541072415560}
   side3: {fileID: 2538517579781362413}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -3518,12 +3748,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &4824390158610461604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3686,11 +3922,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 994143741030477826}
   side1: {fileID: 434307620496469984}
   side3: {fileID: 499679028486825140}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -3708,12 +3949,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &5245721949216229377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3830,11 +4077,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 1170012824398820310}
   side1: {fileID: 2998914306799676867}
   side3: {fileID: 3042490848670046069}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -3852,12 +4104,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &6806375044758258026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3974,11 +4232,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 2813226997821905303}
   side1: {fileID: 8553532268895956014}
   side3: {fileID: 5567505987553535432}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -3996,12 +4259,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &787822038822242289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4118,11 +4387,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 2538517579781362413}
   side1: {fileID: 3924965484612317127}
   side3: {fileID: 2813226997821905303}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -4140,12 +4414,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &2645241256073731601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4313,11 +4593,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 929559425470851936}
   side1: {fileID: 7102918306467607040}
   side3: {fileID: 4245001089259185261}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -4335,12 +4620,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &3407124698849806149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4457,11 +4748,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 5696066412293980597}
   side1: {fileID: 5866420694040546404}
   side3: {fileID: 8267011386902420242}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -4479,12 +4775,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &7776025440369206266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4601,11 +4903,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 5575593989716607707}
   side1: {fileID: 8699132423281594788}
   side3: {fileID: 1338632889447029834}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -4623,12 +4930,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &3634391644038186836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4745,11 +5058,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 4830914241559364469}
   side1: {fileID: 5575593989716607707}
   side3: {fileID: 7887250672121410544}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -4767,12 +5085,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &6479505220687316052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4889,11 +5213,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 3924965484612317127}
   side1: {fileID: 5203064882388176902}
   side3: {fileID: 8553532268895956014}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -4911,12 +5240,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &5767903088904505986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5033,11 +5368,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 5866420694040546404}
   side1: {fileID: 1977540912250590712}
   side3: {fileID: 611807253160836265}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -5055,12 +5395,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &5714538612365209655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5177,11 +5523,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 3042490848670046069}
   side1: {fileID: 3903394396396785280}
   side3: {fileID: 6769831366055548956}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -5199,12 +5550,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &4760566376783747866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5321,11 +5678,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 5768078684606229682}
   side1: {fileID: 4754458160043455089}
   side3: {fileID: 7609126553982860416}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -5343,12 +5705,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &1236584469330739840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5465,11 +5833,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 6234845317047494711}
   side1: {fileID: 6343685575542027520}
   side3: {fileID: 3549776180664793402}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -5487,12 +5860,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &4784051874730429173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5609,11 +5988,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 5203064882388176902}
   side1: {fileID: 8931923988157696947}
   side3: {fileID: 6234845317047494711}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -5631,12 +6015,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &3129637929381232478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5753,11 +6143,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 5892287813396906366}
   side1: {fileID: 7516142785602260944}
   side3: {fileID: 7024042354357101386}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -5775,12 +6170,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &3538904757332831634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5897,11 +6298,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 8699132423281594788}
   side1: {fileID: 838775323961285570}
   side3: {fileID: 5696066412293980597}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -5919,12 +6325,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &5639512610474068539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6042,11 +6454,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 7887250672121410544}
   side1: {fileID: 1338632889447029834}
   side3: {fileID: 994143741030477826}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -6064,12 +6481,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 1
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &5146983044582407726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6186,11 +6609,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 3968934881111175390}
   side1: {fileID: 9136584641840077622}
   side3: {fileID: 2351935556004592677}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -6208,12 +6636,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &8371010221733134247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6330,11 +6764,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 611807253160836265}
   side1: {fileID: 3703377597551912633}
   side3: {fileID: 8931923988157696947}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -6352,12 +6791,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &5927430590976455216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6474,11 +6919,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 3903394396396785280}
   side1: {fileID: 4384275591529929323}
   side3: {fileID: 7369142941821324401}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -6496,12 +6946,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &2255419929934352128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6618,11 +7074,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 318358543946288996}
   side1: {fileID: 2479322142983254785}
   side3: {fileID: 7256876197800930307}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -6640,12 +7101,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &1693987836051143230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6762,11 +7229,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 9136584641840077622}
   side1: {fileID: 8578529159484550698}
   side3: {fileID: 2998914306799676867}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -6784,12 +7256,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &1916662650591430283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6906,11 +7384,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 3703377597551912633}
   side1: {fileID: 3660285781751441619}
   side3: {fileID: 1977540912250590712}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -6928,12 +7411,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &3905311828055292377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7050,11 +7539,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 1977540912250590712}
   side1: {fileID: 3578327661452296100}
   side3: {fileID: 4513669224618614431}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -7072,12 +7566,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &2573158577915852919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7194,11 +7694,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 9045838579808242458}
   side1: {fileID: 5768078684606229682}
   side3: {fileID: 1342441944372239098}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -7216,12 +7721,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &2706556879407579859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7338,11 +7849,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 5726590261708184695}
   side1: {fileID: 3968934881111175390}
   side3: {fileID: 7144825517796094670}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -7360,12 +7876,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &5804095452790093572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7482,11 +8004,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 3578327661452296100}
   side1: {fileID: 3919304699312285804}
   side3: {fileID: 5936408541072415560}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -7504,12 +8031,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &8413133130709609254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7626,11 +8159,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 6046306741307039995}
   side1: {fileID: 4459724513596080970}
   side3: {fileID: 6953705133574963937}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -7648,12 +8186,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &110901601902800523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7770,11 +8314,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 2615288408572365257}
   side1: {fileID: 6769831366055548956}
   side3: {fileID: 5866420694040546404}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -7792,12 +8341,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &4790320123066857274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7914,11 +8469,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 44481538107201911}
   side1: {fileID: 5892287813396906366}
   side3: {fileID: 2333041968347566988}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -7936,12 +8496,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &7531837781670059582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8058,11 +8624,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 7102918306467607040}
   side1: {fileID: 499679028486825140}
   side3: {fileID: 9145196027471913241}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -8080,12 +8651,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &3279745398410412725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8202,11 +8779,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 250563210981145005}
   side1: {fileID: 1342441944372239098}
   side3: {fileID: 1837679986962795538}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -8224,12 +8806,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &3157043611393607324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8346,11 +8934,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 749263298601138927}
   side1: {fileID: 4245001089259185261}
   side3: {fileID: 4384275591529929323}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -8368,12 +8961,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &5695576578273995693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8490,11 +9089,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 4245001089259185261}
   side1: {fileID: 9145196027471913241}
   side3: {fileID: 8089265229431732647}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -8512,12 +9116,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &7033452455094438732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8634,11 +9244,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 2351935556004592677}
   side1: {fileID: 250563210981145005}
   side3: {fileID: 8578529159484550698}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -8656,12 +9271,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &1103486127492982479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8778,11 +9399,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 5936408541072415560}
   side1: {fileID: 7369142941821324401}
   side3: {fileID: 3924965484612317127}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -8800,12 +9426,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &5342973747713251273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8922,11 +9554,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 7144825517796094670}
   side1: {fileID: 7609126553982860416}
   side3: {fileID: 5892287813396906366}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -8944,12 +9581,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &6381951861928430926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9066,11 +9709,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 2479322142983254785}
   side1: {fileID: 7144825517796094670}
   side3: {fileID: 44481538107201911}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -9088,12 +9736,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &5718797292602638862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9210,11 +9864,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 8267011386902420242}
   side1: {fileID: 2615288408572365257}
   side3: {fileID: 4459724513596080970}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -9232,12 +9891,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &2312736342306910194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9354,11 +10019,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 3549776180664793402}
   side1: {fileID: 6106082453602785605}
   side3: {fileID: 250563210981145005}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -9376,12 +10046,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &5384195081951434591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9498,11 +10174,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 7012345550774154504}
   side1: {fileID: 6953705133574963937}
   side3: {fileID: 5768078684606229682}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -9520,12 +10201,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &7790377319629676250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9642,11 +10329,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 2461397896930871195}
   side1: {fileID: 7735698173426261198}
   side3: {fileID: 5234919433185034692}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -9664,12 +10356,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &8881173125793201512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9786,11 +10484,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 6769831366055548956}
   side1: {fileID: 611807253160836265}
   side3: {fileID: 5203064882388176902}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -9808,12 +10511,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &6587366203605430847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9930,11 +10639,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 4459724513596080970}
   side1: {fileID: 2538517579781362413}
   side3: {fileID: 8049329918862935367}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -9952,12 +10666,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &3106274254069744743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10074,11 +10794,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 6953705133574963937}
   side1: {fileID: 8049329918862935367}
   side3: {fileID: 3968934881111175390}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -10096,12 +10821,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &8211657331451775887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10218,11 +10949,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 7256876197800930307}
   side1: {fileID: 44481538107201911}
   side3: {fileID: 838775323961285570}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -10240,12 +10976,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &8777623199346894033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10362,11 +11104,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 8089265229431732647}
   side1: {fileID: 4729499894221336858}
   side3: {fileID: 3703377597551912633}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -10384,12 +11131,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &7173422917942734498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10506,11 +11259,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 7609126553982860416}
   side1: {fileID: 1170012824398820310}
   side3: {fileID: 7516142785602260944}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -10528,12 +11286,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &7746627561003351785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10717,11 +11481,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 8931923988157696947}
   side1: {fileID: 7887250672121410544}
   side3: {fileID: 6343685575542027520}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -10739,12 +11508,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &1074765543016369886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10861,11 +11636,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 2333041968347566988}
   side1: {fileID: 7024042354357101386}
   side3: {fileID: 3578327661452296100}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -10883,12 +11663,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &8985428388679673540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11005,11 +11791,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 1837679986962795538}
   side1: {fileID: 9045838579808242458}
   side3: {fileID: 318358543946288996}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -11027,12 +11818,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &7671589907177109582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11195,11 +11992,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 2998914306799676867}
   side1: {fileID: 749263298601138927}
   side3: {fileID: 3903394396396785280}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -11217,12 +12019,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &417901877002174202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11339,11 +12147,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 5567505987553535432}
   side1: {fileID: 929559425470851936}
   side3: {fileID: 6570964182601405983}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -11361,12 +12174,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &1634269720736682988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11483,11 +12302,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 3660285781751441619}
   side1: {fileID: 4513669224618614431}
   side3: {fileID: 2461397896930871195}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -11505,12 +12329,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &2176508663450355282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11627,11 +12457,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 4384275591529929323}
   side1: {fileID: 8089265229431732647}
   side3: {fileID: 4830914241559364469}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -11649,12 +12484,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &841070804942880985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11751,14 +12592,14 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 1847988862261081205}
-  - {fileID: 4230486564000023500}
   - {fileID: 5070482993255399858}
   - {fileID: 4021302569265480881}
   - {fileID: 1490808030863178644}
   - {fileID: 3865318285063918772}
   - {fileID: 2915433461176145070}
   - {fileID: 3091928872969507167}
+  - {fileID: 1847988862261081205}
+  - {fileID: 4230486564000023500}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6369856117141942070
@@ -11841,11 +12682,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 8365565005503481948}
   side1: {fileID: 5726590261708184695}
   side3: {fileID: 2479322142983254785}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -11863,12 +12709,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &4876481263189742435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11985,11 +12837,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 4754458160043455089}
   side1: {fileID: 5567505987553535432}
   side3: {fileID: 1170012824398820310}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -12007,12 +12864,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &6013755274047994185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12129,11 +12992,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3766995322741213703}
+  pathObjectCount: -1
   PS: {fileID: 0}
   side2: {fileID: 6343685575542027520}
   side1: {fileID: 994143741030477826}
   side3: {fileID: 6106082453602785605}
+  FS2: {fileID: 0}
+  FS1: {fileID: 0}
+  FS3: {fileID: 0}
   materialBasicFace: {fileID: 2100000, guid: 9ae1bc24c5ec1b8419106d9a9960710e, type: 2}
+  materialKillerFace: {fileID: 0}
   materialPlayerFace: {fileID: 2100000, guid: c11a02e573dd05145bd2f29b900363c6, type: 2}
   materialRightFace: {fileID: 2100000, guid: 662af7bb2192b3b478c380dd1acc8fef, type: 2}
   materialLeftFace: {fileID: 2100000, guid: 59989691223971d4f80f5f257faa22f4, type: 2}
@@ -12151,12 +13019,18 @@ MonoBehaviour:
   BC: {fileID: 0}
   SS: {fileID: 0}
   TC: {fileID: 0}
+  BSS: {fileID: 0}
+  PCS: {fileID: 0}
   havePlayer: 0
   isAnExtremeSide: 0
   isTutorial: 0
-  isBlocked: 0
   isKilling: 0
   isBlinking: 0
+  isBlocked: 0
+  isLeft: 0
+  isRight: 0
+  isTop: 0
+  isBonus: 0
 --- !u!114 &714527544652880647
 MonoBehaviour:
   m_ObjectHideFlags: 0

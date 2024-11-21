@@ -9,8 +9,10 @@ public class RedFaceScript : MonoBehaviour
     private GameObject[] faces;
     //[SerializeField] private Image imageLose;
     [SerializeField] private float colorChangeDuration = 2f;
-    [SerializeField] private float scaleChangeDuration = 1f;
+    [SerializeField] private float scaleChangeDurationUp = 1f;
+    [SerializeField] private float scaleChangeDurationDown = 1f;
     [SerializeField] private float scaleChange = 25f;
+    [SerializeField] private float waitDuration = 1f;
     [SerializeField] private float positionChange = -4.5f;
     [SerializeField] private Material materialWhite;
     [SerializeField] private Material materialRed;
@@ -120,7 +122,7 @@ public class RedFaceScript : MonoBehaviour
                     }
                     while (FS.havePlayer || FS.isBlinking || FS.isKilling || FS.isBlocked || FS.isBonus); //lastCubeIndices.Contains(randomIndex) 
 
-                    StartCoroutine(SetRedFace(faces[randomIndex], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
+                    StartCoroutine(SetRedFace(faces[randomIndex], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDurationUp, scaleChangeDurationDown));
                 }
             }
             else
@@ -132,22 +134,23 @@ public class RedFaceScript : MonoBehaviour
                     {
                         StartCoroutine(ChangeColorThenScale(faces[newCubeIndices[i]], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
                     }*/
-                    StartCoroutine(SetRedFace(faces[newCubeIndices[i]], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
+                    StartCoroutine(SetRedFace(faces[newCubeIndices[i]], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDurationUp, scaleChangeDurationDown));
                 }
             }
         }
     }
 
-    private IEnumerator SetRedFace(GameObject face, Material targetMaterial, Vector3 targetScale, float colorDuration, float scaleDuration)
+    private IEnumerator SetRedFace(GameObject face, Material targetMaterial, Vector3 targetScale, float colorDuration, float scaleDurationUp, float scaleDurationDown)
     {
         FaceScript FS = face.GetComponent<FaceScript>();
         FaceDanceScript FDC = face.GetComponent<FaceDanceScript>();
         FS.isKilling = true;
-
+        /*
         if (FDC.isOn && FDC != null)
         {
             FDC.StopScaling();
-        }
+        }*/
+        FDC.isOn = false;
         float timer = 0f;
         while (timer < colorDuration)
         {
@@ -157,11 +160,11 @@ public class RedFaceScript : MonoBehaviour
             yield return null;
         }
 
-        yield return StartCoroutine(ChangeScale(face, new Vector3(1f, 1f, scaleChange), new Vector3(0f, positionChange, 0f),  scaleDuration));
+        yield return StartCoroutine(ChangeScale(face, new Vector3(1f, 1f, scaleChange), new Vector3(0f, positionChange, 0f), scaleDurationUp));
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(waitDuration);
 
-        yield return StartCoroutine(ChangeScale(face, new Vector3(1f, 1f, 1f), new Vector3(0f, 0f, 0f), scaleDuration)); 
+        yield return StartCoroutine(ChangeScale(face, new Vector3(1f, 1f, 1f), new Vector3(0f, 0f, 0f), scaleDurationDown)); 
 
         if (!FS.havePlayer) FS.rend.material = materialWhite;
         else SetPartsMaterial(materialPlayer);

@@ -17,6 +17,11 @@ public class CameraRotation : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            isOn = !isOn;
+        }
+
         float elapsedTime = TC.timeElapsed;
 
         for (int i = 0; i < enemySpawnSettings.spawnTimes.Length - 1; i++)

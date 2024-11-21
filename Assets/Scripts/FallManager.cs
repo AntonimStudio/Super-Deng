@@ -7,6 +7,7 @@ using UnityEngine;
 public class FallManager : MonoBehaviour
 {
     private GameObject[] faces;
+    private FaceScript[] faceScripts;
     [SerializeField] private FaceArrayScript FAS;
     private List<int> numbersOfFalledFaces;
 
@@ -24,6 +25,7 @@ public class FallManager : MonoBehaviour
     private void Start()
     {
         faces = FAS.GetAllFaces();
+        faceScripts = FAS.GetAllFaceScripts();
         numbersOfFalledFaces = new List<int>();
         foreach (GameObject face in faces)
         {
@@ -130,7 +132,7 @@ public class FallManager : MonoBehaviour
         Renderer[] childRenderers = face.GetComponentsInChildren<Renderer>();
         foreach (Renderer renderer in childRenderers)
         {
-            renderer.enabled = false; // Отключаем рендеринг у всех дочерних объектов
+            renderer.enabled = false; // РћС‚РєР»СЋС‡Р°РµРј СЂРµРЅРґРµСЂРёРЅРі Сѓ РІСЃРµС… РґРѕС‡РµСЂРЅРёС… РѕР±СЉРµРєС‚РѕРІ
         }
 
         rb.velocity = Vector3.zero;
@@ -169,17 +171,31 @@ public class FallManager : MonoBehaviour
 
     private IEnumerator PlayAnimationReset(GameObject face)
     {
+        foreach (FaceScript FS in faceScripts)
+        {
+            FS.ResetRightLeftTop();
+        }
         Animator animator = face.GetComponent<Animator>();
         animator.enabled = true;
         if (animator != null && animClipReset != null)
         {
-
             animator.enabled = true;
             animator.Play(animClipReset.name);
             yield return new WaitForSeconds(animClipReset.length);
         }
-
+        foreach (FaceScript FS in faceScripts)
+        {
+            FS.ResetRightLeftTop();
+        }
         animator.enabled = false;
         isReset = false;
+    }
+
+    private void SetPartsMaterial(Material material)
+    {
+        PS.rendPartTop.material = material;
+        PS.rendPartMiddle.material = material;
+        PS.rendPartLeft.material = material;
+        PS.rendPartRight.material = material;
     }
 }

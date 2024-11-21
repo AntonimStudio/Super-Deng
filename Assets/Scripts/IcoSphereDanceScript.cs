@@ -21,6 +21,10 @@ public class IcoSphereDanceScript : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            isOn = !isOn;
+        }
         float elapsedTime = TC.timeElapsed;
 
         for (int i = 0; i < enemySpawnSettings.spawnTimes.Length - 1; i++)

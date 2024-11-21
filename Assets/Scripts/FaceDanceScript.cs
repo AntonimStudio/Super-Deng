@@ -14,7 +14,7 @@ public class FaceDanceScript : MonoBehaviour
     [SerializeField] private EnemySpawnSettings enemySpawnSettings;
     [SerializeField] private TimerController TC;
     private bool[] spawnExecuted;
-    /*
+    
     private void Start()
     {
         FS = gameObject.GetComponent<FaceScript>();
@@ -28,7 +28,7 @@ public class FaceDanceScript : MonoBehaviour
 
     private void Update()
     {
-        if (TC != null)
+        if (TC != null && enemySpawnSettings != null)
         {
             float elapsedTime = TC.timeElapsed;
 
@@ -44,45 +44,24 @@ public class FaceDanceScript : MonoBehaviour
                     spawnExecuted[i] = true;
                 }
             }
-            if (isOn && !inProcess && !FS.havePlayer)
+            if (isOn && !inProcess && !FS.havePlayer && !FS.isBlinking && !FS.isKilling && !FS.isBlocked)
             {
                 constantCoroutine = StartCoroutine(ScaleObject(FS.glowingPart, scaleFactor, duration));
             }
         }
-        if (FS.havePlayer || FS.isKilling || FS.isBlocked || FS.isBlinking)
+        if (Input.GetKeyDown(KeyCode.V))
         {
-            isOn = false;
-            StopScaling();
+            isOn = !isOn;
         }
     }
-
-    public void StartScaling()
-    {
-        FS.glowingPart.transform.localScale = originalScale;
-        constantCoroutine = StartCoroutine(ScaleObject(FS.glowingPart, scaleFactor, duration));
-    }
-    */
-    public void StopScaling()
-    {
-        /*
-        FS.glowingPart.transform.localScale = originalScale;
-        if (constantCoroutine != null)
-        {
-            StopCoroutine(constantCoroutine);
-            FS.glowingPart.transform.localScale = originalScale;
-            constantCoroutine = null;
-        }*/
-    }
-    /*
+    
     private IEnumerator ScaleObject(GameObject obj, float factor, float time)
     {
-        FaceScript FS = obj.GetComponent<FaceScript>();
-        if (isOn && !inProcess && !FS.havePlayer && !FS.isKilling)
+        if (isOn && !inProcess && !FS.havePlayer && !FS.isKilling && !FS.isBlinking && !FS.isBlocked)
         {
             inProcess = true;
             Vector3 targetScale = new Vector3(originalScale.x, originalScale.y, originalScale.z * factor);
 
-            // Scale up
             float elapsedTime = 0f;
             while (elapsedTime < time)
             {
@@ -91,7 +70,7 @@ public class FaceDanceScript : MonoBehaviour
                 yield return null;
             }
             obj.transform.localScale = targetScale;
-
+            
             // Scale down
             elapsedTime = 0f;
             while (elapsedTime < time)
@@ -107,5 +86,6 @@ public class FaceDanceScript : MonoBehaviour
         {
             yield return null;
         }
-    }*/
+        yield return null;
+    }
 }

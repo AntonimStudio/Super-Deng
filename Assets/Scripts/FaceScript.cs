@@ -537,6 +537,13 @@ public class FaceScript : MonoBehaviour
         
     }
 
+    public void ResetRightLeftTop()
+    {
+        if (isLeft) rend.material = materialLeftFace;
+        else if (isRight) rend.material = materialRightFace;
+        else if (isTop) rend.material = materialTopFace;
+    }
+
     public GameObject GetGameObject(string key)
     {
         GameObject gameObject;

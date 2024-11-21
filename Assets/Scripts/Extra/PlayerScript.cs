@@ -71,6 +71,10 @@ public class PlayerScript : MonoBehaviour
             TakeDamage();
             StartCoroutine(PlayAnimationTakeDamage());
         }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            TakeHP();
+        }
 
         if (faceCurrent.GetComponent<FaceScript>().isBlinking && !inBlinking)
         {
@@ -163,7 +167,7 @@ public class PlayerScript : MonoBehaviour
 
     public void TakeHP()
     {
-        if (hp <= 4)
+        if (hp < 4)
         {
             hp += 1;
         }
@@ -236,4 +240,5 @@ public class PlayerScript : MonoBehaviour
     {
         imageLose.gameObject.SetActive(true);
     }
+
 }
