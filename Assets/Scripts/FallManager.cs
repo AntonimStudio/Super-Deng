@@ -76,6 +76,7 @@ public class FallManager : MonoBehaviour
                     !FS.isKilling &&
                     !FS.isBlocked &&
                     !FS.isColored &&
+                    !FS.isPortal &&
                     !FS.isBonus)
                 {
                     availableFaces.Add(i);

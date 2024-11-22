@@ -46,6 +46,8 @@ public class FaceScript : MonoBehaviour
     [SerializeField] private Material materialKillerFace;
     [FormerlySerializedAs("materialLightBlue")]
     [SerializeField] private Material materialPlayerFace;
+    [FormerlySerializedAs("heheheheh")]
+    [SerializeField] private Material materialSecretFace;
     [FormerlySerializedAs("materialBlue")]
     public Material materialRightFace;
     [FormerlySerializedAs("materialOrange")]
@@ -77,6 +79,7 @@ public class FaceScript : MonoBehaviour
     [SerializeField] private TutorialController TC;
     [SerializeField] private BonusSpawnerScript BSS;
     [SerializeField] private PathCounterScript PCS;
+    [SerializeField] private PortalSpawnerScript PSS;
 
     [Space]
     [Header("Questions")]
@@ -89,11 +92,11 @@ public class FaceScript : MonoBehaviour
     public bool isBlinking = false;
     public bool isColored = false;
     public bool isBlocked = false;
+    public bool isPortal = false;
+    public bool isBonus = false;
     [HideInInspector] public bool isLeft = false;
     [HideInInspector] public bool isRight = false;
     [HideInInspector] public bool isTop = false;
-
-    public bool isBonus = false;
 
     private void Awake() 
     {
@@ -223,6 +226,11 @@ public class FaceScript : MonoBehaviour
                 bonusCombo.DestroyMe();
             }
         }
+
+        if (havePlayer && isPortal && PSS != null)
+        {
+            PSS.LoadSecretScene();  
+        }
     }
 
     public void TurnOnInTutorial()
@@ -252,14 +260,17 @@ public class FaceScript : MonoBehaviour
 
         if (FS1.isBonus) FS1.rend.material = materialPlayerFace;
         else if (FS1.isKilling) FS1.rend.material = materialKillerFace;
+        else if (FS1.isPortal) FS1.rend.material = materialSecretFace;
         else FS1.rend.material = materialBasicFace;
 
         if (FS2.isBonus) FS2.rend.material = materialPlayerFace;
         else if (FS2.isKilling) FS2.rend.material = materialKillerFace;
+        else if (FS2.isPortal) FS2.rend.material = materialSecretFace;
         else FS2.rend.material = materialBasicFace;
 
         if (FS3.isBonus) FS3.rend.material = materialPlayerFace;
         else if (FS3.isKilling) FS3.rend.material = materialKillerFace;
+        else if (FS3.isPortal) FS3.rend.material = materialSecretFace;
         else FS3.rend.material = materialBasicFace;
 
         StartCoroutine(TransferPlayer(targetSide, sideNumber, color));
@@ -536,7 +547,6 @@ public class FaceScript : MonoBehaviour
         {
             newPlayer.transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
-        
     }
 
     public void ResetRightLeftTop()

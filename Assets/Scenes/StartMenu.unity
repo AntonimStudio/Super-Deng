@@ -6548,7 +6548,7 @@ GameObject:
   - component: {fileID: 871886946}
   - component: {fileID: 871886948}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Audio Source Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6908,7 +6908,9 @@ MonoBehaviour:
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
-  m_AfterStackBundles: []
+  m_AfterStackBundles:
+  - assemblyQualifiedName: RetroPostProcessEffect, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!81 &912186668
 AudioListener:
   m_ObjectHideFlags: 0
@@ -13787,7 +13789,7 @@ GameObject:
   - component: {fileID: 1807889040}
   - component: {fileID: 1807889039}
   m_Layer: 0
-  m_Name: Audio Source (1)
+  m_Name: Audio Source SFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
