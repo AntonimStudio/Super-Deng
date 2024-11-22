@@ -78,7 +78,7 @@ public class PortalSpawnerScript : MonoBehaviour
     {
         panel.enabled = true;
         panel.GetComponent<Animator>().enabled = true;
-        panel.GetComponent<Animator>().Play(animClip.name);
+        //panel.GetComponent<Animator>().Play(animClip.name);
         yield return new WaitForSeconds(animClip.length);
         SceneManager.LoadScene(indexScene);
     }

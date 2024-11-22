@@ -229,6 +229,9 @@ public class FaceScript : MonoBehaviour
 
         if (havePlayer && isPortal && PSS != null)
         {
+            Portal portal = GetComponentInChildren<Portal>(true);
+            isPortal = false;
+            portal.DestroyMe();
             PSS.LoadSecretScene();  
         }
     }

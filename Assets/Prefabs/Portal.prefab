@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9114975799539705320}
-  - component: {fileID: 1571294733039859573}
   - component: {fileID: 1087301305682582249}
   - component: {fileID: 2352451914242437546}
+  - component: {fileID: 3576891756524655988}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -35,18 +35,6 @@ Transform:
   - {fileID: 8727738062955791369}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1571294733039859573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 522931450574674631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b916422135057146b0008034b3afc87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1087301305682582249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,6 +71,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3576891756524655988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522931450574674631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f062229aa78c9a4ea5889ec6f2929fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2547432260230053127
 GameObject:
   m_ObjectHideFlags: 0
