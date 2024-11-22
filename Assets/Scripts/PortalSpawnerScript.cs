@@ -66,7 +66,6 @@ public class PortalSpawnerScript : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         face.isPortal = false;
-        panel.enabled = true;
         Destroy(bonus);
     }
 
