@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PortalSpawnerScript : MonoBehaviour
 {
     private FaceScript[] faceScripts;
+    [SerializeField] private int proximityLimit = 5;
     [SerializeField] private GameObject prefab;
     [SerializeField] private Material materialBasic;
     [SerializeField] private Material materialPortal;
@@ -40,7 +41,8 @@ public class PortalSpawnerScript : MonoBehaviour
                     !faceScripts[i].isBlocked &&
                     !faceScripts[i].isColored &&
                     !faceScripts[i].isPortal &&
-                    !faceScripts[i].isBonus)
+                    !faceScripts[i].isBonus && 
+                    faceScripts[i].pathObjectCount >= proximityLimit)
                 {
                     availableFaces.Add(i);
                 }

@@ -21,9 +21,9 @@ MonoBehaviour:
     isSphereDance: 0
     isRotate: 0
   - time: 0
-    isRandom: 0
+    isRandom: 1
     gameObjects: 
-    colvo: 0
+    colvo: -25
     isFaceDance: 0
     isSphereDance: 0
     isRotate: 0
