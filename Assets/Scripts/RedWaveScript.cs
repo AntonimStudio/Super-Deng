@@ -6,7 +6,7 @@ using UnityEngine;
 public class RedWaveScript : MonoBehaviour
 {
     private GameObject[] faces;
-    //[SerializeField] private Image imageLose;
+    [SerializeField] private int proximityLimit = 5;
     [SerializeField] private float colorChangeDuration = 2f;
     [SerializeField] private float scaleChangeDurationUp = 1f;
     [SerializeField] private float scaleChangeDurationDown = 1f;
@@ -23,6 +23,7 @@ public class RedWaveScript : MonoBehaviour
     [SerializeField] private ComboManager CM;
     [SerializeField] private EnemySpawnSettings enemySpawnSettings;
     public bool isTurnOn = false;
+
 
 
     private List<int> lastCubeIndices = new List<int>();
@@ -51,67 +52,57 @@ public class RedWaveScript : MonoBehaviour
         {
             if (isRandomSpawnTime)
             {
-                for (int i = 0; i < colvo; i++)
+                List<int> availableFaces = new List<int>();
+
+                // Сбор подходящих граней
+                for (int i = 0; i < faces.Length; i++)
                 {
-                    int randomIndex;
-                    FaceScript FS;
-                    do
+                    FaceScript FS = faces[i].GetComponent<FaceScript>();
+                    if (!FS.havePlayer &&
+                        !FS.isBlinking &&
+                        !FS.isKilling &&
+                        !FS.isBlocked &&
+                        !FS.isColored &&
+                        !FS.isPortal &&
+                        !FS.isBonus &&
+                        FS.pathObjectCount >= proximityLimit)
                     {
-                        randomIndex = Random.Range(0, faces.Length);
-                        FS = faces[randomIndex].GetComponent<FaceScript>();
+                        availableFaces.Add(i);
                     }
-                    while (FS.havePlayer || FS.isBlinking || FS.isKilling || FS.isBlocked || FS.isBonus || FS.pathObjectCount <5); //lastCubeIndices.Contains(randomIndex) 
-                    Debug.Log(FS.pathObjectCount);
-                    StartCoroutine(SetRedWave(faces[randomIndex], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDurationUp, scaleChangeDurationDown));
                 }
+
+                if (availableFaces.Count == 0) return;
+
+                int randomIndex = Random.Range(0, availableFaces.Count);
+                int selectedFaceIndex = availableFaces[randomIndex];
+
+                StartCoroutine(SetRedWave(faces[selectedFaceIndex]));
             }
         }
     }
 
-    private IEnumerator SetRedWave(GameObject face, Material targetMaterial, Vector3 targetScale, float colorDuration, float scaleDurationUp, float scaleDurationDown)
+    private IEnumerator SetRedWave(GameObject face)
     {
         FaceScript FS = face.GetComponent<FaceScript>();
         FaceDanceScript FDC = face.GetComponent<FaceDanceScript>();
         FS.isKilling = true;
-        /*
-        if (FDC.isOn && FDC != null)
-        {
-            FDC.StopScaling();
-        }*/
         FDC.isOn = false;
         float timer = 0f;
-        while (timer < colorDuration)
+        while (timer < colorChangeDuration)
         {
-            if (!FS.havePlayer) FS.rend.material = targetMaterial;
-            else SetPartsMaterial(targetMaterial);
+            SetMaterial(FS, materialRed);
             timer += Time.deltaTime;
             yield return null;
         }
-        SetNextStep(face.GetComponent<FaceScript>());
-        yield return StartCoroutine(ChangeScale(face, new Vector3(1f, 1f, scaleChange), new Vector3(0f, positionChange, 0f), scaleDurationUp, true));
+        SetNextStep(FS);
+
+        yield return StartCoroutine(ChangeScale(face, new Vector3(1f, 1f, scaleChange), new Vector3(0f, positionChange, 0f), scaleChangeDurationUp, true));
         
         yield return new WaitForSeconds(waitDuration);
        
-        yield return StartCoroutine(ChangeScale(face, new Vector3(1f, 1f, 1f), new Vector3(0f, 0f, 0f), scaleDurationDown, false));
+        yield return StartCoroutine(ChangeScale(face, new Vector3(1f, 1f, 1f), new Vector3(0f, 0f, 0f), scaleChangeDurationDown, false));
 
-        if (!FS.havePlayer) FS.rend.material = materialWhite;
-        else SetPartsMaterial(materialPlayer);
-
-        if (FS.havePlayer) { SetPartsMaterial(materialPlayer); }
-        else if (FS.isRight)
-        {
-            FS.rend.material = FS.materialRightFace;
-        }
-        else if (FS.isLeft)
-        {
-            FS.rend.material = FS.materialLeftFace;
-        }
-        else if (FS.isTop)
-        {
-            FS.rend.material = FS.materialTopFace;
-        }
-        else FS.rend.material = materialWhite;
-
+        SetMaterialBack(FS);
 
         FS.isKilling = false;
 
@@ -126,8 +117,7 @@ public class RedWaveScript : MonoBehaviour
 
         while (timer < duration)
         {
-            if (!FS.havePlayer) FS.rend.material = materialRed;
-            else SetPartsMaterial(materialPlayer);
+            SetMaterial(FS, materialRed);
             if (flag)
             {
                 FS.glowingPart.transform.localScale = Vector3.Lerp(new Vector3(0f, 0f, 0f), targetScale, timer / duration);
@@ -145,38 +135,47 @@ public class RedWaveScript : MonoBehaviour
         FS.glowingPart.transform.localScale = targetScale;
     }
 
-
-    private void SetPartsMaterial(Material material)
+    private void SetMaterial(FaceScript FS, Material material)
     {
-        PS.rendPartTop.material = material;
-        PS.rendPartMiddle.material = material;
-        PS.rendPartLeft.material = material;
-        PS.rendPartRight.material = material;
+        if (!FS.havePlayer) FS.rend.material = material;
+        else PS.SetPartsMaterial(material);
+    }
+
+    private void SetMaterialBack(FaceScript FS)
+    {
+        if (FS.havePlayer) PS.SetPartsMaterial(materialPlayer); 
+        else if (FS.isRight) FS.rend.material = FS.materialRightFace;
+        else if (FS.isLeft) FS.rend.material = FS.materialLeftFace;
+        else if (FS.isTop) FS.rend.material = FS.materialTopFace;
+        else FS.rend.material = materialWhite;
     }
 
     private void SetNextStep(FaceScript facescript)
     {
-
-        
         FaceScript objectWithMinPathCounter = null;
         int minPathCounter = int.MaxValue;
 
-        FaceScript[] objects = { facescript.FS1, facescript.FS2, facescript.FS3 };
+        FaceScript[] faces = { facescript.FS1, facescript.FS2, facescript.FS3 };
 
-        foreach (FaceScript obj in objects)
+        foreach (FaceScript face in faces)
         {
-            if (obj == null) continue;
+            if (face == null) continue;
 
-            FaceScript faceScript = obj.GetComponent<FaceScript>();
-            if (faceScript != null)
+            if (face != null && (face.pathObjectCount < minPathCounter))
             {
-                if (faceScript.pathObjectCount < minPathCounter)
+                if (!face.isBlinking &&
+                    !face.isKilling &&
+                    !face.isBlocked &&
+                    !face.isColored &&
+                    !face.isPortal &&
+                    !face.isBonus)
                 {
-                    minPathCounter = faceScript.pathObjectCount;
-                    objectWithMinPathCounter = obj;
+                    minPathCounter = face.pathObjectCount;
+                    objectWithMinPathCounter = face;
                 }
             }
         }
-        if (facescript.pathObjectCount != 0) StartCoroutine(SetRedWave(objectWithMinPathCounter.gameObject, materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDurationUp, scaleChangeDurationDown));
+        if (facescript.pathObjectCount != 0 && objectWithMinPathCounter != null) 
+            StartCoroutine(SetRedWave(objectWithMinPathCounter.gameObject));
     }
 }

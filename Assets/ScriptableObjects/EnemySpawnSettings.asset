@@ -12,4 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd69d8371b5c77541aaf2f002d546aab, type: 3}
   m_Name: EnemySpawnSettings
   m_EditorClassIdentifier: 
-  spawnTimes: []
+  spawnTimes:
+  - time: 0
+    isRandom: 0
+    gameObjects: 00000000000000000000000000000000
+    colvo: 0
+    isFaceDance: 0
+    isSphereDance: 0
+    isRotate: 0
+  - time: 0
+    isRandom: 0
+    gameObjects: 
+    colvo: 0
+    isFaceDance: 0
+    isSphereDance: 0
+    isRotate: 0
+  - time: 0
+    isRandom: 0
+    gameObjects: 
+    colvo: 0
+    isFaceDance: 0
+    isSphereDance: 0
+    isRotate: 0

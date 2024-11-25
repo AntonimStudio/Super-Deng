@@ -7,6 +7,7 @@ using UnityEngine.XR;
 public class BonusSpawnerScript : MonoBehaviour
 {
     private GameObject[] faces;
+    private FaceScript[] faceScripts;
     [SerializeField] private GameObject prefabBonusCombo;
     [SerializeField] private GameObject prefabBonusHealth;
     [SerializeField] private Material materialBasic;
@@ -21,6 +22,7 @@ public class BonusSpawnerScript : MonoBehaviour
     private void Start()
     {
         faces = FAS.GetAllFaces();
+        faceScripts = FAS.GetAllFaceScripts();
         numbersOfBonusFaces = new List<int>();
     }
 
@@ -28,20 +30,31 @@ public class BonusSpawnerScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (numbersOfBonusFaces.Count >= faces.Length - 1)
+            List<int> availableFaces = new List<int>();
+
+            for (int i = 0; i < faceScripts.Length; i++)
             {
-                return;
+
+                if (!faceScripts[i].havePlayer &&
+                    !faceScripts[i].isRight &&
+                    !faceScripts[i].isLeft &&
+                    !faceScripts[i].isTop &&
+                    !faceScripts[i].isBlinking &&
+                    !faceScripts[i].isKilling &&
+                    !faceScripts[i].isBlocked &&
+                    !faceScripts[i].isColored &&
+                    !faceScripts[i].isPortal &&
+                    !faceScripts[i].isBonus)
+                {
+                    availableFaces.Add(i);
+                }
             }
-            int numb;
-            FaceScript FS;
-            do 
-            { 
-                numb = Random.Range(0, 80);
-                FS = faces[numb].GetComponent<FaceScript>();
-            }
-            while (numbersOfBonusFaces.Contains(numb) || FS.havePlayer || FS.isBlinking || FS.isKilling || FS.isBlocked || FS.isBonus);
-            numbersOfBonusFaces.Add(numb);
-            SetBonus(faces[numb], Random.Range(0, 2));
+
+            if (availableFaces.Count == 0) return;
+
+            int selectedFaceIndex = availableFaces[Random.Range(0, availableFaces.Count)];
+
+            SetBonus(faceScripts[selectedFaceIndex].gameObject, Random.Range(0, 2));
         }
     }
 
@@ -64,7 +77,7 @@ public class BonusSpawnerScript : MonoBehaviour
         CM.Double();
     }
 
-    IEnumerator DestroyBonus(GameObject face, GameObject bonus, float delay)
+    private IEnumerator DestroyBonus(GameObject face, GameObject bonus, float delay)
     {
         yield return new WaitForSeconds(delay);
         if (bonus != null)

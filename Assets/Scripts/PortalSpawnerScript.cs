@@ -32,6 +32,9 @@ public class PortalSpawnerScript : MonoBehaviour
             {
 
                 if (!faceScripts[i].havePlayer &&
+                    !faceScripts[i].isRight &&
+                    !faceScripts[i].isLeft &&
+                    !faceScripts[i].isTop &&
                     !faceScripts[i].isBlinking &&
                     !faceScripts[i].isKilling &&
                     !faceScripts[i].isBlocked &&

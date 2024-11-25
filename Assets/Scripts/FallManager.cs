@@ -71,14 +71,14 @@ public class FallManager : MonoBehaviour
             {
                 FaceScript FS = faces[i].GetComponent<FaceScript>();
                 if (!numbersOfFalledFaces.Contains(i) &&
-                    !FS.havePlayer &&
-                    !FS.isBlinking &&
-                    !FS.isKilling &&
-                    !FS.isBlocked &&
-                    !FS.isColored &&
-                    !FS.isPortal &&
-                    !FS.isBonus)
-                {
+                    !faceScripts[i].havePlayer &&
+                    !faceScripts[i].isBlinking &&
+                    !faceScripts[i].isKilling &&
+                    !faceScripts[i].isBlocked &&
+                    !faceScripts[i].isColored &&
+                    !faceScripts[i].isPortal &&
+                    !faceScripts[i].isBonus)
+                    {
                     availableFaces.Add(i);
                 }
             }
