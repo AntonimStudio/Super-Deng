@@ -35,7 +35,7 @@ public class IcoSphereDanceScript : MonoBehaviour
             // Проверяем, прошло ли указанное время и не был ли спавн уже выполнен
             if (elapsedTime >= spawnTimeData.time && elapsedTime <= nextSpawnTimeData.time && !spawnExecuted[i])
             {
-                isOn = spawnTimeData.isSphereDance;
+                //isOn = spawnTimeData.isSphereDance;
                 spawnExecuted[i] = true;
             }
         }

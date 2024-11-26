@@ -27,7 +27,7 @@ public class FaceDanceScript : MonoBehaviour
     }
 
     private void Update()
-    {
+    {/*
         if (TC != null && enemySpawnSettings != null)
         {
             float elapsedTime = TC.timeElapsed;
@@ -48,7 +48,7 @@ public class FaceDanceScript : MonoBehaviour
             {
                 constantCoroutine = StartCoroutine(ScaleObject(FS.glowingPart, scaleFactor, duration));
             }
-        }
+        }*/
         if (Input.GetKeyDown(KeyCode.V))
         {
             isOn = !isOn;
