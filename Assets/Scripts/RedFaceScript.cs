@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 public class RedFaceScript : MonoBehaviour
 {
@@ -25,49 +26,60 @@ public class RedFaceScript : MonoBehaviour
     [SerializeField] private EnemySpawnSettings enemySpawnSettings;
     public bool isTurnOn = false;
 
-
-    private List<int> lastCubeIndices = new List<int>();
-    private List<int> newCubeIndices = new List<int>();
+    private List<int> faceIndices = new List<int>();
+    private int colvo = 0;
     private bool[] spawnExecuted;
-    private int colvo = 1;
     private bool isRandomSpawnTime = true;
-    public bool isTutorial = false;
-    public TutorialController TuC;
-    public Image panel;
-    
+    private int currentSpawnIndex = 0;
+
     private void Start()
     {
         faces = FAS.GetAllFaces();
+        spawnExecuted = new bool[enemySpawnSettings.spawnTimes.Length];
     }
 
     private void Update()
-    {/*
+    {
         if (TC != null)
         {
             float elapsedTime = TC.timeElapsed;
 
-            for (int i = 0; i < enemySpawnSettings.spawnTimes.Length - 1; i++)
+            if (currentSpawnIndex < enemySpawnSettings.spawnTimes.Length)
             {
-                var spawnTimeData = enemySpawnSettings.spawnTimes[i];
-                var nextSpawnTimeData = enemySpawnSettings.spawnTimes[i + 1];
+                var spawnTimeData = enemySpawnSettings.spawnTimes[currentSpawnIndex];
+                var nextSpawnTimeData = currentSpawnIndex < enemySpawnSettings.spawnTimes.Length - 1
+                    ? enemySpawnSettings.spawnTimes[currentSpawnIndex + 1]
+                    : new SpawnTimeData { time = float.MaxValue }; 
 
-                if (elapsedTime >= spawnTimeData.time && elapsedTime <= nextSpawnTimeData.time && !spawnExecuted[i])
+                if (elapsedTime >= spawnTimeData.time && elapsedTime <= nextSpawnTimeData.time && !spawnExecuted[currentSpawnIndex])
                 {
-                    if (spawnTimeData.isRandom)
+                    if (spawnTimeData.isRedFaceTurnOn)
                     {
-                        colvo = spawnTimeData.colvo;
-                        isRandomSpawnTime = true;
+                        if (spawnTimeData.isRedFaceRandom)
+                        {
+                            colvo = spawnTimeData.quantityOfRedFaces;
+                            isRandomSpawnTime = true;
+                        }
+                        else
+                        {
+                            faceIndices.Clear();
+                            faceIndices = new List<int>(spawnTimeData.arrayOfRedFaces);
+                            isRandomSpawnTime = false;
+                        }
+                        spawnExecuted[currentSpawnIndex] = true;
                     }
                     else
                     {
-                        newCubeIndices.Clear();
-                        newCubeIndices = new List<int>(spawnTimeData.gameObjects);
+                        faceIndices.Clear();
                         isRandomSpawnTime = false;
                     }
-                    spawnExecuted[i] = true;
+                }
+                if (elapsedTime > nextSpawnTimeData.time)
+                {
+                    currentSpawnIndex++;
                 }
             }
-        }*/
+        }
 
         if (Input.GetKeyDown(KeyCode.X))
         {
@@ -75,80 +87,48 @@ public class RedFaceScript : MonoBehaviour
             StartSettingRedFace();
         }
     }
-    /*
+
     public void StartSettingRedFace()
     {
         if (isTurnOn)
         {
-            for (int i = 0; i < colvo; i++)
-            {
-                int randomIndex;
-                FaceScript FS;
-                do
-                {
-                    randomIndex = Random.Range(0, faces.Length);
-                    FS = faces[randomIndex].GetComponent<FaceScript>();
-                }
-                while (FS.havePlayer);
-                    
-                StartCoroutine(SetRedFace(faces[randomIndex], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
-            }
-        }
-    }*/
+            List<int> availableFaces = new List<int>();
 
-    public void StartSettingRedFace()
-    {
-        if (isTurnOn)
-        {/*
-            foreach (int index in lastCubeIndices)
+            for (int i = 0; i < faces.Length; i++)
             {
-                //GameObject face, Material targetMaterial, Vector3 targetScale, float colorDuration, float scaleDuration
-                //StartCoroutine(FadeColorAndScale(faces[index], materialWhite, new Vector3(1f, 1f, 1f), colorChangeDuration, scaleChangeDuration));
-                StartCoroutine(ChangeScaleThenColor(faces[index], materialWhite, new Vector3(1f, 1f, 1f), colorChangeDuration, scaleChangeDuration));
-                faces[index].GetComponent<FaceScript>().isKilling = false;
+                FaceScript FS = faces[i].GetComponent<FaceScript>();
+                if (//!FS.havePlayer &&
+                    !FS.isBlinking &&
+                    !FS.isKilling &&
+                    !FS.isBlocked &&
+                    !FS.isColored &&
+                    !FS.isPortal &&
+                    !FS.isBonus)
+                {
+                    availableFaces.Add(i);
+                }
             }
-            lastCubeIndices.Clear();
-            */
+
             if (isRandomSpawnTime)
             {
-                List<int> availableFaces = new List<int>();
-
-                // Сбор подходящих граней
-                for (int i = 0; i < faces.Length; i++)
+                //Debug.Log(colvo);
+                for (int i = 0; i < colvo; i++)
                 {
-                    FaceScript FS = faces[i].GetComponent<FaceScript>();
-                    if (!FS.havePlayer &&
-                        !FS.isBlinking &&
-                        !FS.isKilling &&
-                        !FS.isBlocked &&
-                        !FS.isColored &&
-                        !FS.isPortal &&
-                        !FS.isBonus)
-                    {
-                        availableFaces.Add(i);
-                    }
+                    if (availableFaces.Count == 0) return;
+
+                    int randomIndex = Random.Range(0, availableFaces.Count);
+                    int selectedFaceIndex = availableFaces[randomIndex];
+                    StartCoroutine(SetRedFace(faces[selectedFaceIndex], materialRed));
+                    availableFaces.RemoveAt(randomIndex);
                 }
-
-                // Если доступных граней нет, выходим
-                if (availableFaces.Count == 0) return;
-
-                // Выбираем случайный индекс из доступных граней
-                int randomIndex = Random.Range(0, availableFaces.Count);
-                int selectedFaceIndex = availableFaces[randomIndex];
-
-                // Запускаем корутину для выбранной грани
-                StartCoroutine(SetRedFace(faces[selectedFaceIndex],materialRed));
             }
             else
             {
-                for (int i = 0; i < newCubeIndices.Count; i++)
+                var intersectedIndices = faceIndices.Intersect(availableFaces);
+                foreach (int index in intersectedIndices)
                 {
-                    FaceScript FS = faces[i].GetComponent<FaceScript>();
-                    /*if (!(FS.havePlayer || FS.isBlinking || FS.isKilling || FS.isBlocked || FS.isBonus))
-                    {
-                        StartCoroutine(ChangeColorThenScale(faces[newCubeIndices[i]], materialRed, new Vector3(1f, 1f, scaleChange), colorChangeDuration, scaleChangeDuration));
-                    }*/
-                    StartCoroutine(SetRedFace(faces[newCubeIndices[i]], materialRed));
+                    StartCoroutine(SetRedFace(faces[index], materialRed));
+                    //Debug.Log(faces[index].name);
                 }
             }
         }
