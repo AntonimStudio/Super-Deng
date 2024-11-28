@@ -13,34 +13,36 @@ MonoBehaviour:
   m_Name: EnemySpawnSettings
   m_EditorClassIdentifier: 
   spawnTimes:
-  - time: 3
-    isRedFaceTurnOn: 1
+  - time: 10
+    isRedFaceTurnOn: 0
     isRedFaceRandom: 1
     arrayOfRedFaces: 
     quantityOfRedFaces: 10
     isRedWaveTurnOn: 0
-    isRedWaveRandom: 0
+    isRedWaveRandom: 1
     arrayOfRedWaves: 
-    quantityOfRedWaves: 0
-    proximityLimitOfRedWaves: 0
+    quantityOfRedWaves: 80
+    proximityLimitOfRedWaves: 3
     isFallFaceTurnOn: 0
-    isFallFaceRandom: 0
+    isFallFaceRandom: 1
     arrayOfFallFaces: 
-    quantityOfFallFaces: 0
-    proximityLimitOfFallFaces: 0
-    isResetDelay: 0
-    resetDelayTime: 0
+    quantityOfFallFaces: 4
+    proximityLimitOfFallFaces: 2
+    isResetDelay: 1
+    resetDelayTime: 16
     isResetFallFaceTurnOn: 0
     isBonusTurnOn: 0
-    isBonusRandom: 0
+    isBonusRandom: 1
     arrayOfBonuses: 
-    quantityOfBonuses: 0
-    proximityLimitOfBonuses: 0
-    isPortalTurnOn: 0
-    isPortalRandom: 0
+    quantityOfBonuses: 2
+    proximityLimitOfBonuses: 2
+    isBonusHealth: 0
+    isBonusCombo: 0
+    isPortalTurnOn: 1
+    isPortalRandom: 1
     arrayOfPortals: 
-    quantityOfPortals: 0
-    proximityLimitOfPortals: 0
+    quantityOfPortals: 4
+    proximityLimitOfPortals: 3
     isFaceDanceTurnOn: 0
     isSetFaceDanceIncrease: 0
     isSetFaceDanceDecrease: 0
@@ -50,103 +52,31 @@ MonoBehaviour:
     speedRGB: 0
     isSetRGBIncrease: 0
     isSetRGBDecrease: 0
-  - time: 10
-    isRedFaceTurnOn: 1
-    isRedFaceRandom: 0
-    arrayOfRedFaces: 0c00000022000000030000004b00000029000000
-    quantityOfRedFaces: 10
-    isRedWaveTurnOn: 0
-    isRedWaveRandom: 0
-    arrayOfRedWaves: 
-    quantityOfRedWaves: 0
-    proximityLimitOfRedWaves: 0
-    isFallFaceTurnOn: 0
-    isFallFaceRandom: 0
-    arrayOfFallFaces: 
-    quantityOfFallFaces: 0
-    proximityLimitOfFallFaces: 0
-    isResetDelay: 0
-    resetDelayTime: 0
-    isResetFallFaceTurnOn: 0
-    isBonusTurnOn: 0
-    isBonusRandom: 0
-    arrayOfBonuses: 
-    quantityOfBonuses: 0
-    proximityLimitOfBonuses: 0
-    isPortalTurnOn: 0
-    isPortalRandom: 0
-    arrayOfPortals: 
-    quantityOfPortals: 0
-    proximityLimitOfPortals: 0
-    isFaceDanceTurnOn: 0
-    isSetFaceDanceIncrease: 0
-    isSetFaceDanceDecrease: 0
-    isSphereDanceTurnOn: 0
-    isCameraRotationTurnOn: 0
-    isRGBTurnOn: 0
-    speedRGB: 0
-    isSetRGBIncrease: 0
-    isSetRGBDecrease: 0
-  - time: 20
-    isRedFaceTurnOn: 1
-    isRedFaceRandom: 1
-    arrayOfRedFaces: 0c00000022000000030000004b00000029000000
-    quantityOfRedFaces: 64
-    isRedWaveTurnOn: 0
-    isRedWaveRandom: 0
-    arrayOfRedWaves: 
-    quantityOfRedWaves: 0
-    proximityLimitOfRedWaves: 0
-    isFallFaceTurnOn: 0
-    isFallFaceRandom: 0
-    arrayOfFallFaces: 
-    quantityOfFallFaces: 0
-    proximityLimitOfFallFaces: 0
-    isResetDelay: 0
-    resetDelayTime: 0
-    isResetFallFaceTurnOn: 0
-    isBonusTurnOn: 0
-    isBonusRandom: 0
-    arrayOfBonuses: 
-    quantityOfBonuses: 0
-    proximityLimitOfBonuses: 0
-    isPortalTurnOn: 0
-    isPortalRandom: 0
-    arrayOfPortals: 
-    quantityOfPortals: 0
-    proximityLimitOfPortals: 0
-    isFaceDanceTurnOn: 0
-    isSetFaceDanceIncrease: 0
-    isSetFaceDanceDecrease: 0
-    isSphereDanceTurnOn: 0
-    isCameraRotationTurnOn: 0
-    isRGBTurnOn: 0
-    speedRGB: 0
-    isSetRGBIncrease: 0
-    isSetRGBDecrease: 0
-  - time: 24
+  - time: 14
     isRedFaceTurnOn: 0
     isRedFaceRandom: 1
-    arrayOfRedFaces: 0c00000022000000030000004b00000029000000
-    quantityOfRedFaces: 64
+    arrayOfRedFaces: 
+    quantityOfRedFaces: 10
     isRedWaveTurnOn: 0
-    isRedWaveRandom: 0
+    isRedWaveRandom: 1
     arrayOfRedWaves: 
-    quantityOfRedWaves: 0
-    proximityLimitOfRedWaves: 0
+    quantityOfRedWaves: 80
+    proximityLimitOfRedWaves: 3
     isFallFaceTurnOn: 0
-    isFallFaceRandom: 0
+    isFallFaceRandom: 1
     arrayOfFallFaces: 
-    quantityOfFallFaces: 0
-    proximityLimitOfFallFaces: 0
-    isResetDelay: 0
-    resetDelayTime: 0
+    quantityOfFallFaces: 4
+    proximityLimitOfFallFaces: 2
+    isResetDelay: 1
+    resetDelayTime: 16
     isResetFallFaceTurnOn: 0
     isBonusTurnOn: 0
     isBonusRandom: 0
     arrayOfBonuses: 
     quantityOfBonuses: 0
     proximityLimitOfBonuses: 0
+    isBonusHealth: 0
+    isBonusCombo: 0
     isPortalTurnOn: 0
     isPortalRandom: 0
     arrayOfPortals: 
@@ -162,33 +92,35 @@ MonoBehaviour:
     isSetRGBIncrease: 0
     isSetRGBDecrease: 0
   - time: 30
-    isRedFaceTurnOn: 1
+    isRedFaceTurnOn: 0
     isRedFaceRandom: 1
-    arrayOfRedFaces: 0c00000022000000030000004b00000029000000
-    quantityOfRedFaces: 1
+    arrayOfRedFaces: 
+    quantityOfRedFaces: 10
     isRedWaveTurnOn: 0
-    isRedWaveRandom: 0
+    isRedWaveRandom: 1
     arrayOfRedWaves: 
-    quantityOfRedWaves: 0
-    proximityLimitOfRedWaves: 0
+    quantityOfRedWaves: 80
+    proximityLimitOfRedWaves: 3
     isFallFaceTurnOn: 0
-    isFallFaceRandom: 0
+    isFallFaceRandom: 1
     arrayOfFallFaces: 
-    quantityOfFallFaces: 0
-    proximityLimitOfFallFaces: 0
-    isResetDelay: 0
-    resetDelayTime: 0
+    quantityOfFallFaces: 4
+    proximityLimitOfFallFaces: 2
+    isResetDelay: 1
+    resetDelayTime: 16
     isResetFallFaceTurnOn: 0
     isBonusTurnOn: 0
     isBonusRandom: 0
-    arrayOfBonuses: 
+    arrayOfBonuses: 010000000200000003000000040000000500000006000000
     quantityOfBonuses: 0
     proximityLimitOfBonuses: 0
-    isPortalTurnOn: 0
+    isBonusHealth: 1
+    isBonusCombo: 1
+    isPortalTurnOn: 1
     isPortalRandom: 0
-    arrayOfPortals: 
+    arrayOfPortals: 0000000001000000020000000300000004000000
     quantityOfPortals: 0
-    proximityLimitOfPortals: 0
+    proximityLimitOfPortals: 1
     isFaceDanceTurnOn: 0
     isSetFaceDanceIncrease: 0
     isSetFaceDanceDecrease: 0

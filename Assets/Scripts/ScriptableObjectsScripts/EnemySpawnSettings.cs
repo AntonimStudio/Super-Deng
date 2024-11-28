@@ -41,6 +41,8 @@ public class SpawnTimeData
     public int[] arrayOfBonuses;
     public int quantityOfBonuses;
     public int proximityLimitOfBonuses;
+    public bool isBonusHealth;
+    public bool isBonusCombo;
 
     public bool isPortalTurnOn;
     public bool isPortalRandom;

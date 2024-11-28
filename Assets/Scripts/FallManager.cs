@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
 using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -10,7 +12,8 @@ public class FallManager : MonoBehaviour
     private FaceScript[] faceScripts;
     [SerializeField] private FaceArrayScript FAS;
     private List<int> numbersOfFalledFaces;
-
+    public int proximityLimit = 0;
+    public bool isResetDelay = false;
     [SerializeField] private PlayerScript PS;
     [SerializeField] private Vector3 centerPoint;
     [SerializeField] private float impulseForce = 10f; 
@@ -18,9 +21,13 @@ public class FallManager : MonoBehaviour
     [SerializeField] private float delay = 1.5f;
     [SerializeField] private AnimationClip animClipFall;
     [SerializeField] private AnimationClip animClipReset;
+    public float resetDelayTime = 0f;
     private bool waitForDeath = false;
     private bool isReset = false;
-
+    public bool isTurnOn = false;
+    public bool isRandomSpawnTime = false;
+    public int colvo = 0;
+    public List<int> faceIndices = new();
 
     private void Start()
     {
@@ -42,23 +49,8 @@ public class FallManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {/*
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (numbersOfFalledFaces.Count >= 79) return;
-            int numb;
-            FaceScript FS;
-            do 
-            { 
-                numb = Random.Range(0, 79);
-                FS = faces[numb].GetComponent<FaceScript>();
-            }
-            while (numbersOfFalledFaces.Contains(numb) || FS.havePlayer || FS.isBlinking || FS.isKilling || FS.isBlocked || FS.isBonus);
-            numbersOfFalledFaces.Add(numb);
-            StartCoroutine(PlayAnimationFall(faces[numb], numb));
-        }
-        */
+    /*private void Update()
+    {
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -101,6 +93,59 @@ public class FallManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             ResetFall();
+        }
+    }*/
+
+    public void StartSettingFallFace()
+    {
+        
+        if (numbersOfFalledFaces.Count >= 79) return;
+        if (isTurnOn)
+        {
+            List<int> availableFaces = new List<int>();
+
+            for (int i = 0; i < faces.Length; i++)
+            {
+                FaceScript FS = faces[i].GetComponent<FaceScript>();
+                if (//!FS.havePlayer &&
+                    !FS.isBlinking &&
+                    !FS.isKilling &&
+                    !FS.isBlocked &&
+                    !FS.isColored &&
+                    !FS.isPortal &&
+                    !FS.isBonus &&
+                    FS.pathObjectCount >= proximityLimit)
+                {
+                    availableFaces.Add(i);
+                }
+            }
+
+            if (isRandomSpawnTime)
+            {
+                //Debug.Log(colvo);
+                for (int i = 0; i < colvo; i++)
+                {
+                    if (availableFaces.Count == 0) return;
+
+                    int randomIndex = Random.Range(0, availableFaces.Count);
+                    int selectedFaceIndex = availableFaces[randomIndex];
+
+
+                    numbersOfFalledFaces.Add(selectedFaceIndex);
+                    StartCoroutine(PlayAnimationFall(faces[selectedFaceIndex], selectedFaceIndex));
+                    availableFaces.RemoveAt(randomIndex);
+                }
+            }
+            else
+            {
+                var intersectedIndices = faceIndices.Intersect(availableFaces);
+                foreach (int index in intersectedIndices)
+                {
+                    numbersOfFalledFaces.Add(index);
+                    StartCoroutine(PlayAnimationFall(faces[index], index));
+
+                }
+            }
         }
     }
 

@@ -84,6 +84,8 @@ public class EnemySpawnSettingsEditor : Editor
             public int[] arrayOfBonuses;
             public int quantityOfBonuses;
             public int proximityLimitOfBonuses;
+            public bool isBonusHealth;
+            public bool isBonusCombo;
             */
 
             SerializedProperty isBonusTurnOn = spawnTime.FindPropertyRelative("isBonusTurnOn");
@@ -91,6 +93,8 @@ public class EnemySpawnSettingsEditor : Editor
             SerializedProperty arrayOfBonuses = spawnTime.FindPropertyRelative("arrayOfBonuses");
             SerializedProperty quantityOfBonuses = spawnTime.FindPropertyRelative("quantityOfBonuses");
             SerializedProperty proximityLimitOfBonuses = spawnTime.FindPropertyRelative("proximityLimitOfBonuses");
+            SerializedProperty isBonusHealth = spawnTime.FindPropertyRelative("isBonusHealth");
+            SerializedProperty isBonusCombo = spawnTime.FindPropertyRelative("isBonusCombo");
 
             /*
             Portals
@@ -145,17 +149,23 @@ public class EnemySpawnSettingsEditor : Editor
             SerializedProperty isSetRGBDecrease = spawnTime.FindPropertyRelative("isSetRGBDecrease");
 
             //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            GUIStyle headerStyle = new GUIStyle(EditorStyles.label);
-            headerStyle.fontSize = 20;
-            headerStyle.fontStyle = FontStyle.Bold;
+            GUIStyle headerStyle = new(EditorStyles.label)
+            {
+                fontSize = 20,
+                fontStyle = FontStyle.Bold
+            };
             headerStyle.normal.textColor = Color.white;
-            GUIStyle labelStyle = new GUIStyle(EditorStyles.label);
-            labelStyle.fontSize = 16;
-            labelStyle.fontStyle = FontStyle.Bold;
+            GUIStyle labelStyle = new(EditorStyles.label)
+            {
+                fontSize = 16,
+                fontStyle = FontStyle.Bold
+            };
             labelStyle.normal.textColor = Color.white;
-            GUIStyle attentionStyle = new GUIStyle(EditorStyles.label);
-            attentionStyle.fontSize = 8;
-            attentionStyle.fontStyle = FontStyle.Italic;
+            GUIStyle attentionStyle = new(EditorStyles.label)
+            {
+                fontSize = 10,
+                fontStyle = FontStyle.Italic
+            };
             attentionStyle.normal.textColor = Color.red;
 
             
@@ -242,7 +252,11 @@ public class EnemySpawnSettingsEditor : Editor
                 {
                     EditorGUILayout.PropertyField(arrayOfBonuses, new GUIContent("Array of Bonuses"), true);
                 }
+                
                 EditorGUILayout.PropertyField(proximityLimitOfBonuses, new GUIContent("Proximity Limit of Bonuses"));
+                EditorGUILayout.PropertyField(isBonusHealth, new GUIContent("Is Health Bonus?"));
+                EditorGUILayout.PropertyField(isBonusCombo, new GUIContent("Is Combo Bonus?"));
+                EditorGUILayout.LabelField("can not be false and false!!!", attentionStyle);
             }
 
             EditorGUILayout.LabelField("Portal Settings:", labelStyle);

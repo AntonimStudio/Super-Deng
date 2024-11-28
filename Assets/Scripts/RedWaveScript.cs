@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class RedWaveScript : MonoBehaviour
 {
     private GameObject[] faces;
-    [SerializeField] private int proximityLimit = 5;
+    public int proximityLimit = 5;
     [SerializeField] private float colorChangeDuration = 2f;
     [SerializeField] private float scaleChangeDurationUp = 1f;
     [SerializeField] private float scaleChangeDurationDown = 1f;
@@ -24,59 +25,60 @@ public class RedWaveScript : MonoBehaviour
     [SerializeField] private EnemySpawnSettings enemySpawnSettings;
     public bool isTurnOn = false;
 
-
-
-    private List<int> lastCubeIndices = new List<int>();
-    private List<int> newCubeIndices = new List<int>();
-    private bool[] spawnExecuted;
-    private int colvo = 1;
-    private bool isRandomSpawnTime = true;
+    public List<int> faceIndices = new();
+    public int colvo = 0;
+    public bool isRandomSpawnTime = false;
 
     private void Start()
     {
         faces = FAS.GetAllFaces();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            isRandomSpawnTime = true;
-            StartSettingRedWave();
-        }
+        isRandomSpawnTime = false;
+        isTurnOn = false;
     }
 
     public void StartSettingRedWave()
     {
         if (isTurnOn)
         {
+            List<int> availableFaces = new List<int>();
+
+            for (int i = 0; i < faces.Length; i++)
+            {
+                FaceScript FS = faces[i].GetComponent<FaceScript>();
+                if (!FS.havePlayer &&
+                    !FS.isBlinking &&
+                    !FS.isKilling &&
+                    !FS.isBlocked &&
+                    !FS.isColored &&
+                    !FS.isPortal &&
+                    !FS.isBonus &&
+                    FS.pathObjectCount >= proximityLimit)
+                {
+                    availableFaces.Add(i);
+                }
+            }
+
             if (isRandomSpawnTime)
             {
-                List<int> availableFaces = new List<int>();
-
-                // Сбор подходящих граней
-                for (int i = 0; i < faces.Length; i++)
+                //Debug.Log(colvo);
+                for (int i = 0; i < colvo; i++)
                 {
-                    FaceScript FS = faces[i].GetComponent<FaceScript>();
-                    if (!FS.havePlayer &&
-                        !FS.isBlinking &&
-                        !FS.isKilling &&
-                        !FS.isBlocked &&
-                        !FS.isColored &&
-                        !FS.isPortal &&
-                        !FS.isBonus &&
-                        FS.pathObjectCount >= proximityLimit)
-                    {
-                        availableFaces.Add(i);
-                    }
+                    if (availableFaces.Count == 0) return;
+
+                    int randomIndex = Random.Range(0, availableFaces.Count);
+                    int selectedFaceIndex = availableFaces[randomIndex];
+                    StartCoroutine(SetRedWave(faces[selectedFaceIndex]));
+                    availableFaces.RemoveAt(randomIndex);
                 }
-
-                if (availableFaces.Count == 0) return;
-
-                int randomIndex = Random.Range(0, availableFaces.Count);
-                int selectedFaceIndex = availableFaces[randomIndex];
-
-                StartCoroutine(SetRedWave(faces[selectedFaceIndex]));
+            }
+            else
+            {
+                var intersectedIndices = faceIndices.Intersect(availableFaces);
+                foreach (int index in intersectedIndices)
+                {
+                    StartCoroutine(SetRedWave(faces[index]));
+                    //Debug.Log(faces[index].name);
+                }
             }
         }
     }

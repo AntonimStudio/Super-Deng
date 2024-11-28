@@ -8,7 +8,6 @@ using System.Linq;
 public class RedFaceScript : MonoBehaviour
 {
     private GameObject[] faces;
-    //[SerializeField] private Image imageLose;
     [SerializeField] private float colorChangeDuration = 2f;
     [SerializeField] private float scaleChangeDurationUp = 1f;
     [SerializeField] private float scaleChangeDurationDown = 1f;
@@ -23,69 +22,16 @@ public class RedFaceScript : MonoBehaviour
     [SerializeField] private TimerController TC;
     [SerializeField] private PlayerScript PS;
     [SerializeField] private ComboManager CM;
-    [SerializeField] private EnemySpawnSettings enemySpawnSettings;
     public bool isTurnOn = false;
 
-    private List<int> faceIndices = new List<int>();
-    private int colvo = 0;
-    private bool[] spawnExecuted;
-    private bool isRandomSpawnTime = true;
-    private int currentSpawnIndex = 0;
+    public List<int> faceIndices = new();
+    public int colvo = 0;
+    public bool isRandomSpawnTime = true;
 
     private void Start()
     {
+        isTurnOn = false;
         faces = FAS.GetAllFaces();
-        spawnExecuted = new bool[enemySpawnSettings.spawnTimes.Length];
-    }
-
-    private void Update()
-    {
-        if (TC != null)
-        {
-            float elapsedTime = TC.timeElapsed;
-
-            if (currentSpawnIndex < enemySpawnSettings.spawnTimes.Length)
-            {
-                var spawnTimeData = enemySpawnSettings.spawnTimes[currentSpawnIndex];
-                var nextSpawnTimeData = currentSpawnIndex < enemySpawnSettings.spawnTimes.Length - 1
-                    ? enemySpawnSettings.spawnTimes[currentSpawnIndex + 1]
-                    : new SpawnTimeData { time = float.MaxValue }; 
-
-                if (elapsedTime >= spawnTimeData.time && elapsedTime <= nextSpawnTimeData.time && !spawnExecuted[currentSpawnIndex])
-                {
-                    if (spawnTimeData.isRedFaceTurnOn)
-                    {
-                        if (spawnTimeData.isRedFaceRandom)
-                        {
-                            colvo = spawnTimeData.quantityOfRedFaces;
-                            isRandomSpawnTime = true;
-                        }
-                        else
-                        {
-                            faceIndices.Clear();
-                            faceIndices = new List<int>(spawnTimeData.arrayOfRedFaces);
-                            isRandomSpawnTime = false;
-                        }
-                        spawnExecuted[currentSpawnIndex] = true;
-                    }
-                    else
-                    {
-                        faceIndices.Clear();
-                        isRandomSpawnTime = false;
-                    }
-                }
-                if (elapsedTime > nextSpawnTimeData.time)
-                {
-                    currentSpawnIndex++;
-                }
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            isRandomSpawnTime = true;
-            StartSettingRedFace();
-        }
     }
 
     public void StartSettingRedFace()

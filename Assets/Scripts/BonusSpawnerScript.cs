@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
 using UnityEditor.Presets;
 using UnityEngine;
 using UnityEngine.XR;
@@ -18,6 +20,13 @@ public class BonusSpawnerScript : MonoBehaviour
     [SerializeField] private AnimationClip animClip;
     [SerializeField] private float delay;
     private List<int> numbersOfBonusFaces;
+    public int proximityLimit = 0;
+    public int colvo = 0;
+    public bool isTurnOn = false;
+    public bool isRandomSpawnTime = false;
+    public bool isBonusHealth = false;
+    public bool isBonusCombo = false;
+    public List<int> faceIndices = new();
 
     private void Start()
     {
@@ -26,15 +35,14 @@ public class BonusSpawnerScript : MonoBehaviour
         numbersOfBonusFaces = new List<int>();
     }
 
-    private void Update()
+    public void StartSettingBonus()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (isTurnOn)
         {
             List<int> availableFaces = new List<int>();
 
             for (int i = 0; i < faceScripts.Length; i++)
             {
-
                 if (!faceScripts[i].havePlayer &&
                     !faceScripts[i].isRight &&
                     !faceScripts[i].isLeft &&
@@ -44,18 +52,59 @@ public class BonusSpawnerScript : MonoBehaviour
                     !faceScripts[i].isBlocked &&
                     !faceScripts[i].isColored &&
                     !faceScripts[i].isPortal &&
-                    !faceScripts[i].isBonus)
+                    !faceScripts[i].isBonus &&
+                    faceScripts[i].pathObjectCount >= proximityLimit)
                 {
                     availableFaces.Add(i);
                 }
             }
 
-            if (availableFaces.Count == 0) return;
+            if (isRandomSpawnTime)
+            {
+                //Debug.Log(colvo);
+                for (int i = 0; i < colvo; i++)
+                {
+                    if (availableFaces.Count == 0) return;
 
-            int selectedFaceIndex = availableFaces[Random.Range(0, availableFaces.Count)];
-
-            SetBonus(faceScripts[selectedFaceIndex].gameObject, Random.Range(0, 2));
+                    int randomIndex = Random.Range(0, availableFaces.Count);
+                    int selectedFaceIndex = availableFaces[randomIndex];
+                    SetBonus(faceScripts[selectedFaceIndex].gameObject, SetBonusType());
+                    availableFaces.RemoveAt(randomIndex);
+                }
+            }
+            else
+            {
+                var intersectedIndices = faceIndices.Intersect(availableFaces);
+                foreach (int index in intersectedIndices)
+                {
+                    SetBonus(faceScripts[index].gameObject, SetBonusType());
+                    //Debug.Log(faces[index].name);
+                }
+            }
         }
+    }
+
+    private int SetBonusType()
+    {
+        int type;
+        if (isBonusHealth && isBonusCombo)
+        {
+            type = Random.Range(0, 2);
+        }
+        else if (isBonusHealth && !isBonusCombo)
+        {
+            type = 0;
+        }
+        else if (!isBonusHealth && isBonusCombo)
+        {
+            type = 1;
+        }
+        else
+        {
+            type = Random.Range(0, 2);
+            Debug.Log("ОШИБКА, ВАРЯ, ОШИБКА. Сколько я говорил обращать внимание на красные надписи?!");
+        }
+        return type;
     }
 
     private void SetBonus(GameObject face, int type) //0 - Health, 1 - Combo

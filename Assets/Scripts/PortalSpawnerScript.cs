@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,7 +9,6 @@ using UnityEngine.UI;
 public class PortalSpawnerScript : MonoBehaviour
 {
     private FaceScript[] faceScripts;
-    [SerializeField] private int proximityLimit = 5;
     [SerializeField] private GameObject prefab;
     [SerializeField] private Material materialBasic;
     [SerializeField] private Material materialPortal;
@@ -17,21 +18,25 @@ public class PortalSpawnerScript : MonoBehaviour
     [SerializeField] private AnimationClip animClip;
     [SerializeField] private float delay;
     [SerializeField] private int indexScene;
+    public int proximityLimit = 0;
+    public int colvo = 0;
+    public bool isTurnOn = false;
+    public bool isRandomSpawnTime = false;
+    public List<int> faceIndices = new();
 
     private void Start()
     {
         faceScripts = FAS.GetAllFaceScripts();
     }
 
-    private void Update()
+    public void StartSettingPortal()
     {
-        if (Input.GetKeyDown(KeyCode.H))
+        if (isTurnOn)
         {
             List<int> availableFaces = new List<int>();
 
             for (int i = 0; i < faceScripts.Length; i++)
             {
-
                 if (!faceScripts[i].havePlayer &&
                     !faceScripts[i].isRight &&
                     !faceScripts[i].isLeft &&
@@ -41,18 +46,34 @@ public class PortalSpawnerScript : MonoBehaviour
                     !faceScripts[i].isBlocked &&
                     !faceScripts[i].isColored &&
                     !faceScripts[i].isPortal &&
-                    !faceScripts[i].isBonus && 
+                    !faceScripts[i].isBonus &&
                     faceScripts[i].pathObjectCount >= proximityLimit)
                 {
                     availableFaces.Add(i);
                 }
             }
 
-            if (availableFaces.Count == 0) return;
+            if (isRandomSpawnTime)
+            {
+                //Debug.Log(colvo);
+                for (int i = 0; i < colvo; i++)
+                {
+                    if (availableFaces.Count == 0) return;
 
-            int selectedFaceIndex = availableFaces[Random.Range(0, availableFaces.Count)];
-
-            SetPortal(faceScripts[selectedFaceIndex]);
+                    int randomIndex = Random.Range(0, availableFaces.Count);
+                    int selectedFaceIndex = availableFaces[randomIndex];
+                    SetPortal(faceScripts[selectedFaceIndex]);
+                    availableFaces.RemoveAt(randomIndex);
+                }
+            }
+            else
+            {
+                var intersectedIndices = faceIndices.Intersect(availableFaces);
+                foreach (int index in intersectedIndices)
+                {
+                    SetPortal(faceScripts[index]);
+                }
+            }
         }
     }
 
