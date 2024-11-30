@@ -90,7 +90,7 @@ public class RedFaceScript : MonoBehaviour
         {
             FDC.StopScaling();
         }*/
-        FDC.isOn = false;
+        FDC.isTurnOn = false;
         FS.isColored = true;
         float timer = 0f;
         while (timer < colorChangeDuration)

@@ -11,6 +11,10 @@ public class UnifiedFrameManagerScript : MonoBehaviour
     [SerializeField] private FallManager FM;
     [SerializeField] private BonusSpawnerScript BSS;
     [SerializeField] private PortalSpawnerScript PSS;
+    [SerializeField] private FaceDanceCenterScript FDCS;
+    [SerializeField] private IcoSphereDanceScript ISDS;
+    [SerializeField] private CameraRotation CR;
+    [SerializeField] private CameraRGBInterferenceScript CRGBIS;
 
     [SerializeField] private EnemySpawnSettings enemySpawnSettings;
     private bool[] spawnExecuted;
@@ -185,14 +189,83 @@ public class UnifiedFrameManagerScript : MonoBehaviour
                     }
 
 
+                    /*
+                    public bool isFaceDanceTurnOn;
+                    public bool isSetFaceDanceIncrease;
+                    public bool isSetFaceDanceDecrease;
+                    */
+                    if (spawnTimeData.isFaceDanceTurnOn)
+                    {
+
+                        FDCS.isTurnOn = true;
+                        FDCS.IsFaceDanceIncrease = spawnTimeData.isSetFaceDanceIncrease;
+                        FDCS.IsFaceDanceDecrease = spawnTimeData.isSetFaceDanceDecrease;
+                    }
+                    else
+                    {
+                        FDCS.isTurnOn = false;
+                    }
+
+                    if (spawnTimeData.isSphereDanceTurnOn)
+                    {
+
+                        ISDS.isTurnOn = true;
+                    }
+                    else
+                    {
+                        ISDS.isTurnOn = false;
+                    }
+
+                    if (spawnTimeData.isCameraRotationTurnOn)
+                    {
+
+                        CR.isTurnOn = true;
+                        CR.isClockwise = spawnTimeData.isCameraRotationClockwise;
+                        CR.rotationSpeed = spawnTimeData.cameraRotationSpeed;
+                    }
+                    else
+                    {
+                        CR.isTurnOn = false;
+                    }
+
+                    if (spawnTimeData.isRGBTurnOn)
+                    {
+
+                        CRGBIS.isTurnOn = true;
+                        CRGBIS.targetValue = spawnTimeData.targetValueRGB / 100;
+                        CRGBIS.speed = spawnTimeData.speedRGB / 1000;
+                        if (spawnTimeData.isSetRGBIncrease && !spawnTimeData.isSetRGBDecrease)
+                        {
+                            CRGBIS.isIncreasing = true;
+                            CRGBIS.isChanging = true;
+                        }
+                        else if (!spawnTimeData.isSetRGBIncrease && spawnTimeData.isSetRGBDecrease)
+                        {
+                            CRGBIS.isIncreasing = false;
+                            CRGBIS.isChanging = true;
+                        } 
+                        else if (!spawnTimeData.isSetRGBIncrease && !spawnTimeData.isSetRGBDecrease)
+                        {
+                            CRGBIS.isChanging = false;
+                        }
+                        else
+                        {
+                            CRGBIS.isChanging = false;
+                            Debug.Log("Епт, Варя, ты не должна видеть это сообщение, переделывай Фрейм с РГБ");
+                        }
 
 
 
-
+                    }
+                    else
+                    {
+                        CR.isTurnOn = false;
+                    }
 
 
                     spawnExecuted[currentSpawnIndex] = true;
                 }
+
                 if (elapsedTime > nextSpawnTimeData.time)
                 {
                     currentSpawnIndex++;

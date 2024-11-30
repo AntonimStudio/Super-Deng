@@ -1,66 +1,60 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class FaceDanceScript : MonoBehaviour
 {
-    public float scaleFactor = 1.15f;  // Factor by which the size increases
-    public float duration = 0.2f;  // Duration for scaling up and down
-    public bool isOn = false;  // Boolean to control the scaling behavior
+    [SerializeField] private FaceDanceCenterScript FDCS;
+    private FaceScript FS;
+    public float scaleFactor;
+    public float duration = 0.2f;  
+    public bool isTurnOn = false;  
     private bool inProcess = false;
     public Coroutine constantCoroutine;
     private Vector3 originalScale;
-    private FaceScript FS;
-    [SerializeField] private EnemySpawnSettings enemySpawnSettings;
-    [SerializeField] private TimerController TC;
-    private bool[] spawnExecuted;
-    
+
     private void Start()
     {
         FS = gameObject.GetComponent<FaceScript>();
+        scaleFactor = FDCS.scaleFactor;
+        duration = FDCS.duration;
         duration += Random.Range(-0.2f, 0.05f);
-        originalScale = gameObject.GetComponent<FaceScript>().glowingPart.transform.localScale;
-        if (enemySpawnSettings != null)
-        {
-            spawnExecuted = new bool[enemySpawnSettings.spawnTimes.Length];
-        }
+        originalScale = FS.glowingPart.transform.localScale;
     }
 
     private void Update()
-    {/*
-        if (TC != null && enemySpawnSettings != null)
+    {
+        if (FDCS.isTurnOn && !inProcess)
         {
-            float elapsedTime = TC.timeElapsed;
-
-            for (int i = 0; i < enemySpawnSettings.spawnTimes.Length - 1; i++)
-            {
-                var spawnTimeData = enemySpawnSettings.spawnTimes[i];
-                var nextSpawnTimeData = enemySpawnSettings.spawnTimes[i + 1];
-
-                // Проверяем, прошло ли указанное время и не был ли спавн уже выполнен
-                if (elapsedTime >= spawnTimeData.time && elapsedTime <= nextSpawnTimeData.time && !spawnExecuted[i])
-                {
-                    isOn = spawnTimeData.isFaceDance;
-                    spawnExecuted[i] = true;
-                }
-            }
-            if (isOn && !inProcess && !FS.havePlayer && !FS.isBlinking && !FS.isKilling && !FS.isBlocked)
-            {
-                constantCoroutine = StartCoroutine(ScaleObject(FS.glowingPart, scaleFactor, duration));
-            }
-        }*/
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            isOn = !isOn;
+            constantCoroutine = StartCoroutine(ScaleObject(FS.glowingPart, scaleFactor, duration));
+            inProcess = true;
         }
     }
-    
+
+    public void StartScaling()
+    {
+        FS.glowingPart.transform.localScale = originalScale;
+        constantCoroutine = StartCoroutine(ScaleObject(FS.glowingPart, scaleFactor, duration));
+    }
+
+    public void StopScaling()
+    {
+        FS.glowingPart.transform.localScale = originalScale;
+        if (constantCoroutine != null)
+        {
+            StopCoroutine(constantCoroutine);
+            FS.glowingPart.transform.localScale = originalScale;
+            constantCoroutine = null;
+        }
+    }
+
     private IEnumerator ScaleObject(GameObject obj, float factor, float time)
     {
-        if (isOn && !inProcess && !FS.havePlayer && !FS.isKilling && !FS.isBlinking && !FS.isBlocked)
+        if (FDCS.isTurnOn)
         {
             inProcess = true;
-            Vector3 targetScale = new Vector3(originalScale.x, originalScale.y, originalScale.z * factor);
+            Vector3 targetScale = new(originalScale.x, originalScale.y, originalScale.z * factor);
 
             float elapsedTime = 0f;
             while (elapsedTime < time)
@@ -70,8 +64,6 @@ public class FaceDanceScript : MonoBehaviour
                 yield return null;
             }
             obj.transform.localScale = targetScale;
-            
-            // Scale down
             elapsedTime = 0f;
             while (elapsedTime < time)
             {
@@ -86,6 +78,5 @@ public class FaceDanceScript : MonoBehaviour
         {
             yield return null;
         }
-        yield return null;
     }
 }

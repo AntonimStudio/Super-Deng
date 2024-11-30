@@ -57,9 +57,12 @@ public class SpawnTimeData
     public bool isSphereDanceTurnOn;
 
     public bool isCameraRotationTurnOn;
+    public bool isCameraRotationClockwise;
+    public float cameraRotationSpeed;
 
     public bool isRGBTurnOn;
-    public int speedRGB;
+    public float speedRGB;
+    public float targetValueRGB;
     public bool isSetRGBIncrease;
     public bool isSetRGBDecrease;
 }

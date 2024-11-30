@@ -205,7 +205,7 @@ public class PlayerScript : MonoBehaviour
         rendPartMiddle.material = materialTurnOff;
         RFS.isTurnOn = false;
         SCD.isOn = false;
-        ISDS.isOn = false;
+        ISDS.isTurnOn = false;
         if (TC != null)
         {
             TC.timerIsRunning = false;

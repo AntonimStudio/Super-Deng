@@ -64,7 +64,7 @@ public class LightShutDownScript : MonoBehaviour
         for (int i = 0; i < faces.Length; i++)
         {
             FaceDanceScript FDS = faces[i].GetComponent<FaceDanceScript>();
-            FDS.isOn = false;
+            FDS.isTurnOn = false;
             //FDS.StopScaling();
         }
 

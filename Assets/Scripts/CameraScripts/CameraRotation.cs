@@ -4,42 +4,28 @@ using UnityEngine;
 
 public class CameraRotation : MonoBehaviour
 {
+    [SerializeField] private Transform cameraTransform;
+    [SerializeField] private Transform laserShowTransform;
+    public bool isTurnOn = false;
+    public bool isClockwise = true;
     public float rotationSpeed = 10f;
-    public bool isOn = false;
-    [SerializeField] private EnemySpawnSettings enemySpawnSettings;
-    [SerializeField] private TimerController TC;
-    private bool[] spawnExecuted;
-
-    private void Start()
-    {
-        spawnExecuted = new bool[enemySpawnSettings.spawnTimes.Length];
-    }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            isOn = !isOn;
-        }
-
-        float elapsedTime = TC.timeElapsed;
-
-        for (int i = 0; i < enemySpawnSettings.spawnTimes.Length - 1; i++)
-        {
-            var spawnTimeData = enemySpawnSettings.spawnTimes[i];
-            var nextSpawnTimeData = enemySpawnSettings.spawnTimes[i + 1];
-
-            // Проверяем, прошло ли указанное время и не был ли спавн уже выполнен
-            if (elapsedTime >= spawnTimeData.time && elapsedTime <= nextSpawnTimeData.time && !spawnExecuted[i])
-            {
-                //isOn = spawnTimeData.isRotate;
-                spawnExecuted[i] = true;
-            }
-        }
-        if (isOn)
+        if (isTurnOn)
         {
             float rotation = rotationSpeed * Time.deltaTime;
-            transform.Rotate(0, 0, rotation);
+
+            if (isClockwise)
+            {
+                cameraTransform.Rotate(0, 0, rotation);
+                laserShowTransform.Rotate(0, 0, rotation);
+            }
+            else
+            {
+                cameraTransform.Rotate(0, 0, -rotation);
+                laserShowTransform.Rotate(0, 0, -rotation);
+            }
         }
     }
 }

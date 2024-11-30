@@ -88,7 +88,7 @@ public class RedWaveScript : MonoBehaviour
         FaceScript FS = face.GetComponent<FaceScript>();
         FaceDanceScript FDC = face.GetComponent<FaceDanceScript>();
         FS.isKilling = true;
-        FDC.isOn = false;
+        FDC.isTurnOn = false;
         float timer = 0f;
         while (timer < colorChangeDuration)
         {

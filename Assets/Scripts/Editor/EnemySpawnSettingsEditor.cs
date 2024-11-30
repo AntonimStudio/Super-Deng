@@ -131,9 +131,13 @@ public class EnemySpawnSettingsEditor : Editor
             /*
             CameraRotation
             public bool isCameraRotationTurnOn;
+            public bool isCameraRotationClockwise;
+            public float cameraRotationSpeed;
             */
 
             SerializedProperty isCameraRotationTurnOn = spawnTime.FindPropertyRelative("isCameraRotationTurnOn");
+            SerializedProperty isCameraRotationClockwise = spawnTime.FindPropertyRelative("isCameraRotationClockwise");
+            SerializedProperty cameraRotationSpeed = spawnTime.FindPropertyRelative("cameraRotationSpeed");
 
             /*
             RGB
@@ -145,6 +149,7 @@ public class EnemySpawnSettingsEditor : Editor
 
             SerializedProperty isRGBTurnOn = spawnTime.FindPropertyRelative("isRGBTurnOn");
             SerializedProperty speedRGB = spawnTime.FindPropertyRelative("speedRGB");
+            SerializedProperty targetValueRGB = spawnTime.FindPropertyRelative("targetValueRGB");
             SerializedProperty isSetRGBIncrease = spawnTime.FindPropertyRelative("isSetRGBIncrease");
             SerializedProperty isSetRGBDecrease = spawnTime.FindPropertyRelative("isSetRGBDecrease");
 
@@ -295,12 +300,20 @@ public class EnemySpawnSettingsEditor : Editor
 
             EditorGUILayout.PropertyField(isCameraRotationTurnOn, new GUIContent("Is Camera Rotation turn on?"));
 
+            if (isCameraRotationTurnOn.boolValue)
+            {
+                EditorGUILayout.PropertyField(isCameraRotationClockwise, new GUIContent("Is Camera Rotation clockwise?"));
+                EditorGUILayout.PropertyField(cameraRotationSpeed, new GUIContent("Camera Rotation Speed"));
+                
+            }
+
             EditorGUILayout.LabelField("RGB Settings:", labelStyle);
 
             EditorGUILayout.PropertyField(isRGBTurnOn, new GUIContent("Is RGB turn on?"));
             if (isRGBTurnOn.boolValue)
             {
                 EditorGUILayout.PropertyField(speedRGB, new GUIContent("Speed RGB"));
+                EditorGUILayout.PropertyField(targetValueRGB, new GUIContent("Target Value SSRGB"));
                 EditorGUILayout.PropertyField(isSetRGBIncrease, new GUIContent("Is set RGB increase?"));
                 EditorGUILayout.PropertyField(isSetRGBDecrease, new GUIContent("Is set RGB decrease?"));
                 EditorGUILayout.LabelField("can not be true and true!!!", attentionStyle);

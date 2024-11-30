@@ -17,7 +17,7 @@ public class RGBShiftEffect : MonoBehaviour {
 
 
 
-	void OnRenderImage(RenderTexture src, RenderTexture dest)
+    private void OnRenderImage(RenderTexture src, RenderTexture dest)
 	{
 		if(on)
 		{
@@ -30,7 +30,7 @@ public class RGBShiftEffect : MonoBehaviour {
 	}
 
 
-	void Update()
+	private void Update()
 	{
 		if(on)
 		{

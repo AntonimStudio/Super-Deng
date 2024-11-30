@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class IcoSphereDanceScript : MonoBehaviour
@@ -7,39 +8,15 @@ public class IcoSphereDanceScript : MonoBehaviour
     public GameObject[] objects;  // Массив объектов для вращения
     public float rotationAngle = 15f;  // Угол вращения в градусах
     public float duration = 0.2f;  // Время для выполнения вращения в одну сторону
-    public bool isOn = false;  // Переменная для управления вращением
+    public bool isTurnOn = false;  // Переменная для управления вращением
     private bool inProcess = false;
     private int side = -1;
     [SerializeField] private EnemySpawnSettings enemySpawnSettings;
     [SerializeField] private TimerController TC;
-    private bool[] spawnExecuted;
-
-    private void Start()
-    {
-        spawnExecuted = new bool[enemySpawnSettings.spawnTimes.Length];
-    }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            isOn = !isOn;
-        }
-        float elapsedTime = TC.timeElapsed;
-
-        for (int i = 0; i < enemySpawnSettings.spawnTimes.Length - 1; i++)
-        {
-            var spawnTimeData = enemySpawnSettings.spawnTimes[i];
-            var nextSpawnTimeData = enemySpawnSettings.spawnTimes[i + 1];
-
-            // Проверяем, прошло ли указанное время и не был ли спавн уже выполнен
-            if (elapsedTime >= spawnTimeData.time && elapsedTime <= nextSpawnTimeData.time && !spawnExecuted[i])
-            {
-                //isOn = spawnTimeData.isSphereDance;
-                spawnExecuted[i] = true;
-            }
-        }
-        if (isOn && !inProcess)
+        if (isTurnOn && !inProcess)
         {
             foreach (GameObject obj in objects)
             {
@@ -50,13 +27,12 @@ public class IcoSphereDanceScript : MonoBehaviour
 
     private IEnumerator RotateObject(GameObject obj, float angle, float time)
     {
-        if (isOn)
+        if (isTurnOn)
         {
             inProcess = true;
             Quaternion originalRotation = obj.transform.rotation;
             Quaternion targetRotation = originalRotation * Quaternion.Euler(0, side * angle, 0);
 
-            // Вращение вперёд
             float elapsedTime = 0f;
             while (elapsedTime < time)
             {
@@ -66,7 +42,6 @@ public class IcoSphereDanceScript : MonoBehaviour
             }
             obj.transform.rotation = targetRotation;
 
-            // Вращение обратно
             elapsedTime = 0f;
             while (elapsedTime < time)
             {
@@ -80,6 +55,7 @@ public class IcoSphereDanceScript : MonoBehaviour
         }
         else
         {
+            inProcess = false;
             yield return null;
         }
     }
