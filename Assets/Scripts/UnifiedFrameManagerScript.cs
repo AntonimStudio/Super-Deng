@@ -198,12 +198,16 @@ public class UnifiedFrameManagerScript : MonoBehaviour
                     {
 
                         FDCS.isTurnOn = true;
+                        FDCS.duration = spawnTimeData.durationOfCycleFaceDance;
+                        FDCS.scaleFactor = spawnTimeData.scaleFactorFaceDance;
                         FDCS.IsFaceDanceIncrease = spawnTimeData.isSetFaceDanceIncrease;
                         FDCS.IsFaceDanceDecrease = spawnTimeData.isSetFaceDanceDecrease;
+                        FDCS.SetAllParameters();
                     }
                     else
                     {
                         FDCS.isTurnOn = false;
+                        FDCS.SetAllParameters();
                     }
 
                     if (spawnTimeData.isSphereDanceTurnOn)
@@ -221,7 +225,7 @@ public class UnifiedFrameManagerScript : MonoBehaviour
 
                         CR.isTurnOn = true;
                         CR.isClockwise = spawnTimeData.isCameraRotationClockwise;
-                        CR.rotationSpeed = spawnTimeData.cameraRotationSpeed;
+                        CR.rotationSpeed = spawnTimeData.speedCameraRotation;
                     }
                     else
                     {

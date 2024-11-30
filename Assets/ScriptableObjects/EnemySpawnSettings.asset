@@ -46,10 +46,13 @@ MonoBehaviour:
     isFaceDanceTurnOn: 0
     isSetFaceDanceIncrease: 0
     isSetFaceDanceDecrease: 0
+    durationOfCycleFaceDance: 0
+    scaleFactorFaceDance: 0
     isSphereDanceTurnOn: 0
+    isSphereDanceClockwise: 0
     isCameraRotationTurnOn: 0
     isCameraRotationClockwise: 0
-    cameraRotationSpeed: 10
+    speedCameraRotation: 0
     isRGBTurnOn: 0
     speedRGB: 10
     targetValueRGB: 0
@@ -65,12 +68,12 @@ MonoBehaviour:
     arrayOfRedWaves: 
     quantityOfRedWaves: 0
     proximityLimitOfRedWaves: 0
-    isFallFaceTurnOn: 0
+    isFallFaceTurnOn: 1
     isFallFaceRandom: 0
     arrayOfFallFaces: 
     quantityOfFallFaces: 0
     proximityLimitOfFallFaces: 0
-    isResetDelay: 0
+    isResetDelay: 1
     resetDelayTime: 0
     isResetFallFaceTurnOn: 0
     isBonusTurnOn: 0
@@ -88,10 +91,13 @@ MonoBehaviour:
     isFaceDanceTurnOn: 1
     isSetFaceDanceIncrease: 0
     isSetFaceDanceDecrease: 0
+    durationOfCycleFaceDance: 0.2
+    scaleFactorFaceDance: 100
     isSphereDanceTurnOn: 0
+    isSphereDanceClockwise: 0
     isCameraRotationTurnOn: 0
     isCameraRotationClockwise: 0
-    cameraRotationSpeed: 0
+    speedCameraRotation: 0
     isRGBTurnOn: 0
     speedRGB: 10
     targetValueRGB: 10
@@ -130,10 +136,13 @@ MonoBehaviour:
     isFaceDanceTurnOn: 0
     isSetFaceDanceIncrease: 0
     isSetFaceDanceDecrease: 0
+    durationOfCycleFaceDance: 0
+    scaleFactorFaceDance: 0
     isSphereDanceTurnOn: 0
+    isSphereDanceClockwise: 0
     isCameraRotationTurnOn: 0
     isCameraRotationClockwise: 1
-    cameraRotationSpeed: 1000
+    speedCameraRotation: 0
     isRGBTurnOn: 0
     speedRGB: 0
     targetValueRGB: 0
@@ -172,10 +181,13 @@ MonoBehaviour:
     isFaceDanceTurnOn: 0
     isSetFaceDanceIncrease: 0
     isSetFaceDanceDecrease: 0
+    durationOfCycleFaceDance: 0
+    scaleFactorFaceDance: 0
     isSphereDanceTurnOn: 0
+    isSphereDanceClockwise: 0
     isCameraRotationTurnOn: 0
     isCameraRotationClockwise: 0
-    cameraRotationSpeed: 0
+    speedCameraRotation: 0
     isRGBTurnOn: 1
     speedRGB: 5
     targetValueRGB: 0
@@ -214,10 +226,13 @@ MonoBehaviour:
     isFaceDanceTurnOn: 0
     isSetFaceDanceIncrease: 0
     isSetFaceDanceDecrease: 0
+    durationOfCycleFaceDance: 0
+    scaleFactorFaceDance: 0
     isSphereDanceTurnOn: 0
+    isSphereDanceClockwise: 0
     isCameraRotationTurnOn: 1
     isCameraRotationClockwise: 0
-    cameraRotationSpeed: 0
+    speedCameraRotation: 0
     isRGBTurnOn: 0
     speedRGB: 0
     targetValueRGB: 0

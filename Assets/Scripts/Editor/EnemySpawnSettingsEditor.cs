@@ -121,23 +121,27 @@ public class EnemySpawnSettingsEditor : Editor
             SerializedProperty isFaceDanceTurnOn = spawnTime.FindPropertyRelative("isFaceDanceTurnOn");
             SerializedProperty isSetFaceDanceIncrease = spawnTime.FindPropertyRelative("isSetFaceDanceIncrease");
             SerializedProperty isSetFaceDanceDecrease = spawnTime.FindPropertyRelative("isSetFaceDanceDecrease");
+            SerializedProperty durationOfCycleFaceDance = spawnTime.FindPropertyRelative("durationOfCycleFaceDance");
+            SerializedProperty scaleFactorFaceDance = spawnTime.FindPropertyRelative("scaleFactorFaceDance");
 
             /*
             SphereDance
             public bool isSphereDanceTurnOn;
+            public bool isSphereDanceClockwise;
             */
             SerializedProperty isSphereDanceTurnOn = spawnTime.FindPropertyRelative("isSphereDanceTurnOn");
+            SerializedProperty isSphereDanceClockwise = spawnTime.FindPropertyRelative("isSphereDanceClockwise");
 
             /*
             CameraRotation
             public bool isCameraRotationTurnOn;
             public bool isCameraRotationClockwise;
-            public float cameraRotationSpeed;
+            public float speedCameraRotation;
             */
 
             SerializedProperty isCameraRotationTurnOn = spawnTime.FindPropertyRelative("isCameraRotationTurnOn");
             SerializedProperty isCameraRotationClockwise = spawnTime.FindPropertyRelative("isCameraRotationClockwise");
-            SerializedProperty cameraRotationSpeed = spawnTime.FindPropertyRelative("cameraRotationSpeed");
+            SerializedProperty speedCameraRotation = spawnTime.FindPropertyRelative("speedCameraRotation");
 
             /*
             RGB
@@ -172,9 +176,6 @@ public class EnemySpawnSettingsEditor : Editor
                 fontStyle = FontStyle.Italic
             };
             attentionStyle.normal.textColor = Color.red;
-
-            
-
 
             EditorGUILayout.BeginVertical(GUI.skin.box);
             EditorGUILayout.LabelField("Frame ¹" + i.ToString(), headerStyle);
@@ -286,6 +287,8 @@ public class EnemySpawnSettingsEditor : Editor
             EditorGUILayout.PropertyField(isFaceDanceTurnOn, new GUIContent("Is FaceDance turn on?"));
             if (isFaceDanceTurnOn.boolValue)
             {
+                EditorGUILayout.PropertyField(durationOfCycleFaceDance, new GUIContent("Duration Of Cycle FaceDance"));
+                EditorGUILayout.PropertyField(scaleFactorFaceDance, new GUIContent("Scale Factor FaceDance"));
                 EditorGUILayout.PropertyField(isSetFaceDanceIncrease, new GUIContent("Is set FaceDance increase?"));
                 EditorGUILayout.PropertyField(isSetFaceDanceDecrease, new GUIContent("Is set FaceDance decrease?"));
                 EditorGUILayout.LabelField("can not be true and true!!!", attentionStyle);
@@ -296,6 +299,12 @@ public class EnemySpawnSettingsEditor : Editor
 
             EditorGUILayout.PropertyField(isSphereDanceTurnOn, new GUIContent("Is SphereDance turn on?"));
 
+            if (isSphereDanceTurnOn.boolValue)
+            {
+                EditorGUILayout.PropertyField(isSphereDanceClockwise, new GUIContent("Is SphereDance clockwise?"));
+
+            }
+
             EditorGUILayout.LabelField("Camera Rotation Settings:", labelStyle);
 
             EditorGUILayout.PropertyField(isCameraRotationTurnOn, new GUIContent("Is Camera Rotation turn on?"));
@@ -303,7 +312,7 @@ public class EnemySpawnSettingsEditor : Editor
             if (isCameraRotationTurnOn.boolValue)
             {
                 EditorGUILayout.PropertyField(isCameraRotationClockwise, new GUIContent("Is Camera Rotation clockwise?"));
-                EditorGUILayout.PropertyField(cameraRotationSpeed, new GUIContent("Camera Rotation Speed"));
+                EditorGUILayout.PropertyField(speedCameraRotation, new GUIContent("Camera Rotation Speed"));
                 
             }
 

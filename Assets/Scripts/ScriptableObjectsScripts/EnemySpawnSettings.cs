@@ -53,12 +53,15 @@ public class SpawnTimeData
     public bool isFaceDanceTurnOn;
     public bool isSetFaceDanceIncrease;
     public bool isSetFaceDanceDecrease;
+    public float durationOfCycleFaceDance;
+    public float scaleFactorFaceDance;
 
     public bool isSphereDanceTurnOn;
+    public bool isSphereDanceClockwise;
 
     public bool isCameraRotationTurnOn;
     public bool isCameraRotationClockwise;
-    public float cameraRotationSpeed;
+    public float speedCameraRotation;
 
     public bool isRGBTurnOn;
     public float speedRGB;
