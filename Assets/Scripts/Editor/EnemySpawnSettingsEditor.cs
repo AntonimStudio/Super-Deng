@@ -114,23 +114,29 @@ public class EnemySpawnSettingsEditor : Editor
             /*
             FaceDance
             public bool isFaceDanceTurnOn;
-            public bool isSetFaceDanceIncrease;
-            public bool isSetFaceDanceDecrease;
+            public float durationOfCycleFaceDance;
+            public float scaleFactorFaceDance;
+            public bool isChangingFaceDance;
+            public bool isIncreaseFaceDance;
+            public float durationChangingFaceDance;
             */
 
             SerializedProperty isFaceDanceTurnOn = spawnTime.FindPropertyRelative("isFaceDanceTurnOn");
-            SerializedProperty isSetFaceDanceIncrease = spawnTime.FindPropertyRelative("isSetFaceDanceIncrease");
-            SerializedProperty isSetFaceDanceDecrease = spawnTime.FindPropertyRelative("isSetFaceDanceDecrease");
             SerializedProperty durationOfCycleFaceDance = spawnTime.FindPropertyRelative("durationOfCycleFaceDance");
             SerializedProperty scaleFactorFaceDance = spawnTime.FindPropertyRelative("scaleFactorFaceDance");
+            SerializedProperty isChangingFaceDance = spawnTime.FindPropertyRelative("isChangingFaceDance");
+            SerializedProperty isIncreaseFaceDance = spawnTime.FindPropertyRelative("isIncreaseFaceDance");
+            SerializedProperty durationChangingFaceDance = spawnTime.FindPropertyRelative("durationChangingFaceDance");
 
             /*
             SphereDance
             public bool isSphereDanceTurnOn;
-            public bool isSphereDanceClockwise;
+            public float angleSphereDance;
+            public float durationOfCycleSphereDance;
             */
             SerializedProperty isSphereDanceTurnOn = spawnTime.FindPropertyRelative("isSphereDanceTurnOn");
-            SerializedProperty isSphereDanceClockwise = spawnTime.FindPropertyRelative("isSphereDanceClockwise");
+            SerializedProperty angleSphereDance = spawnTime.FindPropertyRelative("angleSphereDance");
+            SerializedProperty durationOfCycleSphereDance = spawnTime.FindPropertyRelative("durationOfCycleSphereDance");
 
             /*
             CameraRotation
@@ -283,15 +289,26 @@ public class EnemySpawnSettingsEditor : Editor
             }
 
             EditorGUILayout.LabelField("FaceDance Settings:", labelStyle);
-
+            /*
+            FaceDance
+            public bool isFaceDanceTurnOn;
+            public float durationOfCycleFaceDance;
+            public float scaleFactorFaceDance;
+            public bool isChangingFaceDance;
+            public bool isIncreaseFaceDance;
+            public float durationChangingFaceDance;
+            */
             EditorGUILayout.PropertyField(isFaceDanceTurnOn, new GUIContent("Is FaceDance turn on?"));
             if (isFaceDanceTurnOn.boolValue)
             {
                 EditorGUILayout.PropertyField(durationOfCycleFaceDance, new GUIContent("Duration Of Cycle FaceDance"));
                 EditorGUILayout.PropertyField(scaleFactorFaceDance, new GUIContent("Scale Factor FaceDance"));
-                EditorGUILayout.PropertyField(isSetFaceDanceIncrease, new GUIContent("Is set FaceDance increase?"));
-                EditorGUILayout.PropertyField(isSetFaceDanceDecrease, new GUIContent("Is set FaceDance decrease?"));
-                EditorGUILayout.LabelField("can not be true and true!!!", attentionStyle);
+                EditorGUILayout.PropertyField(isChangingFaceDance, new GUIContent("Is Changing FaceDance?"));
+                if (isChangingFaceDance.boolValue)
+                {
+                    EditorGUILayout.PropertyField(isIncreaseFaceDance, new GUIContent("Is Increase FaceDance?"));
+                    EditorGUILayout.PropertyField(durationChangingFaceDance, new GUIContent("Duration of Changing FaceDance"));
+                }
             }
 
 
@@ -301,7 +318,8 @@ public class EnemySpawnSettingsEditor : Editor
 
             if (isSphereDanceTurnOn.boolValue)
             {
-                EditorGUILayout.PropertyField(isSphereDanceClockwise, new GUIContent("Is SphereDance clockwise?"));
+                EditorGUILayout.PropertyField(angleSphereDance, new GUIContent("Angle of SphereDance"));
+                EditorGUILayout.PropertyField(durationOfCycleSphereDance, new GUIContent("durationOfCycleSphereDance"));
 
             }
 

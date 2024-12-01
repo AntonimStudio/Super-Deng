@@ -51,13 +51,16 @@ public class SpawnTimeData
     public int proximityLimitOfPortals;
 
     public bool isFaceDanceTurnOn;
-    public bool isSetFaceDanceIncrease;
-    public bool isSetFaceDanceDecrease;
     public float durationOfCycleFaceDance;
     public float scaleFactorFaceDance;
+    public bool isChangingFaceDance;
+    public bool isIncreaseFaceDance;
+    public float durationChangingFaceDance;
 
     public bool isSphereDanceTurnOn;
-    public bool isSphereDanceClockwise;
+    public float angleSphereDance;
+    public float durationOfCycleSphereDance;
+
 
     public bool isCameraRotationTurnOn;
     public bool isCameraRotationClockwise;
