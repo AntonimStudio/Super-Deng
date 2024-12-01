@@ -17,7 +17,7 @@ public class HumanoidSceneScript : MonoBehaviour
     [SerializeField] private AudioSource audioSourceSFX;
     [SerializeField] private AudioSource audioSourceMusic;
     [SerializeField] private AudioClip soundScream;
-    [SerializeField] private AudioClip music;
+    //[SerializeField] private AudioClip music;
     private float timer = 0f;
     //private bool isSwitching = true;
     private Grain grainEffect; // Зернистость
@@ -70,7 +70,7 @@ public class HumanoidSceneScript : MonoBehaviour
         DisableHead();
         textHitogata.SetActive(false);
         textIcobeat.SetActive(true);
-        PlayMusic();
+        //PlayMusic();
     }
 
     private void DisableHead()
@@ -102,7 +102,7 @@ public class HumanoidSceneScript : MonoBehaviour
             audioSourceSFX.PlayOneShot(soundScream); // Проигрываем звук переключения
         }
     }
-
+    /*
     private void PlayMusic()
     {
         // Проверяем, что звук и источник заданы
@@ -110,5 +110,5 @@ public class HumanoidSceneScript : MonoBehaviour
         {
             audioSourceMusic.PlayOneShot(music); // Проигрываем звук переключения
         }
-    }
+    }*/
 }

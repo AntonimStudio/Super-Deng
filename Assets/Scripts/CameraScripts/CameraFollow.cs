@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
+    public bool isTurnOn = true;
     [SerializeField] private Transform player; // The player object to follow
     [SerializeField] private Transform center; // The center object to look at
     [SerializeField] private float followSpeed = 5f; // Speed of the camera following the player
@@ -17,10 +18,13 @@ public class CameraFollow : MonoBehaviour
 
     private void LateUpdate()
     {
-        Vector3 targetPosition = player.position;
-        transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
-        
-        Vector3 direction = center.position - transform.position;
-        transform.rotation = Quaternion.LookRotation(direction);
+        if (isTurnOn)
+        {
+            Vector3 targetPosition = player.position;
+            transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
+
+            Vector3 direction = center.position - transform.position;
+            transform.rotation = Quaternion.LookRotation(direction);
+        }
     }
 }

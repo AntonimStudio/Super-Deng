@@ -49,53 +49,6 @@ public class FallManager : MonoBehaviour
         }
     }
 
-    /*private void Update()
-    {
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (numbersOfFalledFaces.Count >= 79) return;
-
-            // Создаем список доступных граней
-            List<int> availableFaces = new List<int>();
-
-            for (int i = 0; i < faces.Length; i++)
-            {
-                FaceScript FS = faces[i].GetComponent<FaceScript>();
-                if (!numbersOfFalledFaces.Contains(i) &&
-                    !faceScripts[i].havePlayer &&
-                    !faceScripts[i].isBlinking &&
-                    !faceScripts[i].isKilling &&
-                    !faceScripts[i].isBlocked &&
-                    !faceScripts[i].isColored &&
-                    !faceScripts[i].isPortal &&
-                    !faceScripts[i].isBonus)
-                    {
-                    availableFaces.Add(i);
-                }
-            }
-
-            // Если доступных граней нет, выходим
-            if (availableFaces.Count == 0) return;
-
-            // Выбираем случайную грань из доступных
-            int randomIndex = Random.Range(0, availableFaces.Count);
-            int selectedFaceIndex = availableFaces[randomIndex];
-
-            // Добавляем грань в список использованных
-            numbersOfFalledFaces.Add(selectedFaceIndex);
-
-            // Запускаем корутину
-            StartCoroutine(PlayAnimationFall(faces[selectedFaceIndex], selectedFaceIndex));
-        }
-
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            ResetFall();
-        }
-    }*/
-
     public void StartSettingFallFace()
     {
         
